@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'YekanBakh';
+    src: url('../assets/fonts/YekanBakh-Medium.ttf');  
+}
+
+.ProjectFont{
+    font-family: 'YekanBakh'; 
+}
+
+@font-face {
+    font-family: 'YekanBakhBold';
+    src: url('../assets/fonts/YekanBakh-Heavy.ttf');
+}
+
+.ProjectFontBold{
+    font-family: 'YekanBakhBold';   
+}
+
+@font-face {
+    font-family: 'YekanBakhMiniBold';
+    src: url('../assets/fonts/YekanBakh-Bold.ttf');
+}
