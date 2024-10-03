@@ -1,9 +1,19 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useState } from "react";
 import close from "../../../assets/images/Auth/close.png";
-
+import loginAPI from "../../../core/servises/api/Auth/Login.js";
+import ValidationLogin from "../../../core/validation/ValidationLogin/ValidationLogin.jsx";
 
 const Login = ({ setContent, setAuthModal }) => {
+  const onSubmit = async (values) => {
+    const obj = {
+      password: values.password,
+      phoneOrGmail: values.phoneOrGmail,
+    };
+    const res = await loginAPI(obj);
+    if (res) {
+      setAuthModal(false);
+    }
+  };
   return (
     <div className=" flex justify-center flex-wrap h-[490px] ] ">
       <div className="  mb-[24px]  flex justify-between content-center items-center w-[85%] ">
@@ -26,6 +36,7 @@ const Login = ({ setContent, setAuthModal }) => {
       <Formik
         initialValues={{ phoneOrGmail: "", password: "" }}
         onSubmit={(values) => onSubmit(values)}
+        validationSchema={ValidationLogin}
       >
         <div className="flex mb-[122px] justify-center flex-wrap w-[85%]  ">
           <Form className="flex w-[100%] justify-center flex-wrap h-[60px]">
@@ -33,7 +44,7 @@ const Login = ({ setContent, setAuthModal }) => {
               <Field
                 name="phoneOrGmail"
                 placeholder="ایمیل یا شماره موبایل"
-                className=" w-[100%] h-[56px] border border-solid border-[#CFD8DC] rounded-[50px] text-end pr-4"
+                className=" w-[100%] h-[56px] border border-solid border-[#CFD8DC] rounded-[50px] text-end pr-4 mb-1"
               />
               <ErrorMessage
                 name="phoneOrGmail"
@@ -46,7 +57,7 @@ const Login = ({ setContent, setAuthModal }) => {
                 name="password"
                 type="password"
                 placeholder="رمز عبور"
-                className=" w-[100%] h-[56px] border border-solid border-[#CFD8DC] rounded-[50px] text-end pr-4"
+                className=" w-[100%] h-[56px] border border-solid border-[#CFD8DC] rounded-[50px] text-end pr-4 mb-1"
               />
               <ErrorMessage
                 name="password"
