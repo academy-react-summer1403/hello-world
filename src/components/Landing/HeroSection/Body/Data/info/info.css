@@ -1,0 +1,105 @@
+.Header .Body .Data .Info .DataInfo {
+  border: 4px solid rgb(255, 255, 255);
+  width: 30.5%;
+  height: 81%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  padding-top: 20px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .Header .Body .Data .Info .DataInfo {
+    height: 72%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Header .Body .Data .Info .DataInfo {
+    height: 65%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .Header .Body .Data .Info .DataInfo {
+    width: 87%;
+    height: 73px;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .Header .Body .Data .Info .DataInfo {
+    width: 84%;
+    height: 73px;
+    margin-bottom: 10px;
+  }
+}
+
+.Header .Body .Data .Info .DataInfo .ImgIcon {
+  width: 60px;
+  height: 60px;
+  background-color: #2196f3;
+  border-radius: 16px;
+  margin: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .Header .Body .Data .Info .DataInfo .ImgIcon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.Header .Body .Data .Info .DataInfo .Amar {
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  border-radius: 16px;
+  color: black;
+  margin: 0px;
+  padding: 0;
+}
+
+@media only screen and (max-width: 550px) {
+  .Header .Body .Data .Info .DataInfo .Amar {
+    width: 200px;
+    height: 70px;
+    padding-right: 20px;
+  }
+}
+
+.Header .Body .Data .Info .DataInfo .Amar h2 {
+    line-height: 55px;
+  margin: 0px;
+  color: #263238;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .Header .Body .Data .Info .DataInfo .Amar h2 {
+      font-size: 23px;
+  }
+}
+
+.Header .Body .Data .Info .DataInfo .Amar h3 {
+  margin: 0px;
+  color: #455a64;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 1280px) {
+  .Header .Body .Data .Info .DataInfo .Amar h3 {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Header .Body .Data .Info .DataInfo .Amar h3 {
+    font-size: 14px;
+    margin-top: -12px;
+  }
+}
