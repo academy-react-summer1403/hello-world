@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import close from "../../../assets/images/Auth/close.png";
 import loginAPI from "../../../core/servises/api/Auth/Login.js";
-import ValidationLogin from "../../../core/validation/ValidationLogin/ValidationLogin.jsx";
+import ValidationLogin from "../../../core/validation/ValidationLogin/index.jsx";
 
 const Login = ({ setContent, setAuthModal }) => {
   const onSubmit = async (values) => {

@@ -1,33 +1,9 @@
-.Header .Body .CodingL {
+.CodingL {
   background: url(../../../../assets/images/Landing/HeroSection/Left.png) 60% 20% no-repeat;
   background-size: 140px;
 }
 
-@media only screen and (max-width: 1280px) {
-  .Header .Body .CodingL {
-    background-size: 115px;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .Header .Body .CodingL {
-    background: none
-  }
-}
-
-.Header .Body .CodingR {
+.CodingR {
   background: url(../../../../assets/images/Landing/HeroSection/Right.png) 40% 20% no-repeat;
   background-size: 140px;
 }
-
-@media only screen and (max-width: 1280px) {
-    .Header .Body .CodingR {
-      background-size: 115px;
-    }
-  }
-
-  @media only screen and (max-width: 1024px) {
-    .Header .Body .CodingR {
-      background: none
-    }
-  }
