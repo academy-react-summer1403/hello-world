@@ -1,12 +1,5 @@
 .Header {
     background: url(../../../assets/images/Landing/HeroSection/BackImg.png);
-    background-size: 103%;
     border-bottom-left-radius: 50% 15%;
     border-bottom-right-radius: 50% 15%;
 }
-
-@media only screen and (max-width: 1280px) {
-    .Header {
-        background-size: 1500px;
-    }
-  }
