@@ -2,8 +2,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import close from "../../../assets/images/Auth/close.png";
 import loginAPI from "../../../core/servises/api/Auth/Login.js";
 import ValidationLogin from "../../../core/validation/ValidationLogin/index.jsx";
+import { useAuthStore } from "../../../zustand/Auth/UserToken/index.jsx";
 
 const Login = ({ setContent, setAuthModal }) => {
+  const setTokenAuth = useAuthStore((state) => state.setTokenAuth);
+
   const onSubmit = async (values) => {
     const obj = {
       password: values.password,
@@ -11,6 +14,7 @@ const Login = ({ setContent, setAuthModal }) => {
     };
     const res = await loginAPI(obj);
     if (res) {
+      setTokenAuth(res);
       setAuthModal(false);
     }
   };
