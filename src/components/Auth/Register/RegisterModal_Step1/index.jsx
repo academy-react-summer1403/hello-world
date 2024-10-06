@@ -8,7 +8,7 @@ import registerAPI from "../../../../core/servises/api/Auth/Register/Register-st
     const onSubmit = async (values) => {
       // User Phone Save ----
 
-    //   setUserData(values);
+      setUserData(values);
 
       // Next Step ----
 

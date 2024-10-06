@@ -2,6 +2,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import close from "../../../../assets/images/Auth/close.png";
 import Creataccount from "../../../../core/servises/api/Auth/Register/RegisterFinish-step3/index.js";
+import ValidationRegister from "../../../../core/validation/ValidationRegister/ValidationRegister/index.jsx";
 
 import React, { useState } from "react";
 
@@ -32,7 +33,7 @@ export const RegisterFinish_Step3 = ({
         {/* title */}
         <div className="flex justify-evenly ">
           <div className=" w-[48px] h-[48px] bg-[#F1F7FF] rounded-2xl text-blue-600">
-            <img className="m-3" src={Iclose} alt="" />
+            <img className="m-3" src={close} alt="" />
           </div>
           <div className=" w-[270px] h-[50px] text-3xl myFontMiniBold text-[#263238]">
           ورود به حساب
@@ -44,7 +45,7 @@ export const RegisterFinish_Step3 = ({
             password: "",
           }}
           onSubmit={onSubmit}
-          // validationSchema={ValidationCreat}
+          validationSchema={ValidationRegister}
         >
           {/* input */}
           <Form className="flex justify-center  flex-wrap gap-5	">

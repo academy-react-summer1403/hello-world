@@ -6,26 +6,34 @@ import ValidationRegister from "../../../../core/validation/ValidationRegister/V
 import { ErrorMessage, Field, Form, Formik } from "formik";
 // import CountdownTimer from "../../../../core/utils/Timer";
 
-export const RegisterVerifiction_Step2 = ({ setContent, userData, setUserData, setAuthModal}) => {
+export const RegisterVerifiction_Step2 = ({
+  setContent,
+  userData,
+  setAuthModal,
+}) => {
   const onSubmit = (values) => {
     // Next Step ----
+    console.log(onSubmit, "Register");
 
     setContent("creataccount");
 
     // Api ----
 
-    const object = {
+    const obj = {
       verifyCode: values.verifyCode,
-    //   phoneNumber: userData.phoneNumber,
+      phoneNumber: userData.phoneNumber,
     };
-    codeAPI(object);
+    codeAPI(obj);
   };
   return (
     <>
       <div className="w-[460px] h-[483px] bg-[#ffffff] rounded-3xl flex flex-col justify-around">
         {/* title of register */}
         <div className="flex justify-evenly ">
-          <div onClick={()=>setAuthModal(false)} className=" w-[48px] h-[48px] bg-[#F1F7FF] rounded-2xl text-blue-600">
+          <div
+            onClick={() => setAuthModal(false)}
+            className=" w-[48px] h-[48px] bg-[#F1F7FF] rounded-2xl text-blue-600"
+          >
             <img className="m-3" src={close} alt="" />
           </div>
           <div className=" w-[116px] h-[50px] text-3xl myFontMiniBold text-[#263238] ml-[30%]">
@@ -34,7 +42,8 @@ export const RegisterVerifiction_Step2 = ({ setContent, userData, setUserData, s
         </div>
         <div className=" flex justify-evenly">
           <h1 className=" text-right text-[14px] text-[#455A64]">
-            کد به شماره {"09378412269"} ارسال شد، در صورت اشتباه بودن شماره آنرا{" "}
+            کد به شماره {userData.phoneNumber} ارسال شد، در صورت اشتباه بودن
+            شماره آنرا{" "}
             <h1
               onClick={() => setContent("register")}
               className=" text-right text-[14px] text-[#2196F3] cursor-pointer"
@@ -45,7 +54,7 @@ export const RegisterVerifiction_Step2 = ({ setContent, userData, setUserData, s
         </div>
         <Formik
           initialValues={{
-            phoneNumber: "",
+            verifyCode: "",
           }}
           onSubmit={onSubmit}
           validationSchema={ValidationRegister}
