@@ -27,7 +27,7 @@ const info = () => {
           <img className="max-md:w-[30px]" src={people} alt="" />{" "}
         </div>
         <div className="Amar max-mini:w-[200px] max-mini:h-[70px] max-mini:pr-[20px] text-center w-[100%] h-[80px] rounded-[16px] text-black m-0 p-0 max-mini:absolute max-mini:right-5 max-mini:top-0 ">
-          <h2 className=" max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px]">
+          <h2 className="ProjectFontBold max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px]">
             {" "}
             {landingReport.studentCount &&
               faNumber(landingReport.studentCount.toString())}{" "}
@@ -42,7 +42,7 @@ const info = () => {
           <img className="max-md:w-[30px]" src={clock} alt="" />{" "}
         </div>
         <div className="Amar max-mini:w-[200px] max-mini:h-[70px] max-mini:pr-[20px] text-center w-[100%] h-[80px] rounded-[16px] text-black m-0 p-0 max-mini:absolute max-mini:right-5 max-mini:top-0 ">
-          <h2 className=" max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px]">
+          <h2 className="ProjectFontBold max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px]">
             {" "}
             {landingReport.courseCount &&
               faNumber(landingReport.courseCount.toString())}{" "}
@@ -56,7 +56,7 @@ const info = () => {
           <img className="max-md:w-[30px]" src={teacher} alt="" />{" "}
         </div>
         <div className="Amar max-mini:w-[200px] max-mini:h-[70px] max-mini:pr-[20px] text-center w-[100%] h-[80px] rounded-[16px] text-black m-0 p-0 max-mini:absolute max-mini:right-5 max-mini:top-0 ">
-          <h2 className=" max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px]">
+          <h2 className="ProjectFontBold max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px]">
             {" "}
             {landingReport.teacherCount &&
               faNumber(landingReport.teacherCount.toString())}{" "}
