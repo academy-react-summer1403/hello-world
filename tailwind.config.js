@@ -17,6 +17,7 @@ export default {
         lg: "1024px",
         gg:"1052px",
         lgg: "1110px", 
+        lgx: "1150px", 
         xx:"1232px",
         xll: "1250px", 
         ll:"1256px",
