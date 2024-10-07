@@ -14,7 +14,7 @@ export const RegisterVerifiction_Step2 = ({
   const onSubmit = (values) => {
     // Next Step ----
     console.log(onSubmit, "Register");
-
+    
     setContent("creataccount");
 
     // Api ----
@@ -41,7 +41,7 @@ export const RegisterVerifiction_Step2 = ({
           </div>
         </div>
         <div className=" flex justify-evenly">
-          <h1 className=" text-right text-[14px] text-[#455A64]">
+          <span className=" text-right text-[14px] text-[#455A64]">
             کد به شماره {userData.phoneNumber} ارسال شد، در صورت اشتباه بودن
             شماره آنرا{" "}
             <h1
@@ -50,7 +50,7 @@ export const RegisterVerifiction_Step2 = ({
             >
               تغییر دهید
             </h1>{" "}
-          </h1>
+          </span>
         </div>
         <Formik
           initialValues={{
