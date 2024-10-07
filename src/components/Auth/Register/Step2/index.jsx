@@ -13,7 +13,7 @@ export const RegisterStep2 = ({
 }) => {
   const onSubmit = (values) => {
     // Next Step ----
-    console.log(onSubmit, "Register");
+    console.log("Register");
     
     setContent("creataccount");
 
@@ -57,7 +57,7 @@ export const RegisterStep2 = ({
             verifyCode: "",
           }}
           onSubmit={onSubmit}
-          validationSchema={ValidationCode}
+          ValidationCode={ValidationCode}
         >
           {/* input of register */}
           <Form className="flex justify-center  flex-wrap ">

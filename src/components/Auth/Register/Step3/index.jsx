@@ -2,7 +2,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import close from "../../../../assets/images/Auth/close.png";
 import Creataccount from "../../../../core/servises/api/Auth/Register/RegisterFinish-step3/index.js";
-import ValidationRegister from "../../../../core/validation/ValidationRegister/ValidationRegister/index.jsx";
+import ValidationCreat from "../../../../core/validation/ValidationRegister/ValidationCreat/index.jsx";
 
 import React, { useState } from "react";
 
@@ -45,7 +45,7 @@ export const RegisterStep3 = ({
             password: "",
           }}
           onSubmit={onSubmit}
-          validationSchema={ValidationRegister}
+          validationSchema={ValidationCreat}
         >
           {/* input */}
           <Form className="flex justify-center  flex-wrap gap-5	">

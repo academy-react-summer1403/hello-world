@@ -1,3 +1,4 @@
+import http from "../../../../interceptor/Interseptor";
 
 const Creataccount = async (obj) => {
   console.log("ddd", obj);
