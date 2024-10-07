@@ -2,7 +2,7 @@
   import React from "react";
   import close from "../../../../assets/images/Auth/close.png";
   import { ErrorMessage, Field, Form, Formik } from "formik";
-import ValidationRegister from "../../../../core/validation/ValidationRegister/ValidationRegister";
+import {ValidationRegister} from "../../../../core/validation/ValidationRegister";
 import registerAPI from "../../../../core/servises/api/Auth/Register/Register-step1";
   export const RegisterStep1 = ({ setContent, setUserData, setAuthModal }) => {
     const onSubmit = async (values) => {
@@ -10,14 +10,18 @@ import registerAPI from "../../../../core/servises/api/Auth/Register/Register-st
 
       setUserData(values);
 
-      // Next Step ----
 
-      setContent("entercode");
-
-      // Api ----
 
       const obj = { phoneNumber: values.phoneNumber };
-      registerAPI(obj);
+      try {      const result = await registerAPI(obj);
+          console.log("result:",result);
+          setContent("entercode");
+
+        
+      } catch (error) {
+        console.log("error:",error);
+        
+      }
     };
     return (
       <>

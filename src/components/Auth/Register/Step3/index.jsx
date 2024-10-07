@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import close from "../../../../assets/images/Auth/close.png";
-import Creataccount from "../../../../core/servises/api/Auth/Register/RegisterFinish-step3/index.js";
-import ValidationCreat from "../../../../core/validation/ValidationRegister/ValidationCreat/index.jsx";
+import Creataccount from "../../../../core/servises/api/Auth/Register/RegisterFinish-step3";
+import {ValidationCreat} from "../../../../core/validation/ValidationRegister";
 
 import React, { useState } from "react";
 
@@ -16,7 +16,7 @@ export const RegisterStep3 = ({
   const handleChange = () => {
     setIsChecked(!isChecked);
   };
-  const onSubmit = (values) => {
+  const onSubmit = async (values) => {
     // User Phone Save ----
 
     const obj = {
@@ -24,7 +24,15 @@ export const RegisterStep3 = ({
       password: values.password,
       phoneNumber: userData.phoneNumber,
     };
-    Creataccount(obj);
+try {
+  const result = await Creataccount(obj);
+  console.log("result: " , result);
+
+} catch (error) {
+  console.log("error: " , error);
+  
+}
+    
   };
 
   return (

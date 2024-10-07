@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import close from "../../../../assets/images/Auth/close.png";
-import codeAPI from "../../../../core/servises/api/Auth/Register/RegisterVerifiction-step2/index.js";
-import {ValidationCode} from "../../../../core/validation/ValidationRegister/ValidationCode/index.jsx";
+import codeAPI from "../../../../core/servises/api/Auth/Register/RegisterVerifiction-step2";
+import {ValidationCode} from "../../../../core/validation/ValidationRegister";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 // import CountdownTimer from "../../../../core/utils/Timer";
 
@@ -11,19 +11,22 @@ export const RegisterStep2 = ({
   userData,
   setAuthModal,
 }) => {
-  const onSubmit = (values) => {
-    // Next Step ----
-    console.log("Register");
-    
-    setContent("creataccount");
-
-    // Api ----
+  const onSubmit = async (values) => {  
 
     const obj = {
       verifyCode: values.verifyCode,
       phoneNumber: userData.phoneNumber,
     };
-    codeAPI(obj);
+    try{
+    const result =await codeAPI(obj);
+    console.log("result:",result);
+    setContent("creataccount");
+
+    
+  }catch(error){
+    console.log("reore:",error);
+    
+  }
   };
   return (
     <>
