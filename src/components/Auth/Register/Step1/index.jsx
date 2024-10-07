@@ -4,7 +4,7 @@
   import { ErrorMessage, Field, Form, Formik } from "formik";
 import ValidationRegister from "../../../../core/validation/ValidationRegister/ValidationRegister";
 import registerAPI from "../../../../core/servises/api/Auth/Register/Register-step1";
-  export const RegisterModal_Step1 = ({ setContent, setUserData, setAuthModal }) => {
+  export const RegisterStep1 = ({ setContent, setUserData, setAuthModal }) => {
     const onSubmit = async (values) => {
       // User Phone Save ----
 

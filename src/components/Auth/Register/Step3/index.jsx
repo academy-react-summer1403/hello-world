@@ -6,7 +6,7 @@ import ValidationRegister from "../../../../core/validation/ValidationRegister/V
 
 import React, { useState } from "react";
 
-export const RegisterFinish_Step3 = ({
+export const RegisterStep3 = ({
   setContent,
   setUserData,
   userData,

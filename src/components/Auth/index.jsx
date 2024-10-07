@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Login } from "./Login/index.jsx";
-import { RegisterModal_Step1 } from "./Register/RegisterModal_Step1/index.jsx";
-import { RegisterVerifiction_Step2 } from "./Register/RegisterVerifiction_Step2/index.jsx";
-import { RegisterFinish_Step3 } from "./Register/RegisterFinish_Step3/index.jsx";
+import { RegisterStep1 } from "./Register/Step1/index.jsx";
+import { RegisterStep2 } from "./Register/Step2/index.jsx";
+import { RegisterStep3 } from "./Register/Step3/index.jsx";
 const Auth = ({ setAuthModal }) => {
   const [content, setContent] = useState("login");
   const [userData, setUserData] = useState([]);
@@ -14,23 +14,23 @@ const Auth = ({ setAuthModal }) => {
         {content === "login" ? (
           <Login
             setContent={setContent}
-            setAuthModal={setAuthModal}          />
+            setAuthModal={setAuthModal}/>
         ) : content === "register" ? (
-          <RegisterModal_Step1
+          <RegisterStep1
             setContent={setContent}
             userData={userData}
             setUserData={setUserData}
             setAuthModal={setAuthModal}
           />
         ) : content === "entercode" ? (
-          <RegisterVerifiction_Step2
+          <RegisterStep2
             setContent={setContent}
             userData={userData}
             setUserData={setUserData}
             setAuthModal={setAuthModal}
           />
         ) : content === "creataccount" ? (
-          <RegisterFinish_Step3
+          <RegisterStep3
             setContent={setContent}
             userData={userData}
             setUserData={setUserData}

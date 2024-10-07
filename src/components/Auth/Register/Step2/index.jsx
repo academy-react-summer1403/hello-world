@@ -2,11 +2,11 @@
 import React from "react";
 import close from "../../../../assets/images/Auth/close.png";
 import codeAPI from "../../../../core/servises/api/Auth/Register/RegisterVerifiction-step2/index.js";
-import ValidationRegister from "../../../../core/validation/ValidationRegister/ValidationRegister/index.jsx";
+import {ValidationCode} from "../../../../core/validation/ValidationRegister/ValidationCode/index.jsx";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 // import CountdownTimer from "../../../../core/utils/Timer";
 
-export const RegisterVerifiction_Step2 = ({
+export const RegisterStep2 = ({
   setContent,
   userData,
   setAuthModal,
@@ -44,12 +44,12 @@ export const RegisterVerifiction_Step2 = ({
           <span className=" text-right text-[14px] text-[#455A64]">
             کد به شماره {userData.phoneNumber} ارسال شد، در صورت اشتباه بودن
             شماره آنرا{" "}
-            <h1
+            <span
               onClick={() => setContent("register")}
               className=" text-right text-[14px] text-[#2196F3] cursor-pointer"
             >
               تغییر دهید
-            </h1>{" "}
+            </span>{" "}
           </span>
         </div>
         <Formik
@@ -57,7 +57,7 @@ export const RegisterVerifiction_Step2 = ({
             verifyCode: "",
           }}
           onSubmit={onSubmit}
-          validationSchema={ValidationRegister}
+          validationSchema={ValidationCode}
         >
           {/* input of register */}
           <Form className="flex justify-center  flex-wrap ">
