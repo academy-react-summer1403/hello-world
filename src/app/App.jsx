@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import Landing from "../screens/Landing/index"
-function App() {
-  const [count, setCount] = useState(0)
+import RouterConfig from "../config/router";
+import "./App.css";
+import { Fragment } from "react";
 
+function App() {
   return (
-    <div className='ProjectFont'>
-     <Landing/>
-    </div>
-  )
+    <>
+      <Fragment>
+        <div className="myFont">
+          <RouterConfig />
+        </div>
+      </Fragment>
+    </>
+  );
 }
 
-export default App
+export default App;
