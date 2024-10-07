@@ -8,8 +8,8 @@ const Navbar = () => {
   const [authModal, setAuthModal] = useState(false);
 
   return (
-    <div className=" w-full flex justify-center h-[50px]   ">
-      <div className="w-[90%] flex justify-start    ">
+    <div className=" flex justify-center h-[50px]">
+      <div className=" flex justify-start">
         <div
           className="flex w-[30%] "
           onClick={() => {
@@ -27,6 +27,7 @@ const Navbar = () => {
           <div>ارتباط با ما</div>
           <div>اخبار و مقالات</div>
         </div>
+
         <div className="flex w-[30%] py-2 justify-end text-[#4079c4] ">
           Hello World
           <img className="Logo h-full w-[10%]  " src={img3} alt="image " />
