@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Fragment>
-        <div className="myFont">
+        <div className="ProjectFont">
           <RouterConfig />
         </div>
       </Fragment>
