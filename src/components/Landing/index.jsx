@@ -4,11 +4,13 @@ import Servises from "./Servises/index";
 import Categories from "./Categoris";
 import Teachers from "./Teachers";
 import Blogs from "@components/Landing/Blogs";
+import Courses from "./Courses";
 const Landing = () => {
   return (
     <div>
       <HeroSection />
       <Servises />
+      <Courses/>
       <Categories />
       <Teachers/>
       <Blogs/>
