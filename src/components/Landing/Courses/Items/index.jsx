@@ -30,6 +30,7 @@ const Items = () => {
           currentRegistrants={item.currentRegistrants}
           describe={item.describe}
           id={item.courseId}
+          likeCount={item.likeCount}
         />
       );
     })}

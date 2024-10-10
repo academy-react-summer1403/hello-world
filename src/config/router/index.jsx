@@ -4,6 +4,7 @@ import MainLayout from "@app/Layouts/MainLayout";
 import LandingPage from "@screens/Landing";
 import ErrorPage from "@screens/Errors/404";
 import CoursesPage from "@screens/Courses";
+import CourseDetailPage from "@screens/CourseDetail";
 import NewsPage from "@screens/News";
 
 const RouterConfig = () => {
@@ -14,6 +15,7 @@ const RouterConfig = () => {
       children: [
         { path: "/", element: <LandingPage />, errorElement: <ErrorPage /> },
         { path: "/CoursesPage", element: <CoursesPage /> },
+        { path: "/CourseDetailPage", element: <CourseDetailPage /> },
         { path: "/NewsPage", element: <NewsPage /> },
       ],
     },
