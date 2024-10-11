@@ -26,7 +26,7 @@ const SingleItem = ({
     <>
       <Link
         to="/CourseDetailsS"
-        className="h-[370px] w-[300px] flex justify-center bg-[#f0f0f0] m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]"
+        className="h-[370px] w-[300px]  flex justify-center bg-[#f0f0f0] m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]"
       >
         <img
           className="rounded-[20px]  "
