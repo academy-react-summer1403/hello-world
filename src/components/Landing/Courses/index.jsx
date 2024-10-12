@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
-import Items from './Items';
-import vector from "@assets/images/Landing/Servises/Vector 20.png"
+import Items from "./Items";
+import vector from "@assets/images/Landing/Servises/Vector 20.png";
 const Courses = () => {
   return (
     <div className="w-full h-[560px] mt-28 flex justify-center flex-wrap max-xx:mb-28">
@@ -14,7 +14,7 @@ const Courses = () => {
         </div>
 
         <div className="w-full h-[70%] flex justify-center flex-wrap max-xx:h-[90%] max-tshort:mt-[-90px] max-tshort:h-[100%]">
-          <Items/>
+          <Items />
         </div>
 
         <div className="w-full h-[14%] flex justify-center flex-wrap">
@@ -29,7 +29,7 @@ const Courses = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Courses;

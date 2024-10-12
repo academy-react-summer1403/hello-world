@@ -7,13 +7,13 @@ import Blogs from "@components/Landing/Blogs";
 import Courses from "./Courses";
 const Landing = () => {
   return (
-    <div>
+    <div className="bg-white2">
       <HeroSection />
       <Servises />
-      <Courses/>
+      <Courses />
       <Categories />
-      <Teachers/>
-      <Blogs/>
+      <Teachers />
+      <Blogs />
     </div>
   );
 };
