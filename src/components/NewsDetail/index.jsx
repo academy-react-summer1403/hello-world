@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BigBlogContent = () => {
+const NewsDetail = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const BigBlogContent = () => {
   )
 }
 
-export default BigBlogContent;
+export default NewsDetail;

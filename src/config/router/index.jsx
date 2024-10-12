@@ -6,6 +6,7 @@ import ErrorPage from "@screens/Errors/404";
 import CoursesPage from "@screens/Courses";
 import CourseDetailPage from "@screens/CourseDetail";
 import NewsPage from "@screens/News";
+import NewsDetailPage from "@screens/NewsDetail";
 
 const RouterConfig = () => {
   const pages = [
@@ -17,6 +18,8 @@ const RouterConfig = () => {
         { path: "/CoursesPage", element: <CoursesPage /> },
         { path: "/CourseDetailPage", element: <CourseDetailPage /> },
         { path: "/NewsPage", element: <NewsPage /> },
+        { path: "/NewsDetailPage", element: <NewsDetailPage/> },
+
       ],
     },
 

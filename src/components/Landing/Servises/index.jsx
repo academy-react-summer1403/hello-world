@@ -13,7 +13,7 @@ const Servises = () => {
           <img className="m-auto mt-[15px]  " src={pic} alt="image" />{" "}
         </h1>
         <div className="items  flex flex-row-reverse flex-wrap  gap-[120px] justify-center max-smm:gap-[20px] ">
-          <div className="it1  relative  w-[335px] h-[250px] justify-around rounded-xl my-14 max-xll:w-[200px] max-mmd:w-[100px]   ">
+          <div className="it1  bg-white relative   w-[335px] h-[250px] justify-around rounded-xl my-14 max-xll:w-[200px] max-mmd:w-[100px]   ">
             <div className="photo1 w-[100px] h-[100px] absolute   right-[105px] max-xll:right-[45px] max-mmd:right-[25px] max-mmd:top-[20px] max-mmd:w-[50px] max-mmd:h-[50px] ">
               <img src={pic1} alt="image" />{" "}
             </div>
@@ -39,7 +39,7 @@ const Servises = () => {
             </p>
           </div>
 
-          <div className="it3 relative  w-[335px] h-[250px] justify-around rounded-xl my-14 max-xll:w-[200px] max-mmd:w-[100px] max-smm:gap-[50px]  ">
+          <div className="it3 relative bg-white w-[335px] h-[250px] justify-around rounded-xl my-14 max-xll:w-[200px] max-mmd:w-[100px] max-smm:gap-[50px]  ">
             <div className="photo3 w-[100px] h-[100px] absolute right-[105px] max-xll:right-[45px] max-mmd:right-[25px] max-mmd:top-[20px] max-mmd:w-[50px] max-mmd:h-[50px]  ">
               <img src={pic3} alt="image" />{" "}
             </div>
