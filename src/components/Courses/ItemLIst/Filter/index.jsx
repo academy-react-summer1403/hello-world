@@ -2,11 +2,16 @@ import React from "react";
 import filterIcon from "@assets/images/Courses/filter.svg";
 import trashIcon from "@assets/images/Courses/trash.svg";
 import p1 from "../../../../assets/images/Courses/arrowDown.png";
+import Dastebandi from "./Dastebandi";
+import Asatid from "./Asatid"
+import Moratab from "./Moratab"
+import Time from "./Time"
+
 const filter = () => {
   return (
     <div>
-      <div className="w-[295px] h-[1000px] rounded-[20px]  flex flex-wrap bg-[#fff]  relative  justify-center max-xl:hidden mb-64">
-        <div className=" w-[280px] h-[50px]   bg-grayyy rounded-[15px] relative ">
+      <div className="w-[295px] rounded-[20px]  flex flex-wrap bg-[#fff] justify-center items-start max-xl:hidden mb-64">
+        <div className=" w-[280px] h-[50px] mb-6  bg-grayyy rounded-[15px] relative ">
           <img
             className=" absolute right-[10px] top-[15px]  "
             src={filterIcon}
@@ -21,32 +26,14 @@ const filter = () => {
             <img src={trashIcon} />
           </button>
         </div>
+        <Dastebandi />
 
-        <div
-          className="absolute top-[70px] border  w-[280px] bg-[#fff] 
-     rounded-xl mb-[1rem]"
-        >
-          <input
-            type="checkbox"
-            id="inputrange"
-            className="absolute peer opacity-0"
-          />
+        <Asatid/>
 
-          <label
-            for="inputrange"
-            className="font-[YekanBakhBold] tracking-[1px] mx-[180px] h-[50px] flex items-center"
-          >
-            {" "}
-            دسته‌بندی‌ها{" "}
-          </label>
-          <label
-            for="inputrange"
-            className="h-[1rem] w-[1rem] bg-[url('././././assets/img/courses/plus.png')] bg-no-repeat bg-cover absolute top-[17px] left-[20px]
-         peer-checked:bg-[url('././././assets/img/courses/negativ.png')] duration-300"
-          >
-            {" "}
-          </label>
-        </div>
+        <Moratab/>
+
+        <Time/>
+
       </div>
     </div>
     // <div className="w-[295px] rounded-[20px]  flex flex-wrap border border-sky-500 relative  justify-center max-xl:hidden mb-64">
