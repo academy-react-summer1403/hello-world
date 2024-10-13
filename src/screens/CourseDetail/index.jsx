@@ -1,11 +1,8 @@
-import React from 'react'
+import CourseDetail from "@components/CourseDetail";
+import React from "react";
 
 const CourseDetailPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <CourseDetail />;
+};
 
 export default CourseDetailPage;

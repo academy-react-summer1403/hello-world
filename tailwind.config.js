@@ -52,6 +52,7 @@ export default {
         grayyy: " rgba(236, 239, 241, 1)",
         blueee: "#e0f2fe",
         darkpink: "rgba(255, 0, 122, 1)",
+        primaryColor: "#2196F3",
       },
     },
   },

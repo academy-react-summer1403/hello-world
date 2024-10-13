@@ -4,10 +4,10 @@ import ItemList from "./ItemLIst";
 
 const CourseList = () => {
   return (
-    <>
+    <div className="bg-white2">
       <Baner />
       <ItemList />
-    </>
+    </div>
   );
 };
 
