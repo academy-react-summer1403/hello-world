@@ -35,7 +35,7 @@ const Categories = () => {
           </p>
         </div>
         <div className="item flex    w-[688px] h-[752px]  z-50   absolute  left-[80px] top-0  ">
-          <div className="it1  shadow-[1px_1px_20px_1px] shadow-[#fff8a7] max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  left-0 top-[80px] bg-[#ffffff]     ">
+          <div className="it1  border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  left-0 top-[80px] bg-[#ffffff]     ">
             <div className="icon1  w-[80px]  h-[80px] absolute  top-[50px] inset-x-[110px] max-xl:left-24  max-lgx:left-20 max-lgx:top-[33px] ">
               <img src={pic6} alt="image" />{" "}
             </div>
@@ -50,7 +50,7 @@ const Categories = () => {
             </p>
           </div>
 
-          <div className="it2  shadow-[1px_1px_20px_1px_#ede9fe] max-xl:w-[270px] max-xl:h-[270px]   max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-lgx:right-36 max-lgx:top-10 right-0 top-[10px]  bg-white   ">
+          <div className="it2  border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]   max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-lgx:right-36 max-lgx:top-10 right-0 top-[10px]  bg-white   ">
             <div className="icon2  w-[80px]  h-[80px] absolute  top-[50px] inset-x-[110px] max-xl:left-24  max-lgx:left-20 max-lgx:top-[33px]">
               <img src={pic7} alt="image" />{" "}
             </div>
@@ -64,7 +64,7 @@ const Categories = () => {
             </p>
           </div>
 
-          <div className="it3  shadow-[1px_1px_20px_1px_#d1fae5] max-xl:w-[270px] max-xl:h-[270px] max-lgx:w-[240px] max-lgx:h-[240px]   w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-xl:top-[370px]  max-lgx:right-36 max-lgx:top-[320px] right-0 top-[370px]  bg-white  ">
+          <div className="it3  border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px] max-lgx:w-[240px] max-lgx:h-[240px]   w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-xl:top-[370px]  max-lgx:right-36 max-lgx:top-[320px] right-0 top-[370px]  bg-white  ">
             <div className="icon2  w-[80px]  h-[80px] absolute  top-[50px] inset-x-[110px] max-xl:left-24 max-lgx:left-20 max-lgx:top-[33px]">
               <img src={pic8} alt="image" />{" "}
             </div>
@@ -78,7 +78,7 @@ const Categories = () => {
             </p>
           </div>
 
-          <div className="it4  shadow-[1px_1px_20px_1px_#fce7f3] max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  max-xl:top-[420px] max-lgx:top-[370px] left-0 bottom-[10px] bg-white  ">
+          <div className="it4  border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  max-xl:top-[420px] max-lgx:top-[370px] left-0 bottom-[10px] bg-white  ">
             <div className="icon2  w-[80px]  h-[80px] absolute  top-[50px] inset-x-[110px] max-xl:left-24 max-lgx:left-20 max-lgx:top-[33px] ">
               <img src={pic9} alt="image" />{" "}
             </div>

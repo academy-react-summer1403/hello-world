@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SingleItem from "./Course";
+import CourseCard from "./CourseCard";
 import { getCardList } from "../../../../core/servises/api/Courses/Course/index";
 
 const Items = ({ view }) => {
@@ -24,7 +24,7 @@ const Items = ({ view }) => {
     <>
       {courseList.map((item, index) => {
         return (
-          <SingleItem
+          <CourseCard
             view={view}
             key={index}
             title={item.title}

@@ -32,6 +32,26 @@
   backdrop-filter: blur(15px);
 }
 
+.HeroHeader {
+  background: url(@assets/images/Landing/HeroSection/BackImg.png);
+  border-bottom-left-radius: 50% 15%;
+  border-bottom-right-radius: 50% 15%;
+}
+
+.DataInfo {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.CodingL {
+  background: url(@assets/images/Landing/HeroSection/Left.png) 60% 20% no-repeat;
+  background-size: 140px;
+}
+
+.CodingR {
+  background: url(@assets/images/Landing/HeroSection/Right.png) 40% 20% no-repeat;
+  background-size: 140px;
+}
+
 .like {
   background: #ffebee;
 }
@@ -351,13 +371,13 @@
 }
 
 .Date {
-  background-image: url("../../../../assets/Images/Tutorial/date.png");
+  background-image: url("@assets/Images/Tutorial/date.png");
 }
 
 .Clock {
-  background-image: url("../../../../assets/Images/Tutorial/clock.png");
+  background-image: url("@assets/Images/Tutorial/clock.png");
 }
 
 .Dars {
-  background-image: url("../../../../assets/Images/Tutorial/dars.png");
+  background-image: url("@assets/Images/Tutorial/dars.png");
 }
