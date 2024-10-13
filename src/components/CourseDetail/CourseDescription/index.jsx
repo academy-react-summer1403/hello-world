@@ -6,6 +6,7 @@ import i2 from "@assets/images/CourseDetail/CourseDescription/Icon2.png";
 import i3 from "@assets/images/CourseDetail/CourseDescription/Icon3.png";
 import i4 from "@assets/images/CourseDetail/CourseDescription/Icon4.png";
 import i5 from "@assets/images/CourseDetail/CourseDescription/Icon5.png";
+import {faNumber} from "@core/utils/FaNumber"
 
 const CourseDescription = (props) => {
   const { id } = useParams();
@@ -88,7 +89,7 @@ const CourseDescription = (props) => {
               </button>
               <span className="i4 absolute text-bluee text-[24px]">
                 {" "}
-                {props?.cost} تومان{" "}
+                {props?.cost } تومان{" "}
               </span>
             </div>
           </div>

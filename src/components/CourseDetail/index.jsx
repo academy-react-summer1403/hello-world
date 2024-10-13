@@ -3,7 +3,7 @@ import CourseImage from "./CourseImage";
 import CourseDescription from "./CourseDescription";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {getCourseById} from "@core/servises/api/Courses/getCourseById";
+import { getCourseById } from "@core/servises/api/Courses/getCourseById";
 const CourseDetail = () => {
   const [data, setdata] = useState();
   const { id } = useParams();
@@ -27,7 +27,7 @@ const CourseDetail = () => {
           <CourseImage
             title={data?.title}
             miniDescribe={data?.miniDescribe}
-            tumbImageAddress={data?.tumbImageAddress}
+            imageAddress={data?.imageAddress}
           />
           <CourseDescription
             capacity={data?.capacity}
