@@ -1,7 +1,6 @@
 import Filter from "./Filter";
 import HeaderNews from "./HeaderNews";
 import NewsList from "./NewsList";
-import { Pagination } from '@mantine/core';
 const News = () => {
   return (
     <div>
@@ -10,7 +9,6 @@ const News = () => {
         <Filter />
       </div>
       <NewsList />
-      <Pagination total={10} />
     </div>
   )
 }
