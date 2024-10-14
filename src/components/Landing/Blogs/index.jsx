@@ -43,7 +43,7 @@ const Blogs = () => {
         <div className="max-xl:w-full"></div>
         <Link
           className="w-[141px] h-[48px] text-center bg-[#2196F3] rounded-[80px] mt-[5px] pt-3 text-white max-xl:mt-0"
-          to="/BlogsS"
+          to="/NewsPage"
         >
           {" "}
           مشاهده همه

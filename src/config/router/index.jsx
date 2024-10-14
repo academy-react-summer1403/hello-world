@@ -18,7 +18,7 @@ const RouterConfig = () => {
         { path: "/CoursesPage", element: <CoursesPage /> },
         { path: "/CourseDetailPage", element: <CourseDetailPage /> },
         { path: "/NewsPage", element: <NewsPage /> },
-        { path: "/NewsDetailPage", element: <NewsDetailPage/> },
+        { path: "/NewsDetailPage/:id", element: <NewsDetailPage/> },
 
       ],
     },

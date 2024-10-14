@@ -14,12 +14,6 @@ const NewsItem = (props) => {
         {props?.miniDescribe}
       </h2>
       <div className="w-[90%] h-8 flex flex-nowrap items-center justify-end ">
-        <div className="bg-no-repeat bg-[center_right_1rem] text-[14px] mr-3 text-[#2196F3]">
-          {props?.updateDate}
-        </div>
-        <div className="bg-no-repeat bg-[center_right_1rem] text-[14px] mr-3 text-[#2196F3]">
-          ~
-        </div>
         <div className="bg-no-repeat bg-[center_right_1rem] text-[14px] mr-1 text-[#2196F3]">
           {props?.currentView} بازدید
         </div>
