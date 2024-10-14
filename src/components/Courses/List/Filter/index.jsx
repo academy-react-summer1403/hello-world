@@ -2,10 +2,10 @@ import React from "react";
 import filterIcon from "@assets/images/Courses/filter.svg";
 import trashIcon from "@assets/images/Courses/trash.svg";
 import p1 from "../../../../assets/images/Courses/arrowDown.png";
-import Dastebandi from "./Dastebandi";
-import Asatid from "./Asatid"
-import Moratab from "./Moratab"
-import Time from "./Time"
+import Category from "./Category";
+import Teachers from "./Teachers"
+import Sort from "./Sort"
+import Technology from "./Technology"
 
 const filter = () => {
   return (
@@ -26,13 +26,13 @@ const filter = () => {
             <img src={trashIcon} />
           </button>
         </div>
-        <Dastebandi />
+        <Category />
 
-        <Asatid/>
+        <Teachers/>
 
-        <Moratab/>
+        <Sort/>
 
-        <Time/>
+        <Technology/>
 
       </div>
     </div>

@@ -1,44 +1,44 @@
 import React, { useEffect, useState } from "react";
-import { getFiltercourse } from "@core/servises/api/Courses/Filter/Dastebandi";
+import { getFiltertecnology } from "@core/servises/api/Courses/Filter/Technology";
 
-const Dastebandi = () => {
-  const [coursetypename, setcoursetypename] = useState([]);
+const Technology = () => {
+  const [coursetecnology, setcoursetecnology] = useState([]);
 
-  const getCoursefiltertype = async () => {
-    const courses = await getFiltercourse();
-    setcoursetypename(courses);
+  const getCoursefiltertecnology = async () => {
+    const courses = await getFiltertecnology();
+    setcoursetecnology(courses);
   };
 
   useEffect(() => {
-    getCoursefiltertype();
+    getCoursefiltertecnology();
   }, []);
 
   return (
     <div className=" border-[#c7c7c7] border-[3px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#ececec] bg-[#fff] rounded-xl mb-[1rem]">
       <input
         type="checkbox"
-        id="inputrange"
+        id="inputtime"
         className="absolute peer opacity-0 border"
       />
 
       <label
-        for="inputrange"
-        className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[192px] h-[50px] flex items-center select-none"
+        for="inputtime"
+        className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[190px] h-[50px] flex items-center select-none"
       >
-        {" "}
-نوع کلاس      </label>
+          تکنولوژی
+          </label>
 
       <hr className="border-[#c7c7c7] border-[1px] border-solid w-[98%] m-auto" />
 
       <label
-        for="inputrange"
+        for="inputtime"
         className="h-[1rem] w-[1rem] bg-[url('././././assets/img/courses/plus.png')] bg-no-repeat bg-cover absolute top-[17px] left-[20px] peer-checked:bg-[url('././././assets/img/courses/negativ.png')] duration-300"
       >
         {" "}
       </label>
       <div className="max-h-0 overflow-hidden peer-checked:max-h-full">
         <div className="mt-[1rem] mb-[1rem]">
-          {coursetypename.map((item, index) => {
+          {coursetecnology.map((item, index) => {
             return (
               <div
                 className=" text-right flex justify-end mt-[0.5rem]"
@@ -46,26 +46,26 @@ const Dastebandi = () => {
               >
                 <input
                   type="radio"
-                  id={item.typeName}
+                  id={item.techName}
                   name="filter"
-                  value={item.typeName}
+                  value={item.techName}
                   className="peer hidden"
                 />
                 <label
-                  for={item.typeName}
+                  for={item.techName}
                   className="block mr-[0.5rem] hover:text-[#09B28B] hover:cursor-pointer"
-                  onClick={(e) => {
-                    dispatch(setTypeid(item.id));
+                  onClick={() => {
+                    dispatch(settechnology(item.id));
                   }}
                 >
-                  {item.typeName}
+                  {item.techName}
                 </label>
                 <label
-                  for={item.typeName}
+                  for={item.techName}
                   className="border border-solid border-[black] h-[1rem] w-[1rem] mt-[0.4rem] mr-[1rem] block 
-                            peer-checked:bg-[#09B28B] peer-checked:border-none bg-no-repeat bg-cover rounded-full hover:cursor-pointer hover:bg-[#09B28B]"
-                  onClick={(e) => {
-                    dispatch(setTypeid(item.id));
+          peer-checked:bg-[#09B28B] peer-checked:border-none bg-no-repeat bg-cover rounded-full hover:cursor-pointer hover:bg-[#09B28B]"
+                  onClick={() => {
+                    dispatch(settechnology(item.id));
                   }}
                 ></label>
               </div>
@@ -77,4 +77,4 @@ const Dastebandi = () => {
   );
 };
 
-export default Dastebandi;
+export default Technology;

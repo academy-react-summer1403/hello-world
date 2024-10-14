@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getFilterlevel } from "@core/servises/api/Courses/Filter/Moratab";
+import { getFilterlevel } from "@core/servises/api/Courses/Filter/Sort";
 
 
-const Moratab = () => {
+const Sort = () => {
   const [courselevel, setcourselevel] = useState([]);
 
   const getCoursefilterlevel = async () => {
@@ -78,4 +78,4 @@ const Moratab = () => {
   );
 };
 
-export default Moratab;
+export default Sort;

@@ -1,11 +1,11 @@
-import heart from "../../../../../assets/Images/Tutorial/heart.png";
+import heart from "@assets/Images/Tutorial/heart.png";
 import { useState } from "react";
-import { faNumber } from "../../../../../core/utils/FaNumber";
-import Date from "../../../../../assets/Images/Tutorial/dars.png";
-import noImage from "../../../../../assets/images/Courses/noImage.png";
+import { faNumber } from "@core/utils/FaNumber";
+import Date from "@assets/Images/Tutorial/dars.png";
+import noImage from "@assets/images/Courses/noImage.png";
 import { Link } from "react-router-dom";
 
-const One = ({
+const CourseCard = ({
   view,
   title,
   teacherName,
@@ -77,4 +77,4 @@ const One = ({
   );
 };
 
-export default One;
+export default CourseCard;

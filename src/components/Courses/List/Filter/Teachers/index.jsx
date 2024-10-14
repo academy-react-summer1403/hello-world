@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFilterteacher } from "@core/servises/api/Courses/Filter/Teacher";
 
-const Asatid = () => {
+const Teachers = () => {
   const [courseteacher, setcourseteacher] = useState([]);
 
   const getCoursefilterteacher = async () => {
@@ -77,4 +77,4 @@ const Asatid = () => {
   );
 };
 
-export default Asatid;
+export default Teachers;
