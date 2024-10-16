@@ -1,46 +1,46 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { faNumber } from "@core/utils/FaNumber";
-import noImage from "@assets/images/Landing/Courses/noImage.jpg";
-import levelname from "@assets/images/Landing/Courses/level.png";
-import dislike from "@assets/images/Landing/Courses/dislike.png";
-import typename from "@assets/images/Landing/Courses/clock.png";
+import noImage from "@assets/images/Landing/Courses/noImage.jpg"
+import levelname from "@assets/images/Landing/Courses/note.svg";
+import clock from "@assets/images/Landing/Courses/clock.svg";
+import calendar from "@assets/images/Landing/Courses/calendar.svg";
 import heart from "@assets/images/Landing/Courses/heart.png";
-import Date from "@assets/images/Landing/Courses/dars.png";
-const SingleItem = ({
-  title,
-  teacherName,
-  cost,
-  tumbImageAddress,
-  levelName,
-  currentRegistrants,
-  dissLikeCount,
-  typeName,
-  describe,
-  id,
-  likeCount,
+import { faNumber } from "@core/utils/FaNumber";
+import { ConvertToPersianDate } from "@core/utils/convertDate";
+const CourseCard = ({
+    title,
+    teacherName,
+    cost,
+    tumbImageAddress,
+    levelName,
+    currentRegistrants,
+    dissLikeCount,
+    typeName,
+    describe,
+    id,
+    likeCount,
+    lastUpdate,
 }) => {
-  const [like, setLike] = useState("disslike");
+    const [like, setLike] = useState("disslike");
   console.log("id:", id);
   const ButtonClick = (arg) => {
     setLike(arg);
   };
   console.log("cost:", cost);
-
   return (
     <>
       <div className="h-[370px] w-[300px]  flex justify-center bg-[#f0f0f0] m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">
         <Link
           to="/CourseDetailPage"
-          className="  w-[300px] h-[175px] flex justify-center "
+          className="  w-[90%] h-[45%] flex justify-center rounded-[20px] overflow-hidden  "
         >
           <img
-            className="rounded-[20px]  "
+            className=" w-[100%] h-[100%] "
             src={tumbImageAddress ? tumbImageAddress : noImage}
             alt=""
           />
         </Link>
-        <h3 className="text-right w-[250px] h-[30px] text-[16px] text-[#263238] myFontMiniBold  mt-[-10px] max-sm:text-[14px] max-sm:pr-5">
+        <h3 dir="rtl" className="text-right w-[250px] h-[30px] text-[16px] text-[#263238] myFontMiniBold  mt-[-10px] max-sm:text-[14px] max-sm:pr-5">
           {title}{" "}
         </h3>
 
@@ -57,19 +57,19 @@ const SingleItem = ({
           <div className="dislike  max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
               className=" h-[15px] w-[15px] absolute right-[105px] my-[13px] "
-              src={dislike}
+              src={clock}
             />
-            <span className="font-[YekanBakh] text-[#263238] text-[13px] absolute right-[125px] my-[12px]">
-              {dissLikeCount}
+            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[13px] absolute right-[125px] my-[12px]">
+              20 ساعت
             </span>
           </div>
           <div className="type  bg-[center_right_5px] pr-5  w-1/3 h-full text-[12px] text-[#263238] pt-[11px] pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
               className=" h-[15px] w-[15px] absolute right-[185px] my-[2px] "
-              src={typename}
+              src={calendar}
             />
-            <span className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[203px] my-[4px]">
-              {typeName}
+            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[203px] my-[4px]">
+             {lastUpdate && ConvertToPersianDate(lastUpdate)   }
             </span>
           </div>
         </div>
@@ -83,7 +83,7 @@ const SingleItem = ({
               dir="rtl"
               className="text-[#2196F3] text-[16px] max-sm:text-[12px] mt-[30px] "
             >
-              {cost}
+              {cost && faNumber(cost.toString(), ",")}
               <span className="text-[#263238] mr-[5px] ">تومان </span>
             </span>
           </div>{" "}
@@ -97,7 +97,7 @@ const SingleItem = ({
                 مدرس
               </h2>
             </div>
-            <div className="w-[55px] h-[30px]  bg-[#FFEBEE] rounded-[24px]  mt-5 absolute top-8 max-sm:w-[45px] max-sm:h-[25px] max-sm:top-6">
+            <div className="w-[55px] h-[30px] border  bg-[#FFEBEE] rounded-[24px] overflow-hidden  mt-5   max-sm:w-[45px] max-sm:h-[25px] max-sm:top-6">
               <div
                 className={like === "disslike" ? `disslike` : `like`}
                 onClick={() => {
@@ -113,9 +113,8 @@ const SingleItem = ({
           </div>
         </div>
       </div>
-      {/* // other Fake //////////////////////////// */}
     </>
-  );
-};
+  )
+}
 
-export default SingleItem;
+export default CourseCard;
