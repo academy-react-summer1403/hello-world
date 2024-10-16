@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFilterteacher } from "@core/servises/api/Courses/Filter/Teacher";
 
-const Teachers = () => {
+const Teachers = ({setTecher}) => {
   const [courseteacher, setcourseteacher] = useState([]);
 
   const getCoursefilterteacher = async () => {
@@ -37,12 +37,13 @@ const Teachers = () => {
         {" "}
       </label>
       <div className="  max-h-0 overflow-hidden peer-checked:max-h-full">
-          <div className="  mt-[0.5rem] mb-[1rem]">
+          <div className=" mt-[0.5rem] mb-[1rem]">
             {courseteacher.map((item, index) => {
               return (
                 <div
                   className=" text-right flex justify-end mt-[0.5rem]"
                   key={index}
+                  onClick={() => {setTecher(item.teacherId)}}
                 >
                   <input
                     type="radio"

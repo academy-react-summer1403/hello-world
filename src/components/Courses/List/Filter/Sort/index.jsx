@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getFilterlevel } from "@core/servises/api/Courses/Filter/Sort";
 
 
-const Sort = () => {
+const Sort = ({setLevel}) => {
   const [courselevel, setcourselevel] = useState([]);
 
   const getCoursefilterlevel = async () => {
@@ -24,9 +24,9 @@ const Sort = () => {
 
       <label
         htmlFor="inputmoratab"
-        className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[190px] h-[50px] flex items-center select-none"
+        className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[220px] h-[50px] flex items-center select-none"
       >
-        مرتب سازی
+         سطح
       </label>
 
       <hr className="border-[#c7c7c7] border-[1px] border-solid w-[98%] m-auto" />
@@ -44,6 +44,7 @@ const Sort = () => {
               <div
                 className=" text-right flex justify-end mt-[0.5rem]"
                 key={index}
+                onClick={() => {setLevel(item.id)}}
               >
                 <input
                   type="radio"

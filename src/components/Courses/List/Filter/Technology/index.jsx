@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFiltertecnology } from "@core/servises/api/Courses/Filter/Technology";
 
-const Technology = () => {
+const Technology = ({setTech}) => {
   const [coursetecnology, setcoursetecnology] = useState([]);
 
   const getCoursefiltertecnology = async () => {
@@ -43,6 +43,8 @@ const Technology = () => {
               <div
                 className=" text-right flex justify-end mt-[0.5rem]"
                 key={index}
+                onClick={() => {setTech(item.id)}}
+
               >
                 <input
                   type="radio"

@@ -11,13 +11,18 @@ import { getCourseList } from "@core/servises/api/Courses/Course/index";
 
 const ItemList = () => {
   const [view, setView] = useState("knrhm");
-  const [type, setType] = useState(3);
+  const [type, setType] = useState();
+  const [level, setLevel] = useState();
+  const [tech, setTech] = useState();
+  const [techer, setTecher] = useState();
   const [courseList, setCourseList] = useState([]);
 
   const getList = async () => {
     const params = {
       Count: 5,
       CourseTypeId: type,
+      courseLevelId: level,
+      TeacherId: techer,
     };
     const courses = await getCourseList(params);
     setCourseList(courses.courseFilterDtos);
@@ -30,6 +35,18 @@ const ItemList = () => {
   useEffect(() => {
     getList();
   }, [type]);
+
+  useEffect(() => {
+    getList();
+  }, [level]);
+
+  useEffect(() => {
+    getList();
+  }, [techer]);
+
+  useEffect(() => {
+    getList();
+  }, [tech]);
 
   const ButtonClick = (arg) => {
     setView(arg);
@@ -80,9 +97,9 @@ const ItemList = () => {
           </div>
         </div>
 
-        <Items view={view} courseList={courseList}/>
+        <Items view={view} courseList={courseList} />
       </div>
-      <Filter setType={setType}/>
+      <Filter setType={setType} setLevel={setLevel} setTech={setTech} setTecher={setTecher} />
     </div>
   );
 };

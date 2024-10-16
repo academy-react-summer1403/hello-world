@@ -7,7 +7,7 @@ import Teachers from "./Teachers"
 import Sort from "./Sort"
 import Technology from "./Technology"
 
-const filter = ({setType}) => {
+const filter = ({setType,setLevel,setTech,setTecher}) => {
   return (
     <div>
       <div className="w-[295px] rounded-[20px]  flex flex-wrap bg-[#fff] justify-center items-start max-xl:hidden mb-64">
@@ -28,11 +28,11 @@ const filter = ({setType}) => {
         </div>
         <Category setType={setType} />
 
-        <Teachers/>
+        <Teachers setTecher={setTecher}/>
 
-        <Sort/>
+        <Sort setLevel={setLevel}/>
 
-        <Technology/>
+        <Technology setTech={setTech}/>
 
       </div>
     </div>
