@@ -173,15 +173,31 @@
   height: 100%;
   width: 50%;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   flex-flow: wrap;
   padding-top: 4px;
 }
 
-.knrhm > .textInfo > .LeftInfo > h2 {
+.knrhm > .textInfo > .LeftInfo > h3 {
   font-size: 14px;
   margin-top: 0px;
   margin-bottom: 18px;
+  width: 100%;
+}
+
+.knrhm > .textInfo > .LeftInfo > h2 {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 18px;
+  width: 70%;
+  
+}
+
+.knrhm > .textInfo > .LeftInfo > h4 {
+  font-size: 15px;
+  margin-top: 1px;
+  margin-bottom: 18px;
+  width: 30%;
 }
 
 .knrhm > .textInfo > .RightInfo {

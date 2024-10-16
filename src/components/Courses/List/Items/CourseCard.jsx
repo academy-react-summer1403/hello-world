@@ -51,10 +51,12 @@ const CourseCard = ({
         </Link>
         <div className="textInfo">
           <Link to="/CourseDetailsS" className="LeftInfo">
-            <h2 className="text-[#263238]">دانش آموز {currentRegistrants} </h2>
-            <h2 className="text-[#263238]">
+            <h3 className="text-[#263238]">دانش آموز {currentRegistrants} </h3>
+            <h4 className="text-[#263238]">تومان</h4>
+
+            <h2 className="text-[#2196F3]">
               {" "}
-              {cost && faNumber(cost.toString(), ",")} تومان{" "}
+              {cost && faNumber(cost.toString(), ",")}
             </h2>
           </Link>
           <div className="RightInfo">
