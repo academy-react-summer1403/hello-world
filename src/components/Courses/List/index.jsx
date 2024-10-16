@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Arrow from "../../../assets/images/Courses/Arrow.png";
 import Sort from "../../../assets/images/Courses/Sort.png";
 import Grid from "../../../assets/images/Courses/Grid.png";
@@ -7,9 +7,29 @@ import Items from "./Items";
 import Filter from "./Filter/index.jsx";
 import { useState } from "react";
 import TopFilter from "./TopFilter/TopFilter";
+import { getCourseList } from "@core/servises/api/Courses/Course/index";
 
 const ItemList = () => {
   const [view, setView] = useState("knrhm");
+  const [type, setType] = useState(1);
+  const [courseList, setCourseList] = useState([]);
+
+  const getList = async () => {
+    const params = {
+      Count: 5,
+      CourseTypeId: type,
+    };
+    const courses = await getCourseList(params);
+    setCourseList(courses.courseFilterDtos);
+  };
+
+  useEffect(() => {
+    getList();
+  }, []);
+
+  useEffect(() => {
+    getList();
+  }, [type]);
 
   const ButtonClick = (arg) => {
     setView(arg);
@@ -60,9 +80,9 @@ const ItemList = () => {
           </div>
         </div>
 
-        <Items view={view} />
+        <Items view={view} courseList={courseList}/>
       </div>
-      <Filter />
+      <Filter setType={setType}/>
     </div>
   );
 };

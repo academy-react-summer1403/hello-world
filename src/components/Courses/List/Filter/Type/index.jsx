@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFiltercourse } from "@core/servises/api/Courses/Filter/Category";
 
-const Category = () => {
+const Category = ({setType}) => {
   const [coursetypename, setcoursetypename] = useState([]);
 
   const getCoursefiltertype = async () => {
@@ -22,7 +22,7 @@ const Category = () => {
       />
 
       <label
-        for="inputrange"
+        htmlFor="inputrange"
         className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[192px] h-[50px] flex items-center select-none"
       >
         {" "}
@@ -31,7 +31,7 @@ const Category = () => {
       <hr className="border-[#c7c7c7] border-[1px] border-solid w-[98%] m-auto" />
 
       <label
-        for="inputrange"
+        htmlFor="inputrange"
         className="h-[1rem] w-[1rem] bg-[url('././././assets/img/courses/plus.png')] bg-no-repeat bg-cover absolute top-[17px] left-[20px] peer-checked:bg-[url('././././assets/img/courses/negativ.png')] duration-300"
       >
         {" "}
@@ -43,6 +43,7 @@ const Category = () => {
               <div
                 className=" text-right flex justify-end mt-[0.5rem]"
                 key={index}
+                onClick={() => {setType(item.id)}}
               >
                 <input
                   type="radio"
@@ -52,7 +53,7 @@ const Category = () => {
                   className="peer hidden"
                 />
                 <label
-                  for={item.typeName}
+                  htmlFor={item.typeName}
                   className="block mr-[0.5rem] hover:text-[#09B28B] hover:cursor-pointer"
                   onClick={(e) => {
                     dispatch(setTypeid(item.id));
@@ -61,7 +62,7 @@ const Category = () => {
                   {item.typeName}
                 </label>
                 <label
-                  for={item.typeName}
+                  htmlFor={item.typeName}
                   className="border border-solid border-[black] h-[1rem] w-[1rem] mt-[0.4rem] mr-[1rem] block 
                             peer-checked:bg-[#09B28B] peer-checked:border-none bg-no-repeat bg-cover rounded-full hover:cursor-pointer hover:bg-[#09B28B]"
                   onClick={(e) => {

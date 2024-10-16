@@ -2,12 +2,12 @@ import React from "react";
 import filterIcon from "@assets/images/Courses/filter.svg";
 import trashIcon from "@assets/images/Courses/trash.svg";
 import p1 from "../../../../assets/images/Courses/arrowDown.png";
-import Category from "./Category";
+import Category from "./Type";
 import Teachers from "./Teachers"
 import Sort from "./Sort"
 import Technology from "./Technology"
 
-const filter = () => {
+const filter = ({setType}) => {
   return (
     <div>
       <div className="w-[295px] rounded-[20px]  flex flex-wrap bg-[#fff] justify-center items-start max-xl:hidden mb-64">
@@ -26,7 +26,7 @@ const filter = () => {
             <img src={trashIcon} />
           </button>
         </div>
-        <Category />
+        <Category setType={setType} />
 
         <Teachers/>
 

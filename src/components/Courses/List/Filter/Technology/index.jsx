@@ -22,7 +22,7 @@ const Technology = () => {
       />
 
       <label
-        for="inputtime"
+        htmlFor="inputtime"
         className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[190px] h-[50px] flex items-center select-none"
       >
           تکنولوژی
@@ -31,7 +31,7 @@ const Technology = () => {
       <hr className="border-[#c7c7c7] border-[1px] border-solid w-[98%] m-auto" />
 
       <label
-        for="inputtime"
+        htmlFor="inputtime"
         className="h-[1rem] w-[1rem] bg-[url('././././assets/img/courses/plus.png')] bg-no-repeat bg-cover absolute top-[17px] left-[20px] peer-checked:bg-[url('././././assets/img/courses/negativ.png')] duration-300"
       >
         {" "}
@@ -52,7 +52,7 @@ const Technology = () => {
                   className="peer hidden"
                 />
                 <label
-                  for={item.techName}
+                  htmlFor={item.techName}
                   className="block mr-[0.5rem] hover:text-[#09B28B] hover:cursor-pointer"
                   onClick={() => {
                     dispatch(settechnology(item.id));
@@ -61,7 +61,7 @@ const Technology = () => {
                   {item.techName}
                 </label>
                 <label
-                  for={item.techName}
+                  htmlFor={item.techName}
                   className="border border-solid border-[black] h-[1rem] w-[1rem] mt-[0.4rem] mr-[1rem] block 
           peer-checked:bg-[#09B28B] peer-checked:border-none bg-no-repeat bg-cover rounded-full hover:cursor-pointer hover:bg-[#09B28B]"
                   onClick={() => {
