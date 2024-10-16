@@ -1,13 +1,13 @@
 import React from "react";
 import Baner from "./Baner/index";
-import ItemList from "./ItemLIst";
+import List from "./List";
 
 const CourseList = () => {
   return (
-    <>
+    <div className="bg-white2">
       <Baner />
-      <ItemList />
-    </>
+      <List />
+    </div>
   );
 };
 
