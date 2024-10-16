@@ -1,6 +1,6 @@
 import http from "../../../interceptor/Interseptor";
 
-export const getCardList = async (count) => {
+export const getCourseList = async (count) => {
   try {
     console.log("fetching started...");
 
