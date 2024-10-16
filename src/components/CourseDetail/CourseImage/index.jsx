@@ -1,12 +1,12 @@
 import React from "react";
-import noImage from "@assets/images/Courses/noImage.png"
-const CourseImage = (props ,imageAddress) => {
+import noImage from "@assets/images/Landing/Courses/noImage.jpg"
+const CourseImage = (props) => {
   return (
     <div className="dv1 flex justify-end flex-wrap  w-[50%]  h-[600] ">
-      <div className="h-[500px]   ">
+      <div className="h-[500px]    ">
         <img
-          className="h-[490px] w-[850PX] "
-          src={imageAddress ? imageAddress : noImage}
+          className="h-[100%] w-[100%] rounded-[20px] "
+          src={props?.imageAddress ? props?.imageAddress : noImage}
           alt=""
         />
       </div>

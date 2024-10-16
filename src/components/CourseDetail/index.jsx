@@ -4,6 +4,7 @@ import CourseDescription from "./CourseDescription";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCourseById } from "@core/servises/api/Courses/getCourseById";
+import CourseBox from "./CourseBox";
 const CourseDetail = () => {
   const [data, setdata] = useState();
   const { id } = useParams();
@@ -35,8 +36,10 @@ const CourseDetail = () => {
             endTime={data?.endTime}
             cost={data?.cost}
           />
-          {/* <CourseBox /> */}
         </div>
+      </div>
+      <div className="flex w-[88%] flex-wrap justify-end py-[-30px]">
+        <CourseBox />
       </div>
       {/* <TabComponent id={id} /> */}
       {/* <Slider /> */}

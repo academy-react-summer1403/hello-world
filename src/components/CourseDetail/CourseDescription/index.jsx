@@ -7,7 +7,7 @@ import i3 from "@assets/images/CourseDetail/CourseDescription/Icon3.png";
 import i4 from "@assets/images/CourseDetail/CourseDescription/Icon4.png";
 import i5 from "@assets/images/CourseDetail/CourseDescription/Icon5.png";
 import {faNumber} from "@core/utils/FaNumber"
-
+import { ConvertToPersianDate } from "@core/utils/convertDate";
 const CourseDescription = (props) => {
   const { id } = useParams();
 
@@ -31,9 +31,9 @@ const CourseDescription = (props) => {
                 alt="image"
               />{" "}
               <h3 className="absolute right-[40px] text-gray4 "> ظرفیت </h3>
-              <span className="i1 absolute text-grayy text-[16px] ">
+              <span  className="i1 absolute text-grayy text-[16px] ">
                 {" "}
-                {props?.capacity}
+                {props?.capacity && faNumber(props?.capacity.toString(), ",")  }
               </span>
             </div>
             <div className="info h-[70px] border-b-2 border-graylight relative leading-[70px]   ">
@@ -55,12 +55,12 @@ const CourseDescription = (props) => {
                 alt="image"
               />{" "}
               <h3 className="absolute right-[40px] text-gray4 ">
-                {" "}
-                تاریخ شروع{" "}
+                
+                تاریخ شروع
               </h3>
               <span className="i3 absolute text-grayy text-[16px]">
                 {" "}
-                {props?.startTime}
+                {props?.startTime && ConvertToPersianDate(props?.startTime)   }
               </span>
             </div>
             <div className="info h-[70px] border-b-2 border-graylight relative leading-[70px]">
@@ -74,8 +74,8 @@ const CourseDescription = (props) => {
                 تاریخ پایان{" "}
               </h3>
               <span className="i4 absolute text-grayy text-[16px]">
-                {" "}
-                {props?.endTime}{" "}
+                
+                {props?.endTime  && ConvertToPersianDate(props?.endTime)  }
               </span>
             </div>
             <div className="info h-[105px]  relative leading-[110px] ">
@@ -87,9 +87,9 @@ const CourseDescription = (props) => {
                   alt="image"
                 />
               </button>
-              <span className="i4 absolute text-bluee text-[24px]">
+              <span dir="rtl" className="i4 absolute text-bluee text-[24px]">
                 {" "}
-                {props?.cost } تومان{" "}
+                {props?.cost && faNumber(props?.cost.toString(), ",")  } تومان{" "}
               </span>
             </div>
           </div>
