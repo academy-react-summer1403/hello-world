@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFiltercourse } from "@core/servises/api/Courses/Filter/Category";
 
-const Category = ({setType}) => {
+const Category = ({ setType }) => {
   const [coursetypename, setcoursetypename] = useState([]);
 
   const getCoursefiltertype = async () => {
@@ -14,7 +14,7 @@ const Category = ({setType}) => {
   }, []);
 
   return (
-    <div className=" border-[#c7c7c7] border-[3px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#ececec] bg-[#fff] rounded-xl mb-[1rem]">
+    <div className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
       <input
         type="checkbox"
         id="inputrange"
@@ -23,12 +23,11 @@ const Category = ({setType}) => {
 
       <label
         htmlFor="inputrange"
-        className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[192px] h-[50px] flex items-center select-none"
+        className="font-[YekanBakhMiniBold] w-[200px] text-[#818181] tracking-[1px] mx-[192px] h-[50px] flex items-center select-none"
       >
         {" "}
-نوع کلاس      </label>
-
-      <hr className="border-[#c7c7c7] border-[1px] border-solid w-[98%] m-auto" />
+        نوع کلاس{" "}
+      </label>
 
       <label
         htmlFor="inputrange"
@@ -43,7 +42,9 @@ const Category = ({setType}) => {
               <div
                 className=" text-right flex justify-end mt-[0.5rem]"
                 key={index}
-                onClick={() => {setType(item.id)}}
+                onClick={() => {
+                  setType(item.id);
+                }}
               >
                 <input
                   type="radio"
@@ -54,7 +55,7 @@ const Category = ({setType}) => {
                 />
                 <label
                   htmlFor={item.typeName}
-                  className="block mr-[0.5rem] hover:text-[#09B28B] hover:cursor-pointer"
+                  className="block mr-[0.5rem] hover:text-[#2196F3] hover:cursor-pointer"
                   onClick={(e) => {
                     dispatch(setTypeid(item.id));
                   }}
@@ -63,8 +64,8 @@ const Category = ({setType}) => {
                 </label>
                 <label
                   htmlFor={item.typeName}
-                  className="border border-solid border-[black] h-[1rem] w-[1rem] mt-[0.4rem] mr-[1rem] block 
-                            peer-checked:bg-[#09B28B] peer-checked:border-none bg-no-repeat bg-cover rounded-full hover:cursor-pointer hover:bg-[#09B28B]"
+                  className="border border-solid border-[#c4c4c4] h-[1.1rem] w-[1.1rem] mt-[0.21rem] bg-[#dee5e7] mr-[1rem] block 
+          peer-checked:bg-[#2196F3] peer-checked:border-none bg-no-repeat bg-cover rounded-[7px] hover:cursor-pointer hover:bg-[#85c8ff]"
                   onClick={(e) => {
                     dispatch(setTypeid(item.id));
                   }}
