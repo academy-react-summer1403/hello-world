@@ -42,6 +42,7 @@ export default {
       backgroundColor: {
         white2: "rgba(250, 251, 252, 1)",
         white: "rgb(255 255 255)",
+        whitee: "rgb(255 255 255,1)",
         yellow: "rgba(255, 245, 219, 1)",
         blue: "rgba(227, 242, 253, 1)",
         purple: " rgba(37, 38, 65, 1)",
