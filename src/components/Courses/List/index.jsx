@@ -11,7 +11,7 @@ import { getCourseList } from "@core/servises/api/Courses/Course/index";
 
 const ItemList = () => {
   const [view, setView] = useState("knrhm");
-  const [type, setType] = useState(1);
+  const [type, setType] = useState(3);
   const [courseList, setCourseList] = useState([]);
 
   const getList = async () => {
