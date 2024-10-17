@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import vector from "@assets/images/Landing/Servises/Vector 20.png";
+import vector from "@assets/images/Landing/Servises/Vector 20.svg";
 import { getLandingBlogs } from "@core/servises/api/Landing/Blogs/GetNews";
 import BigBlogs from "./BigBlogs";
 import SmallBlogs from "./SmallBlogs";

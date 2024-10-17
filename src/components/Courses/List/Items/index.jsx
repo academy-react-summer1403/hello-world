@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
-import { getCardList } from "../../../../core/servises/api/Courses/Course/index";
 
-const Items = ({ view }) => {
-  const [courseList, setCourseList] = useState([]);
+const Items = ({ view,courseList }) => {
+  // const [courseList, setCourseList] = useState([]);
 
-  console.log("crs", courseList);
+  // console.log("crs", courseList);
 
-  const getList = async () => {
-    const params = {
-      Count: 5,
-    };
-    const courses = await getCardList(params);
-    console.log("courses:", courses);
-    console.log("courses filter:", courses.courseFilterDtos);
-    setCourseList(courses.courseFilterDtos);
-  };
-  useEffect(() => {
-    getList();
-  }, []);
+  // const getList = async () => {
+  //   const params = {
+  //     Count: 5,
+  //   };
+  //   const courses = await getCourseList(params);
+  //   console.log("courses:", courses);
+  //   console.log("courses filter:", courses.courseFilterDtos);
+  //   setCourseList(courses.courseFilterDtos);
+  // };
+  // useEffect(() => {
+  //   getList();
+  // }, []);
 
   return (
     <>
