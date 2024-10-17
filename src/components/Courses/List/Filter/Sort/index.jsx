@@ -3,6 +3,7 @@ import { getFilterlevel } from "@core/servises/api/Courses/Filter/Sort";
 
 const Sort = ({ setLevel }) => {
   const [courselevel, setcourselevel] = useState([]);
+  const [arrow, setArrow] = useState("down");
 
   const getCoursefilterlevel = async () => {
     const courses = await getFilterlevel();
@@ -13,17 +14,32 @@ const Sort = ({ setLevel }) => {
     getCoursefilterlevel();
   }, []);
 
+  const ButtonClick = (arg) => {
+    setArrow(arg);
+  };
+
   return (
-    <div className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
+    <label
+      onClick={() => ButtonClick("up")}
+      className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[260px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]"
+    >
       <input
         type="checkbox"
         id="inputmoratab"
         className="absolute peer opacity-0 border"
       />
 
+      <div
+        className={
+          arrow === "down"
+            ? "downarrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+            : "uparrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+        }
+      ></div>
+
       <label
         htmlFor="inputmoratab"
-        className="font-[YekanBakhMiniBold] text-[#818181] w-[200px] tracking-[1px] mx-[220px] h-[50px] flex items-center select-none"
+        className="font-[YekanBakhMiniBold] text-[#818181] w-[200px] tracking-[1px] mx-[210px] h-[50px] flex items-center select-none"
       >
         سطح
       </label>
@@ -74,7 +90,7 @@ const Sort = ({ setLevel }) => {
           })}
         </div>
       </div>
-    </div>
+    </label>
   );
 };
 

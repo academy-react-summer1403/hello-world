@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getFiltercourse } from "@core/servises/api/Courses/Filter/Category";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Category = ({ setType }) => {
   const [coursetypename, setcoursetypename] = useState([]);
@@ -14,16 +15,18 @@ const Category = ({ setType }) => {
   }, []);
 
   return (
-    <div className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
+    <label className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[260px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
       <input
         type="checkbox"
         id="inputrange"
         className="absolute peer opacity-0 border"
       />
 
+      <IoIosArrowDown className="w-6 h-7 ml-3 text-[#585858] mt-3 absolute" /> 
+
       <label
         htmlFor="inputrange"
-        className="font-[YekanBakhMiniBold] w-[200px] text-[#818181] tracking-[1px] mx-[192px] h-[50px] flex items-center select-none"
+        className="font-[YekanBakhMiniBold] w-[200px] text-[#818181] tracking-[1px] mx-[182px] h-[50px] flex items-center select-none"
       >
         {" "}
         نوع کلاس{" "}
@@ -75,7 +78,7 @@ const Category = ({ setType }) => {
           })}
         </div>
       </div>
-    </div>
+    </label>
   );
 };
 
