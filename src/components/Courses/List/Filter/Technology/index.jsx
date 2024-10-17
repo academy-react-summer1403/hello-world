@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getFiltertecnology } from "@core/servises/api/Courses/Filter/Technology";
-import { IoIosArrowDown } from "react-icons/io";
 
 const Technology = ({ setTech }) => {
   const [coursetecnology, setcoursetecnology] = useState([]);
+  const [arrow, setArrow] = useState("down");
 
   const getCoursefiltertecnology = async () => {
     const courses = await getFiltertecnology();
@@ -22,7 +22,13 @@ const Technology = ({ setTech }) => {
         className="absolute peer opacity-0 border"
       />
 
-      <IoIosArrowDown className="w-6 h-7 ml-3 text-[#585858] mt-3 absolute" />
+      <div
+        className={
+          arrow === "down"
+            ? "downarrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+            : "uparrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+        }
+      ></div>
 
       <label
         htmlFor="inputtime"

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getFilterteacher } from "@core/servises/api/Courses/Filter/Teacher";
-import { IoIosArrowDown } from "react-icons/io";
 
 const Teachers = ({ setTecher }) => {
   const [courseteacher, setcourseteacher] = useState([]);
+  const [arrow, setArrow] = useState("down");
 
   const getCoursefilterteacher = async () => {
     const courses = await getFilterteacher();
@@ -22,7 +22,13 @@ const Teachers = ({ setTecher }) => {
         className="absolute peer opacity-0 border"
       />
 
-      <IoIosArrowDown className="w-6 h-7 ml-3 text-[#585858] mt-3 absolute" />
+      <div
+        className={
+          arrow === "down"
+            ? "downarrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+            : "uparrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+        }
+      ></div>
 
       <label
         htmlFor="inputasatid"

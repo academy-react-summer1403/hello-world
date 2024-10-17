@@ -92,7 +92,7 @@
   flex-flow: wrap;
   padding-top: 15px;
   cursor: pointer;
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(255, 255, 255);
   border: 1px solid #ececec;
   border-radius: 20px;
   margin-left: 8px;
@@ -115,7 +115,7 @@
 }
 
 .knrhm > .infoBax {
-  background-color: #dce3e9;
+  background-color: #f3f3f3;
   height: 40px;
   width: 260px;
   border-radius: 24px;
@@ -249,7 +249,7 @@
   flex-direction: row-reverse;
   padding-top: 13px;
   cursor: pointer;
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(255, 255, 255);
   border: 1px solid #ececec;
   border-radius: 20px;
   margin-bottom: 15px;
