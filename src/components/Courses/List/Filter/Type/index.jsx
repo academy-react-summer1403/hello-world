@@ -15,7 +15,10 @@ const Category = ({ setType }) => {
   }, []);
 
   return (
-    <label className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[260px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
+    <label
+      onClick={() => ButtonClick("up")}
+      className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[260px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]"
+    >
       <input
         type="checkbox"
         id="inputrange"
