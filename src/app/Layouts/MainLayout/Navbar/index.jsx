@@ -38,7 +38,7 @@ const Navbar = () => {
                  </button>             
 
         </div>
-<div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[35px] mx-[21%]  text-[#455a64]  ">
+<div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%]  text-[#455a64]  ">
 
 
         {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
