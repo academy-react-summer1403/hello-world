@@ -14,6 +14,10 @@ const Technology = ({ setTech }) => {
     getCoursefiltertecnology();
   }, []);
 
+  const ButtonClick = (arg) => {
+    setArrow(arg);
+  };
+
   return (
     <label
       onClick={() => ButtonClick("up")}

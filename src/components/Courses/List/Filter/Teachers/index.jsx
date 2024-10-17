@@ -14,6 +14,10 @@ const Teachers = ({ setTecher }) => {
     getCoursefilterteacher();
   }, []);
 
+  const ButtonClick = (arg) => {
+    setArrow(arg);
+  };
+  
   return (
     <label
       onClick={() => ButtonClick("up")}

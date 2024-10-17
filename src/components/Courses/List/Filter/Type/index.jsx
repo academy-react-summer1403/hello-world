@@ -14,6 +14,10 @@ const Category = ({ setType }) => {
     getCoursefiltertype();
   }, []);
 
+  const ButtonClick = (arg) => {
+    setArrow(arg);
+  };
+
   return (
     <label
       onClick={() => ButtonClick("up")}
