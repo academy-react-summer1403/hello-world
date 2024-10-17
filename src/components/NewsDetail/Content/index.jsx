@@ -9,7 +9,6 @@ import { RiInstagramFill } from "react-icons/ri";
 import { SlSocialFacebook } from "react-icons/sl";
 import { LiaTelegram } from "react-icons/lia";
 
-
 const NewsContent = () => {
   return (
     <div className="bg-white2 ">
@@ -85,9 +84,9 @@ const NewsContent = () => {
           </p>
         </div>
       </div>
-      <div className=" h-16 border  flex justify-center  items-center ">
-        <div className=" w-[842px] h-16 border flex justify-end items-center rounded-2xl bg-slate-100 pr-5">
-          <div className="flex justify-start items-center">
+      <div className=" h-16 flex justify-center  items-center ">
+        <div className="flex justify-end items-center rounded-2xl bg-slate-100 pr-5">
+          <div className="flex justify-start items-center ml-3 gap-4">
             <div>
               <RiInstagramFill />
             </div>
@@ -98,17 +97,17 @@ const NewsContent = () => {
               <LiaTelegram />
             </div>
           </div>
-          <div className="flex justify-end items-center">
+          <div className="flex justify-end items-center  w-[820px] h-16">
             <span className="w-[75px] h-[25px] text-base ">اشتراک گزاری</span>{" "}
             <LiaShareAltSolid className="w-[20px] h-[20px] ml-2" />
           </div>
         </div>
       </div>
-      <div className="h-12 flex justify-center  items-center gap-32">
+      <div className="h-12 flex justify-center  items-center gap-32 mt-3" >
         <div className=" flex w-[361px] h-12 justify-end items-center gap-2">
           <div className="flex justify-end items-center gap-4">
             <div className="flex justify-center items-center w-20 h-11 rounded-3xl bg-slate-100">
-              <span className="text-xl">{faNumber("")}</span>
+              <span className="text-xl">{faNumber("3")}</span>
               <AiOutlineDislike className="w-6 h-6 ml-2" />
             </div>
             <div className="flex justify-center items-center w-20 h-11 rounded-3xl bg-slate-100">
