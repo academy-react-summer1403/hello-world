@@ -10,7 +10,7 @@ import Technology from "./Technology"
 const filter = ({setType,setLevel,setTech,setTecher}) => {
   return (
     <div>
-      <div className="w-[295px] rounded-[20px]  flex flex-wrap bg-[#fff] justify-center items-start max-xl:hidden mb-64">
+      <div className="w-[295px] rounded-[20px]  flex flex-wrap bg-[#fff] border-[1px] border-solid border-[#f7f7f7] justify-center pt-3 pb-3 px-3 items-start max-xl:hidden mb-64">
         <div className=" w-[280px] h-[50px] mb-6  bg-grayyy rounded-[15px] relative ">
           <img
             className=" absolute right-[10px] top-[15px]  "
