@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFilterlevel } from "@core/servises/api/Courses/Filter/Sort";
 
-
-const Sort = () => {
+const Sort = ({ setLevel }) => {
   const [courselevel, setcourselevel] = useState([]);
 
   const getCoursefilterlevel = async () => {
@@ -15,7 +14,7 @@ const Sort = () => {
   }, []);
 
   return (
-    <div className=" border-[#c7c7c7] border-[3px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#ececec] bg-[#fff] rounded-xl mb-[1rem]">
+    <div className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
       <input
         type="checkbox"
         id="inputmoratab"
@@ -23,16 +22,14 @@ const Sort = () => {
       />
 
       <label
-        for="inputmoratab"
-        className="font-[YekanBakhBold] w-[200px] text-[#3f3f3f] tracking-[1px] mx-[190px] h-[50px] flex items-center select-none"
+        htmlFor="inputmoratab"
+        className="font-[YekanBakhMiniBold] text-[#818181] w-[200px] tracking-[1px] mx-[220px] h-[50px] flex items-center select-none"
       >
-        مرتب سازی
+        سطح
       </label>
 
-      <hr className="border-[#c7c7c7] border-[1px] border-solid w-[98%] m-auto" />
-
       <label
-        for="inputmoratab"
+        htmlFor="inputmoratab"
         className="h-[1rem] w-[1rem] bg-[url('././././assets/img/courses/plus.png')] bg-no-repeat bg-cover absolute top-[17px] left-[20px] peer-checked:bg-[url('././././assets/img/courses/negativ.png')] duration-300"
       >
         {" "}
@@ -44,6 +41,9 @@ const Sort = () => {
               <div
                 className=" text-right flex justify-end mt-[0.5rem]"
                 key={index}
+                onClick={() => {
+                  setLevel(item.id);
+                }}
               >
                 <input
                   type="radio"
@@ -53,8 +53,8 @@ const Sort = () => {
                   className="peer hidden"
                 />
                 <label
-                  for={item.levelName}
-                  className="block mr-[0.5rem] hover:text-[#09B28B] hover:cursor-pointer"
+                  htmlFor={item.levelName}
+                  className="block mr-[0.5rem]  hover:text-[#2196F3] hover:cursor-pointer"
                   onClick={() => {
                     dispatch(setlevelid(item.id));
                   }}
@@ -62,9 +62,9 @@ const Sort = () => {
                   {item.levelName}
                 </label>
                 <label
-                  for={item.levelName}
-                  className="border border-solid border-[black] h-[1rem] w-[1rem] mt-[0.4rem] mr-[1rem] block 
-          peer-checked:bg-[#09B28B] peer-checked:border-none bg-no-repeat bg-cover rounded-full hover:cursor-pointer hover:bg-[#09B28B]"
+                  htmlFor={item.levelName}
+                  className="border border-solid border-[#c4c4c4] h-[1.1rem] w-[1.1rem] mt-[0.21rem] bg-[#dee5e7] mr-[1rem] block 
+          peer-checked:bg-[#2196F3] peer-checked:border-none bg-no-repeat bg-cover rounded-[7px] hover:cursor-pointer hover:bg-[#85c8ff]"
                   onClick={() => {
                     dispatch(setlevelid(item.id));
                   }}
