@@ -22,8 +22,8 @@ const CourseDetail = () => {
     getList(id);
   }, []);
   return (
-    <div className="bg-white2">
-      <div className="w-full bg-white2 flex py-14 justify-center ">
+    <div className=" bg-white2 ">
+      <div className="w-full  flex py-14 justify-center  ">
         <div className="flex w-[90%] flex-wrap flex-row-reverse gap-[25px] justify-center  mt-[20px]  ">
           <CourseImage
             title={data?.title}
