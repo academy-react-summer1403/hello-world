@@ -1,6 +1,6 @@
 import React from "react";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+// import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+// import "react-tabs/style/react-tabs.css";
 import Description from "./Description";
 import Preview from "./Preview";
 import Comment from "./Comment";
