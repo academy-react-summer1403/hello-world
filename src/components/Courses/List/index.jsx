@@ -101,7 +101,7 @@ const ItemList = () => {
 
         <Items view={view} courseList={courseList} />
 
-        <Stack className="mt-9 mb-0" spacing={2}>
+        <Stack className=" w-full items-center mt-9 mb-0" spacing={2}>
           <Pagination count={10} color="primary" />
         </Stack>
 
