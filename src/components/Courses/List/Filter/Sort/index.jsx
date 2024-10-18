@@ -14,7 +14,7 @@ const Sort = ({ setLevel }) => {
     getCoursefilterlevel();
   }, []);
 
-  console.log(arrow);
+  // console.log(arrow);
 
   // const ButtonClick = (arg) => {
   //   setArrow(arg);

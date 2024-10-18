@@ -9,6 +9,10 @@ import { useState } from "react";
 import TopFilter from "./TopFilter/TopFilter";
 import { getCourseList } from "@core/servises/api/Courses/Course/index";
 
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+
+
 const ItemList = () => {
   const [view, setView] = useState("knrhm");
   const [type, setType] = useState();
@@ -98,8 +102,18 @@ const ItemList = () => {
         </div>
 
         <Items view={view} courseList={courseList} />
+
+        <Stack className="mt-9 mb-0" spacing={2}>
+          <Pagination count={10} color="primary" />
+        </Stack>
       </div>
-      <Filter setType={setType} setLevel={setLevel} setTech={setTech} setTecher={setTecher} />
+
+      <Filter
+        setType={setType}
+        setLevel={setLevel}
+        setTech={setTech}
+        setTecher={setTecher}
+      />
     </div>
   );
 };

@@ -3,14 +3,14 @@ import filterIcon from "@assets/images/Courses/filter.svg";
 import trashIcon from "@assets/images/Courses/trash.svg";
 import p1 from "../../../../assets/images/Courses/arrowDown.png";
 import Category from "./Type";
-import Teachers from "./Teachers"
-import Sort from "./Sort"
-import Technology from "./Technology"
+import Teachers from "./Teachers";
+import Sort from "./Sort";
+import Technology from "./Technology";
 
-const filter = ({setType,setLevel,setTech,setTecher}) => {
+const filter = ({ setType, setLevel, setTech, setTecher }) => {
   return (
     <div>
-      <div className="w-[295px] rounded-[20px]  flex flex-wrap bg-[#fff] border-[1px] border-solid border-[#f7f7f7] justify-center pt-3 pb-3 px-3 items-start max-xl:hidden mb-64">
+      <div className="w-[295px] rounded-[20px]  flex flex-wrap bg-[#fff] border-[1px] border-solid border-[#f7f7f7] justify-center pt-3 pb-3 px-2 items-start max-xl:hidden mb-64">
         <div className=" w-[280px] h-[50px] mb-6  bg-grayyy rounded-[15px] relative ">
           <img
             className=" absolute right-[10px] top-[15px]  "
@@ -26,14 +26,14 @@ const filter = ({setType,setLevel,setTech,setTecher}) => {
             <img src={trashIcon} />
           </button>
         </div>
+
         <Category setType={setType} />
 
-        <Teachers setTecher={setTecher}/>
+        <Teachers setTecher={setTecher} />
 
-        <Sort setLevel={setLevel}/>
+        <Sort setLevel={setLevel} />
 
-        <Technology setTech={setTech}/>
-
+        <Technology setTech={setTech} />
       </div>
     </div>
     // <div className="w-[295px] rounded-[20px]  flex flex-wrap border border-sky-500 relative  justify-center max-xl:hidden mb-64">
