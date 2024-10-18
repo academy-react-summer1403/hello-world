@@ -92,7 +92,8 @@
   flex-flow: wrap;
   padding-top: 15px;
   cursor: pointer;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ececec;
   border-radius: 20px;
   margin-left: 8px;
   margin-right: 8px;
@@ -114,7 +115,7 @@
 }
 
 .knrhm > .infoBax {
-  background-color: #dce3e9;
+  background-color: #f3f3f3;
   height: 40px;
   width: 260px;
   border-radius: 24px;
@@ -248,7 +249,8 @@
   flex-direction: row-reverse;
   padding-top: 13px;
   cursor: pointer;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ececec;
   border-radius: 20px;
   margin-bottom: 15px;
 }
@@ -336,10 +338,26 @@
 }
 
 .zirhm > .textInfo > .LeftInfo > h2 {
+  font-size: 22px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 70%;
+  font-family: "YekanBakhMiniBold";
+}
+
+.zirhm > .textInfo > .LeftInfo > h3 {
   font-size: 16px;
   margin-top: 0px;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   width: 100%;
+  font-family: "YekanBakhMiniBold";
+}
+
+.zirhm > .textInfo > .LeftInfo > h4 {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  width: 30%;
   font-family: "YekanBakhMiniBold";
 }
 
@@ -396,4 +414,14 @@
 
 .Dars {
   background-image: url("@assets/Images/Tutorial/dars.png");
+}
+
+.downarrow {
+  background-image: url(../assets/images/Courses/arrowDown.png) ;
+  background-size: 20px;
+}
+
+.uparrow {
+  background-image: url(../assets/images/Courses/arrowUp.png) ;
+  background-size: 20px;
 }

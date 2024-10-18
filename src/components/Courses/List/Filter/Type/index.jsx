@@ -3,6 +3,7 @@ import { getFiltercourse } from "@core/servises/api/Courses/Filter/Category";
 
 const Category = ({ setType }) => {
   const [coursetypename, setcoursetypename] = useState([]);
+  const [arrow, setArrow] = useState("down");
 
   const getCoursefiltertype = async () => {
     const courses = await getFiltercourse();
@@ -13,17 +14,32 @@ const Category = ({ setType }) => {
     getCoursefiltertype();
   }, []);
 
+  const ButtonClick = (arg) => {
+    setArrow(arg);
+  };
+
   return (
-    <div className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
+    <label
+      onClick={() => ButtonClick("up")}
+      className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[260px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]"
+    >
       <input
         type="checkbox"
         id="inputrange"
         className="absolute peer opacity-0 border"
       />
 
+      <div
+        className={
+          arrow === "down"
+            ? "downarrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+            : "uparrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+        }
+      ></div>
+
       <label
         htmlFor="inputrange"
-        className="font-[YekanBakhMiniBold] w-[200px] text-[#818181] tracking-[1px] mx-[192px] h-[50px] flex items-center select-none"
+        className="font-[YekanBakhMiniBold] w-[200px] text-[#818181] tracking-[1px] mx-[182px] h-[50px] flex items-center select-none"
       >
         {" "}
         نوع کلاس{" "}
@@ -75,7 +91,7 @@ const Category = ({ setType }) => {
           })}
         </div>
       </div>
-    </div>
+    </label>
   );
 };
 

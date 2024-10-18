@@ -3,6 +3,7 @@ import { getFiltertecnology } from "@core/servises/api/Courses/Filter/Technology
 
 const Technology = ({ setTech }) => {
   const [coursetecnology, setcoursetecnology] = useState([]);
+  const [arrow, setArrow] = useState("down");
 
   const getCoursefiltertecnology = async () => {
     const courses = await getFiltertecnology();
@@ -13,17 +14,32 @@ const Technology = ({ setTech }) => {
     getCoursefiltertecnology();
   }, []);
 
+  const ButtonClick = (arg) => {
+    setArrow(arg);
+  };
+
   return (
-    <div className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
+    <label
+      onClick={() => ButtonClick("up")}
+      className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[260px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]"
+    >
       <input
         type="checkbox"
         id="inputtime"
         className="absolute peer opacity-0 border"
       />
 
+      <div
+        className={
+          arrow === "down"
+            ? "downarrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+            : "uparrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
+        }
+      ></div>
+
       <label
         htmlFor="inputtime"
-        className="font-[YekanBakhMiniBold] w-[200px] text-[#818181] tracking-[1px] mx-[190px] h-[50px] flex items-center select-none"
+        className="font-[YekanBakhMiniBold] w-[200px] text-[#818181] tracking-[1px] mx-[180px] h-[50px] flex items-center select-none"
       >
         تکنولوژی
       </label>
@@ -74,7 +90,7 @@ const Technology = ({ setTech }) => {
           })}
         </div>
       </div>
-    </div>
+    </label>
   );
 };
 
