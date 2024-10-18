@@ -43,7 +43,7 @@ const CourseDetail = () => {
         <CourseBox />
       </div>
 
-      <TabBox/>
+      <TabBox  id={id}/>
       {/* <TabComponent id={id} /> */}
       {/* <Slider /> */}
     </div>
