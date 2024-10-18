@@ -3,7 +3,7 @@ import { getFilterlevel } from "@core/servises/api/Courses/Filter/Sort";
 
 const Sort = ({ setLevel }) => {
   const [courselevel, setcourselevel] = useState([]);
-  const [arrow, setArrow] = useState("down");
+  const [arrow, setArrow] = useState(true);
 
   const getCoursefilterlevel = async () => {
     const courses = await getFilterlevel();
@@ -14,13 +14,15 @@ const Sort = ({ setLevel }) => {
     getCoursefilterlevel();
   }, []);
 
-  const ButtonClick = (arg) => {
-    setArrow(arg);
-  };
+  console.log(arrow);
+
+  // const ButtonClick = (arg) => {
+  //   setArrow(arg);
+  // };
 
   return (
     <label
-      onClick={() => ButtonClick("up")}
+      onClick={() => (arrow == true ? setArrow(false) : setArrow(true))}
       className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[260px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]"
     >
       <input
@@ -31,7 +33,7 @@ const Sort = ({ setLevel }) => {
 
       <div
         className={
-          arrow === "down"
+          arrow === true
             ? "downarrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
             : "uparrow bg-no-repeat w-6 h-7 ml-3 text-[#585858] mt-[16px] absolute"
         }
