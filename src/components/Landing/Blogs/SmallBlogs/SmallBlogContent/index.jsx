@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import noImage from "@assets/images/Landing/Blogs/noImage.jpg";
-const BlogItemContent = ({
+const SmallBlogContent = ({
   title,
   currentImageAddressTumb,
   miniDescribe,
@@ -38,7 +38,7 @@ const BlogItemContent = ({
         <div className="right flex justify-center items-center">
           <img
             className="max-h-[150px] w-[220px] rounded-[25px] border border-[#c2c2c2]"
-            src={currentImageAddressTumb ? currentImageAddressTumb : noImage}
+            src={noImage}
             alt=""
           />
         </div>
@@ -49,4 +49,4 @@ const BlogItemContent = ({
   );
 };
 
-export default BlogItemContent;
+export default SmallBlogContent;

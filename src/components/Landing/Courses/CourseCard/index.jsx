@@ -50,25 +50,25 @@ const CourseCard = ({
               className=" h-[15px] w-[15px] absolute right-[13px] my-[12px] "
               src={levelname}
             />
-            <span className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[33px] my-[13px]">
+            <span className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[33px] my-[15px]">
               {levelName}
             </span>
           </div>
           <div className="dislike  max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
-              className=" h-[15px] w-[15px] absolute right-[90px] my-[13px] "
+              className=" h-[15px] w-[15px] absolute right-[105px] my-[13px] "
               src={clock}
             />
-            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[13px] absolute right-[110px] my-[12px]">
+            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[13px] absolute right-[125px] my-[12px]">
               20 ساعت
             </span>
           </div>
           <div className="type  bg-[center_right_5px] pr-5  w-1/3 h-full text-[12px] text-[#263238] pt-[11px] pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
-              className=" h-[15px] w-[15px] absolute right-[170px] my-[2px] "
+              className=" h-[15px] w-[15px] absolute right-[185px] my-[2px] "
               src={calendar}
             />
-            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[190px] my-[4px]">
+            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[203px] my-[4px]">
              {lastUpdate && ConvertToPersianDate(lastUpdate)   }
             </span>
           </div>
