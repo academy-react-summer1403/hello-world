@@ -32,22 +32,22 @@ const TabBox = ({ id }) => {
             </Tab>
             <Tab className="w-[90px] h-10 text-center border-b-[3px] mt-2 border-[#607D8B] mr-8 text-[#607D8B] hover:cursor-pointer">
               توضیحات
-            </Tab>
+            </Tab> 
           </TabList>
-          <TabPanel className="flex justify-center mr-9 flex-wrap">
-            <div className="  relative w-[820px] h-[900px]">
+          <TabPanel className="flex justify-center mr-9 flex-wrap max-h-[500px] overflow-hidden  ">
+            <div className="  relative w-[820px] ">
               <input
-                className="Search w-[800px] h-[150px]  border  border-[#e2e8f0] mt-[20px] text-right rounded-3xl bg-white font-[YekanBakh] text-[20px] m-auto absolute right-0 "
+                className="Search w-[800px] h-[150px]  border  border-[#e2e8f0] mt-[20px] text-right rounded-3xl bg-white font-[YekanBakh] text-[20px] m-auto  "
                 type="search"
                 placeholder="...نظر خودتو بنویس "
               ></input>
-              <div className="w-[100px] h-[50px] bg-bluee absolute top-[180px] right-[330px] rounded-3xl ">
-                <span className="font-[YekanBakhBold] text-[20px] text-white absolute top-[10px] right-[30px] ">
+              <div className="w-[80px] h-[50px] bg-bluee mx-[350px] my-[20px]  rounded-[50px] ">
+                <span className="font-[YekanBakh] text-[20px] text-white mt-[20px] ">
                   {" "}
                   ارسال{" "}
                 </span>
               </div>
-              <div className="absolute top-[280px] right-0">
+              <div className=" top-[280px] right-0">
                 {comment?.map((item, index) => {
                   console.log("item:", item);
                   return (
