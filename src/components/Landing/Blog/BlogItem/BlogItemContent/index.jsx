@@ -38,7 +38,7 @@ const BlogItemContent = ({
         <div className="right flex justify-center items-center">
           <img
             className="max-h-[150px] w-[220px] rounded-[25px] border border-[#c2c2c2]"
-            src={noImage}
+            src={currentImageAddressTumb ? currentImageAddressTumb : noImage}
             alt=""
           />
         </div>

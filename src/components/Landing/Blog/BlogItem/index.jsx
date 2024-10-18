@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getLandingBlogs } from "@core/servises/api/Landing/Blogs/GetNews";
 import BlogItemContent from "./BlogItemContent";
+
 const BlogItem = () => {
   const [landingBlogs, setLandingBlogs] = useState([]);
 
