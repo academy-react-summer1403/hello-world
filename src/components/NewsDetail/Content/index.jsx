@@ -1,4 +1,4 @@
-// import aks4 from "../../../assets/Images/BlogDetails/Rectangle 4324.png";
+/* eslint-disable react/prop-types */
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import { AiOutlineLike } from "react-icons/ai";
@@ -9,34 +9,20 @@ import { RiInstagramFill } from "react-icons/ri";
 import { SlSocialFacebook } from "react-icons/sl";
 import { LiaTelegram } from "react-icons/lia";
 
-const NewsContent = () => {
+const NewsContent = (props) => {
   return (
     <div className="bg-white2 ">
       <div className="  flex justify-center  ">
         <div className="w-[900px]  h-[550px]  mt-[25px]">
           <h1 className='text-right  font-["YekanBakhBold"] text-[30px] text-grayy'>
             {" "}
-            چگونه اموزش ببینیم ؟
+            {props?.googleTitle}
           </h1>
           <p className='text-right  font-["YekanBakh"] text-[15px] text-gray4  leading-[40px] '>
-            قبل از هر چیزی باید بدانیم که نمیشه یک روند یا روش خاصی رو برای همه
-            افراد که ذهنیت های متفاوتی هم از هم دارند، در نظر گرفت. ولی خب هدف
-            تمامی این افراد آموزش دیدن و رسیدن به درک عمیقی از اون مطلب است ولی
-            آیا برای تمامی افراد آموزش دیدن به این جا ختم میشود و همه به درک
-            عمیقی از اون مطلب میرسند؟ قطعا خیر. در ادامه به نحوه رسیدن به درک
-            عمیق مطلب، مناسب برای تمامی افراد صحبت خواهیم کرد. مثال: فرض کنید
-            شما در حال خواندن یک کتاب هستید، در صفحه 30 یک چیزی را متوجه نشدین.
-            در حالت عادی شما به یک صفحه قبل میروید و دوباره خواندن را شروع
-            میکنید و فرض کنید در صفحه 40 هم دقیقا همین اتفاق میافتد و به یک صفحه
-            قبل برمیگردید و دوباره خواندن را شروع میکنید و تا رسیدن به آخرین
-            صفحه این کتاب این چرخه بارها و بارها اتفاق میافتد. نکته و البته جواب
-            ما اینجاست که شما اگر در صفحه 30 نکته را متوجه نشدین، برای رسیدن به
-            درک عمیق باید به جای صفحه قبلی، به صفحه 1 کتاب برگردین و کتاب را از
-            اول دوباره بخوانید، دوباره اگر در صفحه 50 نکته ای را متوجه نشدین،
-            دوباره کتاب را از اول شروع کنید. شما تا پایان این کتاب به درک عمیق
-            اون مطلبی که قرار بود آموزش ببینید میرسید.
+            {props?.describe}
           </p>
           <div className="leading-[40px]">
+            <h1 className="text-center">توصیه های قبل کار</h1>
             <p className='text-right  font-["YekanBakhBold"] text-[20px] text-grayy  '>
               {" "}
               افزایش انرژی: کافئین به‌عنوان یک محرک عصبی عمل می‌کند و با ورود به
@@ -62,9 +48,9 @@ const NewsContent = () => {
       </div>
 
       <div className="  flex justify-center  ">
-        <div className="w-[850px] h-[400px] mt-[20px]  ">
+        <div className="w-[850px] h-[400px] mt-[20px] rounded-xl ">
           {" "}
-          <img src={"aks4"} alt="aks4" />{" "}
+          <img src={props?.currentImageAddress} alt="aks4" />{" "}
         </div>
       </div>
 
@@ -103,15 +89,15 @@ const NewsContent = () => {
           </div>
         </div>
       </div>
-      <div className="h-12 flex justify-center  items-center gap-32 mt-3" >
+      <div className="h-12 flex justify-center  items-center gap-32 mt-3">
         <div className=" flex w-[361px] h-12 justify-end items-center gap-2">
           <div className="flex justify-end items-center gap-4">
             <div className="flex justify-center items-center w-20 h-11 rounded-3xl bg-slate-100">
-              <span className="text-xl">{faNumber("3")}</span>
+              <span className="text-xl">{props?.currentDissLikeCount}</span>
               <AiOutlineDislike className="w-6 h-6 ml-2" />
             </div>
             <div className="flex justify-center items-center w-20 h-11 rounded-3xl bg-slate-100">
-              <span className="text-xl">{faNumber("22")}</span>
+              <span className="text-xl">{props?.currentLikeCount}</span>
               <AiOutlineLike className="w-6 h-6 ml-2" />
             </div>
           </div>
@@ -119,8 +105,8 @@ const NewsContent = () => {
         </div>
         <div className=" flex justify-start items-center flex-nowrap flex-row-reverse gap-4 w-80 h-8 ">
           <div>
-            <Stack spacing={1}>
-              <Rating name="size-medium" defaultValue={2} />
+            <Stack >
+              <Rating name="size-medium" value={props?.currentRate} />
             </Stack>
           </div>
           <div>

@@ -15,7 +15,7 @@ export const getAllWithCategoryFilter = async (count) => {
 };
 export const GetNewsWithid = async (id) => {
     try {
-      const result = await http.get(`"/News/${id}"`);
+      const result = await http.get(`/News/${id}`);
   
       return result;
     } catch (error) {

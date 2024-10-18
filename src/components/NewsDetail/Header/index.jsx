@@ -1,8 +1,7 @@
-// import aks from "../../../assets/Images/BlogDetails/Rectangle 34.png";
-// import aks2 from "../../../assets/Images/BlogDetails/view and date.png";
-// import aks3 from "../../../assets/Images/BlogDetails/Teacher.png";
+/* eslint-disable react/prop-types */
+import nasher from "@assets/images/News/1215b2106df963d9ff66fbc22f9cf44c.jpg";
 
-const NewsHeader = () => {
+const NewsHeader = (props) => {
   return (
     <div className="bg-white2 ">
       <div className="flex justify-center ">
@@ -10,39 +9,36 @@ const NewsHeader = () => {
           <div className="text w-[900px] [h-400px] absolute max-xxl:right-0">
             <h1 className='text-right  font-["YekanBakhBold"] text-[30px] text-grayy  '>
               {" "}
-              .چگونه مطالعه موثر را برای شما آسانتر کنیم
+              {props?.title}
             </h1>
             <p className='text-right  font-["YekanBakh"] text-[15px] text-gray4 leading-[50px]  '>
               {" "}
-              همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع خاص
-              مثل آموزش از کتاب، ویدئو یا هر آنچه که برای آموزش است نخواهد بود و
-              این مقاله به صورت جامع در مورد چگونگی آموزش دیدن و یادگیری
-              است.همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع
-              خاص مثل آموزش از کتاب، ویدئو یا هر آنچه که همانطور که از عنوان
-              مقاله مشخص است، صحبت ما روی آموزش دیدن و یادگیری است.همانطور که از
-              عنوان مقاله. قبل از هر چیزی باید بدانیم که نمیشه یک روند یا روش
-              خاصی رو برای همه افراد که ذهنیت های متفاوتی هم از هم دارند، در نظر
-              گرفت. ولی خب هدف تمامی این افراد آموزش دیدن و رسیدن به درک عمیقی
-              از اون مطلب است ولی آیا برای تمامی افراد آموزش دیدن به این جا ختم
-              میشود و همه به درک عمیقی از اون مطلب میرسند؟ قطعا خیر
+              {props?.googleDescribe}
             </p>
-            <div className="relative">
-              <img
-                className="absolute right-[20px]  top-[50px] "
-                src={"aks2"}
-                alt="image"
-              />{" "}
-            </div>
-            <div className="relative ">
-              <img
-                className="absolute left-[-30px] top-[-30px]"
-                src={"aks3"}
-                alt="image"
-              />{" "}
+            <div className="flex justify-between items-center w-full ">
+              <div className="flex items-center gap-3">
+                <div className="" /> <span>{props?.addUserFullName}</span>
+                <img className="w-10 h-10 rounded-2xl" src={nasher} alt="" />
+              </div>
+              <div className=" w-44 h-6 ">
+                <span className="text-[#2196F3]">
+                  {" "}
+                  بازدید : {props?.currentView}
+                </span>
+                <span className="text-[#2196F3] text-[5px] m-5">🔵</span>
+                <span className="text-[#2196F3]">
+                  {" "}
+                  تاریخ : {props?.insertDate}
+                </span>
+              </div>
             </div>
           </div>
           <div className="image  w-[500px] h-[400px] max-xxl:hidden relative left-[67%] ">
-            <img className="h-[400px]" src={"aks"} alt="image" />{" "}
+            <img
+              className="h-[400px] rounded-3xl"
+              src={props?.currentImageAddress}
+              alt="image"
+            />{" "}
           </div>
         </div>
       </div>

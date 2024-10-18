@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 const NewsItem = (props) => {
-  return (
-    <div className="w-[32%] h-[450px] border mb-5 border-[#dbdbdb] rounded-[45px] bg-[#f8f8f8] py-5 flex justify-center flex-wrap items-start">
+   const navigate = useNavigate()
+   
+    return (
+    <div onClick={()=>navigate("/NewsDetailPage/"+ props?.id)} className="w-[32%] h-[450px] border mb-5 border-[#dbdbdb] rounded-[45px] bg-[#f8f8f8] py-5 flex justify-center flex-wrap items-start">
       <img
         className="w-[300px] mb-2 rounded-2xl "
         src={props?.currentImageAddressTumb}

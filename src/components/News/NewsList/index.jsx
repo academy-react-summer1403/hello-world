@@ -1,13 +1,13 @@
 import NewsItem from "./NewsItems/index";
 import { useEffect, useState } from "react";
 import { getAllWithCategoryFilter } from "@core/servises/api/News/index";
+import { useParams } from "react-router-dom";
 
 const NewsList = () => {
   const [data, setdata] = useState();
-
   const getList = async () => {
     const params = {
-      Count: 5,
+      Count: 9,
     };
     const blogs = await getAllWithCategoryFilter(params);
     console.log("blogs:", blogs.news);
