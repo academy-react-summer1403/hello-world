@@ -16,7 +16,7 @@ const ItemList = () => {
   const [tech, setTech] = useState();
   const [techer, setTecher] = useState();
   const [courseList, setCourseList] = useState([]);
-
+  const [Search, setSearch] = useState("");
   const getList = async () => {
     const params = {
       CourseTypeId: type,
@@ -72,6 +72,7 @@ const ItemList = () => {
             className="w-[620px] w- h-[90%] bg-[#ECEFF1] rounded-[20px] text-right pr-5 max-lg:w-[400px] max-md:w-[250px] max-md:h-[80%] max-mini:w-[150px] max-mini:text-[12px] max-mini:h-[65%] max-short:w-[120px] max-short:text-[10px]"
             placeholder="چی میخوای یاد بگیری؟"
             type="search"
+            onChange={(e) => setSearch(e.target.value)}
           ></input>
           <div className="w-[100px] h-[100%] bg-[#ECEFF1] rounded-[16px]  flex justify-between items-center mr-1 px-1 max-md:w-[90px] max-md:h-[80%] max-mini:h-[65%] max-lg:justify-center max-lg:hidden">
             <button
@@ -97,7 +98,7 @@ const ItemList = () => {
           </div>
         </div>
 
-        <Items view={view} courseList={courseList} />
+        <Items view={view} courseList={courseList} Search={Search} />
       </div>
       <Filter setType={setType} setLevel={setLevel} setTech={setTech} setTecher={setTecher} />
     </div>
