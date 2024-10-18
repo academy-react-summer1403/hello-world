@@ -1,12 +1,12 @@
 import http from "../../../interceptor/Interseptor";
 
-export const getCourseList = async (count) => {
+export const getCourseList = async (params) => {
   try {
     console.log("fetching started...");
 
     const result = await http.get(
-      "/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&Tech",
-      { params: count }
+      "/Home/GetCoursesWithPagination?PageNumber=2&SortingCol=Active&SortType=DESC&TechCount=0",
+      { params: params }
     );
 
     return result;
