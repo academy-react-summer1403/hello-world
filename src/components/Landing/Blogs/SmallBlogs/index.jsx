@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getLandingBlogs } from "@core/servises/api/Landing/Blogs/GetNews";
-import SmallBlogContent from "./SmallBlogContent";
-const SmallBlogs = () => {
+import BlogItemContent from "./BlogItemContent";
+const BlogItem = () => {
   const [landingBlogs, setLandingBlogs] = useState([]);
 
   const getBlogs = async () => {
@@ -21,7 +21,7 @@ const SmallBlogs = () => {
     <div className=" w-[597px] h-[570px]  mt-[-70px] pt-2 max-xl:w-[700px] flex justify-center flex-wrap">
       {landingBlogs.map((item, index) => {
         return (
-          <SmallBlogContent
+          <BlogItemContent
             key={index}
             title={item.title}
             miniDescribe={item.miniDescribe}
@@ -35,4 +35,4 @@ const SmallBlogs = () => {
   );
 };
 
-export default SmallBlogs;
+export default BlogItem;

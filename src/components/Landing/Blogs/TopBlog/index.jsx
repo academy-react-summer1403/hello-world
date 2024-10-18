@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import view from "@assets/images/Landing/Blogs/view.png";
-const BigBlogs = ({
+const TopBlog = ({
   title,
   miniDescribe,
   currentView,
@@ -33,4 +33,4 @@ const BigBlogs = ({
   );
 };
 
-export default BigBlogs;
+export default TopBlog;
