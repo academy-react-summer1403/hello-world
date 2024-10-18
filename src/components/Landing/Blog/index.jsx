@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import vector from "@assets/images/Landing/Servises/Vector 20.svg";
 import { getLandingBlogs } from "@core/servises/api/Landing/Blogs/GetNews";
-import BigBlogs from "./BigBlogs";
-import SmallBlogs from "./SmallBlogs";
-const Blogs = () => {
+import TopBlog from "./TopBlog";
+import BlogItem from "./BlogItem";
+const Blog = () => {
   const [landingBlogs, setLandingBlogs] = useState([]);
 
   const getBlogs = async () => {
@@ -27,10 +27,10 @@ const Blogs = () => {
           <h2 className="w-full font-['YekanBakhBold'] ">اخبار و مقالات</h2>
           <img className="m-auto mt-4" src={vector} alt="" />
         </div>
-        <SmallBlogs />
+        <BlogItem />
         {landingBlogs.map((item, index) => {
           return (
-            <BigBlogs
+            <TopBlog
               key={index}
               title={item.title}
               miniDescribe={item.miniDescribe}
@@ -53,4 +53,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default Blog;

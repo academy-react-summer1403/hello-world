@@ -15,3 +15,15 @@ export const getCourseList = async (params) => {
     return [];
   }
 };
+
+export const getComment = async (id) => {
+  try {
+    //console.log("Fetching started...");
+
+    const result = await http.get(`/Course/GetCourseCommnets/${id}`);
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};

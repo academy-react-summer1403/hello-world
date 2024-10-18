@@ -33,9 +33,9 @@ const CourseCard = ({
           alt=""
         />
         <h3 className=" text-[16px] text-[#263238]">
-          <Link to={`/CourseDetailsS/${id}`}>{title}</Link>{" "}
+          <Link to={`/CourseDetailPage/${id}`}>{title}</Link>{" "}
         </h3>
-        <Link to={`/CourseDetailsS/${id}`} className="infoBax">
+        <Link to={`/CourseDetailPage/${id}`} className="infoBax">
           <div className="Date bg-no-repeat bg-[center_right_10px] text-[#263238]">
             {" "}
             ساعت 14

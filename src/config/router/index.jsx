@@ -16,7 +16,7 @@ const RouterConfig = () => {
       children: [
         { path: "/", element: <LandingPage />, errorElement: <ErrorPage /> },
         { path: "/CoursesPage", element: <CoursesPage /> },
-        { path: "/CourseDetailPage", element: <CourseDetailPage /> },
+        { path: "/CourseDetailPage/:id", element: <CourseDetailPage /> },
         { path: "/NewsPage", element: <NewsPage /> },
         { path: "/NewsDetailPage/:id", element: <NewsDetailPage/> },
 

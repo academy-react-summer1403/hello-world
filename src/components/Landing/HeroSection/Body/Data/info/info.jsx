@@ -18,7 +18,7 @@ const info = () => {
   useEffect(() => {
     getLandingReport();
   }, []);
-
+ 
   return (
     <div className="Info w-[680px] h-[240px] rounded-[15px] flex justify-between max-xl:w-[600px] max-md:w-[550px] max-sm:w-[480px] max-mini:flex-wrap max-mini:justify-center">
       <div className="DataInfo max-xl:h-[72%] max-md:h-[65%] max-mini:w-[87%] max-mini:h-[73px] max-mini:mb-[10px] max-short:w-[84%] border-[4px] border-white border-solid w-[30.5%] h-[81%] rounded-[16px] flex justify-center flex-wrap pt-[20px] max-mini:relative">
