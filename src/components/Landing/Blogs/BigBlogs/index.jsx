@@ -49,4 +49,4 @@ const TopBlog = ({
   );
 };
 
-export default BigBlogs;
+export default TopBlog;
