@@ -11,10 +11,10 @@ const SmallBlogContent = ({
   return (
     <>
       <Link
-        to="/BlogDetailsS"
+        to="/NewsPage"
         className=" AkhbarData w-[99%] h-[161px] mb-[30px] flex justify-end  "
       >
-        <div className="left w-[62%] h-[161px]  ">
+        <div className="left w-[62%] h-[161px] " >
           <div className="top pt-[10px] pr-[10px] w-[100%] h-[80%] text-right     ">
             <h2 className="mb-[10px] w-[100%] text-[16px] text-[#263238]     ">
               {" "}

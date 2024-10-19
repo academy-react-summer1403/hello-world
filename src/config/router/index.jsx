@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "@app/Layouts/MainLayout";
