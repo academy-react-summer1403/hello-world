@@ -3,8 +3,8 @@ import HeroSection from "./HeroSection/index";
 import Servises from "./Servises/index";
 import Categories from "./Categoris";
 import Teachers from "./Teachers";
+import Blogs from "@components/Landing/Blogs";
 import Courses from "./Courses";
-import Blog from "./Blog";
 const Landing = () => {
   return (
     <div className="bg-white2">
@@ -13,7 +13,7 @@ const Landing = () => {
       <Courses />
       <Categories />
       <Teachers />
-      <Blog/>
+      <Blogs />
     </div>
   );
 };

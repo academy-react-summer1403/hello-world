@@ -19,10 +19,10 @@ const ItemList = () => {
 
   const getList = async () => {
     const params = {
+      Count: 5,
       CourseTypeId: type,
       courseLevelId: level,
       TeacherId: techer,
-      RowsOfPage: 9,
     };
     const courses = await getCourseList(params);
     setCourseList(courses.courseFilterDtos);
