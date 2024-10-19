@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "@app/Layouts/MainLayout";
@@ -18,7 +19,7 @@ const RouterConfig = () => {
         { path: "/CoursesPage", element: <CoursesPage /> },
         { path: "/CourseDetailPage/:id", element: <CourseDetailPage /> },
         { path: "/NewsPage", element: <NewsPage /> },
-        { path: "/NewsDetailPage", element: <NewsDetailPage/> },
+        { path: "/NewsDetailPage/:id", element: <NewsDetailPage/> },
 
       ],
     },

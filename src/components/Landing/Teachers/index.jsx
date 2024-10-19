@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import vector from "@assets/images/Landing/Servises/Vector 20.svg";
 import { getTeachers } from "@core/servises/api/Landing/Teachers/GetTeachers";
 import TeacherCard from "./TeacherCard";
+import Slider from "react-slick/lib/slider";
 const Teachers = () => {
   var settings = {
     dots: true,
