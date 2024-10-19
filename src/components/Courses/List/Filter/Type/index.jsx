@@ -21,16 +21,21 @@ const Category = ({ setType }) => {
   return (
     <>
       <div className="border-none w-full shadow-none">
-        <Accordion className=" w-full shadow-none">
+        <Accordion
+          classes={{
+            root: "before:hidden border-solid mb-1 last:mt-1 last:mb-1 border-b-[1px] last:border-b-[0px]",
+          }}
+          // className=" w-full shadow-none"
+        >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon/>}
+            expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
             dir="rtl"
           >
             نوع کلاس
           </AccordionSummary>
-          <AccordionDetails className=" flex justify-end mt-[-15px] flex-wrap" >
+          <AccordionDetails className=" flex justify-end mt-[-15px] flex-wrap">
             {coursetypename.map((item, index) => {
               return (
                 <div

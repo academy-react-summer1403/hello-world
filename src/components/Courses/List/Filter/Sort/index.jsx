@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getFilterlevel } from "@core/servises/api/Courses/Filter/Sort";
 
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 const Sort = ({ setLevel }) => {
   const [courselevel, setcourselevel] = useState([]);
 
@@ -14,28 +19,22 @@ const Sort = ({ setLevel }) => {
   }, []);
 
   return (
-    <div className=" border-[#ECEFF1] border-b-[1px] border-t-[1px] border-solid w-[280px] cursor-pointer transition-[0.5s] hover:bg-[#f8f8f8] bg-[#fff]">
-      <input
-        type="checkbox"
-        id="inputmoratab"
-        className="absolute peer opacity-0 border"
-      />
-
-      <label
-        htmlFor="inputmoratab"
-        className="font-[YekanBakhMiniBold] text-[#818181] w-[200px] tracking-[1px] mx-[220px] h-[50px] flex items-center select-none"
+    <div className="border-none w-full shadow-none">
+      <Accordion
+        classes={{
+          root: "before:hidden border-solid mb-1 last:mt-1 last:mb-1 border-b-[1px] last:border-b-[0px]",
+        }}
+        // className=" w-full shadow-none"
       >
-        سطح
-      </label>
-
-      <label
-        htmlFor="inputmoratab"
-        className="h-[1rem] w-[1rem] bg-[url('././././assets/img/courses/plus.png')] bg-no-repeat bg-cover absolute top-[17px] left-[20px] peer-checked:bg-[url('././././assets/img/courses/negativ.png')] duration-300"
-      >
-        {" "}
-      </label>
-      <div className="max-h-0 overflow-hidden peer-checked:max-h-full">
-        <div className="mt-[1rem] mb-[1rem]">
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+          dir="rtl"
+        >
+          سطح
+        </AccordionSummary>
+        <AccordionDetails className=" flex justify-end mt-[-15px] flex-wrap">
           {courselevel.map((item, index) => {
             return (
               <div
@@ -72,8 +71,8 @@ const Sort = ({ setLevel }) => {
               </div>
             );
           })}
-        </div>
-      </div>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 };
