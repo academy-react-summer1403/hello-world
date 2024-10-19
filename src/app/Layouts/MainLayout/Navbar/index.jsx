@@ -4,7 +4,7 @@ import img1 from "../../../../assets/images/navbar/login.png";
 import img3 from "../../../../assets/images/navbar/HW.png";
 import sun from "@assets/images/navbar/sun.png"
 import { Auth } from "../../../../components/Auth/index";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [authModal, setAuthModal] = useState(false);
 
@@ -48,9 +48,9 @@ const Navbar = () => {
           <div>اخبار و مقالات</div>
         {/* </div> */}
 </div>
-        <div className="flex w-2  whitespace-nowrap text-[#4079c4] mt-[35px] font-[YekanBakhBold] ">
+        <Link to="/" className="flex w-2  whitespace-nowrap text-[#4079c4] mt-[35px] font-[YekanBakhBold] ">
           Hello World
-        </div>
+        </Link>
                   <img className="Logo h-[50%]  mt-[30px] " src={img3} alt="image " />
 
       </div>
