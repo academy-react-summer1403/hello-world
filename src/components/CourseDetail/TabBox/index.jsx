@@ -34,7 +34,7 @@ const TabBox = ({ id }) => {
               توضیحات
             </Tab> 
           </TabList>
-          <TabPanel className="flex justify-center mr-9 flex-wrap max-h-[500px] overflow-hidden  ">
+          <TabPanel className="flex justify-center mr-9 flex-wrap max-h-[500px] overflow-hidden overflow-y-scroll  ">
             <div className="  relative w-[820px] ">
               <input
                 className="Search w-[800px] h-[150px]  border  border-[#e2e8f0] mt-[20px] text-right rounded-3xl bg-white font-[YekanBakh] text-[20px] m-auto  "
@@ -47,7 +47,7 @@ const TabBox = ({ id }) => {
                   ارسال{" "}
                 </span>
               </div>
-              <div className=" top-[280px] right-0">
+              <div className=" top-[280px] right-0 ">
                 {comment?.map((item, index) => {
                   console.log("item:", item);
                   return (
