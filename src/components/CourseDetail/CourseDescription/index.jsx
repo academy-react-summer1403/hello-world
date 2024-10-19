@@ -6,6 +6,7 @@ import i2 from "@assets/images/CourseDetail/CourseDescription/Icon2.png";
 import i3 from "@assets/images/CourseDetail/CourseDescription/Icon3.png";
 import i4 from "@assets/images/CourseDetail/CourseDescription/Icon4.png";
 import i5 from "@assets/images/CourseDetail/CourseDescription/Icon5.png";
+import image from "@assets/images/CourseDetail/CourseDescription/profile.jpg"
 import { faNumber } from "@core/utils/FaNumber";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
 const CourseDescription = (props) => {
@@ -105,7 +106,7 @@ const CourseDescription = (props) => {
           </p>
         </div>
         <div className=" h-[60px]  w-[70px]  absolute right-[50px] top-[15px] ">
-          <img className="rounded-[20px] to" alt="image" />{" "}
+          <img className="rounded-[20px] to" src={image} alt="image" />{" "}
         </div>
       </div>
     </div>

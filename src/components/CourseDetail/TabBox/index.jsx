@@ -21,7 +21,7 @@ const TabBox = ({ id }) => {
 
   return (
     <div className="w-full  flex justify-center  flex-wrap mt-[30px] ">
-      <div className="w-[1150px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px] ">
+      <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px] ">
         <Tabs defaultIndex={2} className="pb-5">
           <TabList className="flex justify-end flex-wrap mb-5">
             <Tab className="w-[90px] h-10 text-center border-b-[3px] mt-2 border-[#607D8B] mr-8 text-[#607D8B] hover:cursor-pointer">
@@ -41,13 +41,13 @@ const TabBox = ({ id }) => {
                 type="search"
                 placeholder="...نظر خودتو بنویس "
               ></input>
-              <div className="w-[80px] h-[50px] bg-bluee mx-[350px] my-[20px]  rounded-[50px] ">
-                <span className="font-[YekanBakh] text-[20px] text-white mt-[20px] ">
+              <div className="w-[80px] h-[50px] bg-bluee mx-[350px] my-[20px]  rounded-[50px]  ">
+                <span className="font-[YekanBakh] text-[20px] text-white mx-auto  ">
                   {" "}
                   ارسال{" "}
                 </span>
               </div>
-              <div className=" top-[280px] right-0 ">
+              <div className=" flex flex-wrap justify-center ">
                 {comment?.map((item, index) => {
                   console.log("item:", item);
                   return (

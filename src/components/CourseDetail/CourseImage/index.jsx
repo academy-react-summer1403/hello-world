@@ -6,7 +6,12 @@ const CourseImage = (props) => {
       <div className="h-[500px]    ">
         <img
           className="h-[100%] w-[100%] rounded-[20px] "
-          src={props?.imageAddress ? props?.imageAddress : noImage}
+          src={
+            props?.imageAddress &&
+            props?.imageAddress.includes("classapi.sepehracademy.ir")
+              ? props?.imageAddress
+              : noImage
+          }
           alt=""
         />
       </div>
