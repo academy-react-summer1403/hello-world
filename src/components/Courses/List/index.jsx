@@ -10,6 +10,8 @@ import TopFilter from "./TopFilter/TopFilter";
 import { getCourseList } from "@core/servises/api/Courses/Course/index";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { HiOutlineSortAscending } from "react-icons/hi";
+import { HiOutlineSortDescending } from "react-icons/hi";
 
 const ItemList = () => {
   const [view, setView] = useState("knrhm");
@@ -18,6 +20,8 @@ const ItemList = () => {
   const [tech, setTech] = useState();
   const [techer, setTecher] = useState();
   const [courseList, setCourseList] = useState([]);
+  const [sortbox, setSortbox] = useState(false);
+  const [sort, setSort] = useState("DESC");
 
   const getList = async () => {
     const params = {
@@ -25,6 +29,7 @@ const ItemList = () => {
       courseLevelId: level,
       TeacherId: techer,
       RowsOfPage: 9,
+      SortType: sort,
     };
     const courses = await getCourseList(params);
     setCourseList(courses.courseFilterDtos);
@@ -50,6 +55,10 @@ const ItemList = () => {
     getList();
   }, [tech]);
 
+  useEffect(() => {
+    getList();
+  }, [sort]);
+
   const ButtonClick = (arg) => {
     setView(arg);
   };
@@ -59,17 +68,53 @@ const ItemList = () => {
       {/* <TopFilter/> */}
       <div className="max-w-[950px] w-[90%] pb-10 flex justify-center flex-wrap content-start max-lg:w-[720px] max-lg:justify-evenly max-md:w-[640px] max-sm:w-[450px] max-short:w-[350px]">
         <div className="w-full  mb-8 h-[55px] flex justify-between items-center max-lg:w-[700px] max-md:justify-around">
-          <div className="w-[200px] bg-[#ECEFF1] rounded-[16px] h-full flex items-center pl-2 max-lg:w-[150px] max-md:w-[130px] max-md:h-[80%]  max-mini:w-[100px]  max-mini:h-[65%]">
+          <div
+            onClick={() => setSortbox(!sortbox)}
+            className="w-[200px] select-none  cursor-pointer bg-[#ECEFF1] rounded-[16px] h-full flex items-center pl-2 max-lg:w-[150px] max-md:w-[130px] max-md:h-[80%]  max-mini:w-[100px]  max-mini:h-[65%]"
+          >
             <div className="w-10 h-10 rounded-[50%]  hover:cursor-pointer  max-mini:w-[15px]">
               <img className="m-auto mt-3 bg-[#ECEFF1]" src={Arrow} alt="" />
             </div>
             <div className="w-[75%] h-full ml-1 flex justify-start items-center pl-2">
-              <h3 className="text-[#263238] text-[15px] max-lg:text-[12px] max-md:text-[11px]  max-mini:text-[9px]">
-                محبوب ترین ها
+              <h3 className="text-[#263238] w-[85px] text-center text-[15px] max-lg:text-[12px] max-md:text-[11px]  max-mini:text-[9px]">
+                مرتب سازی{" "}
               </h3>
               <img className="ml-3 max-lg:hidden" src={Sort} alt="" />
             </div>
           </div>
+
+          <div
+            className={
+              sortbox === false
+                ? "absolute transition-[0.1] w-[200px] bg-[#ECEFF1] mt-36 border-[1px] justify-center gap-1 flex border-solid border-[#d3d6d8] rounded-[16px] h-[0px] items-center pl-2 max-lg:w-[150px] max-md:w-[130px] max-md:h-[80%]  max-mini:w-[100px]  max-mini:h-[65%] opacity-0"
+                : "absolute transition-[0.1] w-[200px] bg-[#ECEFF1] mt-36 border-[1px] justify-center gap-2 border-solid border-[#d3d6d8] rounded-[16px] h-[70px] flex items-center max-lg:w-[150px] max-md:w-[130px]  max-mini:w-[100px]  opacity-100"
+            }
+          >
+            <div
+              onClick={() => setSort("DESC")}
+              className="w-[87px] cursor-pointer select-none h-[55px] flex justify-center bg-[#cecece] rounded-xl items-center"
+            >
+              <div className="w-[65%] justify-center items-center text-[15px] text-right pr-1 ">
+                نزولی
+              </div>
+              <div className="w-[40%] justify-center items-center text-[20px]">
+                <HiOutlineSortDescending />
+              </div>
+            </div>
+
+            <div
+              onClick={() => setSort("ASCE")}
+              className="w-[87px] cursor-pointer select-none h-[55px] flex justify-center bg-[#cecece] rounded-xl items-center"
+            >
+              <div className="w-[65%] justify-center items-center text-[15px] text-right pr-1 ">
+                صعودی
+              </div>
+              <div className="w-[25%] justify-center items-center text-[20px]">
+                <HiOutlineSortAscending />
+              </div>
+            </div>
+          </div>
+
           <input
             className="w-[620px] w- h-[90%] bg-[#ECEFF1] rounded-[20px] text-right pr-5 max-lg:w-[400px] max-md:w-[250px] max-md:h-[80%] max-mini:w-[150px] max-mini:text-[12px] max-mini:h-[65%] max-short:w-[120px] max-short:text-[10px]"
             placeholder="چی میخوای یاد بگیری؟"
@@ -104,7 +149,6 @@ const ItemList = () => {
         <Stack className=" w-full items-center mt-9 mb-0" spacing={2}>
           <Pagination count={10} color="primary" />
         </Stack>
-
       </div>
       <Filter
         setType={setType}
