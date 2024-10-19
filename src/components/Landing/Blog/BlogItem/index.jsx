@@ -19,7 +19,7 @@ const BlogItem = () => {
   }, []);
 
   return (
-    <div className=" w-[597px] h-[570px]  mt-[-70px] pt-2 max-xl:w-[700px] flex justify-center flex-wrap">
+    <div className=" w-[597px] h-[570px]  mt-[-70px] pt-1 max-xl:w-[700px] flex justify-center flex-wrap">
       {landingBlogs.map((item, index) => {
         return (
           <BlogItemContent

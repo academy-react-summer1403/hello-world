@@ -23,7 +23,7 @@ const Blog = () => {
   return (
     <div className="w-full flex justify-center pt-20 ">
       <div className="w-[1200px] h-[830px] flex justify-center flex-wrap ">
-        <div className="w-full h-20 text-center text-[#263238] text-4xl pt-2 myFontBold max-xl:mb-10">
+        <div className="w-full h-20 text-center text-[#263238] text-4xl  myFontBold max-xl:mb-14">
           <h2 className="w-full font-['YekanBakhBold'] ">اخبار و مقالات</h2>
           <img className="m-auto mt-4" src={vector} alt="" />
         </div>
@@ -43,7 +43,7 @@ const Blog = () => {
         <div className="max-xl:w-full"></div>
         <Link
           className="w-[141px] h-[48px] text-center bg-[#2196F3] rounded-[80px] mt-[5px] pt-3 text-white max-xl:mt-0"
-          to="/BlogsS"
+          to="/NewsPage"
         >
           {" "}
           مشاهده همه
