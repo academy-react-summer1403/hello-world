@@ -1,32 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import view from "@assets/images/Landing/Blogs/view.png";
-const BigBlogs = ({
+import view from "@assets/images/Landing/Blogs/view.svg";
+import calendar from "@assets/images/Landing/Blogs/calendar.svg"
+import noImage from "@assets/images/Landing/Blogs/noImage.jpg";
+import { faNumber } from "@core/utils/FaNumber";
+import { ConvertToPersianDate } from "@core/utils/convertDate";
+
+const TopBlog = ({
   title,
   miniDescribe,
   currentView,
   currentImageAddressTumb,
+  insertDate,
 }) => {
   return (
-    <Link
-      to="/BlogDetailsS"
-      className=" w-[597px] h-[570px] mt-[-70px] flex justify-end flex-wrap max-xl:hidden"
+    <Link to="/NewsDetailPage" className=' w-[597px] h-[570px] mt-[-60px] flex justify-end flex-wrap max-xl:hidden'
     >
-      <div className="laptop w-full h-[60%] rounded-[24px] bg-no-repeat bg-right relative">
-        <h2 className="absolute bottom-[-110px] right-0">{title}</h2>
+      
+        
+      <div className="laptop  rounded-[24px] relative ">
+          <img
+            className=" w-[550px] h-[360px]  rounded-[24px]  "
+            src={currentImageAddressTumb ? currentImageAddressTumb : noImage}
+            alt=""
+          />
+             <h2 className="absolute bottom-[-110px] right-0   text-[] "></h2>
+
+      
+
       </div>
       <div className=" w-[97%] h-[38%] flex justify-end flex-wrap pt-4">
-        <div className="date w-[100px] h-[40px] bg-[#DAEEFF] rounded-[80px] bg-no-repeat bg-[center_right_1rem] text-right text-[13px] font-bold text-[#2196F3] pr-9 pt-[13px]">
-          1402/7/2
+        <div className="date w-[100px] h-[40px] bg-[#DAEEFF] rounded-[80px] bg-no-repeat bg-[center_right_1rem] text-right text-[13px] font-bold text-[#2196F3] pr-9 pt-[13px] relative">
+          <img className="absolute right-[15px] top-[13px]" src={calendar}   />
+        <span>  {insertDate && ConvertToPersianDate(insertDate)   } </span>
         </div>
-        <div className="view w-[100px] h-[40px] bg-[#DAEEFF] rounded-[80px] ml-3  text-right text-[13px] font-bold text-[#2196F3] pr-9 pt-3">
-          <img src={view} />
-          {/* {currentView} بازدید */}
+        <div className="view w-[100px] h-[40px] bg-[#DAEEFF] rounded-[80px] ml-3  text-right text-[13px] font-bold text-[#2196F3] pr-9   relative">
+         <span dir="rtl" className="relative top-2.5  "> {currentView && faNumber(currentView.toString(), ",")  } بازدید</span>
+          <img className="absolute right-[15px] top-[13px]  " src={view} />
         </div>
 
-        <h2 className=" w-full text-[#263238] text-[30px] text-right font-semibold"></h2>
-        <h4 className=" w-full text-[#455A64] text-[14px] text-right font-medium">
+        <h2 dir="rtl" className=" w-full text-[#263238] text-[20px] text-right  font-medium font-[YekanBakhBold]">  {title} </h2>
+        <h4 dir="rtl" className=" w-full text-[#455A64] text-[12px] text-right font-medium font-[YekanBakh]">
           {miniDescribe}
+
         </h4>
       </div>
     </Link>
