@@ -7,6 +7,7 @@ export default {
       screens: {
         tshort: "440px",
         short: "500px",
+        bb:"510px",
         smm: "540px",
         mini: "550px",
         mini1: "600px",
@@ -17,7 +18,8 @@ export default {
         lg: "1024px",
         gg:"1052px",
         lgg: "1110px", 
-        lgx: "1150px", 
+        lgx: "1150px",
+        aa:"1160px", 
         xx:"1232px",
         xll: "1250px", 
         ll:"1256px",
