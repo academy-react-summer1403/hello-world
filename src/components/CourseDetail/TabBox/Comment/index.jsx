@@ -1,16 +1,15 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import noImage from "@assets/images/Landing/Courses/noImage.jpg";
-import heart from "@assets/images/CourseDetail/Comments/heart.png"
+import heart from "@assets/images/CourseDetail/Comments/heart.png";
 import { faNumber } from "@core/utils/FaNumber";
-import messages from "@assets/images/CourseDetail/Comments/messages.svg"
+import messages from "@assets/images/CourseDetail/Comments/messages.svg";
 import AddReply from "./AddReply";
-const Comment = (props, pictureAddress,likeCount) => {
-
+const Comment = (props, pictureAddress, likeCount) => {
   const [isReplyComment, setIsReplyComment] = useState(false);
 
   return (
     <>
-      <div className="w-[780px]  rounded-xl ">
+      <div className="w-[780px]  rounded-xl flex content-end flex-col	flex-wrap">
         <div className=" flex justify-end items-center  gap-5 ">
           <span className="text-gray3"> {props?.title}</span>
           <img
@@ -23,36 +22,35 @@ const Comment = (props, pictureAddress,likeCount) => {
           <span className=" text-xs text-right text-gray4 mt-3">
             {props?.describe}
           </span>
-
-         
         </div>
-         <div className="  flex gap-3  flex-row-reverse  items-center ">
-         <div
+        <div className="  flex gap-3 flex flex-wrap flex-row-reverse w-[70%]">
+          <div
             className="flex justify-end gap-1 items-center mt-2 cursor-pointer"
             // onClick={handleCommentLike}
-          >              <img className="w-[15px] h-[15px] " src={heart} />
-
-            <span  className="commentLikeDislikeCount text-red-400 ">{props?.likeCount && faNumber(props?.likeCount.toString(), ",")  }</span>
-        
+          >
+            {" "}
+            <img className="w-[15px] h-[15px] " src={heart} />
+            <span className="commentLikeDislikeCount text-red-400 ">
+              {props?.likeCount && faNumber(props?.likeCount.toString(), ",")}
+            </span>
           </div>
 
           <div
             className="flex gap-1 mt-2 cursor-pointer"
             onClick={() => {
-              setIsReplyComment( !isReplyComment );
+              setIsReplyComment(!isReplyComment);
             }}
           >
-            <span className="commentAnswerText">
-              { isReplyComment === true && <AddReply setIsReplyComment={setIsReplyComment} /> }
-              
-            </span>
-            <img src={ messages} />
+            <span className="commentAnswerText"></span>
+            <img src={messages} />
           </div>
-            
-          </div>
-        <div className=" flex justify-end mt-8  ">
-          
+            <div className="">
+            {isReplyComment === true && (
+                <AddReply setIsReplyComment={setIsReplyComment} />
+              )}
+            </div>
         </div>
+        <div className=" flex justify-end mt-8  "></div>
       </div>
     </>
   );
