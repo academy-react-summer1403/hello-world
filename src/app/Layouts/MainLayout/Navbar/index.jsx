@@ -27,11 +27,12 @@ const Navbar = () => {
             </button>
           </div>
 
-          {authModal === true && <Auth setAuthModal={setAuthModal} />}
+        {authModal === true && <Auth setAuthModal={setAuthModal} />}
+            <button className="h-[40px] w-[40px]  bg-white rounded-full">  
+            <img className=" w-[20px] h-[20px] mx-auto " src={sun} alt="image "/> 
+              
+                 </button>             
 
-          <div className="bordder">
-            <DarkModeToggle />
-          </div>
         </div>
         <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%]  text-[#455a64] dark: text-slate-200 ">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
