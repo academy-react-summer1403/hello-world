@@ -6,7 +6,10 @@ import Preview from "./Preview";
 import Comment from "./Comment";
 import { useEffect, useState } from "react";
 import { getComment } from "@core/servises/api/Courses/Course";
-const TabBox = ({ id }) => {
+import { getReplyComment } from "@core/servises/api/Courses/Course";
+
+
+const TabBox = ({ id ,courseId, commentId }) => {
   const [comment, setComment] = useState([]);
 
   const getComments = async (id) => {
@@ -18,6 +21,23 @@ const TabBox = ({ id }) => {
   useEffect(() => {
     getComments(id);
   }, []);
+
+  const [reply, setReply] = useState([]);
+
+  const getReply = async (id) => {
+    const reply = await getReplyComment(id);
+    console.log("reply:", reply);
+    setReply(reply);
+  };
+
+  useEffect(() => {
+    getReply(courseId, commentId);
+  }, []);
+
+
+
+
+
 
   return (
     <div className="w-full  flex justify-center  flex-wrap mt-[30px] ">
@@ -42,12 +62,14 @@ const TabBox = ({ id }) => {
                 placeholder="...نظر خودتو بنویس "
               ></input>
               <div className="w-[80px] h-[50px] bg-bluee mx-[350px] my-[20px]  rounded-[50px]  ">
-                <span className="font-[YekanBakh] text-[20px] text-white mx-auto  ">
+                <span className="font-[YekanBakh] relative top-3 left-4 text-[20px] text-white mx-auto  ">
                   {" "}
                   ارسال{" "}
                 </span>
               </div>
               <div className=" flex flex-wrap justify-center ">
+
+              
                 {comment?.map((item, index) => {
                   console.log("item:", item);
                   return (
@@ -60,9 +82,12 @@ const TabBox = ({ id }) => {
                       title={item?.title}
                       describe={item?.describe}
                       pictureAddress={item?.pictureAddress}
+                      likeCount={item?.likeCount}
                     />
                   );
                 })}
+
+
               </div>
             </div>
           </TabPanel>

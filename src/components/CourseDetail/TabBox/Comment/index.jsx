@@ -1,7 +1,13 @@
-import React from "react";
+import React , {useState} from "react";
 import noImage from "@assets/images/Landing/Courses/noImage.jpg";
+import heart from "@assets/images/CourseDetail/Comments/heart.png"
+import { faNumber } from "@core/utils/FaNumber";
+import messages from "@assets/images/CourseDetail/Comments/messages.svg"
+import AddReply from "./AddReply";
+const Comment = (props, pictureAddress,likeCount) => {
 
-const Comment = (props, pictureAddress) => {
+  const [isReplyComment, setIsReplyComment] = useState(false);
+
   return (
     <>
       <div className="w-[780px]  rounded-xl ">
@@ -13,12 +19,40 @@ const Comment = (props, pictureAddress) => {
             alt=""
           />
         </div>
-        <div className=" flex justify-end">
+        <div className="  flex justify-end">
           <span className=" text-xs text-right text-gray4 mt-3">
             {props?.describe}
           </span>
+
+         
         </div>
-        <div className=" flex justify-end mt-8 "></div>
+         <div className="  flex gap-3  flex-row-reverse  items-center ">
+         <div
+            className="flex justify-end gap-1 items-center mt-2 cursor-pointer"
+            // onClick={handleCommentLike}
+          >              <img className="w-[15px] h-[15px] " src={heart} />
+
+            <span  className="commentLikeDislikeCount text-red-400 ">{props?.likeCount && faNumber(props?.likeCount.toString(), ",")  }</span>
+        
+          </div>
+
+          <div
+            className="flex gap-1 mt-2 cursor-pointer"
+            onClick={() => {
+              setIsReplyComment( !isReplyComment );
+            }}
+          >
+            <span className="commentAnswerText">
+              { isReplyComment === true && <AddReply setIsReplyComment={setIsReplyComment} /> }
+              
+            </span>
+            <img src={ messages} />
+          </div>
+            
+          </div>
+        <div className=" flex justify-end mt-8  ">
+          
+        </div>
       </div>
     </>
   );

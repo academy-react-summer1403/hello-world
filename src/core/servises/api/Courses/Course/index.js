@@ -27,3 +27,15 @@ export const getComment = async (id) => {
     return [];
   }
 };
+
+export const getReplyComment = async (courseId, commentId) => {
+  try {
+    const response = await http.get(
+      `/Course/GetCourseReplyCommnets/${courseId}/${commentId}`
+    );
+
+    return response.data;
+  } catch (error) {
+    return false;
+  }
+};
