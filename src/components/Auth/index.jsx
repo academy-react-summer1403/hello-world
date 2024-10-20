@@ -3,6 +3,7 @@ import { Login } from "./Login/index.jsx";
 import { RegisterStep1 } from "./Register/Step1/index.jsx";
 import { RegisterStep2 } from "./Register/Step2/index.jsx";
 import { RegisterStep3 } from "./Register/Step3/index.jsx";
+import ForgetPassword from "./ForgetPassword/index.jsx";
 const Auth = ({ setAuthModal }) => {
   const [content, setContent] = useState("login");
   const [userData, setUserData] = useState([]);
@@ -33,6 +34,12 @@ const Auth = ({ setAuthModal }) => {
           <RegisterStep3
             setContent={setContent}
             userData={userData}
+            setUserData={setUserData}
+            setAuthModal={setAuthModal}
+          />
+        ) : content === "resetpassword" ? (
+          <ForgetPassword
+            setContent={setContent}
             setUserData={setUserData}
             setAuthModal={setAuthModal}
           />
