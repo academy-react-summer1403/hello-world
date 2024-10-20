@@ -56,4 +56,4 @@ const BlogItemContent = ({
   );
 };
 
-export default SmallBlogContent;
+export default BlogItemContent;
