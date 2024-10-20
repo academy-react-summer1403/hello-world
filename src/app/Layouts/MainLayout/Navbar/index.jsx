@@ -32,6 +32,9 @@ const Navbar = () => {
         </div>
 
         {authModal === true && <Auth setAuthModal={setAuthModal} />}
+
+        
+        
             <button className="h-[40px] w-[40px]  bg-white rounded-full">  
             <img className=" w-[20px] h-[20px] mx-auto " src={sun} alt="image "/> 
               
