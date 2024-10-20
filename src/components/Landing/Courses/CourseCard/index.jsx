@@ -1,27 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import noImage from "@assets/images/Landing/Courses/noImage.jpg"
+import noImage from "@assets/images/Landing/Courses/noImage.jpg";
 import levelname from "@assets/images/Landing/Courses/note.svg";
 import clock from "@assets/images/Landing/Courses/clock.svg";
 import calendar from "@assets/images/Landing/Courses/calendar.svg";
+import { GoHeart } from "react-icons/go";
+import { GoHeartFill } from "react-icons/go";
 import heart from "@assets/images/Landing/Courses/heart.png";
 import { faNumber } from "@core/utils/FaNumber";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
 const CourseCard = ({
-    title,
-    teacherName,
-    cost,
-    tumbImageAddress,
-    levelName,
-    currentRegistrants,
-    dissLikeCount,
-    typeName,
-    describe,
-    id,
-    likeCount,
-    lastUpdate,
+  title,
+  teacherName,
+  cost,
+  tumbImageAddress,
+  levelName,
+  currentRegistrants,
+  dissLikeCount,
+  typeName,
+  describe,
+  id,
+  likeCount,
+  lastUpdate,
 }) => {
-    const [like, setLike] = useState("disslike");
+  const [like, setLike] = useState("disslike");
   console.log("id:", id);
   const ButtonClick = (arg) => {
     setLike(arg);
@@ -29,9 +31,9 @@ const CourseCard = ({
   console.log("cost:", cost);
   return (
     <>
-      <div className="h-[370px] w-[300px]  flex justify-center bg-[#f0f0f0] m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">
+      <div className="h-[370px] w-[300px]  flex justify-center bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">
         <Link
-          to="/CourseDetailPage"
+          to={`/CourseDetailPage/${id}`}
           className="  w-[90%] h-[45%] flex justify-center rounded-[20px] overflow-hidden  "
         >
           <img
@@ -40,11 +42,15 @@ const CourseCard = ({
             alt=""
           />
         </Link>
-        <h3 dir="rtl" className="text-right w-[250px] h-[30px] text-[16px] text-[#263238] myFontMiniBold  mt-[-10px] max-sm:text-[14px] max-sm:pr-5">
+
+        <h3
+          dir="rtl"
+          className="text-right w-[250px]  h-[30px] text-[16px] text-[#263238] myFontMiniBold  mt-[-10px] max-sm:text-[14px] max-sm:pr-5"
+        >
           {title}{" "}
         </h3>
 
-        <div className="bg-[#dce3e9] relative  h-[40px] w-[250px] rounded-[24px]  flex justify-center flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]">
+        <div className="bg-[#dce3e9] relative   bg-graylight h-[40px] w-[250px] rounded-[24px]  flex justify-center flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]">
           <div className="level     max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
               className=" h-[15px] w-[15px] absolute right-[13px] my-[12px] "
@@ -59,17 +65,23 @@ const CourseCard = ({
               className=" h-[15px] w-[15px] absolute right-[90px] my-[13px] "
               src={clock}
             />
-            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[13px] absolute right-[110px] my-[12px]">
-              20 ساعت
+            <span
+              dir="rtl"
+              className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[110px] my-[14px]"
+            >
+              {faNumber("20")}ساعت
             </span>
           </div>
           <div className="type  bg-[center_right_5px] pr-5  w-1/3 h-full text-[12px] text-[#263238] pt-[11px] pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
-              className=" h-[15px] w-[15px] absolute right-[170px] my-[2px] "
+              className=" h-[14px] w-[14px] absolute right-[170px] my-[2px] "
               src={calendar}
             />
-            <span dir="rtl" className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[190px] my-[4px]">
-             {lastUpdate && ConvertToPersianDate(lastUpdate)   }
+            <span
+              dir="rtl"
+              className="font-[YekanBakh] text-[#263238] text-[10px] absolute right-[190px] my-[3px]"
+            >
+              {lastUpdate && ConvertToPersianDate(lastUpdate)}
             </span>
           </div>
         </div>
@@ -93,28 +105,38 @@ const CourseCard = ({
               <h2 className="text-[#263238] text-right text-[14px] max-sm:text-[12px] truncate">
                 {teacherName} :
               </h2>
-              <h2 className="text-[#263238] text-right text-[14px] max-sm:text-[12px]">
+              <h2 className="text-[#0f1316] text-right text-[14px] max-sm:text-[12px]">
                 مدرس
               </h2>
             </div>
-            <div className="w-[55px] h-[30px] border  bg-[#FFEBEE] rounded-[24px] overflow-hidden  mt-5   max-sm:w-[45px] max-sm:h-[25px] max-sm:top-6">
+            <div
+              dir="rtl"
+              className="w-[51px] h-[32px]   bg-melopink rounded-[24px] overflow-hidden  mt-5   max-sm:w-[45px] max-sm:h-[25px] max-sm:top-6"
+            >
               <div
-                className={like === "disslike" ? `disslike` : `like`}
+                className="flex justify-center items-center gap-1"
                 onClick={() => {
                   like === "like"
                     ? ButtonClick("disslike")
                     : ButtonClick("like");
                 }}
               >
-                <img src={heart} alt="" className="mr-0" />
-                <h2 className="text-[#F44336] mb-[30px] ">{likeCount}</h2>
+                {like === "like" ? (
+                  <GoHeartFill color="#F44336" />
+                ) : (
+                  <GoHeart color="#F44336" />
+                )}
+
+                <span className="text-[#F44336] pt-1 ">
+                  {likeCount && faNumber(likeCount.toString(), ",")}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default CourseCard;
