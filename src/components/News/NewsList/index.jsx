@@ -18,7 +18,7 @@ const NewsList = () => {
   }, []);
   return (
     <div className="flex flex-wrap content-start justify-center gap-[20px] mt-16 w-full mb-16 ">
-      <div className="flex flex-wrap justify-between px-5 gap-2 items-center w-[1280px]">
+      <div className="flex flex-wrap justify-between px-5 gap-2 items-center w-[1280px] ">
         {data?.map((data, index) => {
           return (
             <NewsItem
