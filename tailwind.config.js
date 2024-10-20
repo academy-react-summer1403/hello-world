@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  darkMode: 'class',
   theme: {
     extend: {
       screens: {
@@ -13,14 +13,14 @@ export default {
         sm: "640px",
         md: "768px",
         mmd: "840px",
-        dd:"950px",
+        dd: "950px",
         lg: "1024px",
-        gg:"1052px",
-        lgg: "1110px", 
-        lgx: "1150px", 
-        xx:"1232px",
-        xll: "1250px", 
-        ll:"1256px",
+        gg: "1052px",
+        lgg: "1110px",
+        lgx: "1150px",
+        xx: "1232px",
+        xll: "1250px",
+        ll: "1256px",
         xl: "1280px",
         xxl: "1405px",
         "2xl": "1536px",
