@@ -12,9 +12,9 @@ const Filter = () => {
         </div>
       </div>
 
-      <div className="div2 w-[600px] bottom-5  bg-white relative max-xl:w-[380px] max-lg:w-[300px] max-md:w-[230px]  max-sm:w-[130px] max-mini:w-[400px] max-mini:flex max-mini:justify-center max-mini:pl-[17px] max-mini:mt-[-110px] dark:bg-[#111827] text-white  ">
+      <div className="div2 w-[600px] bottom-5  bg-white relative max-xl:w-[380px] max-lg:w-[300px] max-md:w-[230px]  max-sm:w-[130px] max-mini:w-[400px] max-mini:flex max-mini:justify-center max-mini:pl-[17px] max-mini:mt-[-110px] dark:bg-[#111827] dark:text-white ">
         <input
-          className=" w-[110%] h-[50px] top-1 rounded-[20px] text-right pr-3 bg-[#ebebeb] myFontMiniBold text-[17px] absolute max-lg:h-[40px] max-md:h-[35px] max-md:top-2 max-md:text-[13px] max-mini:w-[80%] mini:right-0 dark:bg-[#111827] text-white"
+          className=" w-[110%] h-[50px] top-1 rounded-[20px] text-right pr-3 bg-[#ebebeb] myFontMiniBold text-[17px] absolute max-lg:h-[40px] max-md:h-[35px] max-md:top-2 max-md:text-[13px] max-mini:w-[80%] mini:right-0 dark:bg-[#111827] dark:text-white"
           type="search"
           placeholder="دنبال چی میگردی ؟؟ "
         ></input>
