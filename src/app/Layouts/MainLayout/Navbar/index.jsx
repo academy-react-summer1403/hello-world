@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className=" flex  ">
-      <div className=" flex  mx-auto gap-10 justify-between h-[50px] w-[80%] max-aa:gap-5  ">
+      <div className=" flex  mx-auto gap-10 justify-between h-[50px] w-[80%] dark:bg-sky-900 ">
         <div className="flex  gap-4  mt-[30px]  ">
           <div
             className="flex  "
@@ -19,9 +19,9 @@ const Navbar = () => {
               setAuthModal(true);
             }}
           >
-            <button className="h-[40px] w-[40px] bg-white rounded-full">
+            <button className="h-[40px] w-[40px] bg-darkwhite rounded-full  dark:bg-[#111827] ">
               <img
-                className=" w-[20px] h-[20px] mx-auto  "
+                className=" w-[20px] h-[20px] m-[10px]  "
                 src={img1}
                 alt="image "
               />
@@ -29,15 +29,12 @@ const Navbar = () => {
           </div>
 
           {authModal === true && <Auth setAuthModal={setAuthModal} />}
-          <button className="h-[40px] w-[40px]  bg-white rounded-full">
-            <img
-              className=" w-[20px] h-[20px] mx-auto "
-              src={sun}
-              alt="image "
-            />
-          </button>
+
+          <div className="bordder">
+            <DarkModeToggle />
+          </div>
         </div>
-        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[35px] mx-[21%]  text-[#455a64]  ">
+        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%]  text-[#455a64] dark: text-slate-200 ">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
           <div>دوره‌ها</div>
           <div>اساتید</div>

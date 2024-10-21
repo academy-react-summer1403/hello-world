@@ -4,10 +4,10 @@ import { Button } from "@mui/material";
 
 const Comments = () => {
   return (
-    <div className="">
-      <div className="  flex justify-center  ">
-        <div className="w-[900px] h-[891px] overflow-y-scroll mt-[25px] mb-[50px]  rounded-[20px] shadow-2xl  ">
-          <h1 className='text-center font-["YekanBakhBold"] text-2xl text-grayy  mt-[20px]   '>
+    <div className=" dark:bg-[#1a1a2e]">
+      <div className="  flex justify-center ">
+        <div className="w-[900px] h-[891px] overflow-y-scroll mt-[25px] mb-[50px]  rounded-[20px] shadow-2xl  dark:bg-[#111827]">
+          <h1 className='text-center font-["YekanBakhBold"] text-2xl text-grayy  mt-[20px]  dark:text-white '>
             {" "}
             نظر کاربران درباره این مقاله{" "}
           </h1>
@@ -21,8 +21,8 @@ const Comments = () => {
               ارسال
             </Button>
           </div>
-          <div className="flex justify-center mt-2 ">
-            <div className="w-[780px] shadow-2xl rounded-xl ">
+          <div className="flex justify-center mt-2 dark:text-white ">
+            <div className="w-[780px] shadow-[0_0px_30px_20px_rgba(0,0,0,0.1)] rounded-xl pr-5 pt-3">
               <div className=" flex justify-end items-center gap-3 ">
                 <span>محمد زمانی</span>
                 <img className="h-8 w-8 rounded-3xl" src={img} alt="" />

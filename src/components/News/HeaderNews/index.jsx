@@ -39,11 +39,11 @@ const HeaderNews = () => {
         </div>
 
         <div className="text    w-[500px] h-[170px]      absolute right-[70px]  top-[150px]  max-mini:right-[30px] max-smm:right-[5px] max-short:right-[10px] max-tshort:right-[10px]  ">
-          <h1 className="text-right text-grayy font-[YekanBakhBold] text-[30px]  leading-[90px]   ">
+          <h1 className="text-right text-grayy font-[YekanBakhBold] text-[30px]  leading-[90px]   dark:text-white">
             {" "}
             اموزش برنامه نویسی با بهترین ها
           </h1>
-          <p className="text-right  text-gray4 font-[YekanBakh] text-[15px]    leading-[30px]     max-short:hidden    ">
+          <p className="text-right  text-gray4 font-[YekanBakh] text-[15px] leading-[30px] max-short:hidden dark:text-white">
             آموزش برنامه نویسی یکی از دوره‌های محبوب در حوزه فناوری اطلاعات است.
             برنامه نویسی مهارتی است که به افراد امکان می‌دهد تا نرم‌افزارهای
             کامپیوتری را ایجاد و توسعه دهند.{" "}
