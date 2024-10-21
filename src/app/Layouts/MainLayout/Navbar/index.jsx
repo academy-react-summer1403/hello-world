@@ -30,7 +30,7 @@ const Navbar = () => {
           {authModal === true && <Auth setAuthModal={setAuthModal} />}
 
           <div className="flex">
-            <DarkModeToggle />
+            <DarkModeToggle/>
           </div>
         </div>
         <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%] dark:text-slate-200 ">
