@@ -5,7 +5,7 @@ export const getCourseList = async (count) => {
     console.log("fetching started...");
 
     const result = await http.get(
-      "/Home/GetCoursesWithPagination?PageNumber=2&SortingCol=Active&TechCount=0",
+      "/Home/GetCoursesWithPagination?SortingCol=Active&SortType=DESC&TechCount=0",
       { params: count }
     );
 
@@ -37,5 +37,18 @@ export const getReplyComment = async (courseId, commentId) => {
     return response.data;
   } catch (error) {
     return false;
+  }
+};
+
+export const addReplyComment = async (a) => {
+  try {
+    console.log("Fetching started...");
+    const result = await http.post("/Course/AddReplyCourseComment", a);
+    //console.log(result);
+
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
   }
 };

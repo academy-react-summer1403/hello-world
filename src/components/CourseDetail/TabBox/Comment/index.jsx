@@ -4,26 +4,33 @@ import heart from "@assets/images/CourseDetail/Comments/heart.png";
 import { faNumber } from "@core/utils/FaNumber";
 import messages from "@assets/images/CourseDetail/Comments/messages.svg";
 import AddReply from "./AddReply";
-const Comment = (props, pictureAddress, likeCount) => {
+import { ConvertToPersianDate } from "@core/utils/convertDate";
+const Comment = (props, pictureAddress, likeCount , CommentId ,courseId,insertDate) => {
   const [isReplyComment, setIsReplyComment] = useState(false);
 
   return (
     <>
-      <div className="w-[780px]  rounded-xl flex content-end flex-col	flex-wrap">
-        <div className=" flex justify-end items-center  gap-5 ">
-          <span className="text-gray3"> {props?.title}</span>
+      <div className="w-[780px]  rounded-xl flex content-end flex-col	flex-wrap ">
+<div dir="rtl"  className="flex flex-wrap-reverse justify-between  ">
+        <div dir="rtl" className=" flex flex-wrap-reverse items-center  gap-2  ">
+          
           <img
             className="h-8 w-8 rounded-3xl"
             src={pictureAddress ? pictureAddress : noImage}
             alt=""
           />
+<span className="text-gray3"> {props?.author}</span>
         </div>
+            <span className="flex justify-start text-[12px] text-gray4">{props?.insertDate && ConvertToPersianDate(props?.insertDate)}</span> 
+  
+         </div>
+
         <div className="  flex justify-end">
           <span className=" text-xs text-right text-gray4 mt-3">
             {props?.describe}
           </span>
         </div>
-        <div className="  flex gap-3 flex flex-wrap flex-row-reverse w-[70%]">
+        <div className="  flex gap-3  flex-wrap flex-row-reverse w-[70%]">
           <div
             className="flex justify-end gap-1 items-center mt-2 cursor-pointer"
             // onClick={handleCommentLike}
@@ -46,12 +53,16 @@ const Comment = (props, pictureAddress, likeCount) => {
           </div>
             <div className="">
             {isReplyComment === true && (
-                <AddReply setIsReplyComment={setIsReplyComment} />
+                <AddReply setIsReplyComment={setIsReplyComment} CommentId={CommentId} courseId={courseId} />
               )}
             </div>
         </div>
-        <div className=" flex justify-end mt-8  "></div>
+        <div className=" flex justify-end mt-8   ">
+
+
+        </div>
       </div>
+
     </>
   );
 };

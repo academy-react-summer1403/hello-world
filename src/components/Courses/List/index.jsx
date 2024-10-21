@@ -13,6 +13,8 @@ import Stack from "@mui/material/Stack";
 import { HiOutlineSortAscending } from "react-icons/hi";
 import { HiOutlineSortDescending } from "react-icons/hi";
 
+import ResponsivePagination from "react-responsive-pagination";
+
 const ItemList = () => {
   const [view, setView] = useState("knrhm");
   const [type, setType] = useState();
@@ -22,6 +24,7 @@ const ItemList = () => {
   const [courseList, setCourseList] = useState([]);
   const [sortbox, setSortbox] = useState(false);
   const [sort, setSort] = useState("DESC");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const getList = async () => {
     const params = {
@@ -30,6 +33,7 @@ const ItemList = () => {
       TeacherId: techer,
       RowsOfPage: 9,
       SortType: sort,
+      PageNumber: currentPage,
     };
     const courses = await getCourseList(params);
     setCourseList(courses.courseFilterDtos);
@@ -59,9 +63,21 @@ const ItemList = () => {
     getList();
   }, [sort]);
 
+  useEffect(() => {
+    getList();
+  }, [currentPage]);
+
   const ButtonClick = (arg) => {
     setView(arg);
   };
+
+  // pagination
+
+  const totalPages = 10;
+
+  function handlePageChange(page) {
+    setCurrentPage(page);
+  }
 
   return (
     <div className="w-full flex justify-center flex-wrap  gap-5 pt-20">
@@ -146,9 +162,12 @@ const ItemList = () => {
 
         <Items view={view} courseList={courseList} />
 
-        <Stack className=" w-full items-center mt-9 mb-0" spacing={2}>
-          <Pagination count={10} color="primary" />
-        </Stack>
+        <ResponsivePagination
+          total={totalPages}
+          current={currentPage}
+          onPageChange={(page) => handlePageChange(page)}
+        />
+
       </div>
       <Filter
         setType={setType}

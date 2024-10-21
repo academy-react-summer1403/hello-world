@@ -77,6 +77,7 @@ const TabBox = ({ id ,courseId, commentId }) => {
                       key={index}
                       id={item?.id}
                       courseId={item?.courseId}
+                      CommentId={item?.CommentId}
                       author={item?.author}
                       insertDate={item?.insertDate}
                       title={item?.title}

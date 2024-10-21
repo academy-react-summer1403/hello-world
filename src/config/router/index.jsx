@@ -8,6 +8,12 @@ import CoursesPage from "@screens/Courses";
 import CourseDetailPage from "@screens/CourseDetail";
 import NewsPage from "@screens/News";
 import NewsDetailPage from "@screens/NewsDetail";
+import PanelLayout from "@app/Layouts/PanelLayout";
+import Dashboard from "@components/UserPanel/Content/Dashboard";
+import EditProfile from "@components/UserPanel/Content/EditProfile";
+import MyList from "@components/UserPanel/Content/MyList";
+import MyReserve from "@components/UserPanel/Content/MyReserve";
+import ChangePassword from "@components/UserPanel/Content/ChangePassword";
 
 const RouterConfig = () => {
   const pages = [
@@ -21,6 +27,18 @@ const RouterConfig = () => {
         { path: "/NewsPage", element: <NewsPage /> },
         { path: "/NewsDetailPage/:id", element: <NewsDetailPage/> },
 
+      ],
+    },
+
+    {
+      path: "/UserProfileS",
+      element: <PanelLayout />,
+      children: [
+        { path: "/UserProfileS", element: <Dashboard /> },
+        { path: "/UserProfileS/EditProfile", element: <EditProfile /> },
+        { path: "/UserProfileS/MyList", element: <MyList /> },
+        { path: "/UserProfileS/MyReserve", element: <MyReserve /> },
+        { path: "/UserProfileS/ChangePassword", element: <ChangePassword /> },
       ],
     },
 
