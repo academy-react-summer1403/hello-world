@@ -9,6 +9,13 @@ import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
+import LoadingButton from "@mui/lab/LoadingButton";
+import Box from "@mui/material/Box";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import SaveIcon from "@mui/icons-material/Save";
+import SendIcon from "@mui/icons-material/Send";
+
 const Login = ({ setContent, setAuthModal }) => {
   const setTokenAuth = useAuthStore((state) => state.setTokenAuth);
 
@@ -17,18 +24,26 @@ const Login = ({ setContent, setAuthModal }) => {
       password: values.password,
       phoneOrGmail: values.phoneOrGmail,
     };
+
     const res = await loginAPI(obj);
+
     if (res) {
       setTokenAuth(res);
-      setAuthModal(false);
+      setOpen(true);
+
+      // setAuthModal(false);
+      setTimeout( setAuthModal, 2500 )
     }
   };
 
+  // toast
+
   const [open, setOpen] = React.useState(false);
 
-  const handleClick = () => {
-    setOpen(true);
-  };
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
+  
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -37,6 +52,14 @@ const Login = ({ setContent, setAuthModal }) => {
 
     setOpen(false);
   };
+
+  // loading
+
+  const [loading, setLoading] = React.useState(false);
+
+  function handleClickLoading() {
+    setLoading(true);
+  }
 
   return (
     <>
@@ -47,11 +70,11 @@ const Login = ({ setContent, setAuthModal }) => {
           severity="success"
           variant="filled"
           sx={{ width: "100%" }}
+          className=" !font-[YekanBakh]"
         >
-          This is a success Alert inside a Snackbar!
+          ورود شما با موفقیت انجام شد 
         </Alert>
       </Snackbar>
-      
       <div className=" flex justify-center flex-wrap h-[490px] ] ">
         <div className="  mb-[24px]  flex justify-between content-center items-center w-[85%] ">
           <div
@@ -111,15 +134,33 @@ const Login = ({ setContent, setAuthModal }) => {
                   رمز عبور را فراموش کردم
                 </span>
               </div>
-
-              <Button
-                type="submit"
-                className=" !w-[208px] !font-[YekanBakh] !h-[56px] !bg-[#2196F3] !rounded-[80px] !text-white"
-                onClick={handleClick}
+              <LoadingButton
+                onClick={handleClickLoading}
+                loading={loading}
+                loadingPosition="center"
+                variant="contained"
+                className=" !w-[208px] !font-[YekanBakh] !h-[56px] bg-[#2196F3] !rounded-[80px] !text-white"
               >
-                {" "}
-                ورود به حساب
-              </Button>
+                <Button
+                  // onClick={handleClick}
+                  type="submit"
+                  className="!w-[208px] !h-[56px] !font-[YekanBakh] !text-white"
+                >
+                  {" "}
+                  ورود به حساب
+                </Button>
+              </LoadingButton>{" "}
+              {/* <Button onClick={handleClick} type="submit">
+                <LoadingButton
+                  onClick={handleClickLoading}
+                  loading={loading}
+                  loadingPosition="center"
+                  variant="contained"
+                  className=" !w-[208px] !font-[YekanBakh] !h-[56px] bg-[#2196F3] !rounded-[80px] !text-white"
+                >
+                  ورود به حساب
+                </LoadingButton>
+              </Button> */}
             </Form>
           </div>
         </Formik>
