@@ -10,11 +10,9 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
 import LoadingButton from "@mui/lab/LoadingButton";
-import Box from "@mui/material/Box";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import SaveIcon from "@mui/icons-material/Save";
-import SendIcon from "@mui/icons-material/Send";
+
+import Stack from "@mui/material/Stack";
+import { useState } from "react";
 
 const Login = ({ setContent, setAuthModal }) => {
   const setTokenAuth = useAuthStore((state) => state.setTokenAuth);
@@ -30,9 +28,12 @@ const Login = ({ setContent, setAuthModal }) => {
     if (res) {
       setTokenAuth(res);
       setOpen(true);
-
+      setLoading(true);
+      setErrortoast(true);
       // setAuthModal(false);
-      setTimeout( setAuthModal, 2500 )
+      setTimeout(setAuthModal, 2500);
+    } else {
+      setErrortoast(false);
     }
   };
 
@@ -40,10 +41,11 @@ const Login = ({ setContent, setAuthModal }) => {
 
   const [open, setOpen] = React.useState(false);
 
+  const [errortoast, setErrortoast] = useState();
+
   // const handleClick = () => {
   //   setOpen(true);
   // };
-  
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -57,24 +59,13 @@ const Login = ({ setContent, setAuthModal }) => {
 
   const [loading, setLoading] = React.useState(false);
 
-  function handleClickLoading() {
-    setLoading(true);
-  }
+  // function handleClickLoading() {
+  //   setLoading(true);
+  // }
 
   return (
     <>
       {" "}
-      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
-        <Alert
-          onClose={handleClose}
-          severity="success"
-          variant="filled"
-          sx={{ width: "100%" }}
-          className=" !font-[YekanBakh]"
-        >
-          ورود شما با موفقیت انجام شد 
-        </Alert>
-      </Snackbar>
       <div className=" flex justify-center flex-wrap h-[490px] ] ">
         <div className="  mb-[24px]  flex justify-between content-center items-center w-[85%] ">
           <div
@@ -135,7 +126,7 @@ const Login = ({ setContent, setAuthModal }) => {
                 </span>
               </div>
               <LoadingButton
-                onClick={handleClickLoading}
+                // onClick={handleClickLoading}
                 loading={loading}
                 loadingPosition="center"
                 variant="contained"
@@ -179,6 +170,33 @@ const Login = ({ setContent, setAuthModal }) => {
           حساب کاربری ندارید؟{" "}
         </div>
       </div>
+      {errortoast === true ? (
+        <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+            className=" !font-[YekanBakh]"
+          >
+            ورود شما با موفقیت انجام شد
+          </Alert>
+        </Snackbar>
+      ) : errortoast === false ? (
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert
+            variant="filled"
+            dir="rtl"
+            severity="error"
+            className="!font-[YekanBakh] absolute top-[510px] w-full"
+          >
+            {"-"}
+            {" اطلاعات وارد شده نادرست است  "}
+          </Alert>
+        </Stack>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
