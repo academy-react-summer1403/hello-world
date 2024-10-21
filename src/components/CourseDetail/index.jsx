@@ -40,10 +40,12 @@ const CourseDetail = () => {
         </div>
       </div>
       <div className="flex w-[88%] flex-wrap justify-end py-[-30px]">
-        <CourseBox />
+        <CourseBox
+        
+        />
       </div>
 
-      <TabBox id={id} />
+      <TabBox id={id}  />
       {/* <TabComponent id={id} /> */}
       {/* <Slider /> */}
     </div>
