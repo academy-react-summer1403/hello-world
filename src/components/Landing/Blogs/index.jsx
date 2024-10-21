@@ -7,7 +7,7 @@ import BlogItem from "./BlogItem";
 const Blogs = () => {
   const [landingBlogs, setLandingBlogs] = useState([]);
 
-  const getBlogs = async () => {
+  const getBlogs = async () => { 
     const params = {
       Count: 3,
     };
