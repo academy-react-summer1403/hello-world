@@ -5,7 +5,7 @@ export const getCourseList = async (count) => {
     console.log("fetching started...");
 
     const result = await http.get(
-      "/Home/GetCoursesWithPagination?PageNumber=2&SortingCol=Active&TechCount=0",
+      "/Home/GetCoursesWithPagination?SortingCol=Active&SortType=DESC&TechCount=0",
       { params: count }
     );
 
