@@ -39,3 +39,16 @@ export const getReplyComment = async (courseId, commentId) => {
     return false;
   }
 };
+
+export const addReplyComment = async (a) => {
+  try {
+    console.log("Fetching started...");
+    const result = await http.post("/Course/AddReplyCourseComment", a);
+    //console.log(result);
+
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
