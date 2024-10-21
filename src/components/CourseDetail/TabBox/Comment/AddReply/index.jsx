@@ -4,6 +4,8 @@ import { addReplyComment } from "@core/servises/api/Courses/Course";
 
 const AddReply = ({ setIsReplyComment , item }) => {
   const replyCm = async (value) => {
+    
+
     const comentListt = {
       CommentId: item.CommentId,
       CourseId: item.courseId,
@@ -21,7 +23,7 @@ const AddReply = ({ setIsReplyComment , item }) => {
     const coments = await addReplyComment(data);
 
     console.log(coments);
-    console.log(submit);
+    console.log("submit", submit);
   };
   return (
     <div

@@ -6,7 +6,7 @@ import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 const CourseBox = () => {
   return (
-    <div className="h-12 flex justify-end  items-center gap-32">
+    <div className="h-12 flex justify-end  items-center gap-32  max-cc:hidden ">
       <div className=" flex w-[361px] h-12 justify-end items-center gap-2">
         <div className="flex justify-end items-center gap-4">
           <div className="flex justify-center items-center w-20 h-11 rounded-3xl bg-grayyy ">

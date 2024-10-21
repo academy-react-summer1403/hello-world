@@ -5,28 +5,45 @@ import { faNumber } from "@core/utils/FaNumber";
 import messages from "@assets/images/CourseDetail/Comments/messages.svg";
 import AddReply from "./AddReply";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
-const Comment = (props, pictureAddress, likeCount , CommentId ,courseId,insertDate) => {
+const Comment = (
+  props,
+  pictureAddress,
+  likeCount,
+  CommentId,
+  courseId,
+  insertDate
+) => {
   const [isReplyComment, setIsReplyComment] = useState(false);
+
+    console.log("pictureAddress", pictureAddress);
 
   return (
     <>
       <div className="w-[780px]  rounded-xl flex content-end flex-col	flex-wrap ">
-<div dir="rtl"  className="flex flex-wrap-reverse justify-between  ">
-        <div dir="rtl" className=" flex flex-wrap-reverse items-center  gap-2  ">
-          
-          <img
-            className="h-8 w-8 rounded-3xl"
-            src={pictureAddress ? pictureAddress : noImage}
-            alt=""
-          />
-<span className="text-gray3"> {props?.author}</span>
+        <div dir="rtl" className="flex flex-wrap-reverse justify-between  ">
+          <div
+            dir="rtl"
+            className=" flex flex-wrap-reverse items-center  gap-2  "
+          >
+            <img
+              className="h-8 w-8 rounded-3xl"
+              src={
+                props?.pictureAddress &&
+                props?.pictureAddress.includes("classapi.sepehracademy.ir")
+                  ? props?.pictureAddress
+                  : noImage
+              }
+              alt=""
+            />
+            <span className="text-gray3"> {props?.author}</span>
+          </div>
+          <span className="flex justify-start text-[12px] text-gray4">
+            {props?.insertDate && ConvertToPersianDate(props?.insertDate)}
+          </span>
         </div>
-            <span className="flex justify-start text-[12px] text-gray4">{props?.insertDate && ConvertToPersianDate(props?.insertDate)}</span> 
-  
-         </div>
 
         <div className="  flex justify-end">
-          <span className=" text-xs text-right text-gray4 mt-3">
+          <span dir="rtl" className=" text-xs text-right text-gray4 mt-3">
             {props?.describe}
           </span>
         </div>
@@ -51,18 +68,23 @@ const Comment = (props, pictureAddress, likeCount , CommentId ,courseId,insertDa
             <span className="commentAnswerText"></span>
             <img src={messages} />
           </div>
-            <div className="">
+          <div className="">
             {isReplyComment === true && (
-                <AddReply setIsReplyComment={setIsReplyComment} CommentId={CommentId} courseId={courseId} />
-              )}
-            </div>
-        </div>
-        <div className=" flex justify-end mt-8   ">
+              <AddReply
+                setIsReplyComment={setIsReplyComment}
+                CommentId={CommentId}
+                courseId={courseId}
+              />
+            )}
+          </div>
 
-
+          <div className="flex  mt-2 cursor-pointer">
+            <span className="commentAnswerText"></span>
+            <img src={messages} />
+          </div>
         </div>
+        <div className=" flex justify-end mt-8   "></div>
       </div>
-
     </>
   );
 };
