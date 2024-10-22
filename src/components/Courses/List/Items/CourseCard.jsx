@@ -1,7 +1,9 @@
 import heart from "@assets/Images/Tutorial/heart.png";
 import { useState } from "react";
 import { faNumber } from "@core/utils/FaNumber";
-import Date from "@assets/Images/Tutorial/dars.png";
+import Clock from "@assets/Images/Tutorial/clock.png";
+import Dars from "@assets/Images/Tutorial/dars.png";
+import Date from "@assets/Images/Tutorial/date.png";
 import noImage from "@assets/images/Courses/noImage.png";
 import { Link } from "react-router-dom";
 
@@ -36,22 +38,33 @@ const CourseCard = ({
           <Link to={`/CourseDetailPage/${id}`}>{title}</Link>{" "}
         </h3>
         <Link to={`/CourseDetailPage/${id}`} className="infoBax">
-          <div className="Date bg-no-repeat bg-[center_right_10px] text-[#263238]">
+          <div className="MiniData text-[#263238]">
             {" "}
-            ساعت 14
+            <h3> ساعت 14</h3>
+            <img src={Clock} />
           </div>
-          <div className="Clock bg-no-repeat bg-[center_right_10px] text-[#263238]">
+          <div className="MiniData text-[#263238]">
             {" "}
-            1آذر 402
+            <h3> 1آذر 402</h3>
+            <img src={Date} />
           </div>
-          <div className="Dars bg-no-repeat bg-[center_right_5px] text-[#263238] ">
-            {levelName}
-            <img src={Date} alt="عکس دوره" />
+          <div className="MiniData text-[#263238] ">
+            <h3> {levelName}</h3>
+            <img src={Dars} />
           </div>
         </Link>
         <div className="textInfo">
           <Link to="/CourseDetailsS" className="LeftInfo">
-            <h3 className="text-[#263238]">دانش آموز {currentRegistrants} </h3>
+            <h3 className="text-[#263238]">
+              {" "}
+              <>دانش آموز</>{" "}
+            </h3>
+            <h1 className="text-[#263238]">
+              {" "}
+              {currentRegistrants &&
+                faNumber(currentRegistrants.toString(), ",")}
+            </h1>
+
             <h4 className="text-[#263238]">تومان</h4>
 
             <h2 className="text-[#2196F3]">
@@ -68,8 +81,11 @@ const CourseCard = ({
                 like === "like" ? ButtonClick("disslike") : ButtonClick("like");
               }}
             >
+              <h2 className="text-[#F44336]">
+                {" "}
+                {likeCount && faNumber(likeCount.toString(), ",")}
+              </h2>
               <img src={heart} alt="" />
-              <h2 className="text-[#F44336]">{likeCount}</h2>
             </div>
           </div>
         </div>

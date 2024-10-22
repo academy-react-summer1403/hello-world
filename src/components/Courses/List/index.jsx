@@ -82,7 +82,7 @@ const ItemList = () => {
   return (
     <div className="w-full flex justify-center flex-wrap  gap-5 pt-20">
       {/* <TopFilter/> */}
-      <div className="max-w-[950px] w-[90%] pb-10 flex justify-center flex-wrap content-start max-lg:w-[720px] max-lg:justify-evenly max-md:w-[640px] max-sm:w-[450px] max-short:w-[350px]">
+      <div className="max-w-[950px] w-[90%] pb-10 flex justify-center flex-wrap content-start max-xl:w-[950px] max-lg:w-[720px] max-lg:justify-evenly max-md:w-[640px] max-sm:w-[450px] max-short:w-[350px]">
         <div className="w-full  mb-8 h-[55px] flex justify-between items-center max-lg:w-[700px] max-md:justify-around">
           <div
             onClick={() => setSortbox(!sortbox)}
