@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getCourseById } from "@core/servises/api/Courses/getCourseById";
 import CourseBox from "./CourseBox";
 import TabBox from "./TabBox";
+import SimilarCourses from "./SimilarCourses";
 const CourseDetail = () => {
   const [data, setdata] = useState();
   const { id } = useParams();
@@ -46,8 +47,9 @@ const CourseDetail = () => {
       </div>
 
       <TabBox id={id}  />
-      {/* <TabComponent id={id} /> */}
-      {/* <Slider /> */}
+    
+     <SimilarCourses/>
+     
     </div>
   );
 };

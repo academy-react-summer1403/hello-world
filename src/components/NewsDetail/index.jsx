@@ -39,6 +39,7 @@ const NewsDetail = () => {
         currentRate={data?.detailsNewsDto.currentRate}
         currentLikeCount={data?.detailsNewsDto.currentLikeCount}
         currentImageAddress={data?.detailsNewsDto.currentImageAddress}
+        addUserProfileImage={data?.addUserProfileImage}
       />
       <Comments />
     </div>

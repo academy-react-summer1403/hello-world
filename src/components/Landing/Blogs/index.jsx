@@ -32,6 +32,7 @@ const Blogs = () => {
           return (
             <TopBlog
               key={index}
+              id={item.id}
               title={item.title}
               miniDescribe={item.miniDescribe}
               currentImageAddressTumb={item.currentImageAddressTumb}

@@ -17,8 +17,9 @@ const NewsList = () => {
     getList();
   }, []);
   return (
-    <div className="flex flex-wrap content-start justify-center gap-[20px] mt-16 w-full mb-16 ">
-      <div className="flex flex-wrap justify-between px-5 gap-2 items-center w-[1280px] ">
+    <div className="w-full  mt-23 flex justify-center flex-wrap max-xx:mb-28" >
+      <div className="w-[1300px]  flex justify-center flex-wrap align-top ">
+<div className="w-full h-[70%] gap-[8px] flex justify-center flex-wrap max-xx:h-[90%] max-tshort:mt-[-90px] max-tshort:h-[100%]">  
         {data?.map((data, index) => {
           return (
             <NewsItem
@@ -28,9 +29,11 @@ const NewsList = () => {
               currentView={data?.currentView}
               currentImageAddressTumb={data?.currentImageAddressTumb}
               id={data?.id}
+              insertDate={data?.insertDate}
             />
           );
         })}
+</div>
       </div>
     </div>
   );

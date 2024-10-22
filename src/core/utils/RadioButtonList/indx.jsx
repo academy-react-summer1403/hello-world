@@ -8,7 +8,7 @@ const Tabs = () => {
   };
 
   return (
-    <div className="flex justify-center space-x-4 mt-2 mr-8 h-14 w-[526px] bg-[#ebebeb] rounded-2xl pt-2 dark:bg-[#111827] dark:text-white">
+    <div className="flex justify-center   space-x-4 mt-2 mr-8 h-14 w-[526px] bg-white shadow-md rounded-2xl pt-2 dark:bg-[#111827] dark:text-white">
       <button
         className={`px-6 py-2 rounded-full w-[88px] h-10 ${
           activeTab === "همه"
@@ -22,8 +22,8 @@ const Tabs = () => {
       <button
         className={`px-6 py-2 rounded-full w-[88px] h-10 ${
           activeTab === "محبوب‌ترین‌ها"
-            ? "bg-bluee text-white"
-            : "bg-gray-100 text-gray-600"
+            ? "bg-bluee text-white   "
+            : "bg-gray-100 text-gray-600 "
         }`}
         onClick={() => handleTabClick("محبوب‌ترین‌ها")}
       >

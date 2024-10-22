@@ -24,6 +24,7 @@ const BlogItem = () => {
           <BlogItemContent
             key={index}
             title={item.title}
+            id={item.id}
             miniDescribe={item.miniDescribe}
             currentImageAddressTumb={item.currentImageAddressTumb}
             currentView={item.currentView}
