@@ -18,6 +18,7 @@ export default {
         mmd: "840px",
         cc:"945px",
         dd: "950px",
+        kk:"999px",
         lg: "1024px",
         gg:"1052px",
         lgg: "1110px", 
