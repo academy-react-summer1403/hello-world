@@ -6,6 +6,7 @@ import calendar from "@assets/images/Landing/Blogs/calendar.svg"
 import { ConvertToPersianDate } from "@core/utils/convertDate";
 import { faNumber } from "@core/utils/FaNumber";
 const BlogItemContent = ({
+  id,
   title,
   currentImageAddressTumb,
   miniDescribe,
@@ -15,7 +16,7 @@ const BlogItemContent = ({
   return (
     <>
       <Link
-        to="/NewsDetailPage"
+        to={`/NewsDetailPage/${id}`}
         className=" AkhbarData w-[99%] h-[161px] mb-[30px] flex justify-end max-md:w-[80%] max-sm:w-[60%] max-short:w-[50%]   "
       >
         <div className="left w-[62%] h-[161px] " >

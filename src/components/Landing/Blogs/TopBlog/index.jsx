@@ -7,6 +7,7 @@ import { faNumber } from "@core/utils/FaNumber";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
 
 const TopBlog = ({
+  id,
   title,
   miniDescribe,
   currentView,
@@ -14,7 +15,7 @@ const TopBlog = ({
   insertDate,
 }) => {
   return (
-    <Link to="/NewsDetailPage" className=' w-[597px] h-[570px] mt-[-60px] flex justify-end flex-wrap max-xl:hidden'
+    <Link to={`/NewsDetailPage/${id}`} className=' w-[597px] h-[570px] mt-[-60px] flex justify-end flex-wrap max-xl:hidden'
     >
       
         
