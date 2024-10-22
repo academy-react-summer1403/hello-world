@@ -23,8 +23,8 @@ const Blogs = () => {
   return (
     <div className="w-full flex justify-center pt-20 ">
       <div className="w-[1200px] h-[830px] flex justify-center flex-wrap ">
-        <div className="w-full h-20 text-center text-[#263238] text-4xl  myFontBold max-xl:mb-14">
-          <h2 className="w-full font-['YekanBakhBold'] ">اخبار و مقالات</h2>
+        <div className="w-full h-20 text-center dark:text-white text-[#263238] text-4xl  myFontBold max-xl:mb-14">
+          <h2 className="w-full font-['YekanBakhBold'] dark:text-white ">اخبار و مقالات</h2>
           <img className="m-auto mt-4" src={vector} alt="" />
         </div>
         <BlogItem />

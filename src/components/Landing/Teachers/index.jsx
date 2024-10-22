@@ -73,10 +73,10 @@ const Teachers = () => {
   }, []);
   return (
     <>
-      <div className="w-full h-[700px] bg-[#E3F2FD] flex justify-center flex-wrap mt-[100px] ">
-        <div className="slider-container bg-[#E3F2FD] slider m-auto w-[1100px] h-[570px] ">
+      <div className="w-full h-[700px] dark:bg-[#1a1a2e] bg-[#E3F2FD] flex justify-center flex-wrap mt-[100px] ">
+        <div className="slider-container dark:bg-[#1a1a2e] bg-[#E3F2FD] slider m-auto w-[1100px] h-[570px] ">
           <div className="w-full h-[17%] ">
-            <div className="w-full h-20 text-center text-[#263238] text-4xl pt-4 myFontBold">
+            <div className="w-full h-20 text-center dark:text-white text-[#263238] text-4xl pt-4 myFontBold">
               <h2 className="w-full  font-['YekanBakhBold']">اساتید برتر</h2>
               <img className=" mx-auto mt-3" src={vector} alt="" />
             </div>

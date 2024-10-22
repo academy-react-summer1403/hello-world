@@ -14,10 +14,10 @@ const TeacherCard = ({ fullName, courseCounts ,pictureAddress,newsCount}) => {
            
           </div>
         </div>
-        <h4 className="mt-2 font-[700] text-[24px] text-text1 dark:text-darkText">
+        <h4 className="dark:text-white mt-2 font-[700] text-[24px] text-text1 dark:text-darkText">
           {fullName}
         </h4>
-        <span className="font-[500] text-text2 dark:text-darkText text-center">
+        <span className="dark:text-white font-[500] text-text2 dark:text-darkText text-center">
           {newsCount} مقاله
         </span>
       </div>

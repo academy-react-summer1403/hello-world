@@ -20,11 +20,11 @@ const BlogItemContent = ({
       >
         <div className="left w-[62%] h-[161px] " >
           <div className="top pt-[10px] pr-[10px] w-[100%] h-[80%] text-right     ">
-            <h2 dir="rtl" className="mb-[10px] w-[100%]   text-[#263238] text-[20px]   font-medium font-[YekanBakhBold] max-short:text-[12px]  ">
+            <h2 dir="rtl" className="mb-[10px] w-[100%]  dark:text-white text-[#263238] text-[20px]   font-medium font-[YekanBakhBold] max-short:text-[12px]  ">
               {" "}
               {title}{" "}
             </h2>
-            <h4 dir="rtl" className="w-[100%] text-[12px] text-[#455A64]    font-medium font-[YekanBakh]  leading-[21px] max-short:text-[10px]  ">
+            <h4 dir="rtl" className="w-[100%] text-[12px] dark:text-white text-[#455A64]    font-medium font-[YekanBakh]  leading-[21px] max-short:text-[10px]  ">
               {miniDescribe}
             </h4>
           </div>
