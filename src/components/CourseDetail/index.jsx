@@ -23,7 +23,7 @@ const CourseDetail = () => {
     getList(id);
   }, []);
   return (
-    <div className=" bg-white2 ">
+    <div className=" bg-white2 dark:bg-[#1a1a2e] ">
       <div className="w-full  flex py-14 justify-center  ">
         <div className="flex w-[90%] flex-wrap flex-row-reverse gap-[25px] justify-center  mt-[20px]  ">
           <CourseImage
@@ -39,7 +39,7 @@ const CourseDetail = () => {
           />
         </div>
       </div>
-      <div className="flex w-[88%] flex-wrap justify-end py-[-30px]">
+      <div className="flex w-[88%] flex-wrap justify-end py-[-30px] ">
         <CourseBox
         
         />

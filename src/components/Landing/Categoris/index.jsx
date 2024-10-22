@@ -28,7 +28,7 @@ const Categories = () => {
           <h3 className="block  text-right dark:text-white text-gray3 font-[YekanBakhBold] text-[40px] leading-[80px] max-lgx:text-[33px] ">
             دسته بندی‌ دوره‌ها{" "}
           </h3>
-          <div className="bg-[blue] blur-[170px] w-[150px] h-[150px] rounded-full absolute top-0"></div>
+          <div className="dark:bg-[blue] dark:blur-[170px] w-[150px] h-[150px] rounded-full absolute top-0"></div>
           <p className="block  text-right text-[10px] font-[YekanBakh] dark:text-white text-gray4 leading-[22px]  ">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در

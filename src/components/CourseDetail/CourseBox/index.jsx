@@ -18,7 +18,7 @@ const CourseBox = () => {
             <AiOutlineLike className="w-6 h-6 ml-2" />
           </div>
         </div>
-        <span className="font-[] text-[16px] text-gray4">
+        <span className="font-[] text-[16px] dark:text-white text-gray4">
           آیا از این دوره راضی بودید؟
         </span>
       </div>
@@ -29,9 +29,9 @@ const CourseBox = () => {
           </Stack>
         </div>
         <div>
-          <span className="text-xs ">امتیاز {faNumber("20")} نفر</span>
+          <span className="text-xs dark:text-white ">امتیاز {faNumber("20")} نفر</span>
         </div>
-        <div className="w-20 h-8 bg-[#2196F3] border rounded-full text-[#ffff] text-center pt-2 text-xs ">
+        <div className="w-20 h-8 bg-[#2196F3] rounded-full text-[#ffff] text-center pt-2 text-xs ">
           ثبت دیدگاه{" "}
         </div>
       </div>

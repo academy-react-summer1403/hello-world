@@ -37,18 +37,18 @@ const CourseCard = ({
         <h3 className=" text-[16px] text-[#263238]">
           <Link to={`/CourseDetailPage/${id}`}>{title}</Link>{" "}
         </h3>
-        <Link to={`/CourseDetailPage/${id}`} className="infoBax">
-          <div className="MiniData text-[#263238]">
+        <Link to={`/CourseDetailPage/${id}`} className="infoBax dark:bg-[#1a1a2e]">
+          <div className="MiniData dark:text-white text-[#263238]">
             {" "}
             <h3> ساعت 14</h3>
             <img src={Clock} />
           </div>
-          <div className="MiniData text-[#263238]">
+          <div className="MiniData dark:text-white text-[#263238]">
             {" "}
             <h3> 1آذر 402</h3>
             <img src={Date} />
           </div>
-          <div className="MiniData text-[#263238] ">
+          <div className="MiniData dark:text-white text-[#263238] ">
             <h3> {levelName}</h3>
             <img src={Dars} />
           </div>
