@@ -22,7 +22,7 @@ const Courses = () => {
     <div className="w-full h-[560px] mt-28 flex justify-center flex-wrap max-xx:mb-28">
       <div className="w-[1300px]  flex justify-center flex-wrap align-top">
         <div className="w-full h-[16%]">
-          <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px]">
+          <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white">
             دوره‌های اموزشی{" "}
           </h1>
           <img className="mx-auto mt-1" src={vector} alt="" />

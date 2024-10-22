@@ -7,7 +7,7 @@ import Blogs from "@components/Landing/Blogs";
 import Courses from "./Courses";
 const Landing = () => {
   return (
-    <div className="bg-white2">
+    <div className="bg-white2 dark:bg-[#1a1a2e]">
       <HeroSection />
       <Servises />
       <Courses />
