@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getAllWithCategoryFilter } from "@core/servises/api/News/index";
 import { useParams } from "react-router-dom";
 
-const NewsList = () => {
+const NewsList = (Search) => {
   const [data, setdata] = useState();
   const getList = async () => {
     const params = {
