@@ -30,6 +30,7 @@ export default {
         xll: "1250px", 
         ll:"1256px",
         xl: "1280px",
+        qq:"1392px",
         xxl: "1405px",
         "2xl": "1536px",
       },
