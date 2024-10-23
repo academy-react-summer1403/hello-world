@@ -4,6 +4,8 @@ import pi2 from "@assets/images/News/Dots.png";
 import pi3 from "@assets/images/News/Dot.png";
 import pi4 from "@assets/images/News/Dott.png";
 import pi5 from "@assets/images/News/Asset 1 2.png";
+import { Typewriter } from "@components/common/Typewriter";
+import { typeWriterOptions } from "@components/common/Typewriter/typeWriterOptions";
 const HeaderNews = () => {
   return (
     <div className=" w-full flex justify-center flex-wrap pt-14   ">
@@ -39,10 +41,13 @@ const HeaderNews = () => {
         </div>
 
         <div className="text    w-[500px] h-[170px]      absolute right-[70px]  top-[150px]  max-mini:right-[30px] max-smm:right-[5px] max-short:right-[10px] max-tshort:right-[10px]  ">
-          <h1 className="text-right text-grayy font-[YekanBakhBold] text-[30px]  leading-[90px]   dark:text-white">
+          <h1 className="text-right text-grayy font-[YekanBakhBold] text-[50px]  leading-[90px]   dark:text-white">
             {" "}
-            اموزش برنامه نویسی با بهترین ها
+            <Typewriter
+              options={typeWriterOptions(["اخبار و مقالات نابغه"])}
+            />
           </h1>
+            <div className="dark:bg-[blue] dark:blur-[170px] w-[150px] h-[150px] rounded-full absolute top-0"></div>
           <p className="text-right  text-gray4 font-[YekanBakh] text-[15px] leading-[30px] max-short:hidden dark:text-white">
             آموزش برنامه نویسی یکی از دوره‌های محبوب در حوزه فناوری اطلاعات است.
             برنامه نویسی مهارتی است که به افراد امکان می‌دهد تا نرم‌افزارهای

@@ -2,6 +2,8 @@ import React from "react";
 import dot1 from "../../../assets/images/Courses/Dots.png";
 import dot2 from "../../../assets/images/Courses/Dots2.png";
 import aks from "../../../assets/images/Courses/Asset 1 1(1).png";
+import { Typewriter } from "@components/common/Typewriter";
+import { typeWriterOptions } from "@components/common/Typewriter/typeWriterOptions";
 
 const Baner = () => {
   return (
@@ -31,7 +33,10 @@ const Baner = () => {
           </h3>
           <h1 className="text-right dark:text-white text-grayy font-[YekanBakhBold] text-[30px]    ">
             {" "}
-            اموزش برنامه نویسی با بهترین ها
+            <Typewriter
+              options={typeWriterOptions(["اموزش برنامه نویسی با بهترین ها"])}
+            />
+
           </h1>
           <div className="dark:bg-[blue] dark:blur-[170px] w-[150px] h-[150px] rounded-full absolute top-0"></div>
           <p className="text-right dark:text-white text-gray4 font-[YekanBakh] text-[15px]    leading-[30px]  max-sm:text-[12px]  max-smm:text-[10px] max-short:hidden  ">
