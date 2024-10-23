@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
 
-const Items = ({ view,courseList }) => {
+const Items = ({ view, courseList, Search }) => {
   // const [courseList, setCourseList] = useState([]);
 
   // console.log("crs", courseList);
@@ -21,23 +21,27 @@ const Items = ({ view,courseList }) => {
 
   return (
     <>
-      {courseList.map((item, index) => {
-        return (
-          <CourseCard
-            view={view}
-            key={index}
-            title={item.title}
-            teacherName={item.teacherName}
-            cost={item.cost}
-            tumbImageAddress={item.tumbImageAddress}
-            levelName={item.levelName}
-            currentRegistrants={item.currentRegistrants}
-            describe={item.describe}
-            id={item.courseId}
-            likeCount={item.likeCount}
-          />
-        );
-      })}
+      {courseList
+        .filter((item) => {
+          return Search === "" ? item : item.title.includes(Search);
+        })
+        .map((item, index) => {
+          return (
+            <CourseCard
+              view={view}
+              key={index}
+              title={item.title}
+              teacherName={item.teacherName}
+              cost={item.cost}
+              tumbImageAddress={item.tumbImageAddress}
+              levelName={item.levelName}
+              currentRegistrants={item.currentRegistrants}
+              describe={item.describe}
+              id={item.courseId}
+              likeCount={item.likeCount}
+            />
+          );
+        })}
     </>
   );
 };
