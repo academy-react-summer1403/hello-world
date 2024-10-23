@@ -10,7 +10,7 @@ const NewsItem = (props) => {
    const navigate = useNavigate()
    
     return (
-      <div className="h-[370px] w-[350px]  flex justify-center bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">  
+      <div className="h-[370px] w-[350px]  flex justify-center dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">  
     <Link onClick={()=>navigate("/NewsDetailPage/"+ props?.id)} className="w-[90%] h-[60%] flex justify-center rounded-[20px] overflow-hidden  dark:bg-[#1a1a2e]">
       <img
         className="w-[100%] h-[100%]  "

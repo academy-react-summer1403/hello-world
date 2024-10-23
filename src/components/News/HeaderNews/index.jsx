@@ -14,11 +14,11 @@ const HeaderNews = () => {
         <div className="max-short:w-[120px] max-short:h-[120px] max-short:bg-darkpink absolute max-short:right-0 max-short:top-[120px] rounded-tl-3xl     ">
           {" "}
         </div>
-        <div className="image absolute  right-[250px]  top-[340px] z-50 max-short:top-[270px] ">
+        <div className="image absolute   right-[250px]  top-[340px] z-50 max-short:top-[270px] ">
           <img src={pi} alt="image" />
         </div>
 
-        <div className="image1 absolute  right-0  top-[90px] max-short:hidden   ">
+        <div className="image1 absolute dark:hidden right-0  top-[90px] max-short:hidden   ">
           <img src={pi1} alt="image" />
         </div>
 
@@ -34,7 +34,7 @@ const HeaderNews = () => {
           <img src={pi4} alt="image" />
         </div>
 
-        <div className="bigimg w-[600px] h-[600px] absolute  right-[650px]  top-[30px] max-xl:right-[500px] max-lgg:hidden ">
+        <div className="bigimg w-[600px]  h-[600px] absolute  right-[650px]  top-[30px] max-xl:right-[500px] max-lgg:hidden ">
           <img src={pi5} alt="image" />
         </div>
 
