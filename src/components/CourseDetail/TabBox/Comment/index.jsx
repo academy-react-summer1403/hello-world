@@ -5,6 +5,8 @@ import { faNumber } from "@core/utils/FaNumber";
 import messages from "@assets/images/CourseDetail/Comments/messages.svg";
 import AddReply from "./AddReply";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
+import RepliedComment from "./RepliedComment";
+import Content from "./RepliedComment/Content";
 const Comment = (
   props,
   pictureAddress,
@@ -14,6 +16,8 @@ const Comment = (
   insertDate
 ) => {
   const [isReplyComment, setIsReplyComment] = useState(false);
+  const [RepliedCm, setRepliedCm] = useState(false);
+
 
     console.log("pictureAddress", pictureAddress);
 
@@ -78,10 +82,28 @@ const Comment = (
             )}
           </div>
 
-          <div className="flex  mt-2 cursor-pointer">
+          <div className="flex  mt-2 cursor-pointer"
+           onClick={() => {
+            setRepliedCm(!RepliedCm);
+          }}
+          
+          
+          >
             <span className="commentAnswerText"></span>
             <img src={messages} />
           </div>
+          <div className="">
+            {RepliedCm === true && (
+              <Content
+                setRepliedCm={setRepliedCm}
+                CommentId={CommentId}
+                courseId={courseId}
+              />
+            )}
+          </div>
+
+
+
         </div>
         <div className=" flex justify-end mt-8   "></div>
       </div>

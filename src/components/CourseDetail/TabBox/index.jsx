@@ -6,10 +6,8 @@ import Preview from "./Preview";
 import Comment from "./Comment";
 import { useEffect, useState } from "react";
 import { getComment } from "@core/servises/api/Courses/Course";
-import { getReplyComment } from "@core/servises/api/Courses/Course";
 
-
-const TabBox = ({ id ,courseId, commentId  }) => {
+const TabBox = ({ id }) => {
   const [comment, setComment] = useState([]);
 
   const getComments = async (id) => {
@@ -22,23 +20,7 @@ const TabBox = ({ id ,courseId, commentId  }) => {
     getComments(id);
   }, []);
 
-  const [reply, setReply] = useState([]);
-
-  const getReply = async (id) => {
-    const reply = await getReplyComment(id);
-    console.log("reply:", reply);
-    setReply(reply);
-  };
-
-  useEffect(() => {
-    getReply(courseId, commentId);
-  }, []);
-
-
-
-
-
-
+ 
   return (
     <div className="w-full  flex justify-center  flex-wrap mt-[30px]  max-cc:pt-12  max-ff:w-[90%] overflow-x-visible max-ss:overflow-x-scroll ">
       <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px]   ">
@@ -52,7 +34,7 @@ const TabBox = ({ id ,courseId, commentId  }) => {
             </Tab>
             <Tab className="w-[90px] h-10 text-center border-b-[3px] mt-2 border-[#607D8B] mr-8 text-[#607D8B] hover:cursor-pointer">
               توضیحات
-            </Tab> 
+            </Tab>
           </TabList>
           <TabPanel className="flex justify-center mr-9 flex-wrap max-h-[500px] overflow-hidden overflow-y-scroll  ">
             <div className="  relative w-[820px] ">
@@ -68,8 +50,6 @@ const TabBox = ({ id ,courseId, commentId  }) => {
                 </span>
               </div>
               <div className=" flex flex-wrap justify-center ">
-
-              
                 {comment?.map((item, index) => {
                   console.log("item:", item);
                   return (
@@ -86,11 +66,23 @@ const TabBox = ({ id ,courseId, commentId  }) => {
                       likeCount={item?.likeCount}
                     />
                   );
-                })}
+                })};
 
-
+              
               </div>
+
+
+
+ 
+
             </div>
+
+
+
+ 
+
+
+
           </TabPanel>
 
           <TabPanel className="dv1   flex  justify-center mr-9 flex-wrap pt-5 ">
@@ -98,9 +90,7 @@ const TabBox = ({ id ,courseId, commentId  }) => {
           </TabPanel>
 
           <TabPanel className="flex justify-center mr-9 flex-wrap ">
-            <Description
-           
-            />
+            <Description />
           </TabPanel>
         </Tabs>
       </div>
