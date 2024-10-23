@@ -37,7 +37,10 @@ const CourseCard = ({
         <h3 className=" text-[16px] text-[#263238]">
           <Link to={`/CourseDetailPage/${id}`}>{title}</Link>{" "}
         </h3>
-        <Link to={`/CourseDetailPage/${id}`} className="infoBax dark:bg-[#1a1a2e]">
+        <Link
+          to={`/CourseDetailPage/${id}`}
+          className="infoBax dark:bg-[#1a1a2e]"
+        >
           <div className="MiniData dark:text-white text-[#263238]">
             {" "}
             <h3> ساعت 14</h3>

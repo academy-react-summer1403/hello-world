@@ -71,14 +71,13 @@ const ItemList = () => {
     setView(arg);
   };
 
-  // pagination
+  // // pagination
 
-  const totalPages = 10;
+  // const totalPages = 10;
 
-  function handlePageChange(page) {
-    setCurrentPage(page);
-  }
-  const [Search, setSearch] = useState("");
+  // function handlePageChange(page) {
+  //   setCurrentPage(page);
+  // }
 
   return (
     <div className="w-full flex justify-center flex-wrap  gap-5 pt-20">
@@ -164,12 +163,11 @@ const ItemList = () => {
 
         <Items view={view} courseList={courseList} Search={Search} />
 
-        <ResponsivePagination
+        {/* <ResponsivePagination
           total={totalPages}
           current={currentPage}
           onPageChange={(page) => handlePageChange(page)}
-        />
-
+        /> */}
       </div>
       <Filter
         setType={setType}

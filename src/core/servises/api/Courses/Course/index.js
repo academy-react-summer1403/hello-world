@@ -1,12 +1,13 @@
 import http from "../../../interceptor/Interseptor";
 
-export const getCourseList = async (count) => {
+
+export const getCourseList = async (params) => {
   try {
     console.log("fetching started...");
 
     const result = await http.get(
-      "/Home/GetCoursesWithPagination?SortingCol=Active&SortType=DESC&TechCount=0",
-      { params: count }
+      "/Home/GetCoursesWithPagination?SortingCol=Active&TechCount=0",
+      { params: params }
     );
 
     return result;
@@ -15,6 +16,8 @@ export const getCourseList = async (count) => {
     return [];
   }
 };
+
+
 
 export const getComment = async (id) => {
   try {
@@ -42,7 +45,6 @@ export const getReplyComment = async (courseId, commentId) => {
 
 export const addReplyComment = async (a) => {
   try {
-    console.log("Fetching started...");
     const result = await http.post("/Course/AddReplyCourseComment", a);
     //console.log(result);
 
