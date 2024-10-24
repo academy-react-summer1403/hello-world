@@ -73,8 +73,8 @@ const Teachers = () => {
   }, []);
   return (
     <>
-      <div className="w-full h-[700px] dark:bg-[#1a1a2e] bg-[#E3F2FD] flex justify-center flex-wrap mt-[100px] ">
-        <div className="slider-container dark:bg-[#1a1a2e] bg-[#E3F2FD] slider m-auto w-[1100px] h-[570px] ">
+      <div className="w-full h-[600px] dark:bg-[#1a1a2e] bg-[#E3F2FD] flex justify-center flex-wrap mt-[100px] ">
+        <div className="slider-container dark:bg-[#1a1a2e] bg-[#E3F2FD] slider m-auto w-[1100px] h-[500px] ">
           <div className="w-full h-[17%] ">
             <div className="w-full h-20 text-center dark:text-white text-[#263238] text-4xl pt-4 myFontBold">
               <h2 className="w-full  font-['YekanBakhBold']">اساتید برتر</h2>
@@ -82,7 +82,7 @@ const Teachers = () => {
             </div>
           </div>
           <div className="w-full h-[83%] max-ss:w-[100%] max-ss:m-auto  max-mi:px-[60px] max-short:m-auto max-sh:m-auto max-ssh:m-auto ">
-            <Slider {...settings}>
+            <Slider className="" {...settings}>
               {topCourse.map((item, index) => {
                 return (
                   <TeacherCard
@@ -92,6 +92,7 @@ const Teachers = () => {
                     fullName={item.fullName}
                     courseCounts={item.courseCounts}
                     newsCount={item.newsCount}
+                    index={index}
                   />
                 );
               })}

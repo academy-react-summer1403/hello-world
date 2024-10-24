@@ -11,6 +11,7 @@ import { getCourseList } from "@core/servises/api/Courses/Course/index";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { HiOutlineSortAscending } from "react-icons/hi";
+// import Pagination from "@mui/material/Pagination";
 import { HiOutlineSortDescending } from "react-icons/hi";
 
 import ResponsivePagination from "react-responsive-pagination";
@@ -25,18 +26,29 @@ const ItemList = () => {
   const [sortbox, setSortbox] = useState(false);
   const [sort, setSort] = useState("DESC");
   const [currentPage, setCurrentPage] = useState(1);
+  const [courses, setCourses] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
+  const [page, setPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(9);
 
   const getList = async () => {
     const params = {
       CourseTypeId: type,
       courseLevelId: level,
       TeacherId: techer,
-      RowsOfPage: 9,
       SortType: sort,
-      PageNumber: currentPage,
+      PageNumber: page,
+      RowsOfPage: rowsPerPage,
     };
-    const courses = await getCourseList(params);
-    setCourseList(courses.courseFilterDtos);
+    const response = await getCourseList(params);
+    setCourseList(response.courseFilterDtos);
+    setCourses(response.courseFilterDtos);
+    setTotalCount(response.totalCount);
+    console.log("response", response);
+  };
+
+  const handlePageChange = (event, value) => {
+    setPage(value);
   };
 
   useEffect(() => {
@@ -45,23 +57,7 @@ const ItemList = () => {
 
   useEffect(() => {
     getList();
-  }, [type]);
-
-  useEffect(() => {
-    getList();
-  }, [level]);
-
-  useEffect(() => {
-    getList();
-  }, [techer]);
-
-  useEffect(() => {
-    getList();
-  }, [tech]);
-
-  useEffect(() => {
-    getList();
-  }, [sort]);
+  }, [type, level, techer, tech, sort, page, rowsPerPage]);
 
   useEffect(() => {
     getList();
@@ -70,6 +66,8 @@ const ItemList = () => {
   const ButtonClick = (arg) => {
     setView(arg);
   };
+
+  console.log(view)
 
   // // pagination
 
@@ -82,7 +80,7 @@ const ItemList = () => {
   return (
     <div className="w-full flex justify-center flex-wrap  gap-5 pt-20">
       {/* <TopFilter/> */}
-      <div className="max-w-[950px] w-[90%] pb-10 flex justify-center flex-wrap content-start max-xl:w-[950px] max-lg:w-[720px] max-lg:justify-evenly max-md:w-[640px] max-sm:w-[450px] max-short:w-[350px]">
+      <div className="max-w-[960px] w-[90%] pb-10 flex justify-center flex-wrap content-start max-xl:w-[950px] max-lg:w-[720px] max-lg:justify-evenly max-md:w-[640px] max-sm:w-[450px] max-short:w-[350px]">
         <div className="w-full  mb-8 h-[55px] flex justify-between items-center max-lg:w-[700px] max-md:justify-around">
           <div
             onClick={() => setSortbox(!sortbox)}
@@ -160,8 +158,19 @@ const ItemList = () => {
             </div>
           </div>
         </div>
+        <div className="w-full">
+          <Items view={view} setView={setView} courseList={courses} />
 
-        <Items view={view} courseList={courseList} Search={Search} />
+
+          <Pagination
+          className="w-full mt-10 justify-center flex"
+            count={Math.ceil(totalCount / rowsPerPage)}
+            page={page}
+            onChange={handlePageChange}
+            color="primary"
+          />
+        </div>
+
 
         {/* <ResponsivePagination
           total={totalPages}

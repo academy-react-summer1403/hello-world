@@ -50,36 +50,40 @@ const CourseCard = ({
           {title}{" "}
         </h3>
 
-        <div className="bg-[#dce3e9] relative  dark:bg-[#1a1a2e]  bg-graylight h-[40px] w-[250px] rounded-[24px]  flex justify-center flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]">
-          <div className="level     max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
+        <div dir="rtl" className="bg-[#dce3e9]    dark:bg-[#1a1a2e]  bg-graylight h-[40px] w-[90%] rounded-[24px]  flex justify-around flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]">
+          <div className="level  flex gap-1   max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
-              className=" h-[15px] w-[15px] absolute right-[13px] my-[12px] "
+              className=" h-[15px] w-[15px]   my-[12px] "
               src={levelname}
             />
-            <span className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] absolute right-[33px] my-[15px]">
+            <span className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[15px]">
               {levelName}
             </span>
           </div>
-          <div className="dislike dark:text-white max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
+          <div className="dislike flex gap-1 dark:text-white max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
-              className=" h-[15px] w-[15px] absolute right-[105px] my-[13px] "
+              // className=" h-[15px] w-[15px] absolute right-[105px] my-[13px] "
+              className=" h-[15px] w-[15px] my-[13px] "
               src={clock}
             />
             <span
               dir="rtl"
-              className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] absolute right-[110px] my-[14px]"
+              // className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] absolute right-[110px] my-[14px]"
+              className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[14px]"
             >
-              {faNumber("20")}ساعت
+              {faNumber("20") }
+              {" "}
+              ساعت 
             </span>
           </div>
-          <div className="type  bg-[center_right_5px] pr-5  w-1/3 h-full text-[12px] dark:text-white text-[#263238] pt-[11px] pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
+          <div className="type flex gap-1 dark:text-white text-[#263238]  pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
-              className=" h-[14px] w-[14px] absolute right-[170px] my-[2px] "
+              className=" h-[15px] w-[15px] my-[13px]  "
               src={calendar}
             />
             <span
               dir="rtl"
-              className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] absolute right-[190px] my-[3px]"
+              className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[14px]"
             >
               {lastUpdate && ConvertToPersianDate(lastUpdate)}
             </span>
@@ -88,7 +92,7 @@ const CourseCard = ({
         <div className="h-[70px] w-[260px]  mt-[-20px] flex justify-center flex-wrap max-sm:w-[200px] max-sm:h-[60px]">
           <div className="w-1/2 h-full  flex justify-start flex-wrap pt-1">
             <span dir="rtl" className="dark:text-white text-[#263238] text-[14px]">
-              0 دانش‌آموز
+            {faNumber("1")} دانش‌آموز
             </span>
             <div className="w-full"></div>
             <span
@@ -111,7 +115,7 @@ const CourseCard = ({
             </div>
             <div
               dir="rtl"
-              className="w-[51px] h-[32px]   bg-melopink rounded-[24px] overflow-hidden  mt-5   max-sm:w-[45px] max-sm:h-[25px] max-sm:top-6"
+              className="w-[70px] h-[32px]  px-[10px] bg-melopink rounded-[24px] overflow-hidden  mt-5   max-sm:w-[45px] max-sm:h-[25px] max-sm:top-6"
             >
               <div
                 className="flex justify-center items-center gap-1"
