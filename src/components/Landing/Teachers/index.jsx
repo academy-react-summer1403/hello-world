@@ -92,6 +92,7 @@ const Teachers = () => {
                     fullName={item.fullName}
                     courseCounts={item.courseCounts}
                     newsCount={item.newsCount}
+                    index={index}
                   />
                 );
               })}

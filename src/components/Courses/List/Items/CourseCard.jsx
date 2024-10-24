@@ -4,8 +4,9 @@ import { faNumber } from "@core/utils/FaNumber";
 import Clock from "@assets/Images/Tutorial/clock.png";
 import Dars from "@assets/Images/Tutorial/dars.png";
 import Date from "@assets/Images/Tutorial/date.png";
-import noImage from "@assets/images/Courses/noImage.png";
+import noImage from "@assets/images/Landing/Courses/noImage.jpg";
 import { Link } from "react-router-dom";
+import { ConvertToPersianDate } from "@core/utils/convertDate";
 
 const CourseCard = ({
   view,
@@ -18,6 +19,7 @@ const CourseCard = ({
   describe,
   id,
   likeCount,
+  lastUpdate,
 }) => {
   const [like, setLike] = useState("disslike");
   // console.log("id:",id)
@@ -41,14 +43,15 @@ const CourseCard = ({
           to={`/CourseDetailPage/${id}`}
           className="infoBax dark:bg-[#1a1a2e]"
         >
-          <div className="MiniData dark:text-white text-[#263238]">
+          <div  className="MiniData dark:text-white text-[#263238]">
             {" "}
-            <h3> ساعت 14</h3>
+            <h3 dir="rtl">  {faNumber("14") }  ساعت</h3>
             <img src={Clock} />
           </div>
           <div className="MiniData dark:text-white text-[#263238]">
             {" "}
-            <h3> 1آذر 402</h3>
+            <span>               {lastUpdate && ConvertToPersianDate(lastUpdate)}
+            </span>
             <img src={Date} />
           </div>
           <div className="MiniData dark:text-white text-[#263238] ">
