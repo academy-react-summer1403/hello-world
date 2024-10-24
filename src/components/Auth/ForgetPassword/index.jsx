@@ -77,12 +77,12 @@ const ForgetPassword = ({ setContent, setUserData, setAuthModal }) => {
               <Form className="flex w-[100%] justify-center flex-wrap h-[60px]">
                 <div className=" w-[100%] h-[56px] mb-[50px]">
                   <Field
-                    name="email"
+                    name="gmail"
                     placeholder=" آدرس ایمیل"
                     className=" w-[100%] h-[56px] border border-solid border-[#CFD8DC] rounded-[50px] text-end pr-4"
                   />
                   <ErrorMessage
-                    name="email"
+                    name="gmail"
                     component={"B"}
                     className="text-[#2196F3] mt-2.5 text-right w-full pr-7  "
                   />{" "}
@@ -137,24 +137,24 @@ const ForgetPassword = ({ setContent, setUserData, setAuthModal }) => {
               <Form className="flex w-[100%] justify-center flex-wrap h-[180px]">
                 <div className=" w-[100%] h-[56px] mb-[30px]">
                   <Field
-                    name="password"
+                    name="verifyCode"
                     placeholder="   رمز عبور جدید"
                     className=" w-[100%] h-[56px] border border-solid border-[#CFD8DC] rounded-[50px] text-end pr-5"
                   />
                   <ErrorMessage
-                    name="password"
+                    name="verifyCode"
                     component={"B"}
                     className="text-[#2196F3] mt-1 text-right w-full pr-7  "
                   />{" "}
                 </div>
                 <div className=" w-[100%] h-[56px] mb-[50px]">
                   <Field
-                    name="password"
+                    name="verifyCode"
                     placeholder=" تکرار رمز عبور"
                     className=" w-[100%] h-[56px] border border-solid border-[#CFD8DC] rounded-[50px] text-end pr-5"
                   />
                   <ErrorMessage
-                    name="password"
+                    name="verifyCode"
                     component={"B"}
                     className="text-[#2196F3] mt-1 text-right w-full pr-7  "
                   />{" "}

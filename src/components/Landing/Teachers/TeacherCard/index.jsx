@@ -9,11 +9,11 @@ const TeacherCard = ({
   index,
 }) => {
   return (
-    <div className="me-5" style={{ marginTop: index % 2 !== 0 ? "15px" : "0" }}>
+    <div className="me-5" style={{ marginTop: index % 2 !== 0 ? "55px" : "0" }}>
       <div className="w-full flex flex-col justify-center items-center">
         <div className="relative">
           <img
-            className="w-[280px] h-[290px]  rounded-[15px] object-cover m-5"
+            className="w-[220px] h-[230px]  rounded-[15px] object-cover m-5"
             src={pictureAddress ? pictureAddress : noImage}
             alt=""
           />
