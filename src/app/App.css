@@ -391,6 +391,9 @@
   font-size: 17px;
 }
 
+.dirRtl {
+  direction: rtl !important;
+}
 /* pagination  */
 
 /* .pagination {

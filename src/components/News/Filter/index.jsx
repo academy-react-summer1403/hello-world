@@ -2,9 +2,9 @@ import LikeDislike from "@core/utils/like and dislikeBT";
 import RadioButtonList from "@core/utils/RadioButtonList/indx";
 import React, { useState } from "react";
 
-const Filter = () => {
+const Filter = ({search,setSearch}) => {
   
-  const [Search, setSearch] = useState("");
+  // const [Search, setSearch] = useState("");
   return (
   <div className="flex flex-nowrap justify-between px-5 items-center gap-[20px] w-[1300px] h-[70px] max-xl:w-[1100px] max-xl:pr-10 max-sm:w-[600px] max-mini:flex-wrap max-mini:justify-center max-mini:h-[190px] dark:bg-[#1a1a2e]">
       <div className="div1  w-[400px] h-[70px]  rounded-[20px]  max-sm:w-[320px] max-mini:w-[100%] max-mini:flex dark:bg-[#1a1a2e]">

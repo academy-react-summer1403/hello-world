@@ -19,7 +19,7 @@ const Navbar = () => {
               setAuthModal(true);
             }}
           >
-            <button className="h-[40px] w-[40px] bg-darkwhite rounded-full  dark:bg-[#111827] ">
+            <button className="h-[40px] w-[40px] bg-white rounded-full  dark:bg-[#111827] ">
               <img
                 className=" w-[20px] h-[20px] m-[10px]  "
                 src={img1}
