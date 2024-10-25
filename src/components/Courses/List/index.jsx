@@ -96,7 +96,7 @@ const ItemList = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 300 }}
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 290 }}
       role="presentation"
       // onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -212,7 +212,7 @@ const ItemList = () => {
 
       {/* filter right  */}
 
-      <div className="w-[170px] h-16  fixed right-[-92px] bottom-48">
+      <div className="w-[170px] h-16 xx:hidden fixed right-[-92px] bottom-48">
         {["right"].map((anchor) => (
           <React.Fragment key={anchor}>
             <Button
