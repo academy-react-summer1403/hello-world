@@ -3,7 +3,6 @@ import sun from "@assets/images/navbar/sun.png";
 import { IoIosSunny } from "react-icons/io";
 import { IoMdMoon } from "react-icons/io";
 
-
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -27,14 +26,9 @@ const DarkModeToggle = () => {
       className="h-[40px] w-[40px]  bg-white rounded-full  dark:bg-[#111827] "
     >
       {darkMode ? (
-        // <img
-        //   className={" w-[20px] h-[20px] m-[10px] "}
-        //   src={sun}
-        //   alt="image "
-        // />
         <IoIosSunny color="white" className={" w-[20px] h-[20px] m-[10px] "} />
       ) : (
-        <IoMdMoon className={" w-[20px] h-[20px] m-[10px] "}/>
+        <IoMdMoon className={" w-[20px] h-[20px] m-[10px] "} />
       )}
     </div>
   );

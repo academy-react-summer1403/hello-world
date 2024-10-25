@@ -7,7 +7,11 @@ import { Auth } from "../../../../components/Auth/index";
 import { Link } from "react-router-dom";
 import DarkModeToggle from "@components/common/DarkModeToggle";
 import CustomizedMenus from "@core/utils/HamburgerMenu";
+import LanguageSwitcher from "@components/common/translait/suicher";
+import "@components/common/translait/index";
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
+  const { t } = useTranslation();
   const [authModal, setAuthModal] = useState(false);
   const tokenAuth = useAuthStore((state) => state.tokenAuth);
 
@@ -15,6 +19,7 @@ const Navbar = () => {
     <div className=" flex dark:bg-[#1a1a2e] ">
       <div className=" flex  mx-auto gap-10 justify-between h-[50px] w-[80%] dark:bg-[#1a1a2e] ">
         <div className="flex  gap-4  mt-[30px]  ">
+          <LanguageSwitcher />
           <div
             className="flex  "
             onClick={() => {
@@ -28,7 +33,7 @@ const Navbar = () => {
                   setAuthModal(true);
                 }}
               >
-                ورود به حساب
+                {t("ورود به حساب")}{" "}
               </div>
             )}
 
@@ -42,7 +47,7 @@ const Navbar = () => {
                   setAuthModal(true);
                 }}
               >
-                ورود به پنل
+                {t("ورود به پنل")}
               </Link>
             )}
           </div>
@@ -55,11 +60,11 @@ const Navbar = () => {
         </div>
         <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%] dark:text-slate-200 max-qq:hidden">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
-          <div> خانه</div>
-          <div>دوره‌ها</div>
-          <div>اساتید</div>
-          <div>ارتباط با ما</div>
-          <div>اخبار و مقالات</div>
+          <div> {t("خانه")}</div>
+          <div>{t("دوره‌ها")}</div>
+          <div>{t("اساتید")}</div>
+          <div>{t("ارتباط با ما")}</div>
+          <div>{t("اخبار و مقالات")}</div>
           {/* </div> */}
         </div>
         <div className=" hidden max-qq:block   mt-[27px] ">
