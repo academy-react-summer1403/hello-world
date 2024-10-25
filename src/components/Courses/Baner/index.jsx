@@ -31,7 +31,7 @@ const Baner = () => {
             {" "}
             !!!مهمه از کی یاد می گیری
           </h3>
-          <h1 className="text-right dark:text-white text-grayy font-[YekanBakhBold] text-[30px]    ">
+          <h1 className="text-right dirRtl dark:text-white text-grayy font-[YekanBakhBold] text-[30px]    ">
             {" "}
             <Typewriter
               options={typeWriterOptions(["اموزش برنامه نویسی با بهترین ها"])}

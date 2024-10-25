@@ -41,7 +41,7 @@ const HeaderNews = () => {
         </div>
 
         <div className="text    w-[500px] h-[170px]      absolute right-[70px]  top-[150px]  max-mini:right-[30px] max-smm:right-[5px] max-short:right-[10px] max-tshort:right-[10px]  ">
-          <h1 className="text-right text-grayy font-[YekanBakhBold] text-[50px]  leading-[90px]   dark:text-white">
+          <h1 className="text-right dirRtl text-grayy font-[YekanBakhBold] text-[50px]  leading-[90px]   dark:text-white">
             {" "}
             <Typewriter
               options={typeWriterOptions(["اخبار و مقالات نابغه"])}
