@@ -17,7 +17,7 @@ const Dore = () => {
   }, []);
 
   return (
-    <div className="w-[95%] h-[520px]  mt-8 flex justify-center flex-wrap content-start">
+    <div className="w-[95%] max-h-[520px] h-[520px]  mt-8 flex justify-center flex-wrap content-start">
       <Titr />
       {userReserve.map((item, index) => {
         return (

@@ -9,11 +9,11 @@ import CourseDetailPage from "@screens/CourseDetail";
 import NewsPage from "@screens/News";
 import NewsDetailPage from "@screens/NewsDetail";
 import PanelLayout from "@app/Layouts/PanelLayout";
-import Dashboard from "@components/UserPanel/Content/Dashboard";
-import EditProfile from "@components/UserPanel/Content/EditProfile";
-import MyList from "@components/UserPanel/Content/MyList";
-import MyReserve from "@components/UserPanel/Content/MyReserve";
-import ChangePassword from "@components/UserPanel/Content/ChangePassword";
+import DashboardPage from "@screens/UserPanel/Dashboard";
+import EditProfilePage from "@screens/UserPanel/EditProfile";
+import MyListPage from "@screens/UserPanel/MyCourse";
+import MyReservePage from "@screens/UserPanel/ReservedCourse";
+import ChangePassPage from "@screens/UserPanel/ChangePass";
 
 const RouterConfig = () => {
   const pages = [
@@ -34,11 +34,11 @@ const RouterConfig = () => {
       path: "/UserProfileS",
       element: <PanelLayout />,
       children: [
-        { path: "/UserProfileS", element: <Dashboard /> },
-        { path: "/UserProfileS/EditProfile", element: <EditProfile /> },
-        { path: "/UserProfileS/MyList", element: <MyList /> },
-        { path: "/UserProfileS/MyReserve", element: <MyReserve /> },
-        { path: "/UserProfileS/ChangePassword", element: <ChangePassword /> },
+        { path: "/UserProfileS", element: <DashboardPage /> },
+        { path: "/UserProfileS/EditProfile", element: <EditProfilePage /> },
+        { path: "/UserProfileS/MyList", element: <MyListPage /> },
+        { path: "/UserProfileS/MyReserve", element: <MyReservePage /> },
+        { path: "/UserProfileS/ChangePassword", element: <ChangePassPage /> },
       ],
     },
 

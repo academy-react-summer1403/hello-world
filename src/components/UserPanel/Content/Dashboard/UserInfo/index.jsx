@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getUserDashboard } from "@core/servises/api/UserPanel/UserPanel/Dashboard";
 import { Link } from "react-router-dom";
+import { faNumber } from "@core/utils/FaNumber";
 
 const UserInfo = () => {
   const [userDash, setUserDash] = useState([]);
@@ -39,7 +40,7 @@ const UserInfo = () => {
         </div>
         <div className="w-1/3 h-[50%] flex justify-end pr-10 items-center content-center">
           <h2 className=" text-[#422dae]   text-[18px]">
-            {userDash.phoneNumber}{" "}
+            {userDash.phoneNumber && faNumber(userDash.phoneNumber.toString())}
           </h2>
           <span className="w-1"></span>
           <span className="text-[#8787a7]"> : </span>
@@ -50,7 +51,8 @@ const UserInfo = () => {
         <div className="w-1/3 h-[50%] flex justify-end pr-10 items-center content-center">
           <h2 className=" text-[#422dae]   text-[18px]">
             {" "}
-            {userDash.nationalCode}{" "}
+            {userDash.nationalCode &&
+              faNumber(userDash.nationalCode.toString())}
           </h2>
           <span className="w-1"></span>
           <span className="text-[#8787a7]"> : </span>

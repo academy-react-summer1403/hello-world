@@ -6,12 +6,19 @@ import { LuBookMarked, LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlineBookmarks } from "react-icons/md";
 import { RiShieldKeyholeLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useAuthStore } from "../../../../../zustand/Auth/UserToken";
 
 const show = () => {};
 const List = () => {
+  const logout = useAuthStore((state) => state.logout);
+  const onSubmit = () => {
+    logout();
+    localStorage.removeItem("token");
+  };
+
   return (
     <>
-      <div className="w-full h-[500px] pr-1">
+      <div className="w-full h-[495px] pr-1">
         <Link
           className="  w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
           to="/UserProfileS"
@@ -52,17 +59,21 @@ const List = () => {
         </Link>
         <Link
           className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
-          to="LogOut"
-        >
-          <h3 className="text-[#fdfbff] mt-2 text-[17px]"> خروج از حساب </h3>
-          <FiLogOut className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
-        </Link>
-        <Link
-          className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
           to="Comments"
         >
           <h3 className="text-[#fdfbff] mt-2 text-[17px]"> نظرات ثبت شده </h3>
           <GoCommentDiscussion className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
+        </Link>
+      </div>
+
+      <div className="w-full h-[500px]">
+        <Link
+          onClick={onSubmit}
+          className="w-full h-[50px]  my-3.5 flex gap-2 justify-end items-center pr-2 rounded-[13px] transition-[0.1s] bg-[#6033ff] hover:bg-[#6454f1]"
+          to="/"
+        >
+          <h3 className="text-[#fdfbff] text-[15px]"> خروج از حساب </h3>
+          <FiLogOut className="text-[#fdfbff] w-5 h-5" />
         </Link>
       </div>
     </>
