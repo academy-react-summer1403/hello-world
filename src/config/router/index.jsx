@@ -14,6 +14,7 @@ import EditProfile from "@components/UserPanel/Content/EditProfile";
 import MyList from "@components/UserPanel/Content/MyList";
 import MyReserve from "@components/UserPanel/Content/MyReserve";
 import ChangePassword from "@components/UserPanel/Content/ChangePassword";
+import LogOut from "@components/UserPanel/Content/LogOut";
 
 const RouterConfig = () => {
   const pages = [
@@ -39,6 +40,7 @@ const RouterConfig = () => {
         { path: "/UserProfileS/MyList", element: <MyList /> },
         { path: "/UserProfileS/MyReserve", element: <MyReserve /> },
         { path: "/UserProfileS/ChangePassword", element: <ChangePassword /> },
+        { path: "/UserProfileS/LogOut", element: <LogOut /> },
       ],
     },
 

@@ -33,13 +33,13 @@ const Technology = ({ setTech }) => {
             id="panel1-header"
             dir="rtl"
           >
-            تکنولوژی 
+            تکنولوژی
           </AccordionSummary>
-          <AccordionDetails className=" flex justify-end mt-[-15px] flex-wrap">
+          <AccordionDetails className=" flex text-[14px] text-[#455A64] justify-end mt-[-10px] flex-wrap">
             {coursetecnology.map((item, index) => {
               return (
                 <div
-                  className=" text-right flex justify-end mt-[0.5rem]"
+                  className="w-full my-2 text-right flex flex-wrap justify-end mt-[0.5rem] mr-[-5px]"
                   key={index}
                   onClick={() => {
                     setTech(item.id);
@@ -60,8 +60,7 @@ const Technology = ({ setTech }) => {
                   </label>
                   <label
                     htmlFor={item.techName}
-                    className="border border-solid border-[#c4c4c4] h-[1.1rem] w-[1.1rem] mt-[0.21rem] bg-[#dee5e7] mr-[1rem] block 
-          peer-checked:bg-[#2196F3] peer-checked:border-none bg-no-repeat bg-cover rounded-[7px] hover:cursor-pointer hover:bg-[#85c8ff]"
+                    className="border border-solid border-[#c4c4c4] h-[17px] w-[17px] mt-[0.21rem] bg-[#dee5e7] mr-[1rem] block peer-checked:bg-[#2196F3] peer-checked:border-none bg-no-repeat bg-cover rounded-[6px] hover:cursor-pointer hover:bg-[#85c8ff]"
                   ></label>
                 </div>
               );
