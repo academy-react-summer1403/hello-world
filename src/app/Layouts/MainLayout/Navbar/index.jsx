@@ -6,7 +6,8 @@ import img3 from "../../../../assets/images/navbar/HW.png";
 import { Auth } from "../../../../components/Auth/index";
 import { Link } from "react-router-dom";
 import DarkModeToggle from "@components/common/DarkModeToggle";
-import CustomizedMenus from "@core/utils/HamburgerMenu";
+import TemporaryDrawer from "@core/utils/DrawerMenu";
+import SwipeableTemporaryDrawer from "@core/utils/DrawerMenu";
 const Navbar = () => {
   const [authModal, setAuthModal] = useState(false);
   const tokenAuth = useAuthStore((state) => state.tokenAuth);
@@ -62,9 +63,9 @@ const Navbar = () => {
           <div>اخبار و مقالات</div>
           {/* </div> */}
         </div>
-        <div className=" hidden max-qq:block   mt-[27px] ">
+        <div dir="rtl" className=" hidden max-qq:block   mt-[27px] ">
           {" "}
-          <CustomizedMenus />{" "}
+          <SwipeableTemporaryDrawer/>{" "}
         </div>
         <Link
           to="/"
