@@ -17,9 +17,14 @@ const Comment = (
 ) => {
   const [isReplyComment, setIsReplyComment] = useState(false);
   const [RepliedCm, setRepliedCm] = useState(false);
+  const [reply, setReply] = useState(true);
 
+  const setdesignReply = () => {
+    setReply(!reply)
+  }
 
-    console.log("pictureAddress", pictureAddress);
+  console.log(reply)
+  console.log("pictureAddress", pictureAddress);
 
   return (
     <>
@@ -70,11 +75,14 @@ const Comment = (
             }}
           >
             <span className="commentAnswerText"></span>
+            <span> {reply ? "پاسخ" : "انصراف"}</span>
+
             <img src={messages} />
           </div>
           <div className="">
             {isReplyComment === true && (
               <AddReply
+                onClick={setdesignReply}
                 setIsReplyComment={setIsReplyComment}
                 CommentId={CommentId}
                 courseId={courseId}
@@ -82,12 +90,11 @@ const Comment = (
             )}
           </div>
 
-          <div className="flex  mt-2 cursor-pointer"
-           onClick={() => {
-            setRepliedCm(!RepliedCm);
-          }}
-          
-          
+          <div
+            className="flex  mt-2 cursor-pointer"
+            onClick={() => {
+              setRepliedCm(!RepliedCm);
+            }}
           >
             <span className="commentAnswerText"></span>
             <img src={messages} />
@@ -101,9 +108,6 @@ const Comment = (
               />
             )}
           </div>
-
-
-
         </div>
         <div className=" flex justify-end mt-8   "></div>
       </div>
