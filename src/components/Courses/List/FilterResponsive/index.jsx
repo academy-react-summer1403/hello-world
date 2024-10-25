@@ -7,10 +7,10 @@ import Teachers from "./Teachers"
 import Sort from "./Sort"
 import Technology from "./Technology"
 
-const filter = ({setType,setLevel,setTech,setTecher}) => {
+const FilterResponsive = ({setType,setLevel,setTech,setTecher}) => {
   return (
-    <div className="max-xx:hidden">
-      <div className="w-[295px] rounded-[20px] pt-3 pb-3  dark:bg-[#111827]  flex flex-wrap bg-[#fff] justify-center items-start max-xl:w-[250px] mb-64">
+    <div>
+      <div className="w-[295px] mt-1 font-[YekanBakh] rounded-[20px] pt-3 pb-3  dark:bg-[#111827]  flex flex-wrap bg-[#fff] justify-center items-start mb-64">
         <div className=" w-[280px] max-xl:w-[230px] h-[50px] mb-6 dark:bg-[#1a1a2e] bg-grayyy rounded-[15px] relative ">
           <img
             className=" absolute right-[10px] top-[15px]  "
@@ -40,4 +40,4 @@ const filter = ({setType,setLevel,setTech,setTecher}) => {
   );
 };
 
-export default filter;
+export default FilterResponsive;

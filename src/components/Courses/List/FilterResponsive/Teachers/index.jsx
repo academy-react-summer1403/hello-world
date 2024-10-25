@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { getFilterlevel } from "@core/servises/api/Courses/Filter/Sort";
+import { getFilterteacher } from "@core/servises/api/Courses/Filter/Teacher";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const Sort = ({ setLevel }) => {
-  const [courselevel, setcourselevel] = useState([]);
+const Teachers = ({ setTecher }) => {
+  const [courseteacher, setcourseteacher] = useState([]);
 
-  const getCoursefilterlevel = async () => {
-    const courses = await getFilterlevel();
-    setcourselevel(courses);
+  const getCoursefilterteacher = async () => {
+    const courses = await getFilterteacher();
+    setcourseteacher(courses);
   };
 
   useEffect(() => {
-    getCoursefilterlevel();
+    getCoursefilterteacher();
   }, []);
 
   return (
@@ -32,34 +32,33 @@ const Sort = ({ setLevel }) => {
           id="panel1-header"
           dir="rtl"
         >
-          سطح
+          اساتید
         </AccordionSummary>
         <AccordionDetails className=" flex text-[14px] text-[#455A64] justify-end mt-[-10px] flex-wrap">
-          {courselevel.map((items, index) => {
+          {courseteacher.map((item, index) => {
             return (
               <div
                 className="w-full my-2 text-right flex flex-wrap justify-end mt-[0.5rem] mr-[-5px]"
                 key={index}
                 onClick={() => {
-                  setLevel(items.id);
+                  setTecher(item.teacherId);
                 }}
               >
                 <input
                   type="radio"
-                  id={items.levelName}
+                  id={item.fullName}
                   name="filter"
-                  value={items.levelName}
+                  value={item.fullName}
                   className="peer hidden"
                 />
-
                 <label
-                  htmlFor={items.levelName}
-                  className="block mr-[0.5rem]  hover:text-[#2196F3] hover:cursor-pointer"
+                  htmlFor={item.fullName}
+                  className="block mr-[0.5rem] hover:text-[#2196F3] hover:cursor-pointer"
                 >
-                  {items.levelName}
+                  {item.fullName}
                 </label>
                 <label
-                  htmlFor={items.levelName}
+                  htmlFor={item.fullName}
                   className="border border-solid border-[#c4c4c4] h-[17px] w-[17px] mt-[0.21rem] bg-[#dee5e7] mr-[1rem] block peer-checked:bg-[#2196F3] peer-checked:border-none bg-no-repeat bg-cover rounded-[6px] hover:cursor-pointer hover:bg-[#85c8ff]"
                 ></label>
               </div>
@@ -71,4 +70,4 @@ const Sort = ({ setLevel }) => {
   );
 };
 
-export default Sort;
+export default Teachers;

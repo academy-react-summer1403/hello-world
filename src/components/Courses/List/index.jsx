@@ -5,8 +5,8 @@ import Grid from "../../../assets/images/Courses/Grid.png";
 import Grid2 from "../../../assets/images/Courses/Grid2.png";
 import Items from "./Items";
 import Filter from "./Filter/index.jsx";
+import FilterResponsive from "./FilterResponsive/index.jsx";
 import { useState } from "react";
-import TopFilter from "./TopFilter/TopFilter";
 import { getCourseList } from "@core/servises/api/Courses/Course/index";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
@@ -14,7 +14,13 @@ import { HiOutlineSortAscending } from "react-icons/hi";
 // import Pagination from "@mui/material/Pagination";
 import { HiOutlineSortDescending } from "react-icons/hi";
 
-import ResponsivePagination from "react-responsive-pagination";
+// right filter
+
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
 
 const ItemList = () => {
   const [view, setView] = useState("knrhm");
@@ -67,16 +73,43 @@ const ItemList = () => {
     setView(arg);
   };
 
-  console.log(view)
+  console.log(view);
 
-  // // pagination
+  const [Search, setSearch] = useState();
 
-  // const totalPages = 10;
+  // right filter
 
-  // function handlePageChange(page) {
-  //   setCurrentPage(page);
-  // }
-  const [Search, setSearch] = useState()
+  const [state, setState] = React.useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 300 }}
+      role="presentation"
+      // onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <FilterResponsive
+        setType={setType}
+        setLevel={setLevel}
+        setTech={setTech}
+        setTecher={setTecher}
+      />
+    </Box>
+  );
+
   return (
     <div className="w-full flex justify-center flex-wrap  gap-5 pt-20">
       {/* <TopFilter/> */}
@@ -161,22 +194,14 @@ const ItemList = () => {
         <div className="w-full">
           <Items view={view} setView={setView} courseList={courses} />
 
-
           <Pagination
-          className="w-full mt-10 justify-center flex"
+            className="w-full mt-10 justify-center flex"
             count={Math.ceil(totalCount / rowsPerPage)}
             page={page}
             onChange={handlePageChange}
             color="primary"
           />
         </div>
-
-
-        {/* <ResponsivePagination
-          total={totalPages}
-          current={currentPage}
-          onPageChange={(page) => handlePageChange(page)}
-        /> */}
       </div>
       <Filter
         setType={setType}
@@ -184,6 +209,31 @@ const ItemList = () => {
         setTech={setTech}
         setTecher={setTecher}
       />
+
+      {/* filter right  */}
+
+      <div className="w-[170px] h-16  fixed right-[-92px] bottom-48">
+        {["right"].map((anchor) => (
+          <React.Fragment key={anchor}>
+            <Button
+              className="w-full h-full flex justify-center flex-wrap  gap-10 text-white text-right"
+              onClick={toggleDrawer(anchor, true)}
+            >
+              <div className="w-[70px] h-full left-0 rounded-l-[30px] font-[YekanBakhBold] border-[3px] border-solid border-[#888] text-white flex justify-center items-center bg-[#b8b8b8]">
+                فیلتر
+              </div>
+              {anchor}
+            </Button>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            >
+              {list(anchor)}
+            </Drawer>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
