@@ -260,18 +260,41 @@
 }
 
 .zirhm > .infoBax {
+  background-color: #eeeeee;
   height: 40px;
   width: 260px;
   border-radius: 24px;
-  margin-right: 10px;
+  margin-right: 0px;
   display: flex;
   justify-content: center;
+  gap: 4px;
   flex-flow: wrap;
-  margin-top: -3px;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.zirhm > .infoBax > .Date {
+.zirhm > .infoBax > .MiniData {
+  width: 28%;
+  height: 100%;
+  font-size: 13px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-align: right;
+}
+
+.zirhm > .infoBax > .MiniData > h3 {
+  margin-top: 2px;
+}
+
+.zirhm > .infoBax > .Dars > img {
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+/* .zirhm > .infoBax > .Date {
   padding-right: 8px;
   width: 33%;
   height: 100%;
@@ -305,7 +328,7 @@
   margin-left: 5px;
   width: 15px;
   height: 15px;
-}
+} */
 
 .zirhm > .textInfo {
   height: 110px;
@@ -324,20 +347,31 @@
   justify-content: left;
   flex-flow: wrap;
   padding-top: 10px;
+  margin-top: 30px;
+
 }
 
 .zirhm > .textInfo > .LeftInfo > h2 {
   font-size: 19px;
   margin-top: 0px;
   margin-bottom: 5px;
-  width: 70%;
+  width: 60%;
+  margin-left: 2px;
   font-family: "YekanBakhMiniBold";
 }
 .zirhm > .textInfo > .LeftInfo > h3 {
   font-size: 16px;
   margin-top: 0px;
   margin-bottom: 5px;
-  width: 100%;
+  width: 54%;
+  font-family: "YekanBakhMiniBold";
+}
+
+.zirhm > .textInfo > .LeftInfo > h1 {
+  font-size: 17px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  width: 30%;
   font-family: "YekanBakhMiniBold";
 }
 .zirhm > .textInfo > .LeftInfo > h4 {
@@ -373,21 +407,18 @@
 }
 
 .zirhm > .textInfo > .RightInfo > div {
-  width: 70px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
+  gap: 3px;
   border-radius: 24px;
   margin-top: 15px;
 }
 
-.zirhm > .textInfo > .RightInfo > div > img {
-  margin-top: 11px;
-  margin-right: 12px;
-  float: right;
-}
-
 .zirhm > .textInfo > .RightInfo > div > h2 {
-  margin-top: 9px;
-  margin-left: 12px;
+  margin-top: 4px;
   font-size: 17px;
 }
 

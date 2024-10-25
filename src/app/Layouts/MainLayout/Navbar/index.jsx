@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import img1 from "../../../../assets/images/navbar/login.png";
 // import img2 from "../../../../assets/images/navbar/basket.png"
+import { useAuthStore } from "../../../../zustand/Auth/UserToken";
 import img3 from "../../../../assets/images/navbar/HW.png";
 import { Auth } from "../../../../components/Auth/index";
 import { Link } from "react-router-dom";
@@ -8,6 +9,7 @@ import DarkModeToggle from "@components/common/DarkModeToggle";
 import CustomizedMenus from "@core/utils/HamburgerMenu";
 const Navbar = () => {
   const [authModal, setAuthModal] = useState(false);
+  const tokenAuth = useAuthStore((state) => state.tokenAuth);
 
   return (
     <div className=" flex dark:bg-[#1a1a2e] ">
@@ -19,13 +21,30 @@ const Navbar = () => {
               setAuthModal(true);
             }}
           >
-            <button className="h-[40px] w-[40px] bg-darkwhite rounded-full  dark:bg-[#111827] ">
-              <img
-                className=" w-[20px] h-[20px] m-[10px]  "
-                src={img1}
-                alt="image "
-              />
-            </button>
+            {!tokenAuth && (
+              <div
+                className="w-[100px] cursor-pointer h-11 bg-[#2196F3] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full max-md:w-[100px] max-md:text-[10px] max-md:h-8 max-smm:w-[80px] max-smm:h-6 max-smm:text-[8px]"
+                onClick={() => {
+                  setAuthModal(true);
+                }}
+              >
+                ورود به حساب
+              </div>
+            )}
+
+            {authModal === true && <Auth setAuthModal={setAuthModal} />}
+
+            {tokenAuth && (
+              <Link
+                to="/UserProfileS"
+                className="w-[100px] cursor-pointer h-11 border-[4px] border-[#3c8bcc] bg-[#59a9eb] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full max-md:w-[100px] max-md:text-[10px] max-md:h-8 max-smm:w-[80px] max-smm:h-6 max-smm:text-[8px]"
+                onClick={() => {
+                  setAuthModal(true);
+                }}
+              >
+                ورود به پنل
+              </Link>
+            )}
           </div>
 
           {authModal === true && <Auth setAuthModal={setAuthModal} />}
