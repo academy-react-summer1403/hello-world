@@ -26,4 +26,4 @@ function Titr() {
   );
 }
 
-export default Titr;
+export default Title;

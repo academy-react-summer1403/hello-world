@@ -67,9 +67,9 @@ const Navbar = () => {
           <div>{t("اخبار و مقالات")}</div>
           {/* </div> */}
         </div>
-        <div className=" hidden max-qq:block   mt-[27px] ">
+        <div dir="rtl" className=" hidden max-qq:block   mt-[27px] ">
           {" "}
-          <CustomizedMenus />{" "}
+          <SwipeableTemporaryDrawer/>{" "}
         </div>
         <Link
           to="/"
