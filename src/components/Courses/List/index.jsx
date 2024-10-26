@@ -212,8 +212,8 @@ const ItemList = () => {
 
       {/* filter right  */}
 
-      <div className="w-[170px] h-16 xx:hidden fixed right-[-92px] bottom-48">
-        {["right"].map((anchor) => (
+      <div className="w-[170px] h-16 xx:hidden fixed right-[-50px] bottom-48">
+        {[""].map((anchor) => (
           <React.Fragment key={anchor}>
             <Button
               className="w-full h-full flex justify-center flex-wrap  gap-10 text-white text-right"
@@ -225,7 +225,8 @@ const ItemList = () => {
               {anchor}
             </Button>
             <Drawer
-              anchor={anchor}
+            className="text-white"
+              anchor={"right"}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
             >
