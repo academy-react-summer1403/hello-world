@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import search from "@assets/images/Landing/HeroSection/search.svg"
 import "@components/common/translait/index";
 
 

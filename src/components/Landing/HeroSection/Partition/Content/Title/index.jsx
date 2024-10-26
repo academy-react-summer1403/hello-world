@@ -5,7 +5,7 @@ import React from "react";
 import "@components/common/translait/index";
 import { useTranslation } from "react-i18next";
 
-function Titr() {
+function Title() {
   const { t } = useTranslation();
   return (
     <div className="Titr w-[100%] h-[30%] mt-5 flex justify-center flex-wrap ">

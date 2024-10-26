@@ -6,7 +6,6 @@ import img3 from "../../../../assets/images/navbar/HW.png";
 import { Auth } from "../../../../components/Auth/index";
 import { Link } from "react-router-dom";
 import DarkModeToggle from "@components/common/DarkModeToggle";
-import CustomizedMenus from "@core/utils/HamburgerMenu";
 import LanguageSwitcher from "@components/common/translait/suicher";
 import "@components/common/translait/index";
 import { useTranslation } from "react-i18next";
@@ -69,7 +68,6 @@ const Navbar = () => {
         </div>
         <div dir="rtl" className=" hidden max-qq:block   mt-[27px] ">
           {" "}
-          <SwipeableTemporaryDrawer/>{" "}
         </div>
         <Link
           to="/"
