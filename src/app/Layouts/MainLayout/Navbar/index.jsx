@@ -4,7 +4,7 @@ import img1 from "../../../../assets/images/navbar/login.png";
 import { useAuthStore } from "../../../../zustand/Auth/UserToken";
 import img3 from "../../../../assets/images/navbar/HW.png";
 import { Auth } from "../../../../components/Auth/index";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import DarkModeToggle from "@components/common/DarkModeToggle";
 import LanguageSwitcher from "@components/common/translait/suicher";
 import "@components/common/translait/index";
@@ -53,17 +53,28 @@ const Navbar = () => {
 
           {authModal === true && <Auth setAuthModal={setAuthModal} />}
 
-          <div className="flex">
+          <div className="flex  cursor-pointer">
             <DarkModeToggle />
           </div>
         </div>
         <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%] dark:text-slate-200 max-qq:hidden">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
-          <div> {t("خانه")}</div>
-          <div>{t("دوره‌ها")}</div>
-          <div>{t("اساتید")}</div>
-          <div>{t("ارتباط با ما")}</div>
-          <div>{t("اخبار و مقالات")}</div>
+          <NavLink to="/" className="hover:text-[#4079c4]">
+            {" "}
+            {t("خانه")}
+          </NavLink>
+          <NavLink to="/CoursesPage" className="hover:text-[#4079c4]">
+            {t("دوره‌ها")}
+          </NavLink>
+          <NavLink to="*" className="hover:text-[#4079c4]">
+            {t("اساتید")}
+          </NavLink>
+          <NavLink to="/" className="hover:text-[#4079c4]">
+            {t("ارتباط با ما")}
+          </NavLink>
+          <NavLink to="/NewsPage" className="hover:text-[#4079c4]">
+            {t("اخبار و مقالات")}
+          </NavLink>
           {/* </div> */}
         </div>
         <div dir="rtl" className=" hidden max-qq:block   mt-[27px] ">
