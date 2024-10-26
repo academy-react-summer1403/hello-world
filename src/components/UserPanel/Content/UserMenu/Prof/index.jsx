@@ -13,7 +13,7 @@ const Prof = () => {
     setUserDash(data);
   };
 
-  // console.log(userDash.userImage[0].puctureAddress)
+  // console.log(userDash.userImage[0])
 
   useEffect(() => {
     getUserDash();
