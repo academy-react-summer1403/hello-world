@@ -3,38 +3,250 @@ import Pagination from "@mui/material/Pagination";
 import { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
 
-const Items = ({courseList,view}) => {
-  // const [view, setView] = useState("knrhm");
-  console.log("courseList",courseList)
-  // const [courses, setCourses] = useState([]);
-  // const [totalCount, setTotalCount] = useState(0);
-  // const [page, setPage] = useState(1);
-  // const [rowsPerPage, setRowsPerPage] = useState(10);
+import Skeleton from "@mui/material/Skeleton";
 
-  // const fetchCourses = async (page, rowsPerPage) => {
-  //   try {
-  //     const params = { PageNumber: page, RowsOfPage: rowsPerPage };
-  //     const response = await getCourseList(params);
-  //     console.log("response", response);
-  //     setCourses(response.courseFilterDtos);
-  //     setTotalCount(response.totalCount);
-  //   } catch (error) {
-  //     console.error("Error fetching courses:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchCourses(page, rowsPerPage);
-  //   console.log("page", page);
-  // }, [page, rowsPerPage]);
-
-  // const handlePageChange = (event, value) => {
-  //   setPage(value);
-  // };
+const Items = ({ courseList, view, setSkelet, skeleton }) => {
+  
+  useEffect(() => {
+    setSkelet();
+  }, []);
 
   return (
     <>
-      <div className="flex w-[100%] justify-center flex-wrap">
+      {skeleton ? (
+        <div className="flex justify-center flex-wrap items-center gap-5">
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+          <div className="w-300">
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={170}
+              className="rounded-xl mb-2"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={300}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+            <Skeleton
+              sx={{ bgcolor: "grey.900" }}
+              variant="rectangular"
+              width={210}
+              height={20}
+              className="rounded-lg mb-1"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="flex w-[100%] justify-center flex-wrap">
+          {courseList?.map((item, index) => {
+            return (
+              <CourseCard
+                view={view}
+                key={index}
+                title={item.title}
+                teacherName={item.teacherName}
+                cost={item.cost}
+                tumbImageAddress={item.tumbImageAddress}
+                levelName={item.levelName}
+                currentRegistrants={item.currentRegistrants}
+                describe={item.describe}
+                id={item.courseId}
+                likeCount={item.likeCount}
+                lastUpdate={item.lastUpdate}
+              />
+            );
+          })}
+        </div>
+      )}
+
+      {/* <div className="flex w-[100%] justify-center flex-wrap">
         {courseList?.map((item, index) => {
           return (
             <CourseCard
@@ -50,18 +262,10 @@ const Items = ({courseList,view}) => {
               id={item.courseId}
               likeCount={item.likeCount}
               lastUpdate={item.lastUpdate}
-
             />
           );
         })}
-
-        {/* <Pagination
-          count={Math.ceil(totalCount / rowsPerPage)}
-          page={page}
-          onChange={handlePageChange}
-          color="primary"
-        /> */}
-      </div>
+      </div> */}
     </>
   );
 };
