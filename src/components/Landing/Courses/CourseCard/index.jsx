@@ -50,12 +50,12 @@ const CourseCard = ({
           {title}{" "}
         </h3>
 
-        <div dir="rtl" className="bg-[#dce3e9]    dark:bg-[#1a1a2e]  bg-graylight h-[40px] w-[90%] rounded-[24px]  flex justify-around flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]">
+        <div
+          dir="rtl"
+          className="bg-[#dce3e9]    dark:bg-[#1a1a2e]  bg-graylight h-[40px] w-[90%] rounded-[24px]  flex justify-around flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]"
+        >
           <div className="level  flex gap-1   max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
-            <img
-              className=" h-[15px] w-[15px]   my-[12px] "
-              src={levelname}
-            />
+            <img className=" h-[15px] w-[15px]   my-[12px] " src={levelname} />
             <span className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[15px]">
               {levelName}
             </span>
@@ -71,16 +71,11 @@ const CourseCard = ({
               // className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] absolute right-[110px] my-[14px]"
               className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[14px]"
             >
-              {faNumber("20") }
-              {" "}
-              ساعت 
+              {faNumber("20")} ساعت
             </span>
           </div>
           <div className="type flex gap-1 dark:text-white text-[#263238]  pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
-            <img
-              className=" h-[15px] w-[15px] my-[13px]  "
-              src={calendar}
-            />
+            <img className=" h-[15px] w-[15px] my-[13px]  " src={calendar} />
             <span
               dir="rtl"
               className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[14px]"
@@ -91,8 +86,11 @@ const CourseCard = ({
         </div>
         <div className="h-[70px] w-[260px]  mt-[-20px] flex justify-center flex-wrap max-sm:w-[200px] max-sm:h-[60px]">
           <div className="w-1/2 h-full  flex justify-start flex-wrap pt-1">
-            <span dir="rtl" className="dark:text-white text-[#263238] text-[14px]">
-            {faNumber("1")} دانش‌آموز
+            <span
+              dir="rtl"
+              className="dark:text-white text-[#263238] text-[14px]"
+            >
+              {faNumber("1")} دانش‌آموز
             </span>
             <div className="w-full"></div>
             <span
@@ -100,7 +98,9 @@ const CourseCard = ({
               className="text-[#2196F3] text-[16px] max-sm:text-[12px] mt-[30px] "
             >
               {cost && faNumber(cost.toString(), ",")}
-              <span className="dark:text-white text-[#263238] mr-[5px] ">تومان </span>
+              <span className="dark:text-white text-[#263238] mr-[5px] ">
+                تومان{" "}
+              </span>
             </span>
           </div>{" "}
           <div className="w-1/2 h-full  flex justify-end flex-wrap pt-1 relative">

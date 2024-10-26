@@ -12,7 +12,7 @@ function LanguageSwitcher() {
 
   return (
     <div>
-      <button onClick={() => changeLanguage('en')}><RiEnglishInput className='dark:bg-white' /></button>
+      <button className='dark:text-white' onClick={() => changeLanguage('en')}>en</button>
       <button className='dark:text-white' onClick={() => changeLanguage('fa')}>فا</button>
     </div>
   );
