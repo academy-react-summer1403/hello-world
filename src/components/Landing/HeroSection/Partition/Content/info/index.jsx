@@ -37,7 +37,7 @@ const info = () => {
               faNumber(landingReport.studentCount.toString())}{" "}
           </h2>
 
-          <h3 className="dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]"> نفر دانشجو </h3>
+          <h3 className="dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]"> {t("نفر دانشجو")}</h3>
         </div>
       </div>
       <div className="DataInfo dark:bg-[#111827] max-xl:h-[72%] max-md:h-[65%] max-mini:w-[87%] max-mini:h-[73px] max-mini:mb-[10px] max-short:w-[84%] border-[4px] dark:border-[#1a1a2e] border-white border-solid w-[30.5%] h-[81%] rounded-[16px] flex justify-center flex-wrap pt-[20px] max-mini:relative">
@@ -51,7 +51,7 @@ const info = () => {
             {landingReport.courseCount &&
               faNumber(landingReport.courseCount.toString())}{" "}
           </h2>
-          <h3 className=" dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]">  دوره </h3>
+          <h3 className=" dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]">  {t("دوره")} </h3>
         </div>
       </div>
       <div className="DataInfo dark:bg-[#111827] max-xl:h-[72%] max-md:h-[65%] max-mini:w-[87%] max-mini:h-[73px] max-mini:mb-[10px] max-short:w-[84%] border-[4px] dark:border-[#1a1a2e] border-white border-solid w-[30.5%] h-[81%] rounded-[16px] flex justify-center flex-wrap pt-[20px] max-mini:relative">
@@ -65,7 +65,7 @@ const info = () => {
             {landingReport.teacherCount &&
               faNumber(landingReport.teacherCount.toString())}{" "}
           </h2>
-          <h3 className=" dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]"> مدرس مجرب </h3>
+          <h3 className=" dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]"> {t("مدرس مجرب")}</h3>
         </div>
       </div>
     </div>

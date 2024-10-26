@@ -9,6 +9,8 @@ import { GoHeartFill } from "react-icons/go";
 import heart from "@assets/images/Landing/Courses/heart.png";
 import { faNumber } from "@core/utils/FaNumber";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
+import { useTranslation } from "react-i18next";
+import "@components/common/translait/index";
 const CourseCard = ({
   title,
   teacherName,
@@ -23,6 +25,7 @@ const CourseCard = ({
   likeCount,
   lastUpdate,
 }) => {
+  const { t } = useTranslation();
   const [like, setLike] = useState("disslike");
   console.log("id:", id);
   const ButtonClick = (arg) => {
@@ -71,7 +74,7 @@ const CourseCard = ({
               // className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] absolute right-[110px] my-[14px]"
               className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[14px]"
             >
-              {faNumber("20")} ساعت
+              {faNumber("20")} {t("ساعت")}
             </span>
           </div>
           <div className="type flex gap-1 dark:text-white text-[#263238]  pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
@@ -90,7 +93,7 @@ const CourseCard = ({
               dir="rtl"
               className="dark:text-white text-[#263238] text-[14px]"
             >
-              {faNumber("1")} دانش‌آموز
+              {("1")} {t("دانش‌آموز")}
             </span>
             <div className="w-full"></div>
             <span
