@@ -3,11 +3,20 @@ import filterIcon from "@assets/images/Courses/filter.svg";
 import trashIcon from "@assets/images/Courses/trash.svg";
 import p1 from "../../../../assets/images/Courses/arrowDown.png";
 import Category from "./Type";
-import Teachers from "./Teachers"
-import Sort from "./Sort"
-import Technology from "./Technology"
+import Teachers from "./Teachers";
+import Sort from "./Sort";
+import Technology from "./Technology";
 
-const filter = ({setType,setLevel,setTech,setTecher}) => {
+const filter = ({
+  setType,
+  setLevel,
+  setTech,
+  setTecher,
+  setSkelet,
+  skeleton,
+  setSkeleton,
+  getList,
+}) => {
   return (
     <div className="max-xx:hidden">
       <div className="w-[295px] rounded-[20px] pt-3 pb-3  dark:bg-[#111827]  flex flex-wrap bg-[#fff] justify-center items-start max-xl:w-[250px] mb-64">
@@ -26,17 +35,39 @@ const filter = ({setType,setLevel,setTech,setTecher}) => {
             <img src={trashIcon} />
           </button>
         </div>
-        <Category setType={setType} />
+        <Category
+          setLevel={setLevel}
+          skeleton={skeleton}
+          setSkelet={setSkelet}
+          getList={getList}
+          setSkeleton={setSkeleton}
+        />
 
-        <Teachers setTecher={setTecher}/>
+        <Teachers
+          setLevel={setLevel}
+          skeleton={skeleton}
+          setSkelet={setSkelet}
+          getList={getList}
+          setSkeleton={setSkeleton}
+        />
 
-        <Sort setLevel={setLevel}/>
+        <Sort
+          setLevel={setLevel}
+          skeleton={skeleton}
+          setSkelet={setSkelet}
+          getList={getList}
+          setSkeleton={setSkeleton}
+        />
 
-        <Technology setTech={setTech}/>
-
+        <Technology
+          setLevel={setLevel}
+          skeleton={skeleton}
+          setSkelet={setSkelet}
+          getList={getList}
+          setSkeleton={setSkeleton}
+        />
       </div>
     </div>
-
   );
 };
 
