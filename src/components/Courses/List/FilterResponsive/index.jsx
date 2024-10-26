@@ -3,13 +3,13 @@ import filterIcon from "@assets/images/Courses/filter.svg";
 import trashIcon from "@assets/images/Courses/trash.svg";
 import p1 from "../../../../assets/images/Courses/arrowDown.png";
 import Category from "./Type";
-import Teachers from "./Teachers"
-import Sort from "./Sort"
-import Technology from "./Technology"
+import Teachers from "./Teachers";
+import Sort from "./Sort";
+import Technology from "./Technology";
 
-const FilterResponsive = ({setType,setLevel,setTech,setTecher}) => {
+const FilterResponsive = ({ setType, setLevel, setTech, setTecher }) => {
   return (
-    <div  >
+    <div>
       <div className="w-[295px] mt-1 font-[YekanBakh] rounded-[20px] pt-3 pb-3  dark:bg-[#111827]  flex flex-wrap bg-[#fff] justify-center items-start mb-64">
         <div className=" w-[280px] max-xl:w-[230px] h-[50px] mb-6 dark:bg-[#1a1a2e] bg-grayyy rounded-[15px] relative ">
           <img
@@ -28,15 +28,13 @@ const FilterResponsive = ({setType,setLevel,setTech,setTecher}) => {
         </div>
         <Category setType={setType} />
 
-        <Teachers setTecher={setTecher}/>
+        <Teachers setTecher={setTecher} />
 
-        <Sort setLevel={setLevel}/>
+        <Sort setLevel={setLevel} />
 
-        <Technology setTech={setTech}/>
-
+        <Technology setTech={setTech} />
       </div>
     </div>
-
   );
 };
 
