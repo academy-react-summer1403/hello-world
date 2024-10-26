@@ -59,7 +59,7 @@ const List = () => {
         </Link>
         <Link
           className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
-          to="Comments"
+          to="CommentPage"
         >
           <h3 className="text-[#fdfbff] mt-2 text-[17px]"> نظرات ثبت شده </h3>
           <GoCommentDiscussion className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />

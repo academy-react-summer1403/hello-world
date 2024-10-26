@@ -8,7 +8,7 @@ const HeadTitle = () => {
   return (
     <div className="w-full h-[80px] border-[#dcdcdc] border-b-2 flex justify-end items-center">
 
-      <h2 className="myFontMiniBold text-[26px] text-[#3f3f47]">دوره های من</h2>
+      <h2 className="myFontMiniBold text-[26px] text-[#3f3f47]">  نظر های ثبت شده</h2>
       <CgBorderStyleDashed className="w-9 h-9 ml-1 text-[#5748c7]" />
     </div>
   );

@@ -14,6 +14,7 @@ import EditProfilePage from "@screens/UserPanel/EditProfile";
 import MyListPage from "@screens/UserPanel/MyCourse";
 import MyReservePage from "@screens/UserPanel/ReservedCourse";
 import ChangePassPage from "@screens/UserPanel/ChangePass";
+import CommentPage from "@screens/UserPanel/Comment";
 
 const RouterConfig = () => {
   const pages = [
@@ -39,6 +40,7 @@ const RouterConfig = () => {
         { path: "/UserProfileS/MyList", element: <MyListPage /> },
         { path: "/UserProfileS/MyReserve", element: <MyReservePage /> },
         { path: "/UserProfileS/ChangePassword", element: <ChangePassPage /> },
+        { path: "/UserProfileS/CommentPage", element: <CommentPage /> },
       ],
     },
 

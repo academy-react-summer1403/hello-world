@@ -5,6 +5,8 @@ import Categories from "./Categoris";
 import Teachers from "./Teachers";
 import Blogs from "@components/Landing/Blogs";
 import Courses from "./Courses";
+import GoTop from "./GoTop";
+
 const Landing = () => {
   return (
     <div className="bg-white2 dark:bg-[#1a1a2e]">
@@ -14,6 +16,7 @@ const Landing = () => {
       <Categories />
       <Teachers />
       <Blogs />
+      <GoTop />
     </div>
   );
 };
