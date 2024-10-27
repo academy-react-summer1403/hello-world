@@ -6,8 +6,12 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const Sort = ({ setLevel }) => {
+const Sort = ({ setLevel, setSkelet, setSkeleton, getList }) => {
   const [courselevel, setcourselevel] = useState([]);
+
+  const setData = () => {
+    setSkeleton(true);
+  };
 
   const getCoursefilterlevel = async () => {
     const courses = await getFilterlevel();
@@ -16,6 +20,14 @@ const Sort = ({ setLevel }) => {
 
   useEffect(() => {
     getCoursefilterlevel();
+  }, []);
+
+  useEffect(() => {
+    getList();
+  }, []);
+
+  useEffect(() => {
+    setSkelet();
   }, []);
 
   return (
@@ -50,8 +62,8 @@ const Sort = ({ setLevel }) => {
                   name="filter"
                   value={items.levelName}
                   className="peer hidden"
+                  onClick={setData}
                 />
-
                 <label
                   htmlFor={items.levelName}
                   className="block mr-[0.5rem]  hover:text-[#2196F3] hover:cursor-pointer"

@@ -37,6 +37,16 @@ const ItemList = () => {
   const [page, setPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(9);
 
+  const [skeleton, setSkeleton] = useState(true);
+
+  const setSkelet = async () => {
+    const response = await getCourseList();
+    console.log("response", response);
+    setSkeleton(false);
+  };
+
+  console.log(skeleton);
+
   const getList = async () => {
     const params = {
       CourseTypeId: type,
@@ -51,6 +61,8 @@ const ItemList = () => {
     setCourses(response.courseFilterDtos);
     setTotalCount(response.totalCount);
     console.log("response", response);
+    setSkeleton(false);
+
   };
 
   const handlePageChange = (event, value) => {
@@ -192,7 +204,13 @@ const ItemList = () => {
           </div>
         </div>
         <div className="w-full">
-          <Items view={view} setView={setView} courseList={courses} />
+          <Items
+            view={view}
+            skeleton={skeleton}
+            setSkelet={setSkelet}
+            setView={setView}
+            courseList={courses}
+          />
 
           <Pagination
             className="w-full mt-10 justify-center flex"
@@ -204,16 +222,20 @@ const ItemList = () => {
         </div>
       </div>
       <Filter
+        getList={getList}
+        skeleton={skeleton}
+        setSkelet={setSkelet}
         setType={setType}
         setLevel={setLevel}
         setTech={setTech}
         setTecher={setTecher}
+        setSkeleton={setSkeleton}
       />
 
       {/* filter right  */}
 
-      <div className="w-[170px] h-16 xx:hidden fixed right-[-92px] bottom-48">
-        {["right"].map((anchor) => (
+      <div className="w-[170px] h-16 xx:hidden fixed right-[-50px] bottom-48">
+        {[""].map((anchor) => (
           <React.Fragment key={anchor}>
             <Button
               className="w-full h-full flex justify-center flex-wrap  gap-10 text-white text-right"
@@ -225,7 +247,8 @@ const ItemList = () => {
               {anchor}
             </Button>
             <Drawer
-              anchor={anchor}
+            className="text-white"
+              anchor={"right"}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
             >
