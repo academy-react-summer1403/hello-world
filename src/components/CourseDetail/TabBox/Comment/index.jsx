@@ -20,10 +20,10 @@ const Comment = (
   const [reply, setReply] = useState(true);
 
   const setdesignReply = () => {
-    setReply(!reply)
-  }
+    setReply(!reply);
+  };
 
-  console.log(reply)
+  console.log(reply);
   console.log("pictureAddress", pictureAddress);
 
   return (
@@ -84,8 +84,8 @@ const Comment = (
               <AddReply
                 onClick={setdesignReply}
                 setIsReplyComment={setIsReplyComment}
-                CommentId={CommentId}
-                courseId={courseId}
+                CommentId={props?.CommentId}
+                courseId={props?.courseId}
               />
             )}
           </div>
@@ -103,8 +103,8 @@ const Comment = (
             {RepliedCm === true && (
               <Content
                 setRepliedCm={setRepliedCm}
-                CommentId={CommentId}
-                courseId={courseId}
+                CommentId={props?.CommentId}
+                courseId={props?.courseId}
               />
             )}
           </div>
