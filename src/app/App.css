@@ -222,12 +222,36 @@
   gap: 3px;
   margin-top: 10px;
 }
-
-.knrhm > .textInfo > .RightInfo > div > h2{
-  margin-top: 2px;
+.knrhm > .textInfo > .RightInfo > h2 {
+  font-size: 14px;
+  text-align: right;
+  width: 200px;
 }
 
-
+/* dark */
+.dark .knrhm {
+  background-color: #111827;
+  border: none;
+}
+.dark .knrhm > h3 {
+  color: white;
+}
+.dark .knrhm > .textInfo > .RightInfo > h3 {
+  color: white;
+}
+.dark .knrhm > .textInfo > .RightInfo > h2 {
+  color: white;
+}
+.dark .knrhm > .textInfo > .LeftInfo > h1 {
+  color: white;
+}
+.dark .knrhm > .textInfo > .LeftInfo > h3 {
+  color: #e2e2e2;
+}
+.dark .knrhm > .textInfo > .LeftInfo > h4 {
+  color: white;
+}
+/*  */
 .zirhm {
   width: 98%;
   height: 200px;
@@ -294,42 +318,6 @@
   height: 15px;
 }
 
-/* .zirhm > .infoBax > .Date {
-  padding-right: 8px;
-  width: 33%;
-  height: 100%;
-  font-size: 12px;
-  padding-top: 11px;
-  padding-left: 12px;
-}
-
-.zirhm > .infoBax > .Clock {
-  padding-right: 8px;
-  width: 33%;
-  height: 100%;
-  font-size: 12px;
-  padding-top: 11px;
-  padding-left: 12px;
-}
-
-.zirhm > .infoBax > .Dars {
-  display: flex;
-  justify-content: right;
-  background-image: none;
-  align-items: center;
-  padding-right: 8px;
-  width: 34%;
-  height: 100%;
-  font-size: 11px;
-  padding-left: 5px;
-}
-
-.zirhm > .infoBax > .Dars > img {
-  margin-left: 5px;
-  width: 15px;
-  height: 15px;
-} */
-
 .zirhm > .textInfo {
   height: 110px;
   width: 68%;
@@ -348,7 +336,6 @@
   flex-flow: wrap;
   padding-top: 10px;
   margin-top: 30px;
-
 }
 
 .zirhm > .textInfo > .LeftInfo > h2 {
@@ -421,7 +408,34 @@
   margin-top: 4px;
   font-size: 17px;
 }
+/* dark mode */
+.dark .zirhm {
+  background-color: #111827;
+  border: none;
+}
+.dark .zirhm > h3 {
+  color: white;
+}
 
+.dark .zirhm > .textInfo > .LeftInfo > h3 {
+  color: white;
+}
+
+.dark .zirhm > .textInfo > .LeftInfo > h1 {
+  color: white;
+}
+.dark .zirhm > .textInfo > .LeftInfo > h4 {
+  color: white;
+}
+.dark .zirhm > .textInfo > .RightInfo > h2 {
+  color: white;
+}
+
+.dark .zirhm > .textInfo > .RightInfo > h3 {
+  color: white;
+}
+
+/*  */
 .dirRtl {
   direction: rtl !important;
 }
