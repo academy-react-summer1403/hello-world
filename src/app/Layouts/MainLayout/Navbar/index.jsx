@@ -9,6 +9,7 @@ import DarkModeToggle from "@components/common/DarkModeToggle";
 import LanguageSwitcher from "@components/common/translait/suicher";
 import "@components/common/translait/index";
 import { useTranslation } from "react-i18next";
+import SwipeableTemporaryDrawer from "@core/utils/DrawerMenu";
 const Navbar = () => {
   const { t } = useTranslation();
   const [authModal, setAuthModal] = useState(false);
@@ -16,9 +17,9 @@ const Navbar = () => {
 
   return (
     <div className=" flex dark:bg-[#1a1a2e] ">
-      <div className=" flex  mx-auto gap-10 justify-between h-[50px] w-[80%] dark:bg-[#1a1a2e] ">
+      <div className="    h-[70px] flex justify-evenly w-full dark:bg-[#1a1a2e] ">
         <div className="flex  gap-4  mt-[30px]  ">
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
           <div
             className="flex  "
             onClick={() => {
@@ -57,7 +58,7 @@ const Navbar = () => {
             <DarkModeToggle />
           </div>
         </div>
-        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%] dark:text-slate-200 max-qq:hidden">
+        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px]  dark:text-slate-200 max-lg:hidden">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
           <NavLink to="/" className="hover:text-[#4079c4]">
             {" "}
@@ -77,20 +78,23 @@ const Navbar = () => {
           </NavLink>
           {/* </div> */}
         </div>
-        <div dir="rtl" className=" hidden max-qq:block   mt-[27px] ">
-          {" "}
+        <div dir="rtl" className=" hidden max-lg:block   mt-[27px] ">
+         <SwipeableTemporaryDrawer/>
         </div>
+        
         <Link
           to="/"
-          className="flex w-[4%]   whitespace-nowrap text-[#4079c4] mt-[35px] font-[YekanBakhBold] max-qq:hidden "
+          className="  flex   whitespace-nowrap text-[20px] text-[#4079c4] mt-[35px] font-[YekanBakhBold] max-lg:hidden "
         >
           Hello World
-        </Link>
-        <img
-          className="Logo h-[50%]  mt-[30px]  max-qq:hidden"
+          
+         </Link>
+        {/* <img
+          className="Logo h-[50%] border  mt-[30px]  max-qq:hidden"
           src={img3}
           alt="image "
-        />
+        /> */}
+       
       </div>
     </div>
   );
