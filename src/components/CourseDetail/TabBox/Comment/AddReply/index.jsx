@@ -2,17 +2,17 @@ import React from "react";
 import { Form, Formik, Field } from "formik";
 import { addReplyComment } from "@core/servises/api/Courses/Course";
 
-const AddReply = ({ setIsReplyComment , item }) => {
+const AddReply = ({ setIsReplyComment ,CommentId,courseId  }) => {
   const replyCm = async (value) => {
     
 
     const comentListt = {
-      CommentId: item.CommentId,
-      CourseId: item.courseId,
+      CommentId: CommentId,
+      CourseId: courseId,
       Title: value.title,
       Describe: value.comment,
     };
-    console.log(comentListt);
+    console.log("comentListt",comentListt);
 
     const data = new FormData();
     const keys = Object.keys(comentListt);
@@ -23,7 +23,7 @@ const AddReply = ({ setIsReplyComment , item }) => {
     const coments = await addReplyComment(data);
 
     console.log(coments);
-    console.log("submit", submit);
+    // console.log("submit", submit);
   };
   return (
     <div
