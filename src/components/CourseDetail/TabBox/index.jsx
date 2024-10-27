@@ -23,8 +23,8 @@ const TabBox = ({ id }) => {
  
   return (
     <div className="w-full  flex justify-center  flex-wrap mt-[30px]  max-cc:pt-12  max-ff:w-[90%] overflow-x-visible max-ss:overflow-x-scroll ">
-      <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px]   ">
-        <Tabs defaultIndex={2} className="pb-5    ">
+      <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px]  dark:bg-[#111827]">
+        <Tabs defaultIndex={2} className="dark:bg-[#111827] pb-5    ">
           <TabList className="flex justify-end flex-wrap mb-5">
             <Tab className="w-[90px] h-10 text-center border-b-[3px] mt-2 border-[#607D8B] mr-8 text-[#607D8B] hover:cursor-pointer ">
               نظرات کاربران
@@ -39,7 +39,7 @@ const TabBox = ({ id }) => {
           <TabPanel className="flex justify-center mr-9 flex-wrap max-h-[500px] overflow-hidden overflow-y-scroll  ">
             <div className="  relative w-[820px] ">
               <input
-                className="Search w-[800px] h-[150px]  border  border-[#e2e8f0] mt-[20px] text-right rounded-3xl bg-white font-[YekanBakh] text-[20px] m-auto  "
+                className="Search w-[800px] h-[150px]  border  border-[#e2e8f0] mt-[20px] text-right rounded-3xl dark:bg-[#1a1a2e] bg-white font-[YekanBakh] text-[20px] m-auto  "
                 type="search"
                 placeholder="...نظر خودتو بنویس "
               ></input>

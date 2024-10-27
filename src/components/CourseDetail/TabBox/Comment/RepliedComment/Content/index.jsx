@@ -32,9 +32,9 @@ const Content = ({
        }
        alt=""
      />
-     <span className="text-gray3"> {author}</span>
+     <span className="dark:text-white text-gray3"> {author}</span>
    </div>
-   <span className="flex justify-start text-[12px] text-gray4">
+   <span className="flex justify-start text-[12px] dark:text-white text-gray4">
      {props?.insertDate && ConvertToPersianDate(props?.insertDate)}
    </span>
  </div> 

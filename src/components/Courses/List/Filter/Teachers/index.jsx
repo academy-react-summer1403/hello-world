@@ -22,7 +22,7 @@ const Teachers = ({ setTecher }) => {
     <div className="border-none w-full shadow-none">
       <Accordion
         classes={{
-          root: "!shadow-none !border-b-[1px] !rounded-[0px] border-solid border-[#e7e7e7] mb-1 last:mt-1 last:mb-1",
+          root: "!shadow-none !border-b-[1px] dark:!bg-[#111827] dark:!text-white !rounded-[0px] border-solid border-[#e7e7e7] mb-1 last:mt-1 last:mb-1",
         }}
         // className=" w-full shadow-none"
       >
