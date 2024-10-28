@@ -6,6 +6,7 @@ export default {
     extend: {
       screens: {
         tshort: "440px",
+        hh:"496px",
         short: "500px",
         bb:"510px",
         smm: "540px",
