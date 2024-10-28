@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Arrow from "../../../assets/images/Courses/Arrow.png";
 import Sort from "../../../assets/images/Courses/Sort.png";
 import Grid from "../../../assets/images/Courses/Grid.png";
@@ -13,6 +13,7 @@ import Stack from "@mui/material/Stack";
 import { HiOutlineSortAscending } from "react-icons/hi";
 // import Pagination from "@mui/material/Pagination";
 import { HiOutlineSortDescending } from "react-icons/hi";
+import { MdKeyboardVoice, MdOutlineKeyboardVoice } from "react-icons/md";
 
 // right filter
 
@@ -23,7 +24,7 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 
 const ItemList = () => {
-  const [Search, setSearch] = useState();
+  const [searchQuery, setSearchQuery] = useState();
   const [view, setView] = useState("knrhm");
   const [type, setType] = useState();
   const [level, setLevel] = useState();
@@ -45,7 +46,35 @@ const ItemList = () => {
     console.log("response", response);
     setSkeleton(false);
   };
+  const [isListening, setIsListening] = useState(false);
+  const recognition = useRef(null);
 
+  useEffect(() => {
+    recognition.current = new (window.SpeechRecognition ||
+      window.webkitSpeechRecognition)();
+    recognition.current.continuous = false;
+    recognition.current.interimResults = false;
+    recognition.current.lang = "fa-IR";
+
+    recognition.current.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setSearchQuery(transcript);
+    };
+
+    recognition.current.onend = () => {
+      setIsListening(false);
+    };
+  }, []);
+
+  const handleListening = () => {
+    if (isListening) {
+      recognition.current.stop();
+      setIsListening(false);
+    } else {
+      recognition.current.start();
+      setIsListening(true);
+    }
+  };
   console.log(skeleton);
 
   const getList = async () => {
@@ -56,7 +85,7 @@ const ItemList = () => {
       SortType: sort,
       PageNumber: page,
       RowsOfPage: rowsPerPage,
-      Query: Search,
+      Query: searchQuery,
     };
     const response = await getCourseList(params);
     setCourseList(response.courseFilterDtos);
@@ -84,7 +113,7 @@ const ItemList = () => {
 
   useEffect(() => {
     getList();
-  }, [Search]);
+  }, [searchQuery]);
 
   const ButtonClick = (arg) => {
     setView(arg);
@@ -177,11 +206,22 @@ const ItemList = () => {
             </div>
           </div>
 
+          <button
+            className="w-10 h-10 rounded-full dark:bg-[#1a1a2e] relative left-14 bg-white z-10"
+            onClick={handleListening}
+          >
+            {isListening ? (
+              <MdKeyboardVoice className="m-auto" size={"20px"} />
+            ) : (
+              <MdOutlineKeyboardVoice className="m-auto" size={"20px"} />
+            )}
+          </button>
           <input
             className="w-[620px] w- h-[90%] dark:bg-[#111827]  bg-[#ECEFF1] rounded-[20px] text-right pr-5 max-lg:w-[400px] max-md:w-[250px] max-md:h-[80%] max-mini:w-[150px] max-mini:text-[12px] max-mini:h-[65%] max-short:w-[120px] max-short:text-[10px]"
-            placeholder="چی میخوای یاد بگیری؟"
             type="search"
-            onChange={(e) => setSearch(e.target.value)}
+            value={searchQuery}
+            placeholder="چی میخوای یاد بگیری؟"
+            onChange={(e) => setSearchQuery(e.target.value)}
           ></input>
           <div className="w-[100px] h-[100%]  dark:bg-[#111827] bg-[#ECEFF1] rounded-[16px]  flex justify-between items-center mr-1 px-1 max-md:w-[90px] max-md:h-[80%] max-mini:h-[65%] max-lg:justify-center max-lg:hidden">
             <button
