@@ -1,6 +1,7 @@
 import RouterConfig from "../config/router";
 import "./App.css";
 import { Fragment } from "react";
+import {Contactus} from "@components/chatBox/index"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Fragment>
         <div className="ProjectFont dark:bg-[#1a1a2e]">
           <RouterConfig />
+          <Contactus/>
         </div>
       </Fragment>
     </>
