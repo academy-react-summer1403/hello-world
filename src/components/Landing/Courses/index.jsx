@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import vector from "@assets/images/Landing/Servises/Vector 20.svg";
 import CourseCard from "./CourseCard";
 import {getcoursetop} from "@core/servises/api/Landing/Courses/GetCourseTop"
+import SimilarCourses from "@components/CourseDetail/SimilarCourses";
 const Courses = () => {
   const [topCourse, setTopCourse] = useState([]);
 
@@ -21,14 +22,14 @@ const Courses = () => {
   return (
     <div className="w-full h-[560px] mt-28 flex justify-center flex-wrap max-xx:mb-28">
       <div className="w-[1300px]  flex justify-center flex-wrap align-top">
-        <div className="w-full h-[16%]">
+        <div className="w-full h-[16%] max-xx:hidden">
           <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white">
             دوره‌های اموزشی{" "}
           </h1>
           <img className="mx-auto mt-1" src={vector} alt="" />
         </div>
-
-        <div className="w-full h-[70%] gap-[8px] flex justify-center flex-wrap max-xx:h-[90%] max-tshort:mt-[-90px] max-tshort:h-[100%]">
+        <div className="hidden max-xx:block "> <SimilarCourses/> </div>
+        <div className="w-full h-[70%] flex justify-center flex-wrap max-xx:hidden  ">
         {topCourse.map((item, index) => {
         return (
           <CourseCard

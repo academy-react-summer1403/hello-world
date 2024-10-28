@@ -6,8 +6,12 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const Teachers = ({ setTecher }) => {
+const Teachers = ({ setTecher, setSkelet, setSkeleton, getList }) => {
   const [courseteacher, setcourseteacher] = useState([]);
+
+  const setData = () => {
+    setSkeleton(true);
+  };
 
   const getCoursefilterteacher = async () => {
     const courses = await getFilterteacher();
@@ -16,6 +20,14 @@ const Teachers = ({ setTecher }) => {
 
   useEffect(() => {
     getCoursefilterteacher();
+  }, []);
+
+  useEffect(() => {
+    getList();
+  }, []);
+
+  useEffect(() => {
+    setSkelet();
   }, []);
 
   return (

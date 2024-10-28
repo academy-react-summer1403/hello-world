@@ -17,7 +17,7 @@ const UserInfo = () => {
   }, []);
 
   return (
-    <div className="w-full h-[35%] mt-5  flex justify-center items-center">
+    <div className="w-full h-[52%] border mt-5  flex justify-center items-start">
       <div className="w-[97%] h-[180px] border-[3px] border-[#d5d4fe] rounded-[20px] flex justify-center flex-row-reverse flex-wrap">
         <div className="w-1/3 h-[50%] flex justify-end pr-10 items-center content-center">
           <h2 className=" text-[#422dae]  text-[18px]">
