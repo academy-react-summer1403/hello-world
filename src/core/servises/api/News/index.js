@@ -23,3 +23,16 @@ export const GetNewsWithid = async (id) => {
     return [];
   }
 };
+
+
+export const getCommentById = async (id) => {
+  try {
+
+    const result = await http.get(`/News/GetNewsComments?NewsId=${id}`);
+
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
