@@ -34,7 +34,7 @@ const CourseCard = ({
   console.log("cost:", cost);
   return (
     <>
-      <div className="h-[370px] w-[300px]  flex justify-center dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">
+      <div className="h-[370px] w-[300px]  flex justify-center dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px] ">
         <Link
           to={`/CourseDetailPage/${id}`}
           className="  w-[90%] h-[45%] flex justify-center rounded-[20px] overflow-hidden  "

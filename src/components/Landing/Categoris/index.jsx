@@ -8,7 +8,7 @@ import pic9 from "../../../assets/images/Landing/Categories/Icon(2).png";
 
 const Categories = () => {
   return (
-    <div className="w-full flex justify-center mt-10 mb-20">
+    <div className="w-full flex justify-center   mt-10 mb-20 max-xx:pt-[10%]  ">
       <div className="categories flex  mt-20 w-[1410px] h-[752px]  relative max-dd:hidden ">
         <div className="yellow  w-[160px] h-[160px] dark:bg-[#111827] bg-yellow rounded-tr-[100px]  absolute  right-10 top-[200px]">
           {" "}
