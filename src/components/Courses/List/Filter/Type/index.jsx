@@ -6,8 +6,12 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const Category = ({ setType }) => {
+const Category = ({ setType, setSkelet, setSkeleton, getList }) => {
   const [coursetypename, setcoursetypename] = useState([]);
+
+  const setData = () => {
+    setSkeleton(true);
+  };
 
   const getCoursefiltertype = async () => {
     const courses = await getFiltercourse();
@@ -16,6 +20,14 @@ const Category = ({ setType }) => {
 
   useEffect(() => {
     getCoursefiltertype();
+  }, []);
+
+  useEffect(() => {
+    getList();
+  }, []);
+
+  useEffect(() => {
+    setSkelet();
   }, []);
 
   return (
@@ -51,6 +63,7 @@ const Category = ({ setType }) => {
                     name="filter"
                     value={item.typeName}
                     className="peer hidden"
+                    onClick={setData}
                   />
                   <label
                     htmlFor={item.typeName}

@@ -36,7 +36,7 @@ const filter = ({
           </button>
         </div>
         <Category
-          setLevel={setLevel}
+          setType={setType}
           skeleton={skeleton}
           setSkelet={setSkelet}
           getList={getList}
@@ -44,7 +44,7 @@ const filter = ({
         />
 
         <Teachers
-          setLevel={setLevel}
+          setTecher={setTecher}
           skeleton={skeleton}
           setSkelet={setSkelet}
           getList={getList}
@@ -60,7 +60,7 @@ const filter = ({
         />
 
         <Technology
-          setLevel={setLevel}
+          setTech={setTech}
           skeleton={skeleton}
           setSkelet={setSkelet}
           getList={getList}
