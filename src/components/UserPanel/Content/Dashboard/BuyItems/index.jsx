@@ -22,13 +22,13 @@ const BuyItems = () => {
   return (
     <div className="w-[98%] gap-9 h-[42%] flex justify-center">
       <div className="w-1/2 h-full">
-        <div className="w-full h-[80px]  flex justify-end items-center">
+        <div className="w-full h-[50px]  flex justify-end items-center">
           <h2 className="myFontMiniBold text-[26px] text-[#3f3f47]">
             دوره های پیشنهادی{" "}
           </h2>
           <CgBorderStyleDashed className="w-9 h-9 ml-1 text-[#5748c7]" />
         </div>
-        <div className="w-full mt-2 h-[250px] flex justify-center flex-wrap items-center">
+        <div className="w-full h-[250px] flex justify-center flex-wrap items-center">
           {courseSugges.map((item, index) => {
             return (
               <SuggesCours
@@ -49,14 +49,14 @@ const BuyItems = () => {
       </div>
 
       <div className="w-1/2 h-full">
-        <div className="w-full h-[80px]  flex justify-end items-center">
+        <div className="w-full h-[50px]  flex justify-end items-center">
           <h2 className="myFontMiniBold text-[26px] text-[#3f3f47]">
             اخرین دوره ثبت شده{" "}
           </h2>
           <CgBorderStyleDashed className="w-9 h-9 ml-1 text-[#5748c7]" />
         </div>
 
-        <div className="w-full mt-2 h-[250px] flex justify-center flex-wrap items-center">
+        <div className="w-full h-[250px] flex justify-center flex-wrap items-center">
           <LastDesign />
           <LastDesign />
         </div>
