@@ -8,20 +8,23 @@ const Filter = ({ searchQuery, setSearchQuery }) => {
   const recognition = useRef(null);
 
   useEffect(() => {
-    recognition.current = new (window.SpeechRecognition ||
-      window.webkitSpeechRecognition)();
-    recognition.current.continuous = false;
-    recognition.current.interimResults = false;
-    recognition.current.lang = "fa-IR";
-
-    recognition.current.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      setSearchQuery(transcript);
-    };
-
-    recognition.current.onend = () => {
-      setIsListening(false);
-    };
+    if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+      recognition.current = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.current.continuous = false;
+      recognition.current.interimResults = false;
+      recognition.current.lang = "fa-IR";
+  
+      recognition.current.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setSearchQuery(transcript);
+      };
+  
+      recognition.current.onend = () => {
+        setIsListening(false);
+      };
+    } else {
+      console.warn("Speech recognition is not supported in this browser.");
+    }
   }, []);
 
   const handleListening = () => {
