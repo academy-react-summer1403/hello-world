@@ -24,19 +24,19 @@ const TabBox = ({ id }) => {
   }, []);
 
   const addcm = async (value) => {
-    const { id } = useParams();
+    // const { id } = useParams();
 
-    const comentListt = {
+    const addComent = {
       CourseId: id,
       Title: value.title,
       Describe: value.describe,
     };
-    console.log("comentListt", comentListt);
+    console.log("comentListt", addComent);
 
     const data = new FormData();
-    const keys = Object.keys(comentListt);
+    const keys = Object.keys(addComent);
     keys.forEach((key) => {
-      const item = comentListt[key];
+      const item = addComent[key];
       data.append(key, item);
     });
     const coments = await addcomment(data);
