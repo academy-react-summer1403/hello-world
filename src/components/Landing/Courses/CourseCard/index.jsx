@@ -93,7 +93,7 @@ const CourseCard = ({
               dir="rtl"
               className="dark:text-white text-[#263238] text-[14px]"
             >
-              {("1")} {t("دانش‌آموز")}
+              {faNumber("0")} {t("دانش‌آموز")}
             </span>
             <div className="w-full"></div>
             <span

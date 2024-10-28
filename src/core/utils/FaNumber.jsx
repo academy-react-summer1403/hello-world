@@ -1,16 +1,13 @@
-import React from "react";
-
-const faNumber = (num, comma) => {
+export const faNumber = (numb, comma) => {
+  let num = numb;
+  const hasZero = num[0] === "0";
+  if (hasZero) {
+    num = "1" + num;
+  }
   const farsiNum = new Intl.NumberFormat("fa-IR", {
     useGrouping: comma ? true : false,
   }).format(+num);
-  const firstLetter = num.slice(0, 1);
-  if (firstLetter === "0") {
-    const zero = new Intl.NumberFormat("fa-IR").format(0);
-    const final = zero + farsiNum;
-    return final;
-  } else {
-    return farsiNum;
-  }
+
+  if (hasZero) return farsiNum?.slice(1);
+  else return farsiNum;
 };
-export { faNumber };
