@@ -17,7 +17,17 @@ export const getCourseList = async (params) => {
   }
 };
 
+export const addcomment = async (data) => {
+  try {
+    const result = await http.post("/Course/AddCommentCourse", data);
+    //console.log(result);
 
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
 
 export const getComment = async (id) => {
   try {

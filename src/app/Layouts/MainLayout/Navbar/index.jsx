@@ -4,11 +4,13 @@ import img1 from "../../../../assets/images/navbar/login.png";
 import { useAuthStore } from "../../../../zustand/Auth/UserToken";
 import img3 from "../../../../assets/images/navbar/HW.png";
 import { Auth } from "../../../../components/Auth/index";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import DarkModeToggle from "@components/common/DarkModeToggle";
 import LanguageSwitcher from "@components/common/translait/suicher";
 import "@components/common/translait/index";
 import { useTranslation } from "react-i18next";
+import SwipeableTemporaryDrawer from "@core/utils/DrawerMenu";
+import AnchorTemporaryDrawer from "@core/utils/DrawerMenu";
 const Navbar = () => {
   const { t } = useTranslation();
   const [authModal, setAuthModal] = useState(false);
@@ -16,9 +18,9 @@ const Navbar = () => {
 
   return (
     <div className=" flex dark:bg-[#1a1a2e] ">
-      <div className=" flex  mx-auto gap-10 justify-between h-[50px] w-[80%] dark:bg-[#1a1a2e] ">
+      <div className="    h-[70px] flex justify-evenly w-full dark:bg-[#1a1a2e] ">
         <div className="flex  gap-4  mt-[30px]  ">
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
           <div
             className="flex  "
             onClick={() => {
@@ -41,7 +43,7 @@ const Navbar = () => {
             {tokenAuth && (
               <Link
                 to="/UserProfileS"
-                className="w-[100px] cursor-pointer h-11 border-[4px] border-[#3c8bcc] bg-[#59a9eb] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full max-md:w-[100px] max-md:text-[10px] max-md:h-8 max-smm:w-[80px] max-smm:h-6 max-smm:text-[8px]"
+                className="w-[100px] cursor-pointer h-11 border-[4px] border-[#3c8bcc] bg-[#59a9eb] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full "
                 onClick={() => {
                   setAuthModal(true);
                 }}
@@ -53,33 +55,47 @@ const Navbar = () => {
 
           {authModal === true && <Auth setAuthModal={setAuthModal} />}
 
-          <div className="flex">
+          <div className="flex  cursor-pointer">
             <DarkModeToggle />
           </div>
         </div>
-        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px] mx-[21%] dark:text-slate-200 max-qq:hidden">
+        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px]  dark:text-slate-200 max-lg:hidden">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
-          <div> {t("خانه")}</div>
-          <div>{t("دوره‌ها")}</div>
-          <div>{t("اساتید")}</div>
-          <div>{t("ارتباط با ما")}</div>
-          <div>{t("اخبار و مقالات")}</div>
+          <NavLink to="/" className="hover:text-[#4079c4]">
+            {" "}
+            {t("خانه")}
+          </NavLink>
+          <NavLink to="/CoursesPage" className="hover:text-[#4079c4]">
+            {t("دوره‌ها")}
+          </NavLink>
+          <NavLink to="*" className="hover:text-[#4079c4]">
+            {t("اساتید")}
+          </NavLink>
+          <NavLink to="/" className="hover:text-[#4079c4]">
+            {t("ارتباط با ما")}
+          </NavLink>
+          <NavLink to="/NewsPage" className="hover:text-[#4079c4]">
+            {t("اخبار و مقالات")}
+          </NavLink>
           {/* </div> */}
         </div>
-        <div dir="rtl" className=" hidden max-qq:block   mt-[27px] ">
-          {" "}
+        <div dir="rtl" className=" hidden max-lg:block   mt-[30px] ">
+         <AnchorTemporaryDrawer/>
         </div>
+        
         <Link
           to="/"
-          className="flex w-[4%]   whitespace-nowrap text-[#4079c4] mt-[35px] font-[YekanBakhBold] max-qq:hidden "
+          className="  flex   whitespace-nowrap text-[20px] text-[#4079c4] mt-[35px] font-[YekanBakhBold] max-lg:hidden "
         >
           Hello World
-        </Link>
-        <img
-          className="Logo h-[50%]  mt-[30px]  max-qq:hidden"
+          
+         </Link>
+        {/* <img
+          className="Logo h-[50%] border  mt-[30px]  max-qq:hidden"
           src={img3}
           alt="image "
-        />
+        /> */}
+       
       </div>
     </div>
   );
