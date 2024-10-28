@@ -123,7 +123,7 @@ const Login = ({ setContent, setAuthModal }) => {
                   onClick={() => setContent("resetpassword")}
                 >
                   رمز عبور را فراموش کردم
-                </span>
+                </span> 
               </div>
               <LoadingButton
                 // onClick={handleClickLoading}

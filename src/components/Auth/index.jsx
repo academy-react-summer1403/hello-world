@@ -11,7 +11,7 @@ const Auth = ({ setAuthModal }) => {
 
   return (
     <div className="h-screen flex justify-center items-center bgblur">
-      <div className="border-[#a8a8a8] border-[2px] fixed top-[28%] left-[40%] w-[450px] rounded-[30px] bg-white z-[10] shadow-2xl ">
+      <div className="border-[#a8a8a8] border-[2px]  fixed top-[15%] left-[35%] w-[450px] rounded-[30px] bg-white z-[10] shadow-2xl ">
         {content === "login" ? (
           <Login
             setContent={setContent}

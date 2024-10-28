@@ -17,7 +17,7 @@ const Navbar = () => {
   const tokenAuth = useAuthStore((state) => state.tokenAuth);
 
   return (
-    <div className=" flex dark:bg-[#1a1a2e] ">
+    <div className="countainer mx-auto flex dark:bg-[#1a1a2e] ">
       <div className="    h-[70px] flex justify-evenly w-full dark:bg-[#1a1a2e] ">
         <div className="flex  gap-4  mt-[30px]  ">
           {/* <LanguageSwitcher /> */}

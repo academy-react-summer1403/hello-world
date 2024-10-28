@@ -47,7 +47,7 @@ export const RegisterStep1 = ({ setContent, setUserData, setAuthModal }) => {
           <Form className="flex justify-center  flex-wrap ">
             <Field
               name="phoneNumber"
-              placeholder="شماره موبایل"
+              placeholder="شماره موبایل" 
               className="w-[356px] h-[56px] rounded-[50px] text-right pr-3 bg-inherit border border-slate-300 backdrop-brightness-200 text-black"
             />
             <ErrorMessage
