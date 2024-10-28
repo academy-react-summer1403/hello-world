@@ -1,10 +1,8 @@
 import http from "../../../interceptor/Interseptor";
 
-
 export const getCourseList = async (params) => {
   try {
     console.log("fetching started...");
-
     const result = await http.get(
       "/Home/GetCoursesWithPagination?SortingCol=Active&TechCount=0",
       { params: params }

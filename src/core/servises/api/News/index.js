@@ -14,12 +14,12 @@ export const getAllWithCategoryFilter = async (params) => {
   }
 };
 export const GetNewsWithid = async (id) => {
-    try {
-      const result = await http.get(`/News/${id}`);
-  
-      return result;
-    } catch (error) {
-      console.log(error);
-      return [];
-    }
-  };
+  try {
+    const result = await http.get(`/News/${id}`);
+
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};

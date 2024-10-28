@@ -4,7 +4,7 @@ import { getAllWithCategoryFilter } from "@core/servises/api/News/index";
 import { useParams } from "react-router-dom";
 
 const NewsList = (data) => {
-  console.log("dataaaaaaaa",data.data)
+  console.log("dataaaaaaaa", data.data);
   // const [data, setdata] = useState();
   // const getList = async () => {
   //   const params = {

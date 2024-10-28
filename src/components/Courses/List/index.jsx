@@ -23,6 +23,7 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 
 const ItemList = () => {
+  const [Search, setSearch] = useState();
   const [view, setView] = useState("knrhm");
   const [type, setType] = useState();
   const [level, setLevel] = useState();
@@ -55,6 +56,7 @@ const ItemList = () => {
       SortType: sort,
       PageNumber: page,
       RowsOfPage: rowsPerPage,
+      Query: Search,
     };
     const response = await getCourseList(params);
     setCourseList(response.courseFilterDtos);
@@ -62,7 +64,6 @@ const ItemList = () => {
     setTotalCount(response.totalCount);
     console.log("response", response);
     setSkeleton(false);
-
   };
 
   const handlePageChange = (event, value) => {
@@ -81,13 +82,15 @@ const ItemList = () => {
     getList();
   }, [currentPage]);
 
+  useEffect(() => {
+    getList();
+  }, [Search]);
+
   const ButtonClick = (arg) => {
     setView(arg);
   };
 
   console.log(view);
-
-  const [Search, setSearch] = useState();
 
   // right filter
 
@@ -247,7 +250,7 @@ const ItemList = () => {
               {anchor}
             </Button>
             <Drawer
-            className="text-white"
+              className="text-white"
               anchor={"right"}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
