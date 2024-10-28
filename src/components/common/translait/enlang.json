@@ -1,36 +1,36 @@
-{
-    "welcome_message": "Welcome to our website!",
+// {
+//     "welcome_message": "Welcome to our website!",
       
-    "خانه":"home",
-    "دوره‌ها":"Courses",
-    "اساتید":"professors",
-    "ارتباط با ما":"Contact us",
-    "اخبار و مقالات":"News and articles",
-    "ورود به حساب":"Login",
-    "ورود به پنل":"panel",
+//     "خانه":"home",
+//     "دوره‌ها":"Courses",
+//     "اساتید":"professors",
+//     "ارتباط با ما":"Contact us",
+//     "اخبار و مقالات":"News and articles",
+//     "ورود به حساب":"Login",
+//     "ورود به پنل":"panel",
     
-    "پلتفرم اموزش طراحی وب": "Web design learning platform",
-    "مرجع اموزش برنامه نویسی":"Programming learning reference",
-    "مرجع اموزش زنده و تعاملی دسترسی به بیش از هفت هزار ویدیوی اموزشی به زبان فارسی":"Live and interactive learning reference, access to more than seven thousand educational videos in Persian language",
-    "چی میخوای یاد بگیری؟":"What do you want to learn?",
+//     "پلتفرم اموزش طراحی وب": "Web design learning platform",
+//     "مرجع اموزش برنامه نویسی":"Programming learning reference",
+//     "مرجع اموزش زنده و تعاملی دسترسی به بیش از هفت هزار ویدیوی اموزشی به زبان فارسی":"Live and interactive learning reference, access to more than seven thousand educational videos in Persian language",
+//     "چی میخوای یاد بگیری؟":"What do you want to learn?",
 
-    "مدرس مجرب":"Experienced teacher",
-    "دوره":"period",
-    "نفر دانشجو":"student person",
+//     "مدرس مجرب":"Experienced teacher",
+//     "دوره":"period",
+//     "نفر دانشجو":"student person",
 
-  "خدمات ما":"Our services",
-  "سادگی خدمات":"Simplicity of service",
-  "فرصت های شغلی":"Job opportunities",
-  "مدرک معتبر":"Valid certificate",
-  "سهولت دسترسی و دریافت خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز مراجعه حضوری در کل فرایند ثبت":"Ease of access and receiving services from all parts of the country with the lowest tariff and without the need to visit in person in the entire registration process",
+//   "خدمات ما":"Our services",
+//   "سادگی خدمات":"Simplicity of service",
+//   "فرصت های شغلی":"Job opportunities",
+//   "مدرک معتبر":"Valid certificate",
+//   "سهولت دسترسی و دریافت خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز مراجعه حضوری در کل فرایند ثبت":"Ease of access and receiving services from all parts of the country with the lowest tariff and without the need to visit in person in the entire registration process",
  
-  "دوره‌های اموزشی":"Training courses",
-  "دوره جامع UI/UX":"Comprehensive UI/UX course",
-  "متوسط":"average",
-  "ساعت":"hours",
-  "۱۴۰۳/۸/۱":"8/1/1403",
-  "حامد نظری :مدرس":"teacher:Hamed Nazari ",
-  "دانش‌آموز":"student",
-  "۵۰۰٬۰۰۰تومان":"500,000 toman"
-  }
-  
+//   "دوره‌های اموزشی":"Training courses",
+//   "دوره جامع UI/UX":"Comprehensive UI/UX course",
+//   "متوسط":"average",
+//   "ساعت":"hours",
+//   "۱۴۰۳/۸/۱":"8/1/1403",
+//   "حامد نظری :مدرس":"teacher:Hamed Nazari ",
+//   "دانش‌آموز":"student",
+//   "۵۰۰٬۰۰۰تومان":"500,000 toman"
+//   }
+//   //
