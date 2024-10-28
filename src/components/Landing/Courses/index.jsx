@@ -28,7 +28,7 @@ const Courses = () => {
           <img className="mx-auto mt-1" src={vector} alt="" />
         </div>
 
-        <div className="w-full h-[70%] gap-[8px] flex justify-center flex-wrap max-xx:h-[90%] max-tshort:mt-[-90px] max-tshort:h-[100%]">
+        <div className="w-full h-[70%] gap-[8px] flex justify-center flex-wrap max-ll:w-[20%] max-ll:h-[20%] ma-xll:flex-wrap ">
         {topCourse.map((item, index) => {
         return (
           <CourseCard

@@ -20,7 +20,6 @@ const TabBox = ({ id }) => {
     getComments(id);
   }, []);
 
- 
   return (
     <div className="w-full  flex justify-center  flex-wrap mt-[30px]  max-cc:pt-12  max-ff:w-[90%] overflow-x-visible max-ss:overflow-x-scroll ">
       <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px]   ">
@@ -66,23 +65,10 @@ const TabBox = ({ id }) => {
                       likeCount={item?.likeCount}
                     />
                   );
-                })};
-
-              
+                })}
+                ;
               </div>
-
-
-
- 
-
             </div>
-
-
-
- 
-
-
-
           </TabPanel>
 
           <TabPanel className="dv1   flex  justify-center mr-9 flex-wrap pt-5 ">
