@@ -13,8 +13,6 @@ const Prof = () => {
     setUserDash(data);
   };
 
-  // console.log(userDash.userImage[0])
-
   useEffect(() => {
     getUserDash();
   }, []);
@@ -28,7 +26,7 @@ const Prof = () => {
       <div className="w-[97%] mb-5 h-[200px] border-b-2 border-[#9b8efa] flex justify-center flex-wrap ">
         <div className="w-[135px] h-[135px]  border-b-[4px] border-r-[4px]  border-[#d0ceff] border-dotted p-2 rounded-[50%]">
           <img
-            // src={userDash.userImage[0].puctureAddress}
+            src={userDash.currentPictureAddress}
             alt="pic"
             className="rounded-[50%] mt-[-1px] ml-[2px]"
           />
