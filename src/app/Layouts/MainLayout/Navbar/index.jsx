@@ -10,6 +10,7 @@ import LanguageSwitcher from "@components/common/translait/suicher";
 import "@components/common/translait/index";
 import { useTranslation } from "react-i18next";
 import SwipeableTemporaryDrawer from "@core/utils/DrawerMenu";
+import AnchorTemporaryDrawer from "@core/utils/DrawerMenu";
 const Navbar = () => {
   const { t } = useTranslation();
   const [authModal, setAuthModal] = useState(false);
@@ -42,7 +43,7 @@ const Navbar = () => {
             {tokenAuth && (
               <Link
                 to="/UserProfileS"
-                className="w-[100px] cursor-pointer h-11 border-[4px] border-[#3c8bcc] bg-[#59a9eb] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full max-md:w-[100px] max-md:text-[10px] max-md:h-8 max-smm:w-[80px] max-smm:h-6 max-smm:text-[8px]"
+                className="w-[100px] cursor-pointer h-11 border-[4px] border-[#3c8bcc] bg-[#59a9eb] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full "
                 onClick={() => {
                   setAuthModal(true);
                 }}
@@ -78,8 +79,8 @@ const Navbar = () => {
           </NavLink>
           {/* </div> */}
         </div>
-        <div dir="rtl" className=" hidden max-lg:block   mt-[27px] ">
-         <SwipeableTemporaryDrawer/>
+        <div dir="rtl" className=" hidden max-lg:block   mt-[30px] ">
+         <AnchorTemporaryDrawer/>
         </div>
         
         <Link

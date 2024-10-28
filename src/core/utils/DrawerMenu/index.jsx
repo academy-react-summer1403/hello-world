@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -10,22 +10,17 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import HomeIcon from '@mui/icons-material/Home';
-import EqualizerIcon from '@mui/icons-material/Equalizer';
+import img3 from "@assets/images/navbar/HW.png";
 import { Link } from "react-router-dom";
 
-
-export default function SwipeableTemporaryDrawer() {
+export default function AnchorTemporaryDrawer() {
   const [state, setState] = React.useState({
+   
     right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
@@ -39,97 +34,94 @@ export default function SwipeableTemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-
-<List> 
-
-<div className='flex justify-center'> 
-<span className='text-[#4079c4] text-[16px] font-[YekanBakhBold]'> HELLO WORLD </span> 
-</div>
-</List>
-<Divider />
       <List>
-
-        {['خانه'].map((text, index) => (
-          <Link to="/" key={text} disablePadding>
+        {['HELLO WORLD'].map((text, index) => (
+          <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <HomeIcon/>  
-              </ListItemIcon>
+              <img className='h-[30px] w-[30px] ' src={img3}/>
               <ListItemText primary={text} />
             </ListItemButton>
-          </Link>
+          </ListItem>
         ))}
-        
       </List>
-      <List>
+      <Divider />
+      <Link to="/">
+        {[ 'خانه'].map((text, index) => (
+          <ListItem  key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+              </ListItemIcon>
+              <ListItemText  primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </Link>
+      <Link to="/CoursesPage">
         {['دوره‌ها'].map((text, index) => (
-          <Link to="/CoursesPage" key={text} disablePadding>
+          <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <EqualizerIcon/>  
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
-          </Link>
+          </ListItem>
         ))}
-      </List>
-      <List>
-        {['اساتید'].map((text, index) => (
-          <Link to="/" key={text} disablePadding>
+      </Link>
+      <Link to="*">
+        {[ 'اساتید'].map((text, index) => (
+          <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <EqualizerIcon/>  
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
-          </Link>
+          </ListItem>
         ))}
-      </List>
-      <List>
-        {['  اخبار و مقالات'].map((text, index) => (
-          <Link to="/" key={text} disablePadding>
+      </Link>
+      <Link to="*">
+        {[ 'ارتباط با ما'].map((text, index) => (
+          <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <EqualizerIcon/>  
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
-          </Link>
+          </ListItem>
         ))}
-      </List>
+      </Link>
 
-      <List>
-        {['  ارتباط با ما '].map((text, index) => (
-          <Link to="/" key={text} disablePadding>
+      <Link to="/NewsPage">
+        {['اخبار و  مقالات'].map((text, index) => (
+          <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <EqualizerIcon/>  
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
-          </Link>
+          </ListItem>
         ))}
-      </List>
+      </Link>
 
 
-     
+
+
+
+
     </Box>
   );
 
   return (
-    <div>
-      {['دسته‌بندی'].map((anchor) => (
+    <div dir="ltr" className=''>
+      {['دسته‌بندی‌ها'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button  onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <SwipeableDrawer
-          className='text-[20px]'
-            anchor={anchor}
+          <Button classes={{root:"!border-[4px] !border-[#3c8bcc] !bg-[#59a9eb] !text-[12px] !text-white !font-[YekanBakh] !h-[43px] !w-[100px] !rounded-[30px] "}} onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <Drawer
+            anchor={"right"}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
           >
             {list(anchor)}
-          </SwipeableDrawer>
+          </Drawer>
         </React.Fragment>
       ))}
     </div>
