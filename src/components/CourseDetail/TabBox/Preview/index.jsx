@@ -5,7 +5,7 @@ const Preview = () => {
     <div className='w-[820px]  flex justify-end flex-wrap pt-5 align-top'>
        <h2
         dir="rtl"
-        className="myFontMiniBold text-[21px] text-[#263238] text-right"
+        className="myFontMiniBold text-[21px] dark:text-white text-[#263238] text-right"
       >
         پیش‌نمایشی برای این دوره‌ وجود ندارد.
       </h2>

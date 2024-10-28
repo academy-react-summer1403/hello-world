@@ -20,10 +20,10 @@ const Comment = (
   const [reply, setReply] = useState(true);
 
   const setdesignReply = () => {
-    setReply(!reply)
-  }
+    setReply(!reply);
+  };
 
-  console.log(reply)
+  console.log(reply);
   console.log("pictureAddress", pictureAddress);
 
   return (
@@ -44,15 +44,15 @@ const Comment = (
               }
               alt=""
             />
-            <span className="text-gray3"> {props?.author}</span>
+            <span className="dark:text-white text-gray3"> {props?.author}</span>
           </div>
-          <span className="flex justify-start text-[12px] text-gray4">
+          <span className="flex justify-start text-[12px] dark:text-white text-gray4">
             {props?.insertDate && ConvertToPersianDate(props?.insertDate)}
           </span>
         </div>
 
         <div className="  flex justify-end">
-          <span dir="rtl" className=" text-xs text-right text-gray4 mt-3">
+          <span dir="rtl" className=" text-xs text-right dark:text-white text-gray4 mt-3">
             {props?.describe}
           </span>
         </div>
@@ -69,7 +69,7 @@ const Comment = (
           </div>
 
           <div
-            className="flex gap-1 mt-2 cursor-pointer"
+            className="flex gap-1 mt-2 cursor-pointer dark:text-white"
             onClick={() => {
               setIsReplyComment(!isReplyComment);
             }}
@@ -84,8 +84,8 @@ const Comment = (
               <AddReply
                 onClick={setdesignReply}
                 setIsReplyComment={setIsReplyComment}
-                CommentId={CommentId}
-                courseId={courseId}
+                CommentId={props?.CommentId}
+                courseId={props?.courseId}
               />
             )}
           </div>
@@ -103,8 +103,8 @@ const Comment = (
             {RepliedCm === true && (
               <Content
                 setRepliedCm={setRepliedCm}
-                CommentId={CommentId}
-                courseId={courseId}
+                CommentId={props?.CommentId}
+                courseId={props?.courseId}
               />
             )}
           </div>
