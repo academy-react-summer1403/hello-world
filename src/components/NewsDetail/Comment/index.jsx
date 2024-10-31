@@ -4,11 +4,10 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getCommentById } from "@core/servises/api/News";
 import { Form, Formik, Field } from "formik";
-import { Form, Formik, Field } from "formik";
 import CommentList from "./CommentList";
+import { addComment } from "@core/servises/api/News";
 
-
-const Comments = () => {
+const Comments = ({id}) => {
   const [comment, setComment] = useState([]);
 
   const getComments = async (id) => {
@@ -20,6 +19,31 @@ const Comments = () => {
   useEffect(() => {
     getComments(id);
   }, []);
+
+  const addcm = async (value) => {
+    // const { id } = useParams();
+
+    const addComent = {
+      newsId: id,
+      Title: value.title,
+      Describe: value.describe,
+    };
+    console.log("comentListt", addComent);
+
+    const data = new FormData();
+    const keys = Object.keys(addComent);
+    keys.forEach((key) => {
+      const item = addComent[key];
+      data.append(key, item);
+    });
+    const coments = await addComment(data);
+
+    console.log(coments);
+    console.log("submit", submit);
+  };
+
+
+
   return (
     <div className=" dark:bg-[#1a1a2e]">
       <div className="  flex justify-center ">
@@ -28,16 +52,7 @@ const Comments = () => {
             {" "}
             نظر کاربران درباره این مقاله{" "}
           </h1>
-          <input
-            className=" flex Search w-[800px] h-[100px] shadow-md mt-[20px] text-right rounded-3xl bg-white font-[YekanBakhBold] text-[20px] m-auto  right-[50px] "
-            type="search"
-            placeholder="نظر خودتو بنویس..."
-          ></input>
-          <div className=" flex justify-center mt-4">
-            <Button variant="contained" size="large" className="w-20 h-12 rounded-[30px]">
-              ارسال
-            </Button>
-          </div>
+         
           <div className="flex justify-center mt-2 dark:text-white ">
           <div>
                 <Formik

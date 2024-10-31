@@ -6,7 +6,6 @@ import messages from "@assets/images/CourseDetail/Comments/messages.svg";
 import AddReply from "./AddReply";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
 import RepliedComment from "./RepliedComment";
-import Content from "./RepliedComment/Content";
 const Comment = (
   props,
   pictureAddress,
@@ -101,7 +100,7 @@ const Comment = (
           </div>
           <div className="">
             {RepliedCm === true && (
-              <Content
+              <RepliedComment
                 setRepliedCm={setRepliedCm}
                 CommentId={props?.CommentId}
                 courseId={props?.courseId}

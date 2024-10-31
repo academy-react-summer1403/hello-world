@@ -41,7 +41,7 @@ const NewsDetail = () => {
         currentImageAddress={data?.detailsNewsDto.currentImageAddress}
         addUserProfileImage={data?.addUserProfileImage}
       />
-      <Comments id={id} />
+      <Comments id={data?.id} />
     </div>
   );
 };
