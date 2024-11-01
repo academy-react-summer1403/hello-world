@@ -31,7 +31,7 @@ const Content = ({
             <span className="text-gray3"> {author}</span>
           </div>
           <span className="flex justify-start text-[12px] text-gray4">
-            {insertDate && ConvertToPersianDate(insertDate)}
+            {props?.insertDate && ConvertToPersianDate(props?.insertDate)}
           </span>
         </div>
       </div>

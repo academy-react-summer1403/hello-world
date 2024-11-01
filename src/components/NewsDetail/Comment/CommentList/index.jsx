@@ -3,10 +3,11 @@ import noImage from "@assets/images/Landing/Courses/noImage.jpg";
 import heart from "@assets/images/CourseDetail/Comments/heart.png";
 import { faNumber } from "@core/utils/FaNumber";
 import messages from "@assets/images/CourseDetail/Comments/messages.svg";
-import AddReply from "./AddReply";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
-import RepliedComment from "./RepliedComment";
-const Comment = (
+import AddReply from "../AddReply";
+import Content from "../RepliedComment/Content";
+import RepliedComment from "../RepliedComment";
+const CommentList = (
   props,
   pictureAddress,
   likeCount,
@@ -83,8 +84,8 @@ const Comment = (
               <AddReply
                 onClick={setdesignReply}
                 setIsReplyComment={setIsReplyComment}
-                CommentId={props?.CommentId}
-                courseId={props?.courseId}
+                parentId={props?.parentId}
+                newsId={props?.newsId}
               />
             )}
           </div>
@@ -103,7 +104,7 @@ const Comment = (
               <RepliedComment
                 setRepliedCm={setRepliedCm}
                 CommentId={props?.CommentId}
-                courseId={props?.courseId}
+                newsId={props?.newsId}
               />
             )}
           </div>
@@ -114,7 +115,7 @@ const Comment = (
   );
 };
 
-export default Comment;
+export default CommentList;
 {
   /* <div className="w-[800px] border">
         <div className="it1  h-[100px]  relative  ">
