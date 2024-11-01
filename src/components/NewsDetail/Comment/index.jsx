@@ -17,9 +17,18 @@ const Comments = () => {
             placeholder="نظر خودتو بنویس..."
           ></input>
           <div className=" flex justify-center mt-4">
-            <Button variant="contained" size="large" className="w-20 h-12 rounded-[30px]">
+            <Button
+              variant="contained"
+              size="large"
+              className="w-20 h-12 rounded-[30px]"
+            >
               ارسال
             </Button>
+            <button
+              className="relative bg-blue-500 text-blue px-4 py-2  before:content-['✔'] before:mr-1  after:content-['→'] after:ml-1"
+            >
+              Click Me
+            </button>
           </div>
           <div className="flex justify-center mt-2 dark:text-white ">
             <div className="w-[780px] shadow-[0_0px_30px_20px_rgba(0,0,0,0.1)] rounded-xl pr-5 pt-3">
@@ -34,9 +43,7 @@ const Comments = () => {
                   مجله در ستون
                 </span>
               </div>
-              <div className=" flex justify-end mt-3 shadow-md">
-                
-              </div>
+              <div className=" flex justify-end mt-3 shadow-md"></div>
             </div>
           </div>
         </div>

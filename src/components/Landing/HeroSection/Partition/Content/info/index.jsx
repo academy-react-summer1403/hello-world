@@ -4,6 +4,7 @@ import clock from "../../../../../../assets/images/Landing/HeroSection/clock.png
 import teacher from "../../../../../../assets/images/Landing/HeroSection/teacher.png";
 import { getReport } from "../../../../../../core/servises/api/Landing/HeroSection/LandingReport";
 import { faNumber } from "../../../../../../core/utils/FaNumber";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "@components/common/translait/index";
 
@@ -22,7 +23,34 @@ const info = () => {
   useEffect(() => {
     getLandingReport();
   }, []);
+const count = useMotionValue(0);
+const counts = useMotionValue(0);
+const countsz = useMotionValue(0);
+  const rounded = useTransform(count, Math.round);
+  const roundeds = useTransform(counts, Math.round);
+  const roundedsz = useTransform(countsz, Math.round);
 
+  useEffect(() => {
+    if (landingReport.studentCount) {
+      const animation = animate(count, landingReport.studentCount, { duration: 9 });
+
+      return animation.stop;
+    }
+  }, [landingReport.studentCount]);
+  useEffect(() => {
+    if (landingReport.courseCount) {
+      const animation = animate(counts, landingReport.courseCount, { duration: 8 });
+
+      return animation.stop;
+    }
+  }, [landingReport.courseCount]);
+  useEffect(() => {
+    if (landingReport.studentCount) {
+      const animation = animate(countsz, landingReport.teacherCount, { duration: 9 });
+
+      return animation.stop;
+    }
+  }, [landingReport.teacherCount]);
   return (
     <div className="Info w-[680px] h-[240px] rounded-[15px] flex justify-between max-xl:w-[600px] max-md:w-[550px] max-sm:w-[480px] max-mini:flex-wrap max-mini:justify-center">
       <div className="DataInfo dark:bg-[#111827] max-xl:h-[72%] max-md:h-[65%] max-mini:w-[87%] max-mini:h-[73px] max-mini:mb-[10px] max-short:w-[84%] border-[4px] dark:border-[#1a1a2e] border-white border-solid w-[30.5%] h-[81%] rounded-[16px] flex justify-center flex-wrap pt-[20px] max-mini:relative">
@@ -31,11 +59,12 @@ const info = () => {
           <img className="max-md:w-[30px]" src={people} alt="" />{" "}
         </div>
         <div className="Amar  max-mini:w-[200px] max-mini:h-[70px] max-mini:pr-[20px] text-center w-[100%] h-[80px] rounded-[16px] text-black m-0 p-0 max-mini:absolute max-mini:right-5 max-mini:top-0 ">
-          <h2 className=" dark:text-white max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px] font-[YekanBakhBold]">
+          {/* <h1 className=" dark:text-white max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px] font-[YekanBakhBold]">
             {" "}
             {landingReport.studentCount &&
               faNumber(landingReport.studentCount.toString())}{" "}
-          </h2>
+          </h1> */}
+           <motion.h1 className=" dark:text-white max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px] font-[YekanBakhBold]">{rounded}</motion.h1>
 
           <h3 className="dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]"> {t("نفر دانشجو")}</h3>
         </div>
@@ -48,8 +77,9 @@ const info = () => {
         <div className="Amar max-mini:w-[200px] max-mini:h-[70px] max-mini:pr-[20px] text-center w-[100%] h-[80px] rounded-[16px] text-black m-0 p-0 max-mini:absolute max-mini:right-5 max-mini:top-0 ">
           <h2 className=" dark:text-white max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px] font-[YekanBakhBold]">
             {" "}
-            {landingReport.courseCount &&
-              faNumber(landingReport.courseCount.toString())}{" "}
+            {/* {landingReport.courseCount &&
+              faNumber(landingReport.courseCount.toString())}{" "} */}
+                         <motion.h1 className=" dark:text-white max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px] font-[YekanBakhBold]">{roundeds}</motion.h1>
           </h2>
           <h3 className=" dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]">  {t("دوره")} </h3>
         </div>
@@ -62,8 +92,9 @@ const info = () => {
         <div className="Amar max-mini:w-[200px] max-mini:h-[70px] max-mini:pr-[20px] text-center w-[100%] h-[80px] rounded-[16px] text-black m-0 p-0 max-mini:absolute max-mini:right-5 max-mini:top-0 ">
           <h2 className=" dark:text-white max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px] font-[YekanBakhBold]">
             {" "}
-            {landingReport.teacherCount &&
-              faNumber(landingReport.teacherCount.toString())}{" "}
+            {/* {landingReport.teacherCount &&
+              faNumber(landingReport.teacherCount.toString())}{" "} */}
+                                       <motion.h1 className=" dark:text-white max-xl:text-[23px] leading-[55px] m-0 text-[#263238] text-[30px] font-[YekanBakhBold]">{roundedsz}</motion.h1>
           </h2>
           <h3 className=" dark:text-white max-xl:text-[15px] max-md:text-[14px] max-md:mt-[-12px] m-0 text-[16px] text-[#455a64] font-[YekanBakhBold]"> {t("مدرس مجرب")}</h3>
         </div>
