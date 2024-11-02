@@ -32,15 +32,15 @@ const Filter = ({ searchQuery, setSearchQuery }) => {
   //   };
   // }, []);
 
-  // const handleListening = () => {
-  //   if (isListening) {
-  //     recognition.current?.stop();
-  //     setIsListening(false);
-  //   } else {
-  //     recognition.current.start();
-  //     setIsListening(true);
-  //   }
-  // };
+  const handleListening = () => {
+    if (isListening) {
+      recognition.current?.stop();
+      setIsListening(false);
+    } else {
+      recognition.current.start();
+      setIsListening(true);
+    }
+  };
   return (
     <div className="flex flex-nowrap justify-between px-5 items-center gap-[20px] w-[1300px] h-[70px] max-xl:w-[1100px] max-xl:pr-10 max-sm:w-[600px] max-mini:flex-wrap max-mini:justify-center max-mini:h-[190px] dark:bg-[#1a1a2e]">
       <div className="div2 w-[600px] bottom-7  relative max-xl:w-[380px] max-lg:w-[300px] max-md:w-[230px]  max-sm:w-[130px] max-mini:w-[400px] max-mini:flex max-mini:justify-center max-mini:pl-[17px] max-mini:mt-[-110px] dark:bg-[#1a1a2e]  dark:text-white ">

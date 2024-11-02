@@ -11,7 +11,8 @@ import { motion, useInView } from "framer-motion";
 
 const Landing = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { threshold: 0.1 });
+  const isInView = useInView(ref, {  once: true });
+  
   return (
     <div className="bg-white2 dark:bg-[#1a1a2e]">
       <HeroSection />
@@ -19,13 +20,18 @@ const Landing = () => {
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{
+        duration: 0.9,
+        ease: [0.17, 0.55, 0.55, 1],
+        delay: 0.5
+      }}
+      style={{ margin: "20px 0", padding: "20px", borderRadius: "8px" }}
     >
-    </motion.div>
       <Servises />
       <Courses />
       <Categories />
       <Teachers />
+    </motion.div>
       <Blogs />
       <GoTop />
     </div>

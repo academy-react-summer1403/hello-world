@@ -22,7 +22,7 @@ const Navbar = () => {
           <motion.div
             whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              transition={{ type: "spring", stiffness: 600, damping: 110 }}
             className="flex "
             onClick={() => {
               setAuthModal(true);
@@ -32,7 +32,7 @@ const Navbar = () => {
               <motion.div
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              transition={{ type: "spring", stiffness: 600, damping: 110 }}
                 className="w-[100px] cursor-pointer h-11 bg-[#2196F3] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full max-md:w-[100px] max-md:text-[10px] max-md:h-8 max-smm:w-[80px] max-smm:h-6 max-smm:text-[8px]"
                 onClick={() => {
                   setAuthModal(true);
