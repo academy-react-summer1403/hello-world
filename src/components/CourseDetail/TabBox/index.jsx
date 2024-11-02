@@ -42,7 +42,7 @@ const TabBox = ({ id }) => {
     const coments = await addcomment(data);
 
     console.log(coments);
-    console.log("submit", submit);
+    // console.log("submit", submit);
   };
 
   return (
