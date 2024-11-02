@@ -1,6 +1,6 @@
 import React from "react";
 import noImage from "@assets/images/Landing/Courses/noImage.jpg";
-
+import { ConvertToPersianDate } from "@core/utils/convertDate";
 const Content = ({
   props,
   author,

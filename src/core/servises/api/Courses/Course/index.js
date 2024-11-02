@@ -41,11 +41,11 @@ export const getComment = async (id) => {
 
 export const getReplyComment = async (courseId, commentId) => {
   try {
-    const response = await http.get(
+    const result = await http.get(
       `/Course/GetCourseReplyCommnets/${courseId}/${commentId}`
     );
 
-    return response.data;
+    return result;
   } catch (error) {
     return false;
   }

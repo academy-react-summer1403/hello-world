@@ -21,7 +21,7 @@ const AddReply = ({ setIsReplyComment, CommentId, courseId }) => {
     const coments = await addReplyComment(data);
 
     console.log(coments);
-    console.log("submit", submit);
+    // console.log("submit", submit);
   };
   return (
     <div
