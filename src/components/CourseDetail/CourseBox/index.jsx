@@ -29,7 +29,9 @@ const CourseBox = () => {
           </Stack>
         </div>
         <div>
-          <span className="text-xs dark:text-white ">امتیاز {faNumber("20")} نفر</span>
+          <span className="text-xs dark:text-white transition duration-300 ease-in-out">
+            امتیاز {faNumber("20")} نفر
+          </span>
         </div>
         <div className="w-20 h-8 bg-[#2196F3] rounded-full text-[#ffff] text-center pt-2 text-xs ">
           ثبت دیدگاه{" "}

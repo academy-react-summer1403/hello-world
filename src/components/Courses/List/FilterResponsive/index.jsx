@@ -10,14 +10,14 @@ import Technology from "./Technology";
 const FilterResponsive = ({ setType, setLevel, setTech, setTecher }) => {
   return (
     <div>
-      <div className="w-[295px] mt-1 font-[YekanBakh] rounded-[20px] pt-3 pb-3  dark:bg-[#111827]  flex flex-wrap bg-[#fff] justify-center items-start mb-64">
-        <div className=" w-[280px] max-xl:w-[230px] h-[50px] mb-6 dark:bg-[#1a1a2e] bg-grayyy rounded-[15px] relative ">
+      <div className="w-[295px] mt-1 font-[YekanBakh] rounded-[20px] pt-3 pb-3  dark:bg-[#111827] transition duration-300 ease-in-out flex flex-wrap bg-[#fff] justify-center items-start mb-64">
+        <div className=" w-[280px] max-xl:w-[230px] h-[50px] mb-6 dark:bg-[#1a1a2e] transition duration-300 ease-in-out bg-grayyy rounded-[15px] relative ">
           <img
             className=" absolute right-[10px] top-[15px]  "
             src={filterIcon}
             alt="image"
           />
-          <span className=" font-[YekanBakh] dark:text-white text-gray absolute right-[35px] top-[15px]  ">
+          <span className=" font-[YekanBakh] dark:text-white transition duration-300 ease-in-out text-gray absolute right-[35px] top-[15px]  ">
             {" "}
             فیلتر{" "}
           </span>

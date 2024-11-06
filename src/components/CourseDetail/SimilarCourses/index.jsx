@@ -28,7 +28,7 @@ const SimilarCourses = () => {
     <div className="mt-16 w-full flex justify-center flex-wrap max-xx:mb-28">
       <div className="w-[1300px]  flex justify-center flex-wrap align-top ">
         <div className="w-full h-[16%]">
-          <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white">
+          <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white transition duration-300 ease-in-out">
             دوره‌های اموزشی{" "}
           </h1>
           <img className="mx-auto mt-1" src={vector} alt="" />

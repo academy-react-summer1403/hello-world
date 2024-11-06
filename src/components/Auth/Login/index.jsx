@@ -166,8 +166,8 @@ const Login = ({ setContent, setAuthModal }) => {
             {" "}
             ثبت نام{" "}
           </span>
-          <div className="w-1"></div>
-          حساب کاربری ندارید؟{" "}
+          <div className="w-1 "></div>
+          <p className="cursor-default">حساب کاربری ندارید؟</p>{" "}
         </div>
       </div>
       {errortoast === true ? (

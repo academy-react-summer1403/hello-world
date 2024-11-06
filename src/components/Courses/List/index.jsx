@@ -51,16 +51,17 @@ const ItemList = () => {
 
   useEffect(() => {
     if (window.SpeechRecognition || window.webkitSpeechRecognition) {
-      recognition.current = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.current = new (window.SpeechRecognition ||
+        window.webkitSpeechRecognition)();
       recognition.current.continuous = false;
       recognition.current.interimResults = false;
       recognition.current.lang = "fa-IR";
-  
+
       recognition.current.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         setSearchQuery(transcript);
       };
-  
+
       recognition.current.onend = () => {
         setIsListening(false);
       };
@@ -68,7 +69,6 @@ const ItemList = () => {
       console.warn("Speech recognition is not supported in this browser.");
     }
   }, []);
-
 
   const handleListening = () => {
     if (isListening) {
@@ -165,13 +165,13 @@ const ItemList = () => {
         <div className="w-full  mb-8 h-[55px] flex justify-between items-center max-lg:w-[700px] max-md:justify-around">
           <div
             onClick={() => setSortbox(!sortbox)}
-            className="w-[200px] select-none  cursor-pointer dark:bg-[#111827]  bg-[#ECEFF1] rounded-[16px] h-full flex items-center pl-2 max-lg:w-[150px] max-md:w-[130px] max-md:h-[80%]  max-mini:w-[100px]  max-mini:h-[65%]"
+            className="w-[200px] select-none  cursor-pointer dark:bg-[#111827] transition duration-300 ease-in-out bg-[#ECEFF1] rounded-[16px] h-full flex items-center pl-2 max-lg:w-[150px] max-md:w-[130px] max-md:h-[80%]  max-mini:w-[100px]  max-mini:h-[65%]"
           >
             <div className="w-10 h-10 rounded-[50%]  hover:cursor-pointer  max-mini:w-[15px]">
               <img className="m-auto mt-3 bg-[#ECEFF1]" src={Arrow} alt="" />
             </div>
             <div className="w-[75%] h-full ml-1 flex justify-start items-center pl-2">
-              <h3 className="dark:text-white text-[#263238] w-[85px] text-center text-[15px] max-lg:text-[12px] max-md:text-[11px]  max-mini:text-[9px]">
+              <h3 className="dark:text-white transition duration-300 ease-in-out text-[#263238] w-[85px] text-center text-[15px] max-lg:text-[12px] max-md:text-[11px]  max-mini:text-[9px]">
                 مرتب سازی{" "}
               </h3>
               <img className="ml-3 max-lg:hidden " src={Sort} alt="" />
@@ -181,13 +181,13 @@ const ItemList = () => {
           <div
             className={
               sortbox === false
-                ? "absolute transition-[0.1] w-[200px]  dark:bg-[#111827] bg-[#ECEFF1] mt-36 border-[1px] justify-center gap-1 flex border-solid dark:border-[#1a1a2e] border-[#d3d6d8] rounded-[16px] h-[0px] items-center pl-2 max-lg:w-[150px] max-md:w-[130px] max-md:h-[80%]  max-mini:w-[100px]  max-mini:h-[65%] opacity-0"
-                : "absolute transition-[0.1] w-[200px]  dark:bg-[#111827] bg-[#ECEFF1] mt-36 border-[1px] justify-center gap-2 border-solid dark:border-[#1a1a2e] border-[#d3d6d8] rounded-[16px] h-[70px] flex items-center max-lg:w-[150px] max-md:w-[130px]  max-mini:w-[100px]  opacity-100"
+                ? "absolute transition-[0.1] w-[200px] transition duration-300 ease-in-out dark:bg-[#111827] bg-[#ECEFF1] mt-36 border-[1px] justify-center gap-1 flex border-solid dark:border-[#1a1a2e] border-[#d3d6d8] rounded-[16px] h-[0px] items-center pl-2 max-lg:w-[150px] max-md:w-[130px] max-md:h-[80%]  max-mini:w-[100px]  max-mini:h-[65%] opacity-0"
+                : "absolute transition-[0.1] w-[200px] transition duration-300 ease-in-out dark:bg-[#111827] bg-[#ECEFF1] mt-36 border-[1px] justify-center gap-2 border-solid dark:border-[#1a1a2e] border-[#d3d6d8] rounded-[16px] h-[70px] flex items-center max-lg:w-[150px] max-md:w-[130px]  max-mini:w-[100px]  opacity-100"
             }
           >
             <div
               onClick={() => setSort("DESC")}
-              className="w-[87px] cursor-pointer select-none h-[55px] flex justify-center dark:bg-[#1a1a2e] dark:text-white  bg-[#cecece] rounded-xl items-center"
+              className="w-[87px] cursor-pointer select-none h-[55px] flex justify-center transition duration-300 ease-in-out dark:bg-[#1a1a2e] dark:text-white  bg-[#cecece] rounded-xl items-center"
             >
               <div className="w-[65%] justify-center items-center text-[15px] text-right pr-1 ">
                 نزولی
@@ -199,7 +199,7 @@ const ItemList = () => {
 
             <div
               onClick={() => setSort("ASCE")}
-              className="w-[87px] cursor-pointer select-none h-[55px] flex justify-center dark:bg-[#1a1a2e] dark:text-white bg-[#cecece] rounded-xl items-center"
+              className="w-[87px] cursor-pointer select-none h-[55px] flex justify-center transition duration-300 ease-in-out dark:bg-[#1a1a2e] dark:text-white bg-[#cecece] rounded-xl items-center"
             >
               <div className="w-[65%] justify-center items-center text-[15px] text-right pr-1 ">
                 صعودی
@@ -211,7 +211,7 @@ const ItemList = () => {
           </div>
 
           <button
-            className="w-10 h-10 rounded-full dark:bg-[#1a1a2e] relative left-14 bg-white z-10"
+            className="w-10 h-10 rounded-full transition duration-300 ease-in-out dark:bg-[#1a1a2e] relative left-14 bg-white z-10"
             onClick={handleListening}
           >
             {isListening ? (
@@ -221,16 +221,16 @@ const ItemList = () => {
             )}
           </button>
           <input
-            className="w-[620px] w- h-[90%] dark:bg-[#111827]  bg-[#ECEFF1] rounded-[20px] text-right pr-5 max-lg:w-[400px] max-md:w-[250px] max-md:h-[80%] max-mini:w-[150px] max-mini:text-[12px] max-mini:h-[65%] max-short:w-[120px] max-short:text-[10px]"
+            className="w-[620px] w- h-[90%] transition duration-300 ease-in-out dark:bg-[#111827]  bg-[#ECEFF1] rounded-[20px] text-right pr-5 max-lg:w-[400px] max-md:w-[250px] max-md:h-[80%] max-mini:w-[150px] max-mini:text-[12px] max-mini:h-[65%] max-short:w-[120px] max-short:text-[10px]"
             type="search"
             value={searchQuery}
             placeholder="چی میخوای یاد بگیری؟"
             onChange={(e) => setSearchQuery(e.target.value)}
           ></input>
-          <div className="w-[100px] h-[100%]  dark:bg-[#111827] bg-[#ECEFF1] rounded-[16px]  flex justify-between items-center mr-1 px-1 max-md:w-[90px] max-md:h-[80%] max-mini:h-[65%] max-lg:justify-center max-lg:hidden">
+          <div className="w-[100px] h-[100%] transition duration-300 ease-in-out dark:bg-[#111827] bg-[#ECEFF1] rounded-[16px]  flex justify-between items-center mr-1 px-1 max-md:w-[90px] max-md:h-[80%] max-mini:h-[65%] max-lg:justify-center max-lg:hidden">
             <button
               onClick={() => ButtonClick("zirhm")}
-              className="w-[40px] dark:bg-[#1a1a2e] bg-[#FFFFFF] h-[40px] rounded-[16px] hover:cursor-pointer max-md:w-[35px] max-md:h-[35px] max-mini:bg-[#fff0] "
+              className="w-[40px] transition duration-300 ease-in-out dark:bg-[#1a1a2e] bg-[#FFFFFF] h-[40px] rounded-[16px] hover:cursor-pointer max-md:w-[35px] max-md:h-[35px] max-mini:bg-[#fff0] "
             >
               <img
                 className="my-2 mx-2 max-md:my-1 max-md:mx-[6px]"
@@ -240,7 +240,7 @@ const ItemList = () => {
             </button>
             <div
               onClick={() => ButtonClick("knrhm")}
-              className="w-[40px] dark:bg-[#1a1a2e] bg-[#FFFFFF] h-[40px] rounded-[16px] hover:cursor-pointer max-md:w-[35px] max-md:h-[35px] max-mini:bg-[#5a303000] "
+              className="w-[40px] transition duration-300 ease-in-out dark:bg-[#1a1a2e] bg-[#FFFFFF] h-[40px] rounded-[16px] hover:cursor-pointer max-md:w-[35px] max-md:h-[35px] max-mini:bg-[#5a303000] "
             >
               <img
                 className=" my-2 mx-2 max-md:my-1 max-md:mx-[6px]"

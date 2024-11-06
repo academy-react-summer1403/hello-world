@@ -5,7 +5,7 @@ const Description = () => {
     <div className="w-[820px]   flex justify-end flex-wrap pt-5 align-top ">
       <h3
         dir="rtl"
-        className="w-[720px] text-right dark:text-white text-[#455A64] text-[16px] "
+        className="w-[720px] text-right dark:text-white text-[#455A64] text-[16px] transition duration-300 ease-in-out"
       >
         امروزه ReactJs به سرعت در حال تبدیل شدن به یک ابزار بسیار قدرتمند برای
         ساخت وب اپلیکیشن ها است و خیلی از معروفترین سایت ها از جمله فیسبوک ,

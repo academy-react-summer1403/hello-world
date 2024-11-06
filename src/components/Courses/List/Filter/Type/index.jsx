@@ -35,7 +35,7 @@ const Category = ({ setType, setSkelet, setSkeleton, getList }) => {
       <div className="border-none w-full shadow-none">
         <Accordion
           classes={{
-            root: "!shadow-none !border-b-[1px] dark:!bg-[#111827] dark:!text-white !rounded-[0px] border-solid border-[#e7e7e7] mb-1 last:mt-1 last:mb-1",
+            root: "!shadow-none !border-b-[1px] dark:!bg-[#111827] dark:!text-white !transition duration-300 ease-in-out !rounded-[0px] border-solid border-[#e7e7e7] mb-1 last:mt-1 last:mb-1",
           }}
           // className=" w-full shadow-none"
         >
@@ -47,7 +47,7 @@ const Category = ({ setType, setSkelet, setSkeleton, getList }) => {
           >
             نوع کلاس
           </AccordionSummary>
-          <AccordionDetails className=" flex text-[14px] dark:text-white text-[#455A64] justify-end mt-[-10px] flex-wrap">
+          <AccordionDetails className=" flex text-[14px] dark:text-white transition duration-300 ease-in-out text-[#455A64] justify-end mt-[-10px] flex-wrap">
             {coursetypename.map((item, index) => {
               return (
                 <div

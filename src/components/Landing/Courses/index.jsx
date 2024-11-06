@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import vector from "@assets/images/Landing/Servises/Vector 20.svg";
 import CourseCard from "./CourseCard";
-import {getcoursetop} from "@core/servises/api/Landing/Courses/GetCourseTop"
+import { getcoursetop } from "@core/servises/api/Landing/Courses/GetCourseTop";
 import SimilarCourses from "@components/CourseDetail/SimilarCourses";
 const Courses = () => {
   const [topCourse, setTopCourse] = useState([]);
@@ -23,32 +23,35 @@ const Courses = () => {
     <div className="w-full h-[560px] mt-28 flex justify-center flex-wrap max-xx:mb-28">
       <div className="w-[1300px]  flex justify-center flex-wrap align-top">
         <div className="w-full h-[16%] max-xx:hidden">
-          <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white">
+          <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white transition duration-300 ease-in-out">
             دوره‌های اموزشی{" "}
           </h1>
           <img className="mx-auto mt-1" src={vector} alt="" />
         </div>
-        <div className="hidden max-xx:block "> <SimilarCourses/> </div>
+        <div className="hidden max-xx:block ">
+          {" "}
+          <SimilarCourses />{" "}
+        </div>
         <div className="w-full h-[70%] flex justify-center flex-wrap max-xx:hidden  ">
-        {topCourse.map((item, index) => {
-        return (
-          <CourseCard
-          key={index}
-          title={item.title}
-          teacherName={item.teacherName}
-          cost={item.cost}
-          tumbImageAddress={item.tumbImageAddress}
-          levelName={item.levelName}
-          currentRegistrants={item.currentRegistrants}
-          describe={item.describe}
-          id={item.courseId}
-          likeCount={item.likeCount}
-          dissLikeCount={item.dissLikeCount}
-          typeName={item.typeName}
-          lastUpdate={item.lastUpdate}
-          />
-        );
-      })}
+          {topCourse.map((item, index) => {
+            return (
+              <CourseCard
+                key={index}
+                title={item.title}
+                teacherName={item.teacherName}
+                cost={item.cost}
+                tumbImageAddress={item.tumbImageAddress}
+                levelName={item.levelName}
+                currentRegistrants={item.currentRegistrants}
+                describe={item.describe}
+                id={item.courseId}
+                likeCount={item.likeCount}
+                dissLikeCount={item.dissLikeCount}
+                typeName={item.typeName}
+                lastUpdate={item.lastUpdate}
+              />
+            );
+          })}
         </div>
 
         <div className="w-full h-[14%] flex justify-center flex-wrap">

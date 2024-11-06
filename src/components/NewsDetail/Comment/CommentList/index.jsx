@@ -44,15 +44,21 @@ const CommentList = (
               }
               alt=""
             />
-            <span className="dark:text-white text-gray3"> {props?.author}</span>
+            <span className="dark:text-white transition duration-300 ease-in-out text-gray3">
+              {" "}
+              {props?.author}
+            </span>
           </div>
-          <span className="flex justify-start text-[12px] dark:text-white text-gray4">
+          <span className="flex justify-start text-[12px] dark:text-white transition duration-300 ease-in-out text-gray4">
             {props?.insertDate && ConvertToPersianDate(props?.insertDate)}
           </span>
         </div>
 
         <div className="  flex justify-end">
-          <span dir="rtl" className=" text-xs text-right dark:text-white text-gray4 mt-3">
+          <span
+            dir="rtl"
+            className=" text-xs text-right dark:text-white transition duration-300 ease-in-out text-gray4 mt-3"
+          >
             {props?.describe}
           </span>
         </div>
@@ -69,7 +75,7 @@ const CommentList = (
           </div>
 
           <div
-            className="flex gap-1 mt-2 cursor-pointer dark:text-white"
+            className="flex gap-1 mt-2 cursor-pointer dark:text-white transition duration-300 ease-in-out"
             onClick={() => {
               setIsReplyComment(!isReplyComment);
             }}

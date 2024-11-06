@@ -34,7 +34,7 @@ const CourseCard = ({
   console.log("cost:", cost);
   return (
     <>
-      <div className="h-[370px] w-[300px]  flex justify-center dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px] ">
+      <div className="h-[370px] w-[300px]  flex justify-center transition duration-300 ease-in-out dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px] ">
         <Link
           to={`/CourseDetailPage/${id}`}
           className="  w-[90%] h-[45%] flex justify-center rounded-[20px] overflow-hidden  "
@@ -48,22 +48,22 @@ const CourseCard = ({
 
         <h3
           dir="rtl"
-          className="text-right w-[250px]  h-[30px] text-[16px] dark:text-white text-[#263238] myFontMiniBold  mt-[-10px] max-sm:text-[14px] max-sm:pr-5"
+          className="text-right w-[250px]  h-[30px] text-[16px] transition duration-300 ease-in-out dark:text-white text-[#263238] myFontMiniBold  mt-[-10px] max-sm:text-[14px] max-sm:pr-5"
         >
           {title}{" "}
         </h3>
 
         <div
           dir="rtl"
-          className="bg-[#dce3e9]    dark:bg-[#1a1a2e]  bg-graylight h-[40px] w-[90%] rounded-[24px]  flex justify-around flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]"
+          className="bg-[#dce3e9]  transition duration-300 ease-in-out  dark:bg-[#1a1a2e]  bg-graylight h-[40px] w-[90%] rounded-[24px]  flex justify-around flex-wrap mt-[-20px] mb-1 max-sm:w-[210px] max-sm:h-[30px]"
         >
           <div className="level  flex gap-1   max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img className=" h-[15px] w-[15px]   my-[12px] " src={levelname} />
-            <span className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[15px]">
+            <span className="font-[YekanBakh] transition duration-300 ease-in-out dark:text-white text-[#263238] text-[10px] my-[15px]">
               {levelName}
             </span>
           </div>
-          <div className="dislike flex gap-1 dark:text-white max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
+          <div className="dislike flex gap-1 transition duration-300 ease-in-out dark:text-white max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img
               // className=" h-[15px] w-[15px] absolute right-[105px] my-[13px] "
               className=" h-[15px] w-[15px] my-[13px] "
@@ -72,16 +72,16 @@ const CourseCard = ({
             <span
               dir="rtl"
               // className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] absolute right-[110px] my-[14px]"
-              className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[14px]"
+              className="font-[YekanBakh] transition duration-300 ease-in-out dark:text-white text-[#263238] text-[10px] my-[14px]"
             >
               {faNumber("20")} {t("ساعت")}
             </span>
           </div>
-          <div className="type flex gap-1 dark:text-white text-[#263238]  pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
+          <div className="type flex gap-1 transition duration-300 ease-in-out dark:text-white text-[#263238]  pl-3 max-sm:pt-[7.5px] max-sm:text-[11px] max-sm:pl-2">
             <img className=" h-[15px] w-[15px] my-[13px]  " src={calendar} />
             <span
               dir="rtl"
-              className="font-[YekanBakh] dark:text-white text-[#263238] text-[10px] my-[14px]"
+              className="font-[YekanBakh] transition duration-300 ease-in-out dark:text-white text-[#263238] text-[10px] my-[14px]"
             >
               {lastUpdate && ConvertToPersianDate(lastUpdate)}
             </span>
@@ -91,7 +91,7 @@ const CourseCard = ({
           <div className="w-1/2 h-full  flex justify-start flex-wrap pt-1">
             <span
               dir="rtl"
-              className="dark:text-white text-[#263238] text-[14px]"
+              className="dark:text-white transition duration-300 ease-in-out text-[#263238] text-[14px]"
             >
               {faNumber("0")} {t("دانش‌آموز")}
             </span>
@@ -101,7 +101,7 @@ const CourseCard = ({
               className="text-[#2196F3] text-[16px] max-sm:text-[12px] mt-[30px] "
             >
               {cost && faNumber(cost.toString(), ",")}
-              <span className="dark:text-white text-[#263238] mr-[5px] ">
+              <span className="dark:text-white transition duration-300 ease-in-out text-[#263238] mr-[5px] ">
                 تومان{" "}
               </span>
             </span>
@@ -109,10 +109,10 @@ const CourseCard = ({
           <div className="w-1/2 h-full  flex justify-end flex-wrap pt-1 relative">
             {/* <h2 className="text-[#263238] text-right text-[14px] max-sm:text-[12px]">مدرس: {teacherName}</h2> */}
             <div className="flex justify-end">
-              <h2 className="dark:text-white text-[#263238] text-right text-[14px] max-sm:text-[12px] truncate">
+              <h2 className="dark:text-white transition duration-300 ease-in-out text-[#263238] text-right text-[14px] max-sm:text-[12px] truncate">
                 {teacherName} :
               </h2>
-              <h2 className="dark:text-white text-[#0f1316] text-right text-[14px] max-sm:text-[12px]">
+              <h2 className="dark:text-white transition duration-300 ease-in-out text-[#0f1316] text-right text-[14px] max-sm:text-[12px]">
                 مدرس
               </h2>
             </div>

@@ -10,10 +10,10 @@ const NewsItem = (props) => {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[370px] w-[350px]  flex justify-center dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">
+    <div className="h-[370px] w-[350px]  flex justify-center dark:bg-[#111827] transition duration-300 ease-in-out bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px]">
       <Link
         onClick={() => navigate("/NewsDetailPage/" + props?.id)}
-        className="w-[90%] h-[60%] flex justify-center rounded-[20px] overflow-hidden  dark:bg-[#1a1a2e]"
+        className="w-[90%] h-[60%] flex justify-center rounded-[20px] overflow-hidden transition duration-300 ease-in-out dark:bg-[#1a1a2e]"
       >
         <img
           className="w-[100%] h-[100%]  "
@@ -23,13 +23,13 @@ const NewsItem = (props) => {
       </Link>
       <h2
         dir="rtl"
-        className=" myFontMiniBold text-[18px] text-right w-[90%] text-[#263238] dark:text-[#ffff]"
+        className=" myFontMiniBold text-[18px] text-right w-[90%] text-[#263238] transition duration-300 ease-in-out dark:text-[#ffff]"
       >
         {props?.title}
       </h2>
       <h2
         dir="rtl"
-        className="text-[12px] text-right w-[90%] text-[#455A64] dark:text-[#ffff]"
+        className="text-[12px] text-right w-[90%] text-[#455A64] transition duration-300 ease-in-out dark:text-[#ffff]"
       >
         {props?.miniDescribe}
       </h2>

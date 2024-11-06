@@ -20,7 +20,7 @@ const HeaderNews = () => {
           <img src={pi} alt="image" />
         </div>
 
-        <div className="image1 absolute dark:hidden right-0  top-[90px] max-short:hidden   ">
+        <div className="image1 absolute dark:hidden transition duration-300 ease-in-out right-0  top-[90px] max-short:hidden   ">
           <img src={pi1} alt="image" />
         </div>
 
@@ -41,14 +41,12 @@ const HeaderNews = () => {
         </div>
 
         <div className="text    w-[500px] h-[170px]      absolute right-[70px]  top-[150px]  max-mini:right-[30px] max-smm:right-[5px] max-short:right-[10px] max-tshort:right-[10px]  ">
-          <h1 className="text-right dirRtl text-grayy font-[YekanBakhBold] text-[50px]  leading-[90px]   dark:text-white">
+          <h1 className="text-right dirRtl text-grayy font-[YekanBakhBold] text-[50px]  leading-[90px]   dark:text-white ">
             {" "}
-            <Typewriter
-              options={typeWriterOptions(["اخبار و مقالات نابغه"])}
-            />
+            <Typewriter options={typeWriterOptions(["اخبار و مقالات نابغه"])} />
           </h1>
-            <div className="dark:bg-[blue] dark:blur-[170px] w-[150px] h-[150px] rounded-full absolute top-0"></div>
-          <p className="text-right  text-gray4 font-[YekanBakh] text-[15px] leading-[30px] max-short:hidden dark:text-white">
+          <div className="dark:bg-[blue] dark:blur-[170px] transition duration-300 ease-in-out w-[150px] h-[150px] rounded-full absolute top-0"></div>
+          <p className="text-right  text-gray4 font-[YekanBakh] text-[15px] leading-[30px] max-short:hidden dark:text-white transition duration-300 ease-in-out">
             آموزش برنامه نویسی یکی از دوره‌های محبوب در حوزه فناوری اطلاعات است.
             برنامه نویسی مهارتی است که به افراد امکان می‌دهد تا نرم‌افزارهای
             کامپیوتری را ایجاد و توسعه دهند.{" "}

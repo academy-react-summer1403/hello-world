@@ -43,15 +43,15 @@ const Comments = ({ id }) => {
   };
 
   return (
-    <div className=" dark:bg-[#1a1a2e]">
+    <div className=" dark:bg-[#1a1a2e] transition duration-300 ease-in-out">
       <div className="  flex justify-center ">
-        <div className="w-[900px] h-[891px] overflow-y-scroll mt-[25px] mb-[50px]  rounded-[20px] shadow-2xl  dark:bg-[#111827]">
-          <h1 className='text-center font-["YekanBakhBold"] text-2xl text-grayy  mt-[20px]  dark:text-white '>
+        <div className="w-[900px] h-[891px] overflow-y-scroll mt-[25px] mb-[50px]  rounded-[20px] shadow-2xl  dark:bg-[#111827] transition duration-300 ease-in-out">
+          <h1 className='text-center font-["YekanBakhBold"] text-2xl text-grayy  mt-[20px]  dark:text-white transition duration-300 ease-in-out'>
             {" "}
             نظر کاربران درباره این مقاله{" "}
           </h1>
 
-          <div className="flex justify-center mt-2 dark:text-white ">
+          <div className="flex justify-center mt-2 dark:text-white transition duration-300 ease-in-out">
             <div>
               <Formik
                 initialValues={{ title: "", describe: "" }}

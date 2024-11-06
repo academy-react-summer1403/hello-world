@@ -37,13 +37,13 @@ const AddReply = ({ setIsReplyComment, CommentId, courseId }) => {
         <Form className="w-full">
           <div className="w-full">
             <div className="relative">
-              <div className=" text-start flex flex-wrap gap-y-2 border dark:bg-[#1a1a2e] dark:border-[#cdd5dea8] border-[#cdd5de] rounded-lg  shadow-md">
+              <div className=" text-start flex flex-wrap gap-y-2 border dark:bg-[#1a1a2e] transition duration-300 ease-in-out dark:border-[#cdd5dea8] border-[#cdd5de] rounded-lg  shadow-md">
                 <Field
                   dir="rtl"
                   as="textarea"
                   name="title"
                   placeholder="عنوان "
-                  className="relative border-b w-[100%] h-[50px] pr-12 dark:bg-[#1a1a2e]"
+                  className="relative border-b w-[100%] h-[50px] pr-12 dark:bg-[#1a1a2e] transition duration-300 ease-in-out"
                 />
 
                 <Field
@@ -51,7 +51,7 @@ const AddReply = ({ setIsReplyComment, CommentId, courseId }) => {
                   as="textarea"
                   id="describe"
                   name="describe"
-                  className="commentFormTextarea w-[500px] h-[100px] dark:bg-[#1a1a2e] "
+                  className="commentFormTextarea w-[500px] h-[100px] dark:bg-[#1a1a2e] transition duration-300 ease-in-out "
                   placeholder="نظر خودتو بنویس..."
                 />
               </div>

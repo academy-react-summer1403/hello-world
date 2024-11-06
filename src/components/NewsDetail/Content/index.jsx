@@ -11,26 +11,26 @@ import { LiaTelegram } from "react-icons/lia";
 
 const NewsContent = (props) => {
   return (
-    <div className="bg-white2 dark:bg-[#1a1a2e]">
+    <div className="bg-white2 dark:bg-[#1a1a2e] transition duration-300 ease-in-out">
       <div className="  flex justify-center  ">
         <div className="w-[60%] mt-[25px]">
           <h1
             dir="rtl"
-            className='text-right  font-["YekanBakhBold"] text-[30px] text-grayy max-mini1:text-[15px] dark:text-white'
+            className='text-right  font-["YekanBakhBold"] text-[30px] text-grayy max-mini1:text-[15px] dark:text-white transition duration-300 ease-in-out'
           >
             {" "}
             {props?.googleTitle}
           </h1>
           <p
             dir="rtl"
-            className='text-right  font-["YekanBakh"] text-[15px] text-gray4 max-mini1:text-[10px] max-mini1:leading-[20px]  leading-[40px] dark:text-white '
+            className='text-right  font-["YekanBakh"] text-[15px] text-gray4 max-mini1:text-[10px] max-mini1:leading-[20px]  leading-[40px] transition duration-300 ease-in-out dark:text-white '
           >
             {props?.describe}
           </p>
         </div>
       </div>
       <div className=" h-16 flex justify-center w-[100%]  items-center  max-cc:hidden  ">
-        <div className="flex justify-end items-center rounded-2xl bg-slate-100 pr-5    dark:bg-[#111827]">
+        <div className="flex justify-end items-center rounded-2xl bg-slate-100 pr-5  transition duration-300 ease-in-out  dark:bg-[#111827]">
           <div className="flex justify-start items-center ml-3 gap-4">
             <div>
               <RiInstagramFill className="text-blue1" />
@@ -68,7 +68,7 @@ const NewsContent = (props) => {
               <AiOutlineLike className="w-6 h-6 ml-2" />
             </div>
           </div>
-          <span className="dark:text-white text-gray4 max-md:text-[10px] max-md:whitespace-nowrap">
+          <span className="dark:text-white text-gray4 max-md:text-[10px] max-md:whitespace-nowrap transition duration-300 ease-in-out">
             آیا از این مقاله راضی بودید؟
           </span>
         </div>
@@ -79,7 +79,7 @@ const NewsContent = (props) => {
             </Stack>
           </div>
           <div>
-            <span className="text-xs dark:text-white  max-md:text-[10px] max-md:whitespace-nowrap">
+            <span className="text-xs dark:text-white transition duration-300 ease-in-out max-md:text-[10px] max-md:whitespace-nowrap">
               امتیاز 20 نفر
             </span>
           </div>
