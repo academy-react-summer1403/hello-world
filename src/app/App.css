@@ -20,7 +20,12 @@
   font-family: "YekanBakhMiniBold";
   src: url("../assets/fonts/YekanBakh-Bold.ttf");
 }
-
+#particles canvas {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
 .bgblur {
   position: fixed;
   top: 0;

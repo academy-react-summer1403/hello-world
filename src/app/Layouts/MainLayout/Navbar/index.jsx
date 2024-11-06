@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import "@app/App.css"
+import "@app/App.css";
 import { useAuthStore } from "../../../../zustand/Auth/UserToken";
 import { Auth } from "../../../../components/Auth/index";
 import { Link, NavLink } from "react-router-dom";
 import DarkModeToggle from "@components/common/DarkModeToggle";
-import LanguageSwitcher from "@components/common/translait/suicher";
+// import LanguageSwitcher from "@components/common/translait/suicher";
 import "@components/common/translait/index";
 import { useTranslation } from "react-i18next";
 import SwipeableTemporaryDrawer from "@core/utils/DrawerMenu";
 import AnchorTemporaryDrawer from "@core/utils/DrawerMenu";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 const Navbar = () => {
   const { t } = useTranslation();
   const [authModal, setAuthModal] = useState(false);
@@ -19,27 +19,21 @@ const Navbar = () => {
       <div className="    h-[70px] flex justify-evenly w-full dark:bg-[#1a1a2e] ">
         <div className="flex  gap-4  mt-[30px]  ">
           {/* <LanguageSwitcher /> */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 600, damping: 110 }}
+          <div
             className="flex "
             onClick={() => {
               setAuthModal(true);
             }}
           >
             {!tokenAuth && (
-              <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 600, damping: 110 }}
+              <div
                 className="w-[100px] cursor-pointer h-11 bg-[#2196F3] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full max-md:w-[100px] max-md:text-[10px] max-md:h-8 max-smm:w-[80px] max-smm:h-6 max-smm:text-[8px]"
                 onClick={() => {
                   setAuthModal(true);
                 }}
               >
                 {t("ورود به حساب")}{" "}
-              </motion.div>
+              </div>
             )}
 
             {authModal === true && <Auth setAuthModal={setAuthModal} />}
@@ -55,7 +49,7 @@ const Navbar = () => {
                 {t("ورود به پنل")}
               </Link>
             )}
-          </motion.div>
+          </div>
 
           {authModal === true && <Auth setAuthModal={setAuthModal} />}
 
@@ -65,41 +59,64 @@ const Navbar = () => {
         </div>
         <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px]  dark:text-slate-200 max-lg:hidden">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
-          <NavLink to="/" className={({isActive})=>`${isActive && "text-[#2196F3]" } hover:text-[#4079c4]`}>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {" "}
             {t("خانه")}
           </NavLink>
-          <NavLink to="/CoursesPage" className={({isActive})=>`${isActive && "text-[#2196F3]" } hover:text-[#4079c4]`}>
+          <NavLink
+            to="/CoursesPage"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("دوره‌ها")}
           </NavLink>
-          <NavLink to="*" className={({isActive})=>`${isActive && "text-[#2196F3]" } hover:text-[#4079c4]`}>
+          <NavLink
+            to="*"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("اساتید")}
           </NavLink>
-          <NavLink to="/ContactUs"className={({isActive})=>`${isActive && "text-[#2196F3]" } hover:text-[#4079c4]`}>
+          <NavLink
+            to="/ContactUs"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("ارتباط با ما")}
           </NavLink>
-          <NavLink to="/NewsPage" className={({isActive})=>`${isActive && "text-[#2196F3]" } hover:text-[#4079c4]`}>
+          <NavLink
+            to="/NewsPage"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("اخبار و مقالات")}
           </NavLink>
           {/* </div> */}
         </div>
         <div dir="rtl" className=" hidden max-lg:block   mt-[30px] ">
-         <AnchorTemporaryDrawer/>
+          <AnchorTemporaryDrawer />
         </div>
-        
+
         <Link
           to="/"
           className="  flex   whitespace-nowrap text-[20px] text-[#4079c4] mt-[35px] font-[YekanBakhBold] max-lg:hidden "
         >
           Hello World
-          
-         </Link>
+        </Link>
         {/* <img
           className="Logo h-[50%] border  mt-[30px]  max-qq:hidden"
           src={img3}
           alt="image "
         /> */}
-       
       </div>
     </div>
   );
