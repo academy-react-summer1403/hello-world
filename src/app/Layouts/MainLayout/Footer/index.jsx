@@ -2,7 +2,7 @@ import React from "react";
 import pic1 from "../../../../assets/images/Footer/social medias 1.png";
 const Footer = () => {
   return (
-    <div className="foot pt-1 mt-20  w-full h-[430px] bg-purple max-sm:h-[380px] max-sm:p-0 max-short:h-[350px] dark:bg-[#111827] transition duration-300 ease-in-out ">
+    <div className="foot pt-1 mt-20  w-full h-[430px] bg-purple max-sm:h-[380px] max-sm:p-0 max-short:h-[350px] dark:bg-[#111827] ">
       <div className="  w-[400px]  m-auto   h-[90px] mt-[30px] ">
         <h1 className="text-center text-white  font-['YekanBakhBold'] text-[24px] leading-[60px]  ">
           HELLO WORLD{" "}

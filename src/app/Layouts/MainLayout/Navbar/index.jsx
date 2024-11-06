@@ -15,8 +15,8 @@ const Navbar = () => {
   const [authModal, setAuthModal] = useState(false);
   const tokenAuth = useAuthStore((state) => state.tokenAuth);
   return (
-    <div className=" flex dark:bg-[#1a1a2e] transition duration-300 ease-in-out">
-      <div className="    h-[70px] flex justify-evenly w-full dark:bg-[#1a1a2e] transition duration-300 ease-in-out">
+    <div className=" flex dark:bg-[#1a1a2e] transition duration-300 ease-in-out bg-inherit">
+      <div className=" bg-transparent   h-[70px] flex justify-evenly w-full  transition duration-300 ease-in-out">
         <div className="flex  gap-4  mt-[30px]  ">
           {/* <LanguageSwitcher /> */}
           <div
