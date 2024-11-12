@@ -9,6 +9,7 @@ import i5 from "@assets/images/CourseDetail/CourseDescription/Icon5.png";
 import image from "@assets/images/CourseDetail/CourseDescription/profile.jpg";
 import { faNumber } from "@core/utils/FaNumber";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
+import { LinearProgress } from "@mui/material";
 const CourseDescription = (props) => {
   const { id } = useParams();
 
@@ -35,7 +36,8 @@ const CourseDescription = (props) => {
                 {" "}
                 ظرفیت{" "}
               </h3>
-              <span className="i1 absolute dark:text-white transition duration-300 ease-in-out text-grayy text-[16px] ">
+                <LinearProgress className="w-40 top-8 left-8 rounded-3xl" variant="determinate" value={props?.capacity} />
+              <span className=" top-[-1px] i1 absolute dark:text-white transition duration-300 ease-in-out text-grayy text-[18px] ">
                 {" "}
                 {props?.capacity && faNumber(props?.capacity.toString(), ",")}
               </span>

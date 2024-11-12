@@ -10,6 +10,9 @@ import { SlSocialFacebook } from "react-icons/sl";
 import { LiaTelegram } from "react-icons/lia";
 
 const NewsContent = (props) => {
+  console.log("props:",props)
+
+  
   return (
     <div className="bg-white2 dark:bg-[#1a1a2e] transition duration-300 ease-in-out">
       <div className="  flex justify-center  ">
@@ -74,9 +77,11 @@ const NewsContent = (props) => {
         </div>
         <div className=" flex justify-start items-center flex-nowrap flex-row-reverse gap-4 w-80 h-8 max-min:hidden ">
           <div>
-            <Stack>
+            {props?.currentRate ? <Stack>
               <Rating name="size-medium" value={props?.currentRate} />
-            </Stack>
+            </Stack>: <Stack>
+              <Rating name="size-medium" value={0} />
+            </Stack>}
           </div>
           <div>
             <span className="text-xs dark:text-white transition duration-300 ease-in-out max-md:text-[10px] max-md:whitespace-nowrap">

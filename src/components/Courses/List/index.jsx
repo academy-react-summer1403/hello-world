@@ -89,7 +89,7 @@ const ItemList = () => {
       SortType: sort,
       PageNumber: page,
       RowsOfPage: rowsPerPage,
-      Query: searchQuery,
+      Query: searchQuery || undefined,
     };
     const response = await getCourseList(params);
     setCourseList(response.courseFilterDtos);

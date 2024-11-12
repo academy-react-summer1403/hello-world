@@ -15,7 +15,7 @@ const Auth = ({ setAuthModal }) => {
   return (
 
     <div className="h-screen flex justify-center items-center ">
-      <div className="border-[#a8a8a8] border-[2px] fixed top-[28%] left-[40%] w-[450px] rounded-[30px] bg-white z-[10] shadow-2xl ">
+      <div className="border-[#a8a8a8] border-[2px] fixed top-[28%] left-[40%] w-[450px] rounded-[30px] bg-white z-[100] shadow-2xl ">
         <ParticlesComponent id="particles" />
         {content === "login" ? (
           <Login
