@@ -15,3 +15,19 @@ const codeAPI = async (obj) => {
 };
 
 export default codeAPI;
+
+
+export const  VerifyCode = async (obj) => {
+  try {
+    const result = await http.post("/Sign/LoginTwoStep?VerifyCode=verify_code", obj);
+    alert("تایید انجام شد  ");
+    return result
+  } catch (error) {
+    if (error.response.status == 400) {
+      alert("کد صحیح نمیباشد");
+    }
+
+    return Promise.reject(error);
+  }
+};
+
