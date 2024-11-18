@@ -8,6 +8,7 @@ import { LiaShareAltSolid } from "react-icons/lia";
 import { RiInstagramFill } from "react-icons/ri";
 import { SlSocialFacebook } from "react-icons/sl";
 import { LiaTelegram } from "react-icons/lia";
+import videoClip from "../../../assets/images/video/videoblocks-closeup-coding-on-screen-man-hands-coding-html-and-programming-on-screen-monitors-development-web-developer_stbx3oft8__39d63a896a683c098f74b06b32648925__P360.mp4"
 
 const NewsContent = (props) => {
   console.log("props:",props)
@@ -95,13 +96,13 @@ const NewsContent = (props) => {
       </div>
 
       <div className=" h-[500px] flex justify-center  items-center mt-3 ">
-        <div className=" bg-[#AA69FF] h-[300px] md:w-1/3  rounded-[32px] overflow-hidden ">
+        <div className=" bg-[#AA69FF] h-[400px] md:w-1/3  rounded-[32px] overflow-hidden shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] border border-[#2a466c]">
           <video
-            src="/src/assest/video/School_of_Code_Bootcamp_Teaser_td09Vy_j5hc_137.mp4"
+            src={videoClip}
             autoPlay
             loop
             controlsList="download"
-            className="min-w-full min-h-full scale-y-[1.7] scale-x-[1.3]"
+            className="min-w-full min-h-full scale-y-[1.7] scale-x-[1.3]  "
           ></video>
         </div>
       </div>
