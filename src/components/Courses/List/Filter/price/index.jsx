@@ -6,15 +6,15 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Slider from "@mui/material/Slider";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const PriceFilter = ({ setCostDown, setCostUp, getList, setSkeleton }) => {
+const PriceFilter = ({ }) => {
   const [priceRange, setPriceRange] = useState([100000, 1000000]); // Initial range, adjust as needed
 
   // Update the API when the slider value changes
-  useEffect(() => {
-    setCostDown(100000);
-    setCostUp(10000000);
-    getList(); // Trigger list update
-  }, [priceRange, setCostDown, setCostUp, getList]);
+  // useEffect(() => {
+  //   setCostDown(100000);
+  //   setCostUp(10000000);
+  //   getList(); // Trigger list update
+  // }, [priceRange, setCostDown, setCostUp, getList]);
   console.log("pDown:",priceRange[0]);
   console.log("pUp:",priceRange[0]);
   
