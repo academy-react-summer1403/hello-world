@@ -6,6 +6,7 @@ import Category from "./Type";
 import Teachers from "./Teachers";
 import Sort from "./Sort";
 import Technology from "./Technology";
+import PriceFilter from "./price";
 
 const filter = ({
   setType,
@@ -16,6 +17,8 @@ const filter = ({
   skeleton,
   setSkeleton,
   getList,
+  setCostDown,
+   setCostUp
 }) => {
   return (
     <div className="max-xx:hidden">
@@ -65,6 +68,12 @@ const filter = ({
           setSkelet={setSkelet}
           getList={getList}
           setSkeleton={setSkeleton}
+        />
+        <PriceFilter
+        setCostDown={setCostDown}
+         setCostUp={setCostUp}
+         getList={getList}
+         setSkeleton={setSkeleton}
         />
       </div>
     </div>

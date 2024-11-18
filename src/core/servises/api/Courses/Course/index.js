@@ -6,8 +6,10 @@ export const getCourseList = async (params) => {
     const result = await http.get(
       "/Home/GetCoursesWithPagination?SortingCol=Active&TechCount=0",
       { params: params }
+      
     );
-
+    
+    console.log("params:",params);
     return result;
   } catch (error) {
     console.log(error);

@@ -38,6 +38,8 @@ const ItemList = () => {
   const [totalCount, setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(9);
+  const [CostDown,setCostDown] = useState();
+  const [CostUp,setCostUp] = useState();
 
   const [skeleton, setSkeleton] = useState(true);
 
@@ -89,7 +91,9 @@ const ItemList = () => {
       SortType: sort,
       PageNumber: page,
       RowsOfPage: rowsPerPage,
-      Query: searchQuery || undefined,
+      Query: searchQuery||undefined,
+      CostDown: CostDown,
+      CostUp:CostUp,
     };
     const response = await getCourseList(params);
     setCourseList(response.courseFilterDtos);
@@ -109,7 +113,7 @@ const ItemList = () => {
 
   useEffect(() => {
     getList();
-  }, [type, level, techer, tech, sort, page, rowsPerPage]);
+  }, [type, level, techer, tech, sort, page, rowsPerPage,CostUp,CostDown]);
 
   useEffect(() => {
     getList();
@@ -277,8 +281,10 @@ const ItemList = () => {
         setTech={setTech}
         setTecher={setTecher}
         setSkeleton={setSkeleton}
+        CostUp={setCostUp}
+        CostDown={setCostDown}
       />
-
+      
       {/* filter right  */}
 
       <div className="w-[170px] h-16 xx:hidden fixed right-[-50px] bottom-48">
