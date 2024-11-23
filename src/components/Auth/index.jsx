@@ -9,15 +9,21 @@ import ParticlesComponent from "./particles.jsx";
 import { Verificationcode } from "./VerificatonCode/index.jsx";
 const Auth = ({ setAuthModal }) => {
   const [content, setContent] = useState("login");
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState();
+  const [userDatas, setUserDatas] = useState();
+  console.log("user:", userDatas);
 
   return (
     <div className="h-screen flex justify-center items-center ">
       <div className="border-[#a8a8a8] border-[2px] fixed top-[28%] left-[40%] w-[450px] rounded-[30px] bg-white z-[100] shadow-2xl ">
         <ParticlesComponent id="particles" />
         {content === "login" ? (
-          <Login setContent={setContent} setAuthModal={setAuthModal} />
-        ) : content === "register" ? (
+          <Login
+            setContent={setContent}
+            setAuthModal={setAuthModal}
+            setUserDatas={setUserDatas}
+          />
+        ) : content === "" ? (
           <RegisterStep1
             setContent={setContent}
             userData={userData}
@@ -44,11 +50,10 @@ const Auth = ({ setAuthModal }) => {
             setUserData={setUserData}
             setAuthModal={setAuthModal}
           />
-        ) : content === "" ? (
+        ) : content === "register" ? (
           <Verificationcode
             setContent={setContent}
-            userData={userData}
-            setUserData={setUserData}
+            userDatas={userDatas}
             setAuthModal={setAuthModal}
           />
         ) : (

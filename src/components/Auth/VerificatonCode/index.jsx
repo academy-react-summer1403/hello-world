@@ -1,32 +1,30 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 // import close from "../../../../assets/images/Auth/close.png"
-import VerifyCode from "@core/servises/api/Auth/Register/RegisterVerifiction-step2/index"
-import {ValidationCode} from "@core/validation/ValidationRegister/index";
+import VrifyCode from "@core/servises/api/Auth/Register/RegisterVerifiction-step2/index";
+import { ValidationCode } from "@core/validation/ValidationRegister/index";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 // import CountdownTimer from "../../../../core/utils/Timer";
 
-export const Verificationcode = ({
-  setContent,
-  userData,
-  setAuthModal,
-}) => {
-  const onSubmit = async (values) => {  
-
+export const Verificationcode = ({ setContent, userDatas, setAuthModal }) => {
+  const onSubmit = async (values) => {
+    console.log("values",values);
+    
+    // console.log(obj);
+    
     const obj = {
-      verifyCode: values.verifyCode,
-      phoneNumber: userData.phoneNumber,
+      // VrifyCode: values.VrifyCode,
+      phoneOrGmail: userDatas.phoneOrGmail,
+      password: userDatas.password,
+      rememberMe: true
     };
-    try{
-    const result =await VerifyCode(obj);
-    console.log("result:",result);
-    setContent("creataccount");
-
-    
-  }catch(error){
-    console.log("reore:",error);
-    
-  }
+    try {
+      const result = await VrifyCode(obj,values.verifyCode);
+      console.log("resultafsfafa:", result);
+      setContent("creataccount");
+    } catch (error) {
+      console.log("reore:", error);
+    }
   };
   return (
     <>
@@ -44,7 +42,7 @@ export const Verificationcode = ({
           </div>
         </div>
         <div className=" flex justify-evenly">
-          <span className=" text-right text-[14px] text-[#455A64]">
+          {/* <span className=" text-right text-[14px] text-[#455A64]">
             کد به شماره {userData.phoneNumber} ارسال شد، در صورت اشتباه بودن
             شماره آنرا{" "}
             <span
@@ -53,14 +51,14 @@ export const Verificationcode = ({
             >
               تغییر دهید
             </span>{" "}
-          </span>
+          </span> */}
         </div>
         <Formik
           initialValues={{
             verifyCode: "",
           }}
           onSubmit={onSubmit}
-          ValidationCode={ValidationCode}
+          // ValidationCode={ValidationCode}
         >
           {/* input of register */}
           <Form className="flex justify-center  flex-wrap ">

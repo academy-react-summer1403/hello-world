@@ -4,7 +4,7 @@ const codeAPI = async (obj) => {
   try {
     const result = await http.post("/Sign/VerifyMessage", obj);
     alert("تایید انجام شد  ");
-    return result
+    return result;
   } catch (error) {
     if (error.response.status == 400) {
       alert("کد صحیح نمیباشد");
@@ -16,12 +16,17 @@ const codeAPI = async (obj) => {
 
 export default codeAPI;
 
-
-export const  VerifyCode = async (obj) => {
+export const VrifyCode = async (obj, code) => {
   try {
-    const result = await http.post("/Sign/LoginTwoStep?VerifyCode=verify_code", obj);
+    const result = await http.post(`/Sign/LoginTwoStep`, obj, {
+      headers: {
+        VrifyCode: code,
+      },
+    });
+    console.log("resasjhab", result);
+
     alert("تایید انجام شد  ");
-    return result
+    return result;
   } catch (error) {
     if (error.response.status == 400) {
       alert("کد صحیح نمیباشد");
@@ -30,4 +35,3 @@ export const  VerifyCode = async (obj) => {
     return Promise.reject(error);
   }
 };
-

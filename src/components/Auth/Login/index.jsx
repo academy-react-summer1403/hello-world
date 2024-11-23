@@ -14,14 +14,15 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import Stack from "@mui/material/Stack";
 import { useState } from "react";
 
-const Login = ({ setContent, setAuthModal }) => {
+const Login = ({ setContent, setAuthModal, setUserDatas }) => {
   const setTokenAuth = useAuthStore((state) => state.setTokenAuth);
-
   const onSubmit = async (values) => {
     const obj = {
       password: values.password,
       phoneOrGmail: values.phoneOrGmail,
     };
+    setUserDatas(values)
+
 
     const res = await loginAPI(obj);
 
