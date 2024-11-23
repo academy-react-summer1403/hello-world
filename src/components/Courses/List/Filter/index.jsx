@@ -18,7 +18,7 @@ const filter = ({
   setSkeleton,
   getList,
   setCostDown,
-   setCostUp
+  setCostUp,
 }) => {
   return (
     <div className="max-xx:hidden">
@@ -69,12 +69,7 @@ const filter = ({
           getList={getList}
           setSkeleton={setSkeleton}
         />
-        <PriceFilter
-        setCostDown={setCostDown}
-         setCostUp={setCostUp}
-         getList={getList}
-         setSkeleton={setSkeleton}
-        />
+        <PriceFilter setCostDown={setCostDown} setCostUp={setCostUp} />
       </div>
     </div>
   );

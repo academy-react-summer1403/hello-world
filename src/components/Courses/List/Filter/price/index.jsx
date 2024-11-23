@@ -6,21 +6,14 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Slider from "@mui/material/Slider";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const PriceFilter = ({ }) => {
+const PriceFilter = ({ setCostDown, setCostUp }) => {
   const [priceRange, setPriceRange] = useState([100000, 1000000]); // Initial range, adjust as needed
 
-  // Update the API when the slider value changes
-  // useEffect(() => {
-  //   setCostDown(100000);
-  //   setCostUp(10000000);
-  //   getList(); // Trigger list update
-  // }, [priceRange, setCostDown, setCostUp, getList]);
-  console.log("pDown:",priceRange[0]);
-  console.log("pUp:",priceRange[0]);
-  
   const handleSliderChange = (event, newValue) => {
+    console.log("newValue", newValue);
     setPriceRange(newValue);
-    setSkeleton(true); // Show loading indicator
+    setCostDown(newValue[0]);
+    setCostUp(newValue[1]);
   };
 
   return (
@@ -43,17 +36,17 @@ const PriceFilter = ({ }) => {
             value={priceRange}
             onChange={handleSliderChange}
             valueLabelDisplay="auto"
-            min={50000}   // Set minimum price as needed
+            min={50000} // Set minimum price as needed
             max={5000000} // Set maximum price as needed
-            step={50000}  // Step size for price increments
+            step={50000} // Step size for price increments
             // marks={[
             //   { value: 50000, label: '۵۰,۰۰۰ تومان' },
             //   { value: 5000000, label: '۵,۰۰۰,۰۰۰ تومان' },
             // ]}
           />
           <div className="flex justify-between mt-2">
-            <span>از {priceRange[1].toLocaleString()} تومان</span>
-            <span>تا {priceRange[0].toLocaleString()} تومان</span>
+            <span>تا {priceRange[1].toLocaleString()} تومان</span>
+            <span>از {priceRange[0].toLocaleString()} تومان</span>
           </div>
         </AccordionDetails>
       </Accordion>

@@ -113,15 +113,7 @@ const ItemList = () => {
 
   useEffect(() => {
     getList();
-  }, [type, level, techer, tech, sort, page, rowsPerPage,CostUp,CostDown]);
-
-  useEffect(() => {
-    getList();
-  }, [currentPage]);
-
-  useEffect(() => {
-    getList();
-  }, [searchQuery]);
+  }, [type, level, techer, tech, sort, page, rowsPerPage,CostUp,CostDown,searchQuery,currentPage]);
 
   const ButtonClick = (arg) => {
     setView(arg);
@@ -282,7 +274,9 @@ const ItemList = () => {
         setTecher={setTecher}
         setSkeleton={setSkeleton}
         CostUp={setCostUp}
-        CostDown={setCostDown}
+        CostDown={CostDown}
+        setCostDown={setCostDown}
+        setCostUp={setCostUp}
       />
       
       {/* filter right  */}
