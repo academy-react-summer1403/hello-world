@@ -20,6 +20,14 @@ const filter = ({
   setCostDown,
   setCostUp,
 }) => {
+  const clearFilter = () => {
+    setType("");
+    setLevel("");
+    setTech("");
+    setTecher("");
+    setCostDown("");
+    setCostUp("");
+  };
   return (
     <div className="max-xx:hidden">
       <div className="w-[295px] rounded-[20px] pt-3 pb-3  dark:bg-[#111827] transition duration-300 ease-in-out flex flex-wrap bg-[#fff] justify-center items-start max-xl:w-[250px] mb-64">
@@ -34,7 +42,10 @@ const filter = ({
             فیلتر{" "}
           </span>
 
-          <button className="w-[32px] h-[32px] bg-red-500 rounded-[12px] flex justify-center absolute left-[10px] top-[8px] items-center">
+          <button
+            onClick={() => clearFilter()}
+            className="w-[32px] h-[32px] bg-red-500 rounded-[12px] flex justify-center absolute left-[10px] top-[8px] items-center"
+          >
             <img src={trashIcon} />
           </button>
         </div>

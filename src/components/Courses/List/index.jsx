@@ -95,6 +95,7 @@ const ItemList = () => {
       CostDown: CostDown,
       CostUp:CostUp,
     };
+
     const response = await getCourseList(params);
     setCourseList(response.courseFilterDtos);
     setCourses(response.courseFilterDtos);
