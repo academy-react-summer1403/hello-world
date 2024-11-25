@@ -3,16 +3,41 @@ import HeadTitle from "./HeadTitle";
 import ValidatonChangePassword from "@core/validation/ValidatonChangePassword";
 import ChangePasswordAPI from "@core/servises/api/UserPanel/UserPanel/ChangePassword";
 import { Formik, Form, Field } from "formik";
+import { Alert, Snackbar, Stack } from "@mui/material";
+import { useState } from "react";
 
 const ChangePassword = () => {
+  const [errortoast, setErrortoast] = useState();
+  const [open, setOpen] = React.useState(false);
+
+
   const onSubmit = async (values) => {
     const obj = {
       oldPassword: values.oldPassword,
       newPassword: values.newPassword,
     };
     console.log("postTruh");
-    ChangePasswordAPI(obj);
+    const res = await ChangePasswordAPI(obj);
+    console.log("rezsaffsaf:", res);
+
+    if (res) {
+      setErrortoast(true);
+      setOpen(true);
+      // setAuthModal(false);
+      setTimeout(2500);
+    } else {
+      setErrortoast(false);
+    }
   };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+      
+    }
+    setOpen(false);
+  };
+
   return (
     <div className="h-[850px] w-[76.5%] rounded-[23px] flex justify-center relative flex-wrap p-4 bg-[#ffffff] content-start">
       <HeadTitle />
@@ -58,6 +83,33 @@ const ChangePassword = () => {
           </button>
         </Form>
       </Formik>
+      {errortoast === true ? (
+        <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+            className=" !font-[YekanBakh]"
+          >
+            ملیات با موفقیت انجام شد
+          </Alert>
+        </Snackbar>
+      ) : errortoast === false ? (
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert
+            variant="filled"
+            dir="rtl"
+            severity="error"
+            className="!font-[YekanBakh] absolute top-[510px] w-full"
+          >
+            {"-"}
+            {" لطفا رمز عبور فعلی مربوطه به کاربر خود را به درستی وارد نمایید "}
+          </Alert>
+        </Stack>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

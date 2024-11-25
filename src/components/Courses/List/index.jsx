@@ -151,6 +151,8 @@ const ItemList = () => {
         setLevel={setLevel}
         setTech={setTech}
         setTecher={setTecher}
+        setCostDown={setCostDown}
+        setCostUp={setCostUp}
       />
     </Box>
   );

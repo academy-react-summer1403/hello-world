@@ -5,6 +5,9 @@ import { GoCommentDiscussion } from "react-icons/go";
 import { LuBookMarked, LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlineBookmarks } from "react-icons/md";
 import { RiShieldKeyholeLine } from "react-icons/ri";
+import { BsPostcardHeart } from "react-icons/bs";
+import { BsBookmarkHeart } from "react-icons/bs";
+
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../../../../../zustand/Auth/UserToken";
 
@@ -52,6 +55,20 @@ const List = () => {
         </Link>
         <Link
           className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
+          to="CommentPage"
+        >
+          <h3 className="text-[#fdfbff] mt-2 text-[17px]"> دوره های موردعلاقه</h3>
+          <BsBookmarkHeart className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
+        </Link>
+        <Link
+          className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
+          to="CommentPage"
+        >
+          <h3 className="text-[#fdfbff] mt-2 text-[17px]"> مقالات موردعلاقه</h3>
+          <BsPostcardHeart className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
+        </Link>
+        <Link
+          className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
           to="ChangePassword"
         >
           <h3 className="text-[#fdfbff] mt-2 text-[17px]"> تغییر رمز عبور</h3>
@@ -64,6 +81,7 @@ const List = () => {
           <h3 className="text-[#fdfbff] mt-2 text-[17px]"> نظرات ثبت شده </h3>
           <GoCommentDiscussion className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
         </Link>
+        
       </div>
 
       <div className="w-full h-[500px]">
