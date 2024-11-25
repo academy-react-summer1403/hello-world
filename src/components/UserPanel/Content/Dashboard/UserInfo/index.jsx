@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getUserDashboard } from "@core/servises/api/UserPanel/UserPanel/Dashboard";
 import { Link } from "react-router-dom";
 import { faNumber } from "@core/utils/FaNumber";
+// import { LuGauge } from "react-icons/lu";
+// import { Gauge, gaugeClasses } from '@mui/x-charts/Gauge';
+
 
 const UserInfo = () => {
   const [userDash, setUserDash] = useState([]);
@@ -11,6 +14,12 @@ const UserInfo = () => {
     // console.log("report:", data);
     setUserDash(data);
   };
+  // const settings = {
+  //   width: 200,
+  //   height: 200,
+  //   value: userDash.profileCompletionPercentage,
+  // };
+  
 
   useEffect(() => {
     getUserDash();
@@ -67,6 +76,23 @@ const UserInfo = () => {
           <span className="w-1"></span>
 
           <h2 className=" text-[#8787a7]   text-[19px]">ایمیل </h2>
+        </div>
+        <div>
+        {/* <Gauge
+      {...settings}
+      cornerRadius="50%"
+      sx={(theme) => ({
+        [`& .${gaugeClasses.valueText}`]: {
+          fontSize: 40,
+        },
+        [`& .${gaugeClasses.valueArc}`]: {
+          fill: '#ffff',
+        },
+        [`& .${gaugeClasses.referenceArc}`]: {
+          fill: theme.palette.text.disabled,
+        },
+      })}
+    /> */}
         </div>
         <div className="w-1/3 h-[50%] flex justify-start content-end items-end">
           <Link
