@@ -84,14 +84,14 @@ const List = () => {
         
       </div>
 
-      <div className="w-full h-[500px]">
+      <div className="w-full mt-2">
         <Link
           onClick={onSubmit}
           className="w-full h-[50px]  my-3.5 flex gap-2 justify-end items-center pr-2 rounded-[13px] transition-[0.1s] bg-[#6033ff] hover:bg-[#6454f1]"
           to="/"
         >
           <h3 className="text-[#fdfbff] text-[15px]"> خروج از حساب </h3>
-          <FiLogOut className="text-[#fdfbff] w-5 mt-3" />
+          <FiLogOut className="text-[#fdfbff] w-7 h-7 " />
         </Link>
       </div>
     </>

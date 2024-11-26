@@ -1,6 +1,6 @@
 import http from "../../../interceptor/Interseptor";
 
-const CourseReserve = async () => {
+const CorsCommentAPI = async () => {
   try {
     const result = await http.get("/SharePanel/GetMyCoursesComments");
 
@@ -11,4 +11,4 @@ const CourseReserve = async () => {
   }
 };
 
-export default CourseReserve;
+export default CorsCommentAPI;
