@@ -16,6 +16,7 @@ import MyReservePage from "@screens/UserPanel/ReservedCourse";
 import ChangePassPage from "@screens/UserPanel/ChangePass";
 import CommentPage from "@screens/UserPanel/Comment";
 import MyfvCorsPage from "@screens/UserPanel/MyfavoriteCord";
+import MyfvNewsPage from "@screens/UserPanel/MyFavoriteNews";
 
 const RouterConfig = () => {
   const pages = [
@@ -27,8 +28,7 @@ const RouterConfig = () => {
         { path: "/CoursesPage", element: <CoursesPage /> },
         { path: "/CourseDetailPage/:id", element: <CourseDetailPage /> },
         { path: "/NewsPage", element: <NewsPage /> },
-        { path: "/NewsDetailPage/:id", element: <NewsDetailPage/> },
-
+        { path: "/NewsDetailPage/:id", element: <NewsDetailPage /> },
       ],
     },
 
@@ -40,6 +40,7 @@ const RouterConfig = () => {
         { path: "/UserProfileS/EditProfile", element: <EditProfilePage /> },
         { path: "/UserProfileS/MyList", element: <MyListPage /> },
         { path: "/UserProfileS/Myfvcardlist", element: <MyfvCorsPage /> },
+        { path: "/UserProfileS/MyfvNewsPage", element: <MyfvNewsPage /> },
         { path: "/UserProfileS/MyReserve", element: <MyReservePage /> },
         { path: "/UserProfileS/ChangePassword", element: <ChangePassPage /> },
         { path: "/UserProfileS/CommentPage", element: <CommentPage /> },
