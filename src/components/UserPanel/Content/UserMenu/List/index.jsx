@@ -55,7 +55,7 @@ const List = () => {
         </Link>
         <Link
           className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
-          to="CommentPage"
+          to="Myfvcardlist"
         >
           <h3 className="text-[#fdfbff] mt-2 text-[17px]"> دوره های موردعلاقه</h3>
           <BsBookmarkHeart className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
@@ -91,7 +91,7 @@ const List = () => {
           to="/"
         >
           <h3 className="text-[#fdfbff] text-[15px]"> خروج از حساب </h3>
-          <FiLogOut className="text-[#fdfbff] w-5 h-5" />
+          <FiLogOut className="text-[#fdfbff] w-5 mt-3" />
         </Link>
       </div>
     </>
