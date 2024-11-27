@@ -50,7 +50,7 @@ const Auth = ({ setAuthModal }) => {
             setUserData={setUserData}
             setAuthModal={setAuthModal}
           />
-        ) : content === "register" ? (
+        ) : content === "verify" ? (
           <Verificationcode
             setContent={setContent}
             userDatas={userDatas}

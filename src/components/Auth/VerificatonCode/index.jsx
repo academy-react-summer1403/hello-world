@@ -1,27 +1,39 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 // import close from "../../../../assets/images/Auth/close.png"
-import VrifyCode from "@core/servises/api/Auth/Register/RegisterVerifiction-step2/index";
+import { VrifyCode } from "@core/servises/api/Auth/Register/RegisterVerifiction-step2/index";
 import { ValidationCode } from "@core/validation/ValidationRegister/index";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useAuthStore } from "@src/zustand/Auth/UserToken";
+import { useNavigate } from "react-router-dom";
 // import CountdownTimer from "../../../../core/utils/Timer";
 
 export const Verificationcode = ({ setContent, userDatas, setAuthModal }) => {
+  const setTokenAuth = useAuthStore((state) => state.setTokenAuth);
+  const navigate = useNavigate();
+
   const onSubmit = async (values) => {
-    console.log("values",values);
-    
+    console.log("values", values);
+
     // console.log(obj);
-    
+
     const obj = {
       // VrifyCode: values.VrifyCode,
       phoneOrGmail: userDatas.phoneOrGmail,
       password: userDatas.password,
-      rememberMe: true
+      rememberMe: true,
     };
     try {
-      const result = await VrifyCode(obj,values.verifyCode);
-      console.log("resultafsfafa:", result);
-      setContent("creataccount");
+      const result = await VrifyCode(obj, values.verifyCode);
+      console.log("result final login:", result);
+      // if(result){
+      //   setTokenAuth(result);
+      // }
+      if (result.token) {
+        localStorage.setItem("token", result.token);
+        navigate("/UserProfileS")
+      }
+      // setContent("creataccount");
     } catch (error) {
       console.log("reore:", error);
     }

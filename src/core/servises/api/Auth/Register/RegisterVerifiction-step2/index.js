@@ -17,15 +17,14 @@ const codeAPI = async (obj) => {
 export default codeAPI;
 
 export const VrifyCode = async (obj, code) => {
+  console.log("verifay", obj, code);
+
   try {
-    const result = await http.post(`/Sign/LoginTwoStep`, obj, {
-      headers: {
-        VrifyCode: code,
-      },
-    });
+    const result = await http.post(`/Sign/LoginTwoStep?VrifyCode=${code}`, obj);
+    
     console.log("resasjhab", result);
 
-    alert("تایید انجام شد  ");
+    // alert("تایید انجام شد  ");
     return result;
   } catch (error) {
     if (error.response.status == 400) {
