@@ -21,7 +21,7 @@ const Comments = ({ id }) => {
   }, []);
 
   const addcm = async (value) => {
-    // const { id } = useParams();
+    
 
     const addComent = {
       newsId: id,

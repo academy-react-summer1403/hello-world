@@ -17,7 +17,12 @@ const NewsItem = (props) => {
       >
         <img
           className="w-[100%] h-[100%]  "
-          src={props?.currentImageAddressTumb}
+          src={
+            props?.currentImageAddressTumb &&
+            props?.currentImageAddressTumb.includes("classapi.sepehracademy.ir")
+              ? props?.currentImageAddressTumb
+              : noImage
+          }
           alt=""
         />
       </Link>

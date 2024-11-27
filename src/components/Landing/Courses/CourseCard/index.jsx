@@ -41,7 +41,13 @@ const CourseCard = ({
         >
           <img
             className=" w-[100%] h-[100%] "
-            src={tumbImageAddress ? tumbImageAddress : noImage}
+            // src={tumbImageAddress ? tumbImageAddress : noImage}
+            src={
+              tumbImageAddress &&
+              tumbImageAddress.includes("classapi.sepehracademy.ir")
+                ? tumbImageAddress
+                : noImage
+            }
             alt=""
           />
         </Link>

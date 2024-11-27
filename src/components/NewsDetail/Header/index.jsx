@@ -13,7 +13,12 @@ const NewsHeader = (props) => {
         <div className="w-[40%] h-[400px] flex justify-end   ">
           <img
             className="h-[100%] w-[100%] rounded-3xl"
-            src={props?.currentImageAddress}
+            src={
+              props?.currentImageAddress &&
+              props?.currentImageAddress.includes("classapi.sepehracademy.ir")
+                ? props?.currentImageAddress
+                : noImage
+            }
             alt="image"
           />
         </div>

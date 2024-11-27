@@ -12,7 +12,7 @@ const NewsDetail = () => {
   const getList = async (id) => {
     try {
       const newsdto = await GetNewsWithid(id);
-      console.log("newsdto:", newsdto);
+      console.log("news data:", newsdto);
       setdata(newsdto);
     } catch (error) {
       throw new Error("ERROR: ", error);
@@ -41,7 +41,7 @@ const NewsDetail = () => {
         currentImageAddress={data?.detailsNewsDto.currentImageAddress}
         addUserProfileImage={data?.addUserProfileImage}
       />
-      <Comments id={data?.id} />
+      {data?.detailsNewsDto.id && <Comments id={data?.detailsNewsDto.id} />}
     </div>
   );
 };
