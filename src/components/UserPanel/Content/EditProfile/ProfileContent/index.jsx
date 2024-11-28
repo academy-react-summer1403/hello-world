@@ -14,17 +14,19 @@ const ProfileContent = () => {
 
     const obj = {
       LName: data.lName,
-      FName: data.fName  ,
+      FName: data.fName,
       NationalCode: data.nationalCode,
       BirthDay: data.birthDay && ConvertToPersianDate(data.birthDay),
       UserAbout: data.userAbout,
       TelegramLink: data.telegramLink,
       HomeAdderess: data.homeAdderess,
       LinkdinProfile: data.linkdinProfile,
+      email: data.email,
       Gender: data.gender,
+      phoneNumber:data.phoneNumber,
       ReceiveMessageEvent: data.receiveMessageEvent,
     };
-    
+
     setUser(obj);
   };
   // const settings = {
@@ -49,11 +51,13 @@ const ProfileContent = () => {
       TelegramLink: values.TelegramLink,
       // "https://t.me/Privet_Mahdi",
       ReceiveMessageEvent: values.ReceiveMessageEvent,
+      email: values.email,
       Gender: values.Gender,
+      phoneNumber:values.phoneNumber,
       Latitude: 0,
       Longitude: 0,
     };
-    console.log("obj vslurs form",obj)
+    console.log("obj vslurs form", obj);
     EditAccount(obj);
   };
   return (
@@ -73,7 +77,7 @@ const ProfileContent = () => {
       <div className="big flex  w-[1000px] h-[300px]  mt-[50px] relative">
         <Formik initialValues={user} enableReinitialize onSubmit={onSubmit}>
           <Form>
-            <div className="  data  w-[250px] h-[40px]  absolute right-[10px] top-[20px]  ">
+            <div className="  data  w-[250px] h-[40px]  absolute right-[10px] top-[10px]  ">
               <p className="text-right text-gray2">نام</p>
               <Field
                 className="rounded-[10px] text-right border border-[#9b9b9b] w-full mt-1 h-9 pr-2 "
@@ -82,7 +86,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[370px] top-[20px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[370px] top-[10px]  ">
               <p className="text-right text-gray2">نام خانوادگی </p>
 
               <Field
@@ -92,7 +96,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute left-[20px] top-[20px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute left-[20px] top-[10px]  ">
               <p className="text-right text-gray2">کد ملی</p>
 
               <Field
@@ -102,7 +106,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[10px] top-[150px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[10px] top-[170px]  ">
               <p className="text-right text-gray2">درباره من</p>
 
               <Field
@@ -112,7 +116,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[370px] top-[150px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[73%] top-[85px]  ">
               <p className="text-right text-gray2">تاریخ تولد</p>
 
               <Field
@@ -122,7 +126,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[150px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[170px]  ">
               <p className="text-right text-gray2">آدرس </p>
 
               <Field
@@ -132,7 +136,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[9px] top-[260px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[37%] top-[170px]  ">
               <p className="text-right text-gray2"> آدرس تلگرام</p>
 
               <Field
@@ -142,7 +146,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[368px] top-[260px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[9px] top-[260px]  ">
               <p className="text-right text-gray2">آدرس لینکدین </p>
 
               <Field
@@ -151,14 +155,32 @@ const ProfileContent = () => {
                 placeholder=""
               />
             </div>
+            <div className="data  w-[250px] h-[40px]  absolute right-[1%] top-[85px]  ">
+              <p className="text-right text-gray2">ایمیل </p>
 
-            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[260px]  ">
+              <Field
+                className="rounded-[10px] text-right border border-[#9b9b9b] w-full mt-1 h-9 pr-2 "
+                name="email"
+                placeholder=""
+              />
+            </div>
+           
+            <div className="data  w-[250px] h-[40px]  absolute right-[37%] top-[85px]  ">
+              <p className="text-right text-gray2">شماره همراه </p>
+
+              <Field
+                className="rounded-[10px] text-right border border-[#9b9b9b] w-full mt-1 h-9 pr-2 "
+                name="phoneNumber"
+                placeholder=""
+              />
+            </div>
+            <div className="data  w-[250px] h-[40px]  absolute right-[37%] top-[260px]  ">
               <p className="text-right text-gray2"> جنسیت </p>
 
-              <div className="w-full flex flex-nowrap justify-center mt-2">
+              <div className="text-right border-[#9b9b9b] relative left-[49%] ">
                 <label
                   name="Gender"
-                  className="w-1/2 flex justify-center items-center gap-2 "
+                  className="w-1/2 flex justify-center items-center gap-2 text-right "
                 >
                   <Field
                     as="select"

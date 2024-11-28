@@ -2,9 +2,16 @@ import React, { useEffect } from "react";
 import { MdOutlineDeleteSweep } from "react-icons/md";
 import { FaRegEye } from "react-icons/fa";
 import Pic from "../../../../../../assets/Images/Profile/items.png";
+import { ConvertToPersianDate } from "@core/utils/convertDate";
 // import { GetCourses } from "../../../../../../Core/Services/Api/UserPanel/GetMyCourses";
 
-const Items = ({tumbImageAddress,courseTitle,termName,levelName,fullName}) => {
+const Items = ({
+  tumbImageAddress,
+  courseTitle,
+  termName,
+  levelName,
+  fullName,
+}) => {
   useEffect(() => {
     // GetCourses()
   }, []);
@@ -22,7 +29,7 @@ const Items = ({tumbImageAddress,courseTitle,termName,levelName,fullName}) => {
         {levelName}
       </div>
       <div className="w-1/6 h-full text-[#36343f] myFont text-center pl-5 pt-[17px]">
-        {termName}
+        {termName && ConvertToPersianDate(termName)}
       </div>
       <div className="w-1/6 h-full text-[15px] myFont text-[#36343f] text-center pl-10 flex items-center justify-center">
         {" "}

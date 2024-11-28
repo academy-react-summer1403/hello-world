@@ -1,4 +1,5 @@
 import React from "react";
+import { BsBookmarkHeart, BsPostcardHeart } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FiLogOut } from "react-icons/fi";
 import { GoCommentDiscussion } from "react-icons/go";
@@ -7,7 +8,6 @@ import { MdOutlineBookmarks } from "react-icons/md";
 import { RiShieldKeyholeLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-const show = () => {};
 const List = () => {
   return (
     <>
@@ -42,6 +42,23 @@ const List = () => {
             دوره های رزرو شده
           </h3>
           <MdOutlineBookmarks className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
+        </Link>
+        <Link
+          className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
+          to="Myfvcardlist"
+        >
+          <h3 className="text-[#fdfbff] mt-2 text-[17px]">
+            {" "}
+            دوره های موردعلاقه
+          </h3>
+          <BsBookmarkHeart className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
+        </Link>
+        <Link
+          className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
+          to="MyfvNewsPage"
+        >
+          <h3 className="text-[#fdfbff] mt-2 text-[17px]"> مقالات موردعلاقه</h3>
+          <BsPostcardHeart className="text-[#fdfbff] ml-2.5 mt-1 w-8 h-8" />
         </Link>
         <Link
           className="w-full h-[50px] my-3.5 flex justify-end p-1 rounded-[10px] transition-[0.1s] hover:bg-[#6033ff]"
