@@ -42,13 +42,16 @@ const TabBox = ({ id }) => {
     const coments = await addcomment(data);
 
     console.log(coments);
-    console.log("submit", submit);
+    // console.log("submit", submit);
   };
 
   return (
     <div className="w-full  flex justify-center  flex-wrap mt-[30px]  max-cc:pt-12  max-ff:w-[90%] overflow-x-visible max-ss:overflow-x-scroll ">
-      <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px]  dark:bg-[#111827]">
-        <Tabs defaultIndex={2} className="dark:bg-[#111827] pb-5    ">
+      <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px]  dark:bg-[#111827] transition duration-300 ease-in-out">
+        <Tabs
+          defaultIndex={2}
+          className="dark:bg-[#111827] transition duration-300 ease-in-out pb-5    "
+        >
           <TabList className="flex justify-end flex-wrap mb-5">
             <Tab className="w-[90px] h-10 text-center border-b-[3px] mt-2 border-[#607D8B] mr-8 text-[#607D8B] hover:cursor-pointer ">
               نظرات کاربران

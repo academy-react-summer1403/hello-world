@@ -20,7 +20,12 @@
   font-family: "YekanBakhMiniBold";
   src: url("../assets/fonts/YekanBakh-Bold.ttf");
 }
-
+#particles canvas {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
 .bgblur {
   position: fixed;
   top: 0;
@@ -229,27 +234,38 @@
 }
 
 /* dark */
+:root,
+.dark {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 .dark .knrhm {
   background-color: #111827;
   border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .knrhm > h3 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .knrhm > .textInfo > .RightInfo > h3 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .knrhm > .textInfo > .RightInfo > h2 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .knrhm > .textInfo > .LeftInfo > h1 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .knrhm > .textInfo > .LeftInfo > h3 {
   color: #e2e2e2;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .knrhm > .textInfo > .LeftInfo > h4 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 /*  */
 .zirhm {
@@ -412,27 +428,34 @@
 .dark .zirhm {
   background-color: #111827;
   border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .zirhm > h3 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark .zirhm > .textInfo > .LeftInfo > h3 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark .zirhm > .textInfo > .LeftInfo > h1 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .zirhm > .textInfo > .LeftInfo > h4 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark .zirhm > .textInfo > .RightInfo > h2 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark .zirhm > .textInfo > .RightInfo > h3 {
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /*  */

@@ -13,35 +13,48 @@ import LoadingButton from "@mui/lab/LoadingButton";
 
 import Stack from "@mui/material/Stack";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = ({ setContent, setAuthModal }) => {
+const Login = ({ setContent, setAuthModal, setUserDatas }) => {
+  const [open, setOpen] = React.useState(false);
+  const [errortoast, setErrortoast] = useState();
+  const [loading, setLoading] = React.useState(false);
+
   const setTokenAuth = useAuthStore((state) => state.setTokenAuth);
+  const navigate = useNavigate();
 
   const onSubmit = async (values) => {
     const obj = {
       password: values.password,
       phoneOrGmail: values.phoneOrGmail,
     };
+    setUserDatas(values);
 
     const res = await loginAPI(obj);
+    console.log("result login step1", res);
 
-    if (res) {
-      setTokenAuth(res);
+    if (res && res.message.includes("پیامک")) {
+      // setTokenAuth(res);
+      setContent("verify");
       setOpen(true);
       setLoading(true);
-      setErrortoast(true);
+      // setErrortoast(true);
       // setAuthModal(false);
-      setTimeout(setAuthModal, 2500);
-    } else {
-      setErrortoast(false);
-    }
+      // setTimeout(setAuthModal, 2500);
+    } 
+    if (res && res.message.includes("موفقیت")) {
+      // setTokenAuth(res);
+      // setContent("verify")
+      navigate("/UserProfileS");
+      setOpen(true);
+      setLoading(true);
+      // setErrortoast(true);
+      // setAuthModal(false);
+      // setTimeout(setAuthModal, 2500);
+    } 
   };
 
   // toast
-
-  const [open, setOpen] = React.useState(false);
-
-  const [errortoast, setErrortoast] = useState();
 
   // const handleClick = () => {
   //   setOpen(true);
@@ -56,8 +69,6 @@ const Login = ({ setContent, setAuthModal }) => {
   };
 
   // loading
-
-  const [loading, setLoading] = React.useState(false);
 
   // function handleClickLoading() {
   //   setLoading(true);
@@ -166,8 +177,8 @@ const Login = ({ setContent, setAuthModal }) => {
             {" "}
             ثبت نام{" "}
           </span>
-          <div className="w-1"></div>
-          حساب کاربری ندارید؟{" "}
+          <div className="w-1 "></div>
+          <p className="cursor-default">حساب کاربری ندارید؟</p>{" "}
         </div>
       </div>
       {errortoast === true ? (

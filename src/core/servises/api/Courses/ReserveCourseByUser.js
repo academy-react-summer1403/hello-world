@@ -4,9 +4,10 @@ const ReserveCourseByUser = async (obj) => {
     if (localStorage.getItem("token")) {
       const result = await http.post("/CourseReserve/ReserveAdd", obj);
     }
+    
   } catch (error) {
-    // console.log(error);
-    alert("Please enter");
+    console.log(error);
+    // alert("Please enter");
   }
 };
 

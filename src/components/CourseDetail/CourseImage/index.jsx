@@ -18,13 +18,13 @@ const CourseImage = (props) => {
       <div className="  h-[150px]">
         <h3
           dir="rtl"
-          className=" font-[YekanBakhBold] text-right text-[24px] dark:text-white text-grayy leading-[70px] max-md:text-[20px] max-short:text-[10px] "
+          className=" font-[YekanBakhBold] text-right text-[24px] dark:text-white transition duration-300 ease-in-out text-grayy leading-[70px] max-md:text-[20px] max-short:text-[10px] "
         >
           {props?.title}
         </h3>
         <p
           dir="rtl"
-          className="font-[YekanBakh] text-right text-[15px] dark:text-white text-gray2 leading-[20px] max-md:text-[12px]  "
+          className="font-[YekanBakh] text-right text-[15px] dark:text-white transition duration-300 ease-in-out text-gray2 leading-[20px] max-md:text-[12px]  "
         >
           {props?.miniDescribe}{" "}
         </p>

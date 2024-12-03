@@ -3,8 +3,8 @@ import http from "../../../interceptor/Interseptor";
 const EditAccount = async (obj) => {
 
   const formData = new FormData();
-  formData.append("Lname", obj.Lname);
-  formData.append("Fname", obj.Fname);
+  formData.append("Lname", obj.LName);
+  formData.append("Fname", obj.FName);
   formData.append("NationalCode", obj.NationalCode);
   formData.append("BirthDay", obj.BirthDay);
   formData.append("UserAbout", obj.UserAbout);

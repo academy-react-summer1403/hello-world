@@ -24,7 +24,7 @@ const CourseDetail = () => {
     getList(id);
   }, []);
   return (
-    <div className=" bg-white2 dark:bg-[#1a1a2e] ">
+    <div className=" bg-white2 dark:bg-[#1a1a2e] transition duration-300 ease-in-out">
       <div className="w-full  flex py-14 justify-center  ">
         <div className="flex w-[90%] flex-wrap flex-row-reverse gap-[25px] justify-center  mt-[20px]  ">
           <CourseImage

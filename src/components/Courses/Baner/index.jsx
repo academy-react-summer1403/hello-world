@@ -9,12 +9,11 @@ const Baner = () => {
   return (
     <div className="flex w-full justify-center ">
       <div className="   w-[1350px] h-[485px] mt-[20px] ml-[185px] relative max-short:h-[300px]   ">
-
-        <div className="blue  bg-purple2  dark:bg-[#111827]  w-[104px] h-[104px]  absolute right-[20px]  top-[110px] rounded-bl-[100px]">
+        <div className="blue  bg-purple2 transition duration-300 ease-in-out dark:bg-[#111827]  w-[104px] h-[104px]  absolute right-[20px]  top-[110px] rounded-bl-[100px]">
           {" "}
         </div>
 
-        <div className="imagedot1 dark:hidden absolute  right-[21px]  top-[245px] max-xl:right-[71px]  ">
+        <div className="imagedot1 dark:hidden absolute  transition duration-300 ease-in-out right-[21px]  top-[245px] max-xl:right-[71px]  ">
           <img src={dot1} alt="image" />
         </div>
 
@@ -31,15 +30,14 @@ const Baner = () => {
             {" "}
             !!!مهمه از کی یاد می گیری
           </h3>
-          <h1 className="text-right dirRtl dark:text-white text-grayy font-[YekanBakhBold] text-[30px]    ">
+          <h1 className="text-right dirRtl dark:text-white transition duration-300 ease-in-out text-grayy font-[YekanBakhBold] text-[30px]    ">
             {" "}
             <Typewriter
               options={typeWriterOptions(["اموزش برنامه نویسی با بهترین ها"])}
             />
-
           </h1>
-          <div className="dark:bg-[blue] dark:blur-[170px] w-[150px] h-[150px] rounded-full absolute top-0"></div>
-          <p className="text-right dark:text-white text-gray4 font-[YekanBakh] text-[15px]    leading-[30px]  max-sm:text-[12px]  max-smm:text-[10px] max-short:hidden  ">
+          <div className="dark:bg-[blue] dark:blur-[170px] transition duration-300 ease-in-out w-[150px] h-[150px] rounded-full absolute top-0"></div>
+          <p className="text-right dark:text-white transition duration-300 ease-in-out text-gray4 font-[YekanBakh] text-[15px]    leading-[30px]  max-sm:text-[12px]  max-smm:text-[10px] max-short:hidden  ">
             آموزش برنامه نویسی یکی از دوره‌های محبوب در حوزه فناوری اطلاعات است.
             برنامه نویسی مهارتی است که به افراد امکان می‌دهد تا نرم‌افزارهای
             کامپیوتری را ایجاد و توسعه دهند.{" "}

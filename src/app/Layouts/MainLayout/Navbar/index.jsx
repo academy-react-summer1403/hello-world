@@ -1,28 +1,26 @@
 import React, { useState } from "react";
-import img1 from "../../../../assets/images/navbar/login.png";
-// import img2 from "../../../../assets/images/navbar/basket.png"
+import "@app/App.css";
 import { useAuthStore } from "../../../../zustand/Auth/UserToken";
-import img3 from "../../../../assets/images/navbar/HW.png";
 import { Auth } from "../../../../components/Auth/index";
 import { Link, NavLink } from "react-router-dom";
 import DarkModeToggle from "@components/common/DarkModeToggle";
-import LanguageSwitcher from "@components/common/translait/suicher";
+// import LanguageSwitcher from "@components/common/translait/suicher";
 import "@components/common/translait/index";
 import { useTranslation } from "react-i18next";
 import SwipeableTemporaryDrawer from "@core/utils/DrawerMenu";
 import AnchorTemporaryDrawer from "@core/utils/DrawerMenu";
+// import { motion } from "framer-motion";
 const Navbar = () => {
   const { t } = useTranslation();
   const [authModal, setAuthModal] = useState(false);
   const tokenAuth = useAuthStore((state) => state.tokenAuth);
-
   return (
-    <div className="countainer mx-auto flex dark:bg-[#1a1a2e] ">
-      <div className="    h-[70px] flex justify-evenly w-full dark:bg-[#1a1a2e] ">
+    <div className=" flex dark:bg-[#1a1a2e] transition duration-300 ease-in-out bg-inherit">
+      <div className=" bg-transparent   h-[70px] flex justify-evenly w-full  transition duration-300 ease-in-out">
         <div className="flex  gap-4  mt-[30px]  ">
           {/* <LanguageSwitcher /> */}
           <div
-            className="flex  "
+            className="flex "
             onClick={() => {
               setAuthModal(true);
             }}
@@ -59,43 +57,66 @@ const Navbar = () => {
             <DarkModeToggle />
           </div>
         </div>
-        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px]  dark:text-slate-200 max-lg:hidden">
+        <div className="flex  gap-12 flex-row-reverse justify-around whitespace-nowrap mt-[37px]  dark:text-slate-200 max-lg:hidden transition duration-300 ease-in-out">
           {/* <div className="flex flex-row-reverse    w-[40%]  mt-[30px]  text-[#455a64]"> */}
-          <NavLink to="/" className="hover:text-[#4079c4]">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {" "}
             {t("خانه")}
           </NavLink>
-          <NavLink to="/CoursesPage" className="hover:text-[#4079c4]">
+          <NavLink
+            to="/CoursesPage"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("دوره‌ها")}
           </NavLink>
-          <NavLink to="*" className="hover:text-[#4079c4]">
+          <NavLink
+            to="*"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("اساتید")}
           </NavLink>
-          <NavLink to="/" className="hover:text-[#4079c4]">
+          <NavLink
+            to="/ContactUs"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("ارتباط با ما")}
           </NavLink>
-          <NavLink to="/NewsPage" className="hover:text-[#4079c4]">
+          <NavLink
+            to="/NewsPage"
+            className={({ isActive }) =>
+              `${isActive && "text-[#2196F3]"} hover:text-[#4079c4]`
+            }
+          >
             {t("اخبار و مقالات")}
           </NavLink>
           {/* </div> */}
         </div>
         <div dir="rtl" className=" hidden max-lg:block   mt-[30px] ">
-         <AnchorTemporaryDrawer/>
+          <AnchorTemporaryDrawer />
         </div>
-        
+
         <Link
           to="/"
           className="  flex   whitespace-nowrap text-[20px] text-[#4079c4] mt-[35px] font-[YekanBakhBold] max-lg:hidden "
         >
           Hello World
-          
-         </Link>
+        </Link>
         {/* <img
           className="Logo h-[50%] border  mt-[30px]  max-qq:hidden"
           src={img3}
           alt="image "
         /> */}
-       
       </div>
     </div>
   );

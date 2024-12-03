@@ -6,8 +6,10 @@ export const getCourseList = async (params) => {
     const result = await http.get(
       "/Home/GetCoursesWithPagination?SortingCol=Active&TechCount=0",
       { params: params }
+      
     );
-
+    
+    console.log("params:",params);
     return result;
   } catch (error) {
     console.log(error);
@@ -41,11 +43,11 @@ export const getComment = async (id) => {
 
 export const getReplyComment = async (courseId, commentId) => {
   try {
-    const response = await http.get(
+    const result = await http.get(
       `/Course/GetCourseReplyCommnets/${courseId}/${commentId}`
     );
 
-    return response.data;
+    return result;
   } catch (error) {
     return false;
   }

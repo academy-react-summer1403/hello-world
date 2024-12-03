@@ -1,6 +1,6 @@
 import React from "react";
 import noImage from "@assets/images/Landing/Courses/noImage.jpg";
-
+import { ConvertToPersianDate } from "@core/utils/convertDate";
 const Content = ({
   props,
   author,
@@ -31,7 +31,7 @@ const Content = ({
             <span className="text-gray3"> {author}</span>
           </div>
           <span className="flex justify-start text-[12px] text-gray4">
-            {props?.insertDate && ConvertToPersianDate(props?.insertDate)}
+            {insertDate && ConvertToPersianDate(insertDate)}
           </span>
         </div>
       </div>

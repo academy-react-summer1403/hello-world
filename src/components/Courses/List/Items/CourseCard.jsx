@@ -41,20 +41,19 @@ const CourseCard = ({
         </h3>
         <Link
           to={`/CourseDetailPage/${id}`}
-          className="infoBax dark:bg-[#1a1a2e]"
+          className="infoBax dark:bg-[#1a1a2e] transition duration-300 ease-in-out"
         >
-          <div  className="MiniData dark:text-white text-[#263238]">
+          <div className="MiniData dark:text-white transition duration-300 ease-in-out text-[#263238]">
             {" "}
-            <h3 dir="rtl">  {faNumber("14") }  ساعت</h3>
+            <h3 dir="rtl"> {faNumber("14")} ساعت</h3>
             <img src={Clock} />
           </div>
-          <div className="MiniData dark:text-white text-[#263238]">
+          <div className="MiniData dark:text-white transition duration-300 ease-in-out text-[#263238]">
             {" "}
-            <span>               {lastUpdate && ConvertToPersianDate(lastUpdate)}
-            </span>
+            <span> {lastUpdate && ConvertToPersianDate(lastUpdate)}</span>
             <img src={Date} />
           </div>
-          <div className="MiniData dark:text-white text-[#263238] ">
+          <div className="MiniData dark:text-white transition duration-300 ease-in-out text-[#263238] ">
             <h3> {levelName}</h3>
             <img src={Dars} />
           </div>

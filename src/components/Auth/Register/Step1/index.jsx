@@ -68,9 +68,12 @@ export const RegisterStep1 = ({ setContent, setUserData, setAuthModal }) => {
         </Formik>
         <div className="flex items-end justify-center	">
           {" "}
-          <p className="text-[#455A64] text-[12px] leading-5 font-medium text-center">
+          <p className="text-[#455A64] text-[12px] cursor-default leading-5 font-medium text-center">
             حساب کاربری دارید؟{" "}
-            <span className="text-[#2196F3] text-[12px] leading-5 font-medium text-center">
+            <span
+              onClick={() => setContent("login")}
+              className="cursor-pointer text-[#2196F3] text-[12px] leading-5 font-medium text-center"
+            >
               وارد شوید
             </span>
           </p>

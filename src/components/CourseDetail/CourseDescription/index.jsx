@@ -6,9 +6,10 @@ import i2 from "@assets/images/CourseDetail/CourseDescription/Icon2.png";
 import i3 from "@assets/images/CourseDetail/CourseDescription/Icon3.png";
 import i4 from "@assets/images/CourseDetail/CourseDescription/Icon4.png";
 import i5 from "@assets/images/CourseDetail/CourseDescription/Icon5.png";
-import image from "@assets/images/CourseDetail/CourseDescription/profile.jpg"
+import image from "@assets/images/CourseDetail/CourseDescription/profile.jpg";
 import { faNumber } from "@core/utils/FaNumber";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
+import { LinearProgress } from "@mui/material";
 const CourseDescription = (props) => {
   const { id } = useParams();
 
@@ -18,11 +19,11 @@ const CourseDescription = (props) => {
   };
 
   return (
-    <div className="dv2 bg-white rounded-[20px] dark:bg-[#111827]  w-[400px]   h-[470px]">
+    <div className="dv2 bg-white rounded-[20px] dark:bg-[#111827] transition duration-300 ease-in-out  w-[400px]   h-[470px]">
       <div className="item flex  flex-wrap gap-[15px]    w-[300px]   h-[580px]  mx-[50px]          ">
         <div className="bigdiv  w-[300px]  ">
           <div className="dv1">
-            <div className="title dark:text-white text-center text-[24px] font-[YekanBakh]  text-grayy mt-[20px] pt-[10px] border-b-2 border-graylight  ">
+            <div className="title dark:text-white text-center text-[24px] font-[YekanBakh] transition duration-300 ease-in-out  text-grayy mt-[20px] pt-[10px] border-b-2 border-graylight  ">
               مشخصات دوره{" "}
             </div>
             <div className="info h-[70px] border-b-2 dark:border-b-[1px] border-graylight relative leading-[70px] ">
@@ -31,20 +32,26 @@ const CourseDescription = (props) => {
                 src={i1}
                 alt="image"
               />{" "}
-              <h3 className="absolute right-[40px] dark:text-white text-gray4 "> ظرفیت </h3>
-              <span className="i1 absolute dark:text-white text-grayy text-[16px] ">
+              <h3 className="absolute right-[40px] dark:text-white transition duration-300 ease-in-out text-gray4 ">
+                {" "}
+                ظرفیت{" "}
+              </h3>
+                <LinearProgress className="w-40 top-8 left-8 rounded-3xl" variant="determinate" value={props?.capacity} />
+              <span className=" top-[-1px] i1 absolute dark:text-white transition duration-300 ease-in-out text-grayy text-[18px] ">
                 {" "}
                 {props?.capacity && faNumber(props?.capacity.toString(), ",")}
               </span>
             </div>
-            <div className="info h-[70px] border-b-2 dark:border-b-[1px] border-graylight relative leading-[70px]   ">
+            <div className="info h-[70px] border-b-2 dark:border-b-[1px] transition duration-300 ease-in-out border-graylight relative leading-[70px]   ">
               <img
                 className="w-[30px] h-[30px]  absolute right-0  top-[17px]  "
                 src={i2}
                 alt="image"
               />{" "}
-              <h3 className="absolute dark:text-white right-[40px] text-gray4 ">وضعیت دوره </h3>
-              <span className="i2 absolute dark:text-white text-grayy text-[16px]">
+              <h3 className="absolute dark:text-white transition duration-300 ease-in-out right-[40px] text-gray4 ">
+                وضعیت دوره{" "}
+              </h3>
+              <span className="i2 absolute dark:text-white transition duration-300 ease-in-out text-grayy text-[16px]">
                 {" "}
                 در حال برگزاری
               </span>
@@ -55,23 +62,25 @@ const CourseDescription = (props) => {
                 src={i3}
                 alt="image"
               />{" "}
-              <h3 className="absolute right-[40px] dark:text-white text-gray4 ">تاریخ شروع</h3>
-              <span className="i3 absolute dark:text-white text-grayy text-[16px]">
+              <h3 className="absolute right-[40px] dark:text-white transition duration-300 ease-in-out text-gray4 ">
+                تاریخ شروع
+              </h3>
+              <span className="i3 absolute dark:text-white transition duration-300 ease-in-out text-grayy text-[16px]">
                 {" "}
                 {props?.startTime && ConvertToPersianDate(props?.startTime)}
               </span>
             </div>
-            <div className="info h-[70px] border-b-2 dark:border-b-[1px] border-graylight relative leading-[70px]">
+            <div className="info h-[70px] border-b-2 dark:border-b-[1px] transition duration-300 ease-in-out border-graylight relative leading-[70px]">
               <img
                 className="w-[30px] h-[30px] absolute right-0  top-[17px]  "
                 src={i4}
                 alt="image"
               />{" "}
-              <h3 className="absolute right-[40px] dark:text-white text-gray4 ">
+              <h3 className="absolute right-[40px] dark:text-white transition duration-300 ease-in-out text-gray4 ">
                 {" "}
                 تاریخ پایان{" "}
               </h3>
-              <span className="i4 absolute dark:text-white text-grayy text-[16px]">
+              <span className="i4 absolute dark:text-white transition duration-300 ease-in-out text-grayy text-[16px]">
                 {props?.endTime && ConvertToPersianDate(props?.endTime)}
               </span>
             </div>
@@ -93,14 +102,13 @@ const CourseDescription = (props) => {
           </div>
         </div>
       </div>
-
-      <div className="dv2 dark:bg-[#111827] bg-white rounded-[20px] relative top-[-90px]     flex gap-[25px]   w-[400px]   h-[100px]    ">
+      <div className="dv2 dark:bg-[#111827] transition duration-300 ease-in-out bg-white rounded-[20px] relative top-[-90px]     flex gap-[25px]   w-[400px]   h-[100px]    ">
         <div className=" h-[60px]  w-[200px] absolute right-[130px] top-[20px] ">
-          <h3 className="text-right dark:text-white text-gray3 font-[YekanBakhBold] ">
+          <h3 className="text-right dark:text-white transition duration-300 ease-in-out text-gray3 font-[YekanBakhBold] ">
             {" "}
             دکتر بحرالعلوم
           </h3>
-          <p className="text-right dark:text-white text-gray4 font-[YekanBakh] leading-[40px] text-[15px]">
+          <p className="text-right dark:text-white transition duration-300 ease-in-out text-gray4 font-[YekanBakh] leading-[40px] text-[15px]">
             {" "}
             برنامه نویسی تحت فرانت و بکند
           </p>

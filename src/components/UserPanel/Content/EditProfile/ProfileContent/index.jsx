@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import photo from "@assets/images/Profile/prof.jpg";
 import EditAccount from "@core/servises/api/UserPanel/UserPanel/EditAccount";
+import { getUserDashboard } from "@core/servises/api/UserPanel/UserPanel/Dashboard";
+import { ConvertToPersianDate } from "@core/utils/convertDate";
 
 const ProfileContent = () => {
+  const [user, setUser] = useState([]);
+
+  const getUser = async () => {
+    const data = await getUserDashboard();
+    console.log("report:", data);
+
+    const obj = {
+      LName: data.lName,
+      FName: data.fName,
+      NationalCode: data.nationalCode,
+      BirthDay: data.birthDay && ConvertToPersianDate(data.birthDay),
+      UserAbout: data.userAbout,
+      TelegramLink: data.telegramLink,
+      HomeAdderess: data.homeAdderess,
+      LinkdinProfile: data.linkdinProfile,
+      email: data.email,
+      Gender: data.gender,
+      phoneNumber:data.phoneNumber,
+      ReceiveMessageEvent: data.receiveMessageEvent,
+    };
+
+    setUser(obj);
+  };
+  // const settings = {
+  //   width: 200,
+  //   height: 200,
+  //   value: userDash.profileCompletionPercentage,
+  // };
+
+  useEffect(() => {
+    getUser();
+  }, []);
   const onSubmit = (values) => {
     const obj = {
       LName: values.LName,
@@ -17,10 +51,13 @@ const ProfileContent = () => {
       TelegramLink: values.TelegramLink,
       // "https://t.me/Privet_Mahdi",
       ReceiveMessageEvent: values.ReceiveMessageEvent,
+      email: values.email,
       Gender: values.Gender,
+      phoneNumber:values.phoneNumber,
       Latitude: 0,
       Longitude: 0,
     };
+    console.log("obj vslurs form", obj);
     EditAccount(obj);
   };
   return (
@@ -38,23 +75,9 @@ const ProfileContent = () => {
       </div>
 
       <div className="big flex  w-[1000px] h-[300px]  mt-[50px] relative">
-        <Formik
-          initialValues={{
-            LName: "",
-            FName: "",
-            NationalCode: "",
-            BirthDay: "",
-            UserAbout: "",
-            TelegramLink: "",
-            HomeAdderess: "",
-            LinkdinProfile: "",
-            Gender: "",
-            ReceiveMessageEvent: "",
-          }}
-          onSubmit={onSubmit}
-        >
+        <Formik initialValues={user} enableReinitialize onSubmit={onSubmit}>
           <Form>
-            <div className="  data  w-[250px] h-[40px]  absolute right-[10px] top-[20px]  ">
+            <div className="  data  w-[250px] h-[40px]  absolute right-[10px] top-[10px]  ">
               <p className="text-right text-gray2">نام</p>
               <Field
                 className="rounded-[10px] text-right border border-[#9b9b9b] w-full mt-1 h-9 pr-2 "
@@ -63,7 +86,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[370px] top-[20px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[370px] top-[10px]  ">
               <p className="text-right text-gray2">نام خانوادگی </p>
 
               <Field
@@ -73,7 +96,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute left-[20px] top-[20px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute left-[20px] top-[10px]  ">
               <p className="text-right text-gray2">کد ملی</p>
 
               <Field
@@ -83,7 +106,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[10px] top-[150px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[10px] top-[170px]  ">
               <p className="text-right text-gray2">درباره من</p>
 
               <Field
@@ -93,7 +116,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[370px] top-[150px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[73%] top-[85px]  ">
               <p className="text-right text-gray2">تاریخ تولد</p>
 
               <Field
@@ -103,7 +126,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[150px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[170px]  ">
               <p className="text-right text-gray2">آدرس </p>
 
               <Field
@@ -113,7 +136,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[9px] top-[260px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[37%] top-[170px]  ">
               <p className="text-right text-gray2"> آدرس تلگرام</p>
 
               <Field
@@ -123,7 +146,7 @@ const ProfileContent = () => {
               />
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute right-[368px] top-[260px]  ">
+            <div className="data  w-[250px] h-[40px]  absolute right-[9px] top-[260px]  ">
               <p className="text-right text-gray2">آدرس لینکدین </p>
 
               <Field
@@ -132,32 +155,54 @@ const ProfileContent = () => {
                 placeholder=""
               />
             </div>
+            <div className="data  w-[250px] h-[40px]  absolute right-[1%] top-[85px]  ">
+              <p className="text-right text-gray2">ایمیل </p>
 
-            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[260px]  ">
+              <Field
+                className="rounded-[10px] text-right border border-[#9b9b9b] w-full mt-1 h-9 pr-2 "
+                name="email"
+                placeholder=""
+              />
+            </div>
+           
+            <div className="data  w-[250px] h-[40px]  absolute right-[37%] top-[85px]  ">
+              <p className="text-right text-gray2">شماره همراه </p>
+
+              <Field
+                className="rounded-[10px] text-right border border-[#9b9b9b] w-full mt-1 h-9 pr-2 "
+                name="phoneNumber"
+                placeholder=""
+              />
+            </div>
+            <div className="data  w-[250px] h-[40px]  absolute right-[37%] top-[260px]  ">
               <p className="text-right text-gray2"> جنسیت </p>
 
-              <div className="w-full flex flex-nowrap justify-center mt-2">
+              <div className="text-right border-[#9b9b9b] relative left-[49%] ">
                 <label
                   name="Gender"
-                  className="w-1/2 flex justify-center items-center gap-2 "
+                  className="w-1/2 flex justify-center items-center gap-2 text-right "
                 >
-                  <Field type="radio" name="Gender" value="false" />
-                  زن
-                </label>
-                <label
-                  name="Gender"
-                  className="w-1/2 flex justify-center items-center gap-2 "
-                >
-                  <Field type="radio" name="Gender" value="true" />
-                  مرد
+                  <Field
+                    as="select"
+                    name="Gender"
+                    style={{
+                      backgroundColor: "var(--text-col5)",
+                      borderColor: "var(--text-col3)",
+                      borderRadius: 10,
+                    }}
+                    className="w-full border-b h-[50px] shadow-md focus:outline-none focus:ring focus:ring-textCol3"
+                  >
+                    <option value="true">مرد</option>
+                    <option value="false">زن</option>
+                  </Field>
                 </label>
               </div>
             </div>
 
             <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[375px]  ">
-              <p className="text-right text-gray2"> اطلاع از اخرین اخبار </p>
+              {/* <p className="text-right text-gray2"> اطلاع از اخرین اخبار </p> */}
 
-              <div className="w-full flex flex-nowrap justify-center mt-2">
+              {/* <div className="w-full flex flex-nowrap justify-center mt-2">
                 <label
                   name="ReceiveMessageEvent"
                   className="w-1/2 flex justify-center items-center gap-2 "
@@ -176,7 +221,7 @@ const ProfileContent = () => {
                   <Field type="radio" name="ReceiveMessageEvent" value="true" />
                   بله
                 </label>
-              </div>
+              </div> */}
             </div>
 
             <button

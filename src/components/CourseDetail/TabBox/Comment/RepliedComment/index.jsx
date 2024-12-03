@@ -3,21 +3,21 @@ import { getReplyComment } from "@core/servises/api/Courses/Course";
 import { useEffect, useState } from "react";
 import Content from "./Content";
 
-const RepliedComment = ({ courseId, commentId }) => {
+const RepliedComment = ({ courseId, CommentId }) => {
   const [replied, setReplied] = useState([]);
 
-  const getReply = async (courseId, commentId) => {
-    const reply = await getReplyComment(courseId, commentId);
+  const getReply = async (courseId, CommentId) => {
+    const reply = await getReplyComment(courseId, CommentId);
     console.log("reply:", reply);
     setReplied(reply);
   };
 
   useEffect(() => {
-    getReply(courseId, commentId);
+    getReply(courseId, CommentId);
   }, []);
 
   return (
-    <div>
+   <>
       {replied?.map((item, index) => {
         return (
           <Content
@@ -34,7 +34,7 @@ const RepliedComment = ({ courseId, commentId }) => {
           />
         );
       })}
-    </div>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ const Categories = () => {
   return (
     <div className="w-full flex justify-center   mt-10 mb-20 max-xx:pt-[10%]  ">
       <div className="categories flex  mt-20 w-[1410px] h-[752px]  relative max-dd:hidden ">
-        <div className="yellow  w-[160px] h-[160px] dark:bg-[#111827] bg-yellow rounded-tr-[100px]  absolute  right-10 top-[200px]">
+        <div className="yellow  w-[160px] h-[160px] dark:bg-[#111827] transition duration-300 ease-in-out bg-yellow rounded-tr-[100px]  absolute  right-10 top-[200px]">
           {" "}
         </div>
 
@@ -20,75 +20,75 @@ const Categories = () => {
         <div className="image2  w-[120px] h-[120px]   absolute  left-[726px] top-[580px] max-xl:top-[480px] max-xl:left-[700px] max-lgx:top-[450px] max-lgx:left-[600px]">
           <img src={pic5} alt="image" />
         </div>
-        <div className="blue dark:bg-[#111827] w-[1004px] h-[480px] bg-blue  rounded-tr-[130px]  absolute  left-0 top-[120px] max-xl:w-[870px] max-xl:h-[400px] max-lgx:w-[750px] max-lgx:h-[360px]">
+        <div className="blue dark:bg-[#111827] transition duration-300 ease-in-out w-[1004px] h-[480px] bg-blue  rounded-tr-[130px]  absolute  left-0 top-[120px] max-xl:w-[870px] max-xl:h-[400px] max-lgx:w-[750px] max-lgx:h-[360px]">
           {" "}
         </div>
 
         <div className="text  w-[300px] h-[50px]   absolute  left-[950px] top-[250px]  max-xl:left-[850px] max-lgx:left-[720px] max-lg:left-[640px]">
-          <h3 className="block  text-right dark:text-white text-gray3 font-[YekanBakhBold] text-[40px] leading-[80px] max-lgx:text-[33px] ">
+          <h3 className="block  text-right dark:text-white transition duration-300 ease-in-out text-gray3 font-[YekanBakhBold] text-[40px] leading-[80px] max-lgx:text-[33px] ">
             دسته بندی‌ دوره‌ها{" "}
           </h3>
-          <div className="dark:bg-[blue] dark:blur-[170px] w-[150px] h-[150px] rounded-full absolute top-0"></div>
-          <p className="block  text-right text-[10px] font-[YekanBakh] dark:text-white text-gray4 leading-[22px]  ">
+          <div className="dark:bg-[blue] dark:blur-[170px] transition duration-300 ease-in-out w-[150px] h-[150px] rounded-full absolute top-0"></div>
+          <p className="block  text-right text-[10px] font-[YekanBakh] transition duration-300 ease-in-out dark:text-white text-gray4 leading-[22px]  ">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
             ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
           </p>
         </div>
         <div className="item flex    w-[688px] h-[752px]  z-50   absolute  left-[80px] top-0  ">
-          <div className="it1 flex justify-center items-center py-10 flex-wrap dark:bg-[#111827] border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  left-0 top-[80px] bg-[#ffffff]     ">
+          <div className="it1 flex justify-center items-center py-10 flex-wrap transition duration-300 ease-in-out dark:bg-[#111827] border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  left-0 top-[80px] bg-[#ffffff]     ">
             <div className="icon1   w-[80px]  h-[80px]  max-lgx:top-[33px] ">
-              <img  src={pic6} alt="image" />{" "}
+              <img src={pic6} alt="image" />{" "}
             </div>
-            <h1 className="dark:text-white text-gray3 w-full  text-center text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]">
+            <h1 className="dark:text-white transition duration-300 ease-in-out text-gray3 w-full  text-center text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]">
               {" "}
               بازی
             </h1>
-            <p className=" dark:text-white text-gray4   text-center w-[200px] text-[13px] font-[YekanBakh] max-lgx:text-[11px] ">
+            <p className=" dark:text-white transition duration-300 ease-in-out text-gray4   text-center w-[200px] text-[13px] font-[YekanBakh] max-lgx:text-[11px] ">
               {" "}
-              بعد از اتمام آموزش، به شرکت‌ها و سرمایه‌گذاران بازی‌ساز معرفی خواهی شد
+              بعد از اتمام آموزش، به شرکت‌ها و سرمایه‌گذاران بازی‌ساز معرفی
+              خواهی شد
             </p>
           </div>
 
-          <div className="it2 flex justify-center items-center py-10 flex-wrap dark:bg-[#111827] border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]   max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-lgx:right-36 max-lgx:top-10 right-0 top-[10px]  bg-white   ">
+          <div className="it2 flex justify-center items-center py-10 flex-wrap transition duration-300 ease-in-out dark:bg-[#111827] border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]   max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-lgx:right-36 max-lgx:top-10 right-0 top-[10px]  bg-white   ">
             <div className="icon2  w-[80px]  h-[80px] ">
               <img src={pic7} alt="image" />{" "}
             </div>
-            <h1 className="dark:text-white text-gray3 w-full text-center text-3xl text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]    ">
+            <h1 className="dark:text-white transition duration-300 ease-in-out text-gray3 w-full text-center text-3xl text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]    ">
               تحلیل داده
             </h1>
-            <p className="dark:text-white text-gray4  text-center  w-[200px] text-[13px] font-[YekanBakh]  max-lgx:text-[11px] ">
+            <p className="dark:text-white transition duration-300 ease-in-out text-gray4  text-center  w-[200px] text-[13px] font-[YekanBakh]  max-lgx:text-[11px] ">
               {" "}
               داده‌ها بیش از هر زمان دیگری در زندگی ما نقش بازی می‌کنند
             </p>
           </div>
 
-          <div className="it3 flex justify-center items-center py-10 flex-wrap dark:bg-[#111827] border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px] max-lgx:w-[240px] max-lgx:h-[240px]   w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-xl:top-[370px]  max-lgx:right-36 max-lgx:top-[320px] right-0 top-[370px]  bg-white  ">
+          <div className="it3 flex justify-center items-center py-10 flex-wrap transition duration-300 ease-in-out dark:bg-[#111827] border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px] max-lgx:w-[240px] max-lgx:h-[240px]   w-[300px] h-[300px] rounded-3xl   absolute max-xl:right-10 max-xl:top-[370px]  max-lgx:right-36 max-lgx:top-[320px] right-0 top-[370px]  bg-white  ">
             <div className="icon2  w-[80px]  h-[80px] ">
               <img src={pic8} alt="image" />{" "}
             </div>
-            <h1 className="dark:text-white text-gray3 w-full text-center text-3xl text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]">
+            <h1 className="dark:text-white transition duration-300 ease-in-out text-gray3 w-full text-center text-3xl text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]">
               {" "}
               امنیت شبکه
             </h1>
-            <p className="dark:text-white text-gray4  text-center w-[200px] text-[13px] font-[YekanBakh] max-lgx:text-[11px] ">
+            <p className="dark:text-white transition duration-300 ease-in-out text-gray4  text-center w-[200px] text-[13px] font-[YekanBakh] max-lgx:text-[11px] ">
               امنیت شبکه یکی از مسائل حیاتی در دنیای فناوری اطلاعات است. دوره
-              امنیت شبکه برای تسلط بر تهدیدات و حفاظت از اطلاعات 
-              الزامی است
+              امنیت شبکه برای تسلط بر تهدیدات و حفاظت از اطلاعات الزامی است
             </p>
           </div>
 
-          <div className="it4 flex justify-center items-center py-10 flex-wrap dark:bg-[#111827] border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  max-xl:top-[420px] max-lgx:top-[370px] left-0 bottom-[10px] bg-white  ">
+          <div className="it4 flex justify-center items-center py-10 flex-wrap dark:bg-[#111827] transition duration-300 ease-in-out border-[#eeeeee] border-[1px] border-solid max-xl:w-[270px] max-xl:h-[270px]  max-lgx:w-[240px] max-lgx:h-[240px]  w-[300px] h-[300px] rounded-3xl   absolute  max-xl:top-[420px] max-lgx:top-[370px] left-0 bottom-[10px] bg-white  ">
             <div className="icon2  w-[80px]  h-[80px] ">
               <img src={pic9} alt="image" />{" "}
             </div>
-            <h1 className="dark:text-white text-gray3 w-full text-center text-3xl text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]">
+            <h1 className="dark:text-white transition duration-300 ease-in-out text-gray3 w-full text-center text-3xl text-[24px] font-[YekanBakhBold] leading-[50px]  max-lgx:text-[19px]">
               {" "}
               وب دیزاین{" "}
             </h1>
-            <p className="dark:text-white text-gray4  text-center w-[200px] text-[13px] font-[YekanBakh]max-lgx:text-[11px] ">
-              دوره ی طراحی وبسایت یکی از پر مخاطب ترین دوره طراحی وب سایت
-              است، این دوره هم به صورت آنلاین برگزار می گردد
+            <p className="dark:text-white transition duration-300 ease-in-out text-gray4  text-center w-[200px] text-[13px] font-[YekanBakh]max-lgx:text-[11px] ">
+              دوره ی طراحی وبسایت یکی از پر مخاطب ترین دوره طراحی وب سایت است،
+              این دوره هم به صورت آنلاین برگزار می گردد
             </p>
           </div>
         </div>
