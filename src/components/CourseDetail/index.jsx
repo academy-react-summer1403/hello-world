@@ -11,6 +11,8 @@ const CourseDetail = () => {
   const [data, setdata] = useState();
   const { id } = useParams();
   console.log("id:", id);
+  console.log("course detial data:", data);
+
   const getList = async (id) => {
     try {
       const courses = await getCourseById(id);
@@ -37,6 +39,11 @@ const CourseDetail = () => {
             startTime={data?.startTime}
             endTime={data?.endTime}
             cost={data?.cost}
+            isUserFavorite={data?.isUserFavorite}
+            currentUserLike={data?.currentUserLike}
+            currentUserDissLike={data?.currentUserDissLike}
+            userLikeId={data?.userLikeId}
+            userFavoriteId={data?.userFavoriteId}
           />
         </div>
       </div>

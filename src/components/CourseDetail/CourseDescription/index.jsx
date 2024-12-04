@@ -7,15 +7,88 @@ import i3 from "@assets/images/CourseDetail/CourseDescription/Icon3.png";
 import i4 from "@assets/images/CourseDetail/CourseDescription/Icon4.png";
 import i5 from "@assets/images/CourseDetail/CourseDescription/Icon5.png";
 import image from "@assets/images/CourseDetail/CourseDescription/profile.jpg";
+import { CiBookmark, CiBookmarkCheck } from "react-icons/ci";
+
 import { faNumber } from "@core/utils/FaNumber";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
-import { LinearProgress } from "@mui/material";
+import { Button, LinearProgress } from "@mui/material";
+import { AiFillDislike, AiFillLike, AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
+import {
+  ArchiveCourseAPI,
+  DeleteArchiveCourseAPI,
+  DeleteLikeCourseAPI,
+  DissLikeCourseAPI,
+  LikeCourseAPI,
+} from "@core/servises/api/Courses/getCourseById";
 const CourseDescription = (props) => {
   const { id } = useParams();
 
   const onSubmit = async () => {
     const obj = { courseid: id };
     ReserveCourseByUser(obj);
+  };
+  
+  console.log("stygu:", props);
+  const params = useParams();
+  console.log("ppapapap",params);
+
+  const handleArchive = () => {
+    props.isUserFavorite ? addArchive() : delArchive();
+  };
+  const handleLike = () => {
+    props.currentUserLike === "0" ? likeCourse() : deleteLikeCourse();
+  };
+  const handleDissLike = () => {
+    props.currentUserDissLike === "0" && dissLikeCourse();
+  };
+
+  const addArchive = async () => {
+    const result = await ArchiveCourseAPI(obj);
+    if (result.success) {
+      // toast.success("دوره به لیست علاقه مندی ها اضافه شد");
+    } else {
+      // toast.error("ارور بدبخت");
+    }
+  };
+
+  const delArchive = async () => {
+    const obj = new FormData();
+    obj.append("CourseFavoriteId", props.userFavoriteId);
+    const result = await DeleteArchiveCourseAPI(obj);
+    if (result) {
+      // toast.success("دوره از لیست علاقه مندی ها حذف شد");
+    } else {
+      // toast.error("ارور بدبخت");
+    }
+  };
+
+  const likeCourse = async () => {
+    const res = await LikeCourseAPI(params);
+    if (res.success) {
+      // toast.success("دوره با موفقیت لایک شد");
+    } else {
+      // toast.error("ارور بدبخت");
+    }
+  };
+
+  const deleteLikeCourse = async () => {
+    const obj = new FormData();
+    obj.append("CourseLikeId", props.userLikeId);
+    const result = await DeleteLikeCourseAPI(obj);
+    if (result.success) {
+      // toast.success("لایک دوره با موفقیت برداشته شد");
+    } else {
+      // toast.error("ارور بدبخت");
+    }
+  };
+
+  const dissLikeCourse = async () => {
+    const res = await DissLikeCourseAPI(params);
+    if (res.success) {
+      // toast.success("دوره با موفقیت دیس لایک شد");
+    } else {
+      // toast.error("ارور بدبخت");
+    }
   };
 
   return (
@@ -36,7 +109,11 @@ const CourseDescription = (props) => {
                 {" "}
                 ظرفیت{" "}
               </h3>
-                <LinearProgress className="w-40 top-8 left-8 rounded-3xl" variant="determinate" value={props?.capacity} />
+              <LinearProgress
+                className="w-40 top-8 left-8 rounded-3xl"
+                variant="determinate"
+                value={props?.capacity}
+              />
               <span className=" top-[-1px] i1 absolute dark:text-white transition duration-300 ease-in-out text-grayy text-[18px] ">
                 {" "}
                 {props?.capacity && faNumber(props?.capacity.toString(), ",")}
@@ -98,6 +175,38 @@ const CourseDescription = (props) => {
                 {props?.cost &&
                   faNumber(props?.cost.toString(), ",")} تومان{" "}
               </span>
+            </div>
+            <div className="flex justify-center">
+              <Button
+                onClick={() => handleLike()}
+                className="!rounded-full w-8 h-8"
+              >
+                {/* <AiOutlineLike className="w-8 h-8"/> */}
+                {props.currentUserLike === "1" ? (
+                  <AiFillLike className="w-8 h-8" />
+                ) : (
+                  <AiOutlineLike className="w-8 h-8" />
+                )}
+              </Button >
+              <Button onClick={() => handleDissLike()} className="!rounded-full w-8 h-8">
+                {/* <AiOutlineDislike className="w-8 h-8" /> */}
+                {props.currentUserDissLike === "1" ? (
+                  <AiOutlineDislike className="w-8 h-8" />
+                ) : (
+                  <AiFillDislike  className="w-8 h-8" />
+                )}
+              </Button>
+              <Button
+                onClick={() => handleArchive()}
+                className="!rounded-full w-8 h-8"
+              >
+                {/* <CiBookmark className="w-8 h-8" /> */}
+                {props.isUserFavorite ? (
+                  <CiBookmarkCheck className="w-8 h-8" />
+                ) : (
+                  <CiBookmark  className="w-8 h-8" />
+                )}
+              </Button>
             </div>
           </div>
         </div>

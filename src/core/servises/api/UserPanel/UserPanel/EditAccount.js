@@ -22,5 +22,37 @@ const EditAccount = async (obj) => {
     console.log(error);
   }
 };
-
 export default EditAccount;
+
+
+export const addProfileImage = async (image) => {
+  try {
+    const response = await http.post("/SharePanel/AddProfileImage", image);
+
+    return response;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const selectProfileImage = async (imgId) => {
+  try {
+    const response = await http.post("/SharePanel/SelectProfileImage", imgId);
+
+    return response;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const deleteProfileImage = async (data) => {
+  try {
+    const response = await http.delete("/SharePanel/DeleteProfileImage", {
+      data: data,
+    });
+
+    return response;
+  } catch (error) {
+    return false;
+  }
+};

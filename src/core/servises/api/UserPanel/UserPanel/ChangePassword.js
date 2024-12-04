@@ -8,5 +8,26 @@ const ChangePasswordAPI = async (obj) => {
     console.log(Error);
   }
 };
+export const getSecurityInfo = async () => {
+  try {
+    const response = await http.get("/SharePanel/GetSecurityInfo");
+
+    return response;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const setTwoStepAuth = async (data) => {
+  try {
+    const response = await http.put(`/SharePanel/EditSecurity`, data);
+    console.log("rspanssss:", response);
+    
+    return response;
+  } catch (error) {
+    return false;
+  }
+};
 
 export default ChangePasswordAPI;
+

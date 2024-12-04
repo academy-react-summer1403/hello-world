@@ -4,30 +4,77 @@ import photo from "@assets/images/Profile/prof.jpg";
 import EditAccount from "@core/servises/api/UserPanel/UserPanel/EditAccount";
 import { getUserDashboard } from "@core/servises/api/UserPanel/UserPanel/Dashboard";
 import { ConvertToPersianDate } from "@core/utils/convertDate";
+import "../../../../../core/utils/Userpanel/Update.css";
+import noImage from "@assets/images/Landing/Courses/noImage.jpg";
+import { Box, Modal, Switch } from "@mui/material";
+import {
+  getSecurityInfo,
+  setTwoStepAuth,
+} from "@core/servises/api/UserPanel/UserPanel/ChangePassword";
+import { ProfilImageModal } from "@core/utils/Userpanel/ProfilImageModal";
 
 const ProfileContent = () => {
   const [user, setUser] = useState([]);
+  const [security, setSecurity] = useState([]);
+  const [checkBox, setCheckBox] = useState();
+  const [showModal, setShowModal] = useState(false);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 600,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
 
   const getUser = async () => {
     const data = await getUserDashboard();
-    console.log("report:", data);
+    console.log("rezalt.dash:", data);
 
     const obj = {
       LName: data.lName,
       FName: data.fName,
       NationalCode: data.nationalCode,
-      BirthDay: data.birthDay && ConvertToPersianDate(data.birthDay),
+      BirthDay: data.birthDay, //&& ConvertToPersianDate(data.birthDay),
       UserAbout: data.userAbout,
       TelegramLink: data.telegramLink,
       HomeAdderess: data.homeAdderess,
       LinkdinProfile: data.linkdinProfile,
       email: data.email,
       Gender: data.gender,
-      phoneNumber:data.phoneNumber,
+      phoneNumber: data.phoneNumber,
       ReceiveMessageEvent: data.receiveMessageEvent,
+      currentPictureAddress: data.currentPictureAddress,
     };
 
     setUser(obj);
+  };
+  const getSecInfo = async () => {
+    const info = await getSecurityInfo();
+    setSecurity(info);
+    setCheckBox(security.twoStepAuth);
+  };
+  const twoStepVerification = async (valuse) => {
+    const email = security.recoveryEmail;
+    const data = {
+      twoStepAuth: valuse,
+      recoveryEmail: email,
+      baseUrl: "http://localhost:5173/",
+    };
+    console.log(data);
+    const res = await setTwoStepAuth(data);
+    // if (res.success === true) {
+    //   toast.success("رمز دومرحله ای فعال شد");
+    // } else {
+    //   toast.error("عملیات ناموفق");
+    // }
+  };
+  const handleTwoAuth = (checked) => {
+    twoStepVerification(checked);
   };
   // const settings = {
   //   width: 200,
@@ -37,7 +84,9 @@ const ProfileContent = () => {
 
   useEffect(() => {
     getUser();
+    getSecInfo();
   }, []);
+
   const onSubmit = (values) => {
     const obj = {
       LName: values.LName,
@@ -53,25 +102,47 @@ const ProfileContent = () => {
       ReceiveMessageEvent: values.ReceiveMessageEvent,
       email: values.email,
       Gender: values.Gender,
-      phoneNumber:values.phoneNumber,
+      phoneNumber: values.phoneNumber,
       Latitude: 0,
       Longitude: 0,
     };
     console.log("obj vslurs form", obj);
     EditAccount(obj);
   };
+  console.log("userrr", user);
+
   return (
     <>
       <div className="relative">
         <img
-          src={photo}
+          src={
+            user.currentPictureAddress &&
+            user.currentPictureAddress.includes("classapi.sepehracademy.ir")
+              ? user.currentPictureAddress
+              : noImage
+          }
           alt="images"
           className="rounded-[50%] w-[200px] h-[200px] mt-[20px] "
         />
-        <span className="  font-[YekanBakh] absolute right-[57px] text-gray4 ">
+        <span
+          onClick={() => setShowModal(!showModal)}
+          className="cursor-pointer  font-[YekanBakh] absolute right-[57px] text-gray4 "
+        >
           {" "}
           ویرایش تصویر{" "}
         </span>
+        {showModal && (
+          <Modal
+            open={showModal}
+            onClose={() => setShowModal(false)}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <ProfilImageModal />
+            </Box>
+          </Modal>
+        )}
       </div>
 
       <div className="big flex  w-[1000px] h-[300px]  mt-[50px] relative">
@@ -164,7 +235,7 @@ const ProfileContent = () => {
                 placeholder=""
               />
             </div>
-           
+
             <div className="data  w-[250px] h-[40px]  absolute right-[37%] top-[85px]  ">
               <p className="text-right text-gray2">شماره همراه </p>
 
@@ -196,6 +267,12 @@ const ProfileContent = () => {
                     <option value="false">زن</option>
                   </Field>
                 </label>
+                <div className="py-8 flex justify-center items-center text-center gap-2  relative top-0 right-[30%]">
+                  <Switch defaultChecked={checkBox} onChange={handleTwoAuth} />
+                  <span className="text-base font-semibold text-[var(--text-col4)]">
+                    رمز ورود دومرحله ای
+                  </span>
+                </div>
               </div>
             </div>
 
