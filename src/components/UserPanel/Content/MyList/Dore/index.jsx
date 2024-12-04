@@ -28,7 +28,9 @@ const Dore = () => {
             termName={item.termName}
             paymentStatus={item.paymentStatus}
             fullName={item.fullName}
-          />
+            courseId={item.courseId}
+            cost={item.cost}
+            />
         );
       })}
     </div>
