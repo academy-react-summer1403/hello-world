@@ -26,21 +26,21 @@ const SimilarCourses = () => {
   }, []);
   return (
     <div className="mt-16 w-full flex justify-center flex-wrap max-xx:mb-28">
-      <div className="w-[1300px]  flex justify-center flex-wrap align-top ">
+      <div className="w-[350px] xl:w-[1300px]  flex justify-center flex-wrap align-top ">
         <div className="w-full h-[16%]">
           <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white transition duration-300 ease-in-out">
             دوره‌های اموزشی{" "}
           </h1>
           <img className="mx-auto mt-1" src={vector} alt="" />
         </div>
-        <div className=" flex justify-center w-[90%] max-xl:w-[60%] max-kk:w-[30%]">
+        <div className=" flex justify-center !w-[100%] max-xl:w-[60%] max-kk:w-[30%] ">
           <Swiper
             pagination={{
               clickable: true,
             }}
             navigation={true}
             modules={[Pagination, Navigation, Autoplay]}
-            className="my-swiper gap-5    "
+            className="my-swiper gap-5"
             loop={true}
             autoplay={{ delay: 1000 }}
             breakpoints={{

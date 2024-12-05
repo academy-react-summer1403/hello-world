@@ -15,7 +15,7 @@ const Servises = () => {
           {t("خدمات ما")}{" "}
           <img className="m-auto mt-[10px]  " src={pic} alt="image" />{" "}
         </h1>
-        <div className="items  mt-[-30px] flex flex-row-reverse flex-wrap  gap-[120px]  justify-center max-smm:gap-[20px] ">
+        <div className="items  mt-[-30px] flex flex-row-reverse  flex-wrap  gap-[120px]  justify-center max-ww:gap-[20px]  max-smm:gap-[20px] max-min2:gap-[10px] ">
           <div className="it1  border  border-[#e2e8f0] hover:dark:bg-[#111827] transition duration-300 ease-in-out hover:bg-white hover:shadow-[0_0_10px_10px_rgba(0,0,0,0.1)]   w-[335px] h-[250px] justify-around rounded-xl my-14 max-xll:w-[200px] max-mmd:w-[100px]   ">
             <div className="photo1 w-[70px] h-[70px] mx-auto my-10 max-xll:my-5 max-mmd:w-[50px] max-mmd:h-[50px] ">
               <img className="" src={pic1} alt="image" />{" "}

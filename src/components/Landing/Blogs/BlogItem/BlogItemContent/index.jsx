@@ -30,7 +30,7 @@ const BlogItemContent = ({
             </h2>
             <h4
               dir="rtl"
-              className="w-[100%] text-[12px] dark:text-white transition duration-300 ease-in-out text-[#455A64]    font-medium font-[YekanBakh]  leading-[21px] max-short:text-[10px]  "
+              className="w-[100%] truncate text-[12px] dark:text-white transition duration-300 ease-in-out text-[#455A64]    font-medium font-[YekanBakh]  leading-[21px] max-short:text-[10px]  "
             >
               {miniDescribe}
             </h4>
