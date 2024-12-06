@@ -3,10 +3,10 @@ import {
 	coursePayment,
 	coursePaymentaddimg,
 } from "@core/servises/api/UserPanel/UserPanel/Corspaymet";
-// import convertDataUrlToFile from "../../../../UserProfile/ImageUploader/dataURLToFileObj";
-// import toast, { Toaster } from "react-hot-toast";
+// import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
-const PaymentModal = ({ id, cost, name }) => {
+const PaymentModal = ({ id, cost, name ,handleClose}) => {
 	const [imgSrc, setImgSrc] = useState();
 	const [payId, setPayId] = useState();
 
@@ -27,8 +27,8 @@ const PaymentModal = ({ id, cost, name }) => {
 		console.log([...formData]);
 		const result = await coursePayment(formData);
 		console.log(result);
-		// result.success ? setPayId(result.id) : toast.error(result.message);
-		// result.success && toast.success(result.message);
+		result.success ? setPayId(result.id) : toast.error(result.message);
+		result.success && toast.success(result.message);
 	};
 	const sendImg = async () => {
 		const formData = new FormData();
@@ -37,9 +37,9 @@ const PaymentModal = ({ id, cost, name }) => {
 		console.log([...formData]);
 		const result = await coursePaymentaddimg(formData);
 		result.success
-			// ? toast.success(result.message)
-			// : toast.error(result.message);
-		// console.log(result);
+			? toast.success(result.message)
+			: toast.error(result.message);
+		console.log(result);
 	};
 	useEffect(() => {
 		Pay();
@@ -47,7 +47,8 @@ const PaymentModal = ({ id, cost, name }) => {
 
 	return (
 		<>
-			{/* <Toaster /> */}
+			<Toaster />
+		<span className="w-4 h-4 text-xl" onClick={handleClose} >x</span>
 			<div className="flex w-full h-full  flex-col gap-5 text-metricBlack justify-between">
 				<div className="flex flex-col gap-3">
 					<h2 className="text-xl font-semibold">
