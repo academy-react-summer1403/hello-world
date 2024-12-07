@@ -2,7 +2,7 @@ import RouterConfig from "../config/router";
 import "./App.css";
 import { Fragment } from "react";
 import { Contactus } from "@components/chatBox/index";
-
+import 'leaflet/dist/leaflet.css';
 function App() {
   return (
     <>
