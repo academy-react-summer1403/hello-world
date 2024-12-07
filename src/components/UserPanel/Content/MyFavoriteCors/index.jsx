@@ -1,7 +1,8 @@
 import React from "react";
-import HeadTitle from "../MyList/HeadTitle";
+// import HeadTitle from "../MyList/HeadTitle";
 import Search from "./Search";
 import Dore from "./Dore";
+import HeadTitle from "./HeadTitle";
 
 const MyFavoriteCors = () => {
   return (

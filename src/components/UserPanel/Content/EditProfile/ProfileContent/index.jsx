@@ -38,11 +38,11 @@ const ProfileContent = () => {
   const getUser = async () => {
     const data = await getUserDashboard();
     console.log("rezalt.dash:", data);
-    if (data.success === true) {
-      toast.success("رمز دومرحله ای فعال شد");
-    } else {
-      toast.error("عملیات ناموفق");
-    }
+    // if (data.success === true) {
+    //   toast.success("رمز دومرحله ای فعال شد");
+    // } else {
+    //   toast.error("عملیات ناموفق");
+    // }
     const obj = {
       LName: data.lName,
       FName: data.fName,
@@ -80,11 +80,11 @@ const ProfileContent = () => {
     };
     console.log(obj);
     const res = await setTwoStepAuth(obj);
-    if (res.success === true) {
-      toast.success("رمز دومرحله ای فعال شد");
-    } else {
-      toast.error("عملیات ناموفق");
-    }
+    // if (res.success === true) {
+    //   toast.success("رمز دومرحله ای فعال شد");
+    // } else {
+    //   toast.error("عملیات ناموفق");
+    // }
   };
   const handleTwoAuth = (event) => {
     console.log("checked", event.target.checked);
