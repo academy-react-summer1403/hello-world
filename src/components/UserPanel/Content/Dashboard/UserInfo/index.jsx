@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getUserDashboard } from "@core/servises/api/UserPanel/UserPanel/Dashboard";
 import { Link } from "react-router-dom";
 import { faNumber } from "@core/utils/FaNumber";
+import { FaCheck } from "react-icons/fa";
+import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 // import { LuGauge } from "react-icons/lu";
 // import { Gauge, gaugeClasses } from '@mui/x-charts/Gauge';
 
@@ -26,7 +28,7 @@ const UserInfo = () => {
   }, []);
 
   return (
-    <div className="w-full h-[35%] mt-5  flex justify-center items-center">
+    <div className="w-full h-[35%] mt-5  flex justify-end items-center">
       <div className="w-[97%] h-[180px] border-[3px] border-[#d5d4fe] rounded-[20px] flex justify-center flex-row-reverse flex-wrap">
         <div className="w-1/3 h-[50%] flex justify-end pr-10 items-center content-center">
           <h2 className=" text-[#422dae]  text-[18px]">
@@ -39,7 +41,7 @@ const UserInfo = () => {
 
           <h2 className=" text-[#8787a7]  text-[19px]">نام و نام خانوادگی</h2>
         </div>
-        <div className="w-1/3 h-[50%] flex justify-end pr-10 items-center content-center">
+        <div className="w- h-[50%] flex justify-end pr-10 items-center content-center">
           <h2 className=" text-[#422dae]   text-[18px]"> 1385/4/27 </h2>
           <span className="w-1"></span>
           <span className="text-[#8787a7]"> : </span>
@@ -77,22 +79,10 @@ const UserInfo = () => {
 
           <h2 className=" text-[#8787a7]   text-[19px]">ایمیل </h2>
         </div>
+        
         <div>
-        {/* <Gauge
-      {...settings}
-      cornerRadius="50%"
-      sx={(theme) => ({
-        [`& .${gaugeClasses.valueText}`]: {
-          fontSize: 40,
-        },
-        [`& .${gaugeClasses.valueArc}`]: {
-          fill: '#ffff',
-        },
-        [`& .${gaugeClasses.referenceArc}`]: {
-          fill: theme.palette.text.disabled,
-        },
-      })}
-    /> */}
+        
+        
         </div>
         <div className="w-1/3 h-[50%] flex justify-start content-end items-end">
           <Link
@@ -103,6 +93,60 @@ const UserInfo = () => {
             ویرایش
           </Link>
         </div>
+        <div className="w-28 mx-auto">
+            <CircularProgressbarWithChildren
+              value={userDash.profileCompletionPercentage}
+              styles={{
+                trail: {
+                  stroke: "white",
+                },
+                path: {
+                  stroke: `${
+                    userDash.profileCompletionPercentage === 100
+                      ? "rgb(76, 175, 80)"
+                      : userDash.profileCompletionPercentage >= 60
+                      ? "rgb(255,152,0)"
+                      : "rgb(244, 67, 54)"
+                  }`,
+                },
+              }}
+            >
+              {userDash.profileCompletionPercentage === 100 ? (
+                <FaCheck className="text-5xl text-green-500" />
+              ) : (
+                <p
+                  className={`text-2xl font-semibold ${
+                    userDash.profileCompletionPercentage >= 60
+                      ? "text-orange-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  {userDash.profileCompletionPercentage}%
+                </p>
+              )}
+            </CircularProgressbarWithChildren>
+          </div>
+          <div className="w-full flex flex-col gap-2 items-center justify-center">
+            {userDash.profileCompletionPercentage === 100 ? (
+              <p
+                className={`font-bold text-green-500 xl:text-base md:text-[12px]`}
+              >
+                پروفایل شما تکمیل است
+              </p>
+            ) : (
+              <>
+                <p
+                  className={`font-bold ${
+                    userDash.profileCompletionPercentage >= 60
+                      ? "text-orange-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  پروفایل شما تکمیل نیست
+                </p>
+              </>
+            )}
+          </div>
       </div>
     </div>
   );

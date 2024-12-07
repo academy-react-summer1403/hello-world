@@ -9,7 +9,7 @@ function App() {
       <Fragment>
         <div className="ProjectFont dark:bg-[#1a1a2e] transition duration-300 ease-in-out">
           <RouterConfig />
-          {/* <Contactus /> */}
+          <Contactus />
         </div>
       </Fragment>
     </>

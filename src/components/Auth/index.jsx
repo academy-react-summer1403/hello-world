@@ -23,7 +23,7 @@ const Auth = ({ setAuthModal }) => {
             setAuthModal={setAuthModal}
             setUserDatas={setUserDatas}
           />
-        ) : content === "" ? (
+        ) : content === "register" ? (
           <RegisterStep1
             setContent={setContent}
             userData={userData}
