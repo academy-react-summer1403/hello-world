@@ -1,9 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
 import close from "../../../../assets/images/Auth/close.png";
 import codeAPI from "../../../../core/servises/api/Auth/Register/RegisterVerifiction-step2";
 import {ValidationCode} from "../../../../core/validation/ValidationRegister";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+
+import LoadingButton from "@mui/lab/LoadingButton";
+
+import Stack from "@mui/material/Stack";
+import { useState } from "react";
+
 // import CountdownTimer from "../../../../core/utils/Timer";
 
 export const RegisterStep2 = ({
@@ -21,13 +30,40 @@ export const RegisterStep2 = ({
     const result =await codeAPI(obj);
     console.log("result:",result);
     setContent("creataccount");
+    setOpen(true);
+    setLoading(true);
+    setErrortoast(true);
+    setTimeout(setAuthModal, 2500);
 
     
   }catch(error){
+    setErrortoast(false);
+
     console.log("reore:",error);
     
   }
   };
+  // toast
+
+  const [open, setOpen] = React.useState(false);
+
+  const [errortoast, setErrortoast] = useState();
+
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  // loading
+
+  const [loading, setLoading] = React.useState(false);
   return (
     <>
       <div className="w-[460px] h-[483px] bg-[#ffffff] rounded-3xl flex flex-col justify-around">
@@ -75,15 +111,19 @@ export const RegisterStep2 = ({
               className="text-[#2196F3] mt-2.5 text-right w-full pr-7  "
             />{" "}
             {/* butten of register */}
-            <div className="flex flex-col	 mt-3">
+            <LoadingButton 
+            loading={loading}
+            loadingPosition="center"
+            variant="contained"
+            className="!w-[208px] !font-[YekanBakh] border !mt-10 !h-[56px] bg-[#2196F3] !rounded-[80px] !text-white">
               {/* Timer => <CountdownTimer /> */}
-              <button
+              <Button
                 type="submit"
-                className="w-[208px] h-[56px] bg-[#2196F3] rounded-[80px] p-[14px] "
+                className="!w-[208px] !h-[56px] !font-[YekanBakh]  !text-white "
               >
                 ورود به حساب
-              </button>
-            </div>
+              </Button>
+            </LoadingButton>
           </Form>
         </Formik>
         <div className="flex items-end justify-center	">
@@ -96,6 +136,34 @@ export const RegisterStep2 = ({
           </p>
         </div>
       </div>
+      {errortoast === true ? (
+        <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+            className=" !font-[YekanBakh]"
+          >
+            ورود شما با موفقیت انجام شد
+          </Alert>
+        </Snackbar>
+      ) : errortoast === false ? (
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert
+            variant="filled"
+            dir="rtl"
+            severity="error"
+            className="!font-[YekanBakh] absolute top-[510px] w-full"
+          >
+            {"-"}
+            {" اطلاعات وارد شده نادرست است  "}
+          </Alert>
+        </Stack>
+      ) : (
+        <></>
+      )}
+
     </>
   );
 };

@@ -22,35 +22,42 @@ const Blogs = () => {
 
   return (
     <div className="w-full flex justify-center pt-20 ">
-      <div className="w-[1200px] h-[830px] flex justify-center flex-wrap ">
+      <div className="">
         <div className="w-full h-20 text-center dark:text-white transition duration-300 ease-in-out text-[#263238] text-4xl  myFontBold max-xl:mb-14">
           <h2 className="w-full font-['YekanBakhBold'] dark:text-white transition duration-300 ease-in-out">
             اخبار و مقالات
           </h2>
           <img className="m-auto mt-4" src={vector} alt="" />
         </div>
-        <BlogItem />
-        {landingBlogs.map((item, index) => {
-          return (
-            <TopBlog
-              key={index}
-              id={item.id}
-              title={item.title}
-              miniDescribe={item.miniDescribe}
-              currentImageAddressTumb={item.currentImageAddressTumb}
-              currentView={item.currentView}
-              insertDate={item.insertDate}
-            />
-          );
-        })}
-        <div className="max-xl:w-full"></div>
+        <div className=" flex w-[80%] mx-auto">
+          <div className="">
+            <BlogItem />
+          </div>
+          <div className="">
+            {landingBlogs.map((item, index) => {
+              return (
+                <TopBlog
+                  key={index}
+                  id={item.id}
+                  title={item.title}
+                  miniDescribe={item.miniDescribe}
+                  currentImageAddressTumb={item.currentImageAddressTumb}
+                  currentView={item.currentView}
+                  insertDate={item.insertDate}
+                />
+              );
+            })}
+          </div>
+        </div>
+        {/* <div className="flex w-[90%] mx-auto border"> */}
         <Link
-          className="w-[141px] h-[48px] text-center bg-[#2196F3] rounded-[80px] mt-[5px] pt-3 text-white max-xl:mt-0"
+          className="flex w-[10%] mx-auto   h-[48px] text-center bg-[#2196F3] rounded-[80px] mt-[5px] pt-3 text-white max-xl:mt-0"
           to="/NewsPage"
         >
           {" "}
-          مشاهده همه
+        <span className=" mx-auto "> مشاهده همه</span>  
         </Link>
+        {/* </div> */}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const NewsItem = (props) => {
       </h2>
       <h2
         dir="rtl"
-        className="text-[12px] text-right w-[90%] text-[#455A64] transition duration-300 ease-in-out dark:text-[#ffff]"
+        className="text-[12px] truncate  text-right w-[90%] text-[#455A64] transition duration-300 ease-in-out dark:text-[#ffff]"
       >
         {props?.miniDescribe}
       </h2>
