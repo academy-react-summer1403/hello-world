@@ -8,7 +8,7 @@ function GoTop() {
           class="bg-[#e7f4ff] text-center w-[300px] rounded-2xl h-12 relative text-black text-xl font-semibold group"
           type="button"
         >
-          <div class="bg-[#94cdff] rounded-xl h-10 w-[50px] flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[490px] z-10 duration-500">
+          <div class="bg-[#94cdff] rounded-xl h-10 w-[50px] flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[290px] z-10 duration-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1024 1024"
