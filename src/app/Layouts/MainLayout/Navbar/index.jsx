@@ -14,6 +14,7 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [authModal, setAuthModal] = useState(false);
   const tokenAuth = useAuthStore((state) => state.tokenAuth);
+  const token = localStorage.getItem("token")
   return (
     <div className=" flex dark:bg-[#1a1a2e] transition duration-300 ease-in-out bg-inherit">
       <div className=" bg-transparent   h-[70px] flex justify-evenly w-full  transition duration-300 ease-in-out">
@@ -25,7 +26,7 @@ const Navbar = () => {
               setAuthModal(true);
             }}
           >
-            {!tokenAuth && (
+            {!token && (
               <div
                 className=" w-[100px] cursor-pointer h-[43px] bg-[#2196F3] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full max-md:w-[100px] max-md:text-[10px]  max-smm:w-[80px]  max-smm:text-[8px]"
                 onClick={() => {
@@ -38,7 +39,7 @@ const Navbar = () => {
 
             {authModal === true && <Auth setAuthModal={setAuthModal} />}
 
-            {tokenAuth && (
+            {token && (
               <Link
                 to="/UserProfileS"
                 className="h-[43px] w-[100px] cursor-pointer  border-[4px] border-[#3c8bcc] bg-[#59a9eb] text-[12px] items-center content-center text-center text-[#ffffff] rounded-full "

@@ -34,7 +34,7 @@ const CourseCard = ({
   console.log("cost:", cost);
   return (
     <>
-      <div className="h-[370px] w-[300px]  flex justify-center transition duration-300 ease-in-out dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px] ">
+      <div className="h-[370px] w-[300px] flex justify-center transition duration-300 ease-in-out dark:bg-[#111827] bg-white shadow-sm m-1 rounded-[20px] flex-wrap pt-3 hover:cursor-pointer max-sm:w-[240px] max-sm:h-[300px] ">
         <Link
           to={`/CourseDetailPage/${id}`}
           className="  w-[90%] h-[45%] flex justify-center rounded-[20px] overflow-hidden  "
@@ -54,7 +54,7 @@ const CourseCard = ({
 
         <h3
           dir="rtl"
-          className="text-right w-[250px]  h-[30px] text-[16px] transition duration-300 ease-in-out dark:text-white text-[#263238] myFontMiniBold  mt-[-10px] max-sm:text-[14px] max-sm:pr-5"
+          className="text-right w-[250px]  h-[30px] text-[16px] transition duration-300 ease-in-out dark:text-white text-[#263238] myFontMiniBold   max-sm:text-[14px] max-sm:pr-5"
         >
           {title}{" "}
         </h3>

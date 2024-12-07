@@ -23,11 +23,11 @@ const NewsHeader = (props) => {
           />
         </div>
         <div dir="rtl" className=" flex  flex-wrap   w-[50%] max-h-[200px]   ">
-          <h1 className=' font-["YekanBakhBold"] text-[30px] text-grayy dark:text-white transition duration-300 ease-in-out'>
+          <h1 className=' font-["YekanBakhBold"] truncate text-[30px] text-grayy dark:text-white transition duration-300 ease-in-out'>
             {" "}
             {props?.title}
           </h1>
-          <p className='  font-["YekanBakh"] text-[15px] text-gray4  dark:text-white transition duration-300 ease-in-out'>
+          <p className='  font-["YekanBakh"] text-[15px] truncate text-gray4  dark:text-white transition duration-300 ease-in-out'>
             {" "}
             {props?.googleDescribe}
           </p>

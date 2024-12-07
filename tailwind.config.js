@@ -31,6 +31,7 @@ export default {
         xx:"1232px",
         xll: "1250px", 
         ll:"1256px",
+        sl:"1272px",
         xl: "1280px",
         ww:"1287px",
         qq:"1392px",

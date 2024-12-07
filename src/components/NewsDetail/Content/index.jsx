@@ -20,14 +20,14 @@ const NewsContent = (props) => {
         <div className="w-[60%] mt-[25px]">
           <h1
             dir="rtl"
-            className='text-right  font-["YekanBakhBold"] text-[30px] text-grayy max-mini1:text-[15px] dark:text-white transition duration-300 ease-in-out'
+            className='text-right truncate font-["YekanBakhBold"] text-[30px] text-grayy max-mini1:text-[15px] dark:text-white transition duration-300 ease-in-out'
           >
             {" "}
             {props?.googleTitle}
           </h1>
           <p
             dir="rtl"
-            className='text-right  font-["YekanBakh"] text-[15px] text-gray4 max-mini1:text-[10px] max-mini1:leading-[20px]  leading-[40px] transition duration-300 ease-in-out dark:text-white '
+            className='text-right truncate font-["YekanBakh"] text-[15px] text-gray4 max-mini1:text-[10px] max-mini1:leading-[20px]  leading-[40px] transition duration-300 ease-in-out dark:text-white '
           >
             {props?.describe}
           </p>
