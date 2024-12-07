@@ -26,9 +26,11 @@ const PaymentModal = ({ id, cost, name, handleClose }) => {
     );
     console.log([...formData]);
     const result = await coursePayment(formData);
+    handleClose()
     console.log(result);
-    result.success ? setPayId(result.id) : toast.error(result.message);
-    result.success && toast.success(result.message);
+    // result.success ? setPayId(result.id) : toast.error(result.message);
+    // result.success && toast.success(result.message);
+    handleClose()
   };
   const sendImg = async () => {
     const formData = new FormData();
@@ -36,9 +38,9 @@ const PaymentModal = ({ id, cost, name, handleClose }) => {
     formData.append("Image", imgSrc);
     // console.log([...formData]);
     const result = await coursePaymentaddimg(formData);
-    result.success
-      ? toast.success(result.message)
-      : toast.error(result.message);
+    // result.success
+    //   ? toast.success(result.message)
+    //   : toast.error(result.message);
     console.log(result);
   };
 //   useEffect(() => {

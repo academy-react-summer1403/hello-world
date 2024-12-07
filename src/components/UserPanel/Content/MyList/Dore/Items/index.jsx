@@ -7,6 +7,7 @@ import { Box, Modal } from "@mui/material";
 import PaymentModal from "@components/UserPanel/Content/payment/PaymentModal";
 import { GetCourses } from "@core/servises/api/UserPanel/UserPanel/GetMyCourses";
 // import { GetCourses } from "../../../../../../Core/Services/Api/UserPanel/GetMyCourses";
+import noImage from "@assets/images/Landing/Courses/noImage.jpg";
 
 const style = {
   position: "absolute",
@@ -84,7 +85,7 @@ const Items = ({
       <div className="w-1/6 h-full text-[#36343f] text-center pl-16 pt-[7px]">
         <img
           className="w-[60px] rounded-[10px] h-[40px]"
-          src={tumbImageAddress}
+          src={tumbImageAddress ? tumbImageAddress : noImage}
           alt="photo"
         />
       </div>
