@@ -43,6 +43,8 @@ const Items = ({
           className="w-[27px] h-full flex justify-center"
         >
           <FcPaid className="w-7 h-7 mt-[-2.7px] " />
+        </button>
+        {open && (
           <Modal
             open={open}
             onClose={handleClose}
@@ -50,10 +52,15 @@ const Items = ({
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              <PaymentModal cost={cost} id={courseId} name={courseTitle} handleClose={handleClose}/>
+              <PaymentModal
+                cost={cost}
+                id={courseId}
+                name={courseTitle}
+                handleClose={handleClose}
+              />
             </Box>
           </Modal>
-        </button>
+        )}
         <button className="w-[27px] h-full flex justify-center">
           <MdOutlineDeleteSweep className="w-7 h-7 mt-[-2.7px] text-[#f9314b]" />
         </button>
