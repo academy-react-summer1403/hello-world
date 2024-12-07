@@ -64,26 +64,32 @@ const ProfileContent = () => {
   };
   const getSecInfo = async () => {
     const info = await getSecurityInfo();
-    setSecurity(info);
-    setCheckBox(security.twoStepAuth);
+    if (info) {
+      setSecurity(info);
+      setCheckBox(info.twoStepAuth);
+      console.log("info.twoStepAuth", info.twoStepAuth);
+    }
   };
   const twoStepVerification = async (valuse) => {
+    console.log("security", security);
     const email = security.recoveryEmail;
-    const data = {
+    const obj = {
       twoStepAuth: valuse,
       recoveryEmail: email,
       baseUrl: "http://localhost:5173/",
     };
-    console.log(data);
-    const res = await setTwoStepAuth(data);
+    console.log(obj);
+    const res = await setTwoStepAuth(obj);
     if (res.success === true) {
       toast.success("رمز دومرحله ای فعال شد");
     } else {
       toast.error("عملیات ناموفق");
     }
   };
-  const handleTwoAuth = (checked) => {
-    twoStepVerification(checked);
+  const handleTwoAuth = (event) => {
+    console.log("checked", event.target.checked);
+    // setChecked(event.target.checked);
+    twoStepVerification(event.target.checked);
   };
   // const settings = {
   //   width: 200,
@@ -95,6 +101,10 @@ const ProfileContent = () => {
     getUser();
     getSecInfo();
   }, []);
+
+  useEffect(() => {
+    console.log("checkBox", checkBox);
+  }, [checkBox]);
 
   const onSubmit = (values) => {
     const obj = {
