@@ -12,24 +12,24 @@ import {
   setTwoStepAuth,
 } from "@core/servises/api/UserPanel/UserPanel/ChangePassword";
 import { ProfilImageModal } from "@core/utils/Userpanel/ProfilImageModal";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProfileContent = () => {
   const [user, setUser] = useState([]);
   const [security, setSecurity] = useState([]);
   const [checkBox, setCheckBox] = useState();
   const [showModal, setShowModal] = useState(false);
-const [imagesGallery,setImagesGallery] = useState([]);
+  const [imagesGallery, setImagesGallery] = useState([]);
   const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 600,
-    height:500,
+    height: 500,
     bgcolor: "background.paper",
     border: "2px solid #000",
-    borderRadius:5,
+    borderRadius: 5,
     boxShadow: 24,
     p: 4,
   };
@@ -37,7 +37,11 @@ const [imagesGallery,setImagesGallery] = useState([]);
   const getUser = async () => {
     const data = await getUserDashboard();
     console.log("rezalt.dash:", data);
-
+    if (data.success === true) {
+      toast.success("رمز دومرحله ای فعال شد");
+    } else {
+      toast.error("عملیات ناموفق");
+    }
     const obj = {
       LName: data.lName,
       FName: data.fName,
@@ -117,6 +121,7 @@ const [imagesGallery,setImagesGallery] = useState([]);
 
   return (
     <>
+      <Toaster />
       <div className="relative">
         <img
           src={
@@ -143,7 +148,7 @@ const [imagesGallery,setImagesGallery] = useState([]);
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              <ProfilImageModal imagesGallery={imagesGallery}/>
+              <ProfilImageModal imagesGallery={imagesGallery} />
             </Box>
           </Modal>
         )}
@@ -280,30 +285,7 @@ const [imagesGallery,setImagesGallery] = useState([]);
               </div>
             </div>
 
-            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[375px]  ">
-              {/* <p className="text-right text-gray2"> اطلاع از اخرین اخبار </p> */}
-
-              {/* <div className="w-full flex flex-nowrap justify-center mt-2">
-                <label
-                  name="ReceiveMessageEvent"
-                  className="w-1/2 flex justify-center items-center gap-2 "
-                >
-                  <Field
-                    type="radio"
-                    name="ReceiveMessageEvent"
-                    value="false"
-                  />
-                  خیر
-                </label>
-                <label
-                  name="ReceiveMessageEvent"
-                  className="w-1/2 flex justify-center items-center gap-2 "
-                >
-                  <Field type="radio" name="ReceiveMessageEvent" value="true" />
-                  بله
-                </label>
-              </div> */}
-            </div>
+            <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[375px]  "></div>
 
             <button
               type="submit"
@@ -318,13 +300,6 @@ const [imagesGallery,setImagesGallery] = useState([]);
           </Form>
         </Formik>
       </div>
-      {/* <div className="w-[220px] h-[50px]  bg-[#3f40ea] rounded-[10px] text-center absolute right-[30px] bottom-[100px]">
-        {" "}
-        <span className="  font-[YekanBakh] text-[20px] text-white leading-[50px] ">
-          {" "}
-          ثبت اطلاعات
-        </span>{" "}
-      </div> */}
     </>
   );
 };

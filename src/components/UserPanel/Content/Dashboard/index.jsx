@@ -2,6 +2,7 @@ import React from "react";
 import HeadTitle from "./HeadTitle";
 import UserInfo from "./UserInfo";
 import BuyItems from "./BuyItems";
+import PieColor from "./Chart/index";
 
 const Dashboard = () => {
   return (
@@ -9,6 +10,7 @@ const Dashboard = () => {
       <HeadTitle />
       <UserInfo />
       <BuyItems />
+      <PieColor />
     </div>
   );
 };

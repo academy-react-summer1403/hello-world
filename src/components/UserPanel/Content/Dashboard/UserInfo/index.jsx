@@ -7,7 +7,6 @@ import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 // import { LuGauge } from "react-icons/lu";
 // import { Gauge, gaugeClasses } from '@mui/x-charts/Gauge';
 
-
 const UserInfo = () => {
   const [userDash, setUserDash] = useState([]);
 
@@ -21,16 +20,15 @@ const UserInfo = () => {
   //   height: 200,
   //   value: userDash.profileCompletionPercentage,
   // };
-  
 
   useEffect(() => {
     getUserDash();
   }, []);
 
   return (
-    <div className="w-full h-[35%] mt-5  flex justify-end items-center">
-      <div className="w-[97%] h-[180px] border-[3px] border-[#d5d4fe] rounded-[20px] flex justify-center flex-row-reverse flex-wrap">
-        <div className="w-1/3 h-[50%] flex justify-end pr-10 items-center content-center">
+    <div className="w-full h-[35%]  flex justify-end items-center">
+      <div className="w-[75%] h-[180px] border-[3px] border-[#d5d4fe] rounded-[20px] flex justify-center flex-row-reverse flex-wrap">
+        <div className="w-1/3 h-[50%] flex justify-end  items-center content-center">
           <h2 className=" text-[#422dae]  text-[18px]">
             {" "}
             {userDash.lName} , {userDash.fName}{" "}
@@ -79,11 +77,7 @@ const UserInfo = () => {
 
           <h2 className=" text-[#8787a7]   text-[19px]">ایمیل </h2>
         </div>
-        
-        <div>
-        
-        
-        </div>
+
         <div className="w-1/3 h-[50%] flex justify-start content-end items-end">
           <Link
             to="/UserProfileS/EditProfile"
@@ -93,7 +87,8 @@ const UserInfo = () => {
             ویرایش
           </Link>
         </div>
-        <div className="w-28 mx-auto">
+        <div className=" w-[18%] h-[21%] absolute left-[5%] top-[17.7%] border-[3px] border-[#d5d4fe] rounded-[20px] ">
+          <div className="w-28 mx-auto ab pt-4">
             <CircularProgressbarWithChildren
               value={userDash.profileCompletionPercentage}
               styles={{
@@ -126,7 +121,7 @@ const UserInfo = () => {
               )}
             </CircularProgressbarWithChildren>
           </div>
-          <div className="w-full flex flex-col gap-2 items-center justify-center">
+          <div className="w-full flex flex-col items-center justify-center">
             {userDash.profileCompletionPercentage === 100 ? (
               <p
                 className={`font-bold text-green-500 xl:text-base md:text-[12px]`}
@@ -147,6 +142,7 @@ const UserInfo = () => {
               </>
             )}
           </div>
+        </div>
       </div>
     </div>
   );

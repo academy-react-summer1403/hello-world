@@ -28,7 +28,7 @@ const BuyItems = () => {
           </h2>
           <CgBorderStyleDashed className="w-9 h-9 ml-1 text-[#5748c7]" />
         </div>
-        <div className="w-full h-[250px] flex justify-center flex-wrap items-center">
+        <div className="w-full h-[200px] flex justify-center flex-wrap items-center">
           {courseSugges.map((item, index) => {
             return (
               <SuggesCours
@@ -56,7 +56,7 @@ const BuyItems = () => {
           <CgBorderStyleDashed className="w-9 h-9 ml-1 text-[#5748c7]" />
         </div>
 
-        <div className="w-full h-[250px] flex justify-center flex-wrap items-center">
+        <div className="w-full h-[200px] flex justify-center flex-wrap items-center">
           <LastDesign />
           <LastDesign />
         </div>
