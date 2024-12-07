@@ -30,7 +30,7 @@ const Technology = ({ setTech }) => {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
-            id="panel1-header"
+            id="panel1-teach"
             dir="rtl"
           >
             تکنولوژی
@@ -48,7 +48,7 @@ const Technology = ({ setTech }) => {
                   <input
                     type="radio"
                     id={item.techName}
-                    name="filter"
+                    name="filter teach"
                     value={item.techName}
                     className="peer hidden"
                   />

@@ -41,7 +41,7 @@ const Sort = ({ setLevel, setSkelet, setSkeleton, getList }) => {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
-          id="panel1-header"
+          id="panel1-sorts"
           dir="rtl"
         >
           سطح

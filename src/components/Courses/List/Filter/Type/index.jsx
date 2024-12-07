@@ -41,7 +41,7 @@ const Category = ({ setType, setSkelet, setSkeleton, getList }) => {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon color="belu" />}
             aria-controls="panel1-content"
-            id="panel1-header"
+            id="panel1-type"
             dir="rtl"
           >
             نوع کلاس
@@ -59,7 +59,7 @@ const Category = ({ setType, setSkelet, setSkeleton, getList }) => {
                   <input
                     type="radio"
                     id={item.typeName}
-                    name="filter"
+                    name="filter type"
                     value={item.typeName}
                     className="peer hidden"
                     onClick={setData}
@@ -74,6 +74,7 @@ const Category = ({ setType, setSkelet, setSkeleton, getList }) => {
                     htmlFor={item.typeName}
                     className="border border-solid border-[#c4c4c4] h-[17px] w-[17px] mt-[0.21rem] bg-[#dee5e7] mr-[1rem] block peer-checked:bg-[#2196F3] peer-checked:border-none bg-no-repeat bg-cover rounded-[6px] hover:cursor-pointer hover:bg-[#85c8ff]"
                   ></label>
+                  
                 </div>
               );
             })}

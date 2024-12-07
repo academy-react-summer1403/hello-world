@@ -41,7 +41,7 @@ const Teachers = ({ setTecher, setSkelet, setSkeleton, getList }) => {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
-          id="panel1-header"
+          id="panel1-teach"
           dir="rtl"
         >
           اساتید
@@ -59,7 +59,7 @@ const Teachers = ({ setTecher, setSkelet, setSkeleton, getList }) => {
                 <input
                   type="radio"
                   id={item.fullName}
-                  name="filter"
+                  name="filter teach"
                   value={item.fullName}
                   className="peer hidden"
                 />
