@@ -13,6 +13,7 @@ import {
 } from "@core/servises/api/UserPanel/UserPanel/ChangePassword";
 import { ProfilImageModal } from "@core/utils/Userpanel/ProfilImageModal";
 import toast, { Toaster } from "react-hot-toast";
+import MapExample from "./Maps";
 
 const ProfileContent = () => {
   const [user, setUser] = useState([]);
@@ -218,7 +219,7 @@ const ProfileContent = () => {
 
             <div className="data  w-[250px] h-[40px]  absolute left-[16px] top-[170px]  ">
               <p className="text-right text-gray2">آدرس </p>
-
+              
               <Field
                 className="rounded-[10px] text-right border border-[#9b9b9b] w-full mt-1 h-9 pr-2 "
                 name="HomeAdderess"
@@ -291,6 +292,9 @@ const ProfileContent = () => {
                   <span className="text-base font-semibold text-[var(--text-col4)]">
                     رمز ورود دومرحله ای
                   </span>
+                </div>
+                <div className="relative top-[-175px] right-[485px] ">
+                <MapExample/>
                 </div>
               </div>
             </div>
