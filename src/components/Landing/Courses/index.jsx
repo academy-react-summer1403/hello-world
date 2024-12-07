@@ -20,9 +20,9 @@ const Courses = () => {
     getList();
   }, []);
   return (
-    <div className="w-full h-[560px] mt-28 flex justify-center flex-wrap max-xx:mb-28">
+    <div className="w-full  mt-28 flex justify-center flex-wrap max-xx:mb-28">
       <div className="  flex justify-center flex-wrap align-top">
-        <div className="w-full h-[16%] max-xx:hidden">
+        <div className="w-full h-[16%]">
           <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white transition duration-300 ease-in-out">
             دوره‌های اموزشی{" "}
           </h1>
@@ -32,7 +32,7 @@ const Courses = () => {
           {" "}
           <SimilarCourses />{" "}
         </div>
-        <div className="w-full h-[70%] flex justify-center flex-wrap max-xx:hidden  ">
+        <div className="w-full  h-[70%] flex justify-center flex-wrap max-xx:hidden  ">
           {topCourse.map((item, index) => {
             return (
               <CourseCard
@@ -54,10 +54,10 @@ const Courses = () => {
           })}
         </div>
 
-        <div className="w-full h-[14%] flex justify-center flex-wrap">
+        <div className="w-full h-[14%] mt-10 max-sl:mt-[100px] flex justify-center flex-wrap">
           {/* <button className="w-[141px] h-[48px] bg-[#2196F3] rounded-[80px] mt-[5px] text-white pt-1 ">مشاهده همه</button> */}
           <Link
-            className="w-[141px] h-[48px] text-center bg-[#2196F3] rounded-[80px] mt-[30px] pt-3 text-white"
+            className="w-[141px] h-[48px] text-center bg-[#2196F3] rounded-[80px] pt-3 text-white"
             to="/CoursesPage"
           >
             {" "}

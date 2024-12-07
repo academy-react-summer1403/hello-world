@@ -23,7 +23,7 @@ const BlogItemContent = ({
           <div className="top pt-[10px] pr-[10px] w-[100%] h-[80%] text-right     ">
             <h2
               dir="rtl"
-              className="mb-[10px] w-[100%]  dark:text-white transition duration-300 ease-in-out text-[#263238] text-[20px]   font-medium font-[YekanBakhBold] max-short:text-[12px]  "
+              className="mb-[10px] w-[100%] truncate dark:text-white transition duration-300 ease-in-out text-[#263238] text-[20px]   font-medium font-[YekanBakhBold] max-short:text-[12px]  "
             >
               {" "}
               {title}{" "}

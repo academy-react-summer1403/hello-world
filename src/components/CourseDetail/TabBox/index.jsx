@@ -9,6 +9,8 @@ import { getComment } from "@core/servises/api/Courses/Course";
 import { Form, Formik, Field } from "formik";
 import { useParams } from "react-router-dom";
 import { addcomment } from "@core/servises/api/Courses/Course";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const TabBox = ({ id }) => {
   const [comment, setComment] = useState([]);
@@ -40,12 +42,20 @@ const TabBox = ({ id }) => {
       data.append(key, item);
     });
     const coments = await addcomment(data);
+    if (coments.success === true){
+      toast.success("پیام ثبت شد.");
+    } else {
+
+      toast.error("تلاش نکن ثبت نمیشه");
+    }
 
     console.log(coments);
     // console.log("submit", submit);
   };
 
   return (
+    <>
+    <Toaster/>
     <div className="w-full  flex justify-center  flex-wrap mt-[30px]  max-cc:pt-12  max-ff:w-[90%] overflow-x-visible max-ss:overflow-x-scroll ">
       <div className="w-[1200px] flex justify-end flex-wrap   bg-white shadow-lg rounded-[20px]  dark:bg-[#111827] transition duration-300 ease-in-out">
         <Tabs
@@ -137,6 +147,7 @@ const TabBox = ({ id }) => {
         </Tabs>
       </div>
     </div>
+    </>
   );
 };
 

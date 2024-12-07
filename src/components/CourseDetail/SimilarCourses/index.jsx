@@ -25,14 +25,14 @@ const SimilarCourses = () => {
     getList();
   }, []);
   return (
-    <div className="mt-16 w-full flex justify-center flex-wrap max-xx:mb-28">
-      <div className="w-[350px] xl:w-[1300px]  flex justify-center flex-wrap align-top ">
-        <div className="w-full h-[16%]">
+    <div className=" w-full flex justify-center flex-wrap max-xx:mb-28">
+      <div className="w-[350px]   flex justify-center flex-wrap align-top ">
+        {/* <div className="w-full">
           <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white transition duration-300 ease-in-out">
             دوره‌های اموزشی{" "}
           </h1>
           <img className="mx-auto mt-1" src={vector} alt="" />
-        </div>
+        </div> */}
         <div className=" flex justify-center !w-[100%] max-xl:w-[60%] max-kk:w-[30%] ">
           <Swiper
             pagination={{
@@ -40,7 +40,8 @@ const SimilarCourses = () => {
             }}
             navigation={true}
             modules={[Pagination, Navigation, Autoplay]}
-            className="my-swiper gap-5"
+            // border-purple-500
+            className="my-swiper gap-5 py-20 "
             loop={true}
             autoplay={{ delay: 1000 }}
             breakpoints={{
@@ -57,7 +58,7 @@ const SimilarCourses = () => {
               topCourse?.map((item, index) => (
                 <SwiperSlide
                   key={index}
-                  className=" flex lg:!w-[296px] lg:h-[389px] mr-4 py-5 mb-6   "
+                  className=" flex lg:!w-[296px] lg:h-[389px]  py-5 mb-6 "
                 >
                   <CourseCard
                     title={item.title}

@@ -41,7 +41,7 @@ const NewsDetail = () => {
         currentImageAddress={data?.detailsNewsDto.currentImageAddress}
         addUserProfileImage={data?.addUserProfileImage}
       />
-      {data?.detailsNewsDto.id && <Comments id={data?.detailsNewsDto.id} />}
+      {/* {data?.detailsNewsDto.id && <Comments id={data?.detailsNewsDto.id} />} */}
     </div>
   );
 };

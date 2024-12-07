@@ -28,7 +28,7 @@ const NewsItem = (props) => {
       </Link>
       <h2
         dir="rtl"
-        className=" myFontMiniBold text-[18px] text-right w-[90%] text-[#263238] transition duration-300 ease-in-out dark:text-[#ffff]"
+        className=" myFontMiniBold truncate text-[18px] text-right w-[90%] text-[#263238] transition duration-300 ease-in-out dark:text-[#ffff]"
       >
         {props?.title}
       </h2>

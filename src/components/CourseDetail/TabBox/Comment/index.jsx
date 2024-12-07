@@ -80,7 +80,7 @@ const Comment = (
             }}
           >
             <span className="commentAnswerText"></span>
-            <span> {reply ? "پاسخ" : "انصراف"}</span>
+            <span className="text-[15px] text-gray4"> {reply ? "پاسخ" : "انصراف"}</span>
 
             <img src={messages} />
           </div>
@@ -102,6 +102,7 @@ const Comment = (
             }}
           >
             <span className="commentAnswerText"></span>
+            <span className="text-[15px] text-gray4"> {RepliedCm ? "انصراف" : "ریپلای‌ها"}</span>
             <img src={messages} />
           </div>
           <div className="">

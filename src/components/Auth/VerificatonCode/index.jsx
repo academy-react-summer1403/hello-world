@@ -26,9 +26,9 @@ export const Verificationcode = ({ setContent, userDatas, setAuthModal }) => {
     try {
       const result = await VrifyCode(obj, values.verifyCode);
       console.log("result final login:", result);
-      // if(result){
-      //   setTokenAuth(result);
-      // }
+      if(result){
+        setTokenAuth(result);
+      }
       if (result.token) {
         localStorage.setItem("token", result.token);
         navigate("/UserProfileS")
