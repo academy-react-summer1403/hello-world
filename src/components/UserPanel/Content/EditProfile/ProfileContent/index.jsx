@@ -12,21 +12,24 @@ import {
   setTwoStepAuth,
 } from "@core/servises/api/UserPanel/UserPanel/ChangePassword";
 import { ProfilImageModal } from "@core/utils/Userpanel/ProfilImageModal";
+import toast from "react-hot-toast";
 
 const ProfileContent = () => {
   const [user, setUser] = useState([]);
   const [security, setSecurity] = useState([]);
   const [checkBox, setCheckBox] = useState();
   const [showModal, setShowModal] = useState(false);
-
+const [imagesGallery,setImagesGallery] = useState([]);
   const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 600,
+    height:500,
     bgcolor: "background.paper",
     border: "2px solid #000",
+    borderRadius:5,
     boxShadow: 24,
     p: 4,
   };
@@ -52,6 +55,7 @@ const ProfileContent = () => {
     };
 
     setUser(obj);
+    setImagesGallery(data.userImage);
   };
   const getSecInfo = async () => {
     const info = await getSecurityInfo();
@@ -67,11 +71,11 @@ const ProfileContent = () => {
     };
     console.log(data);
     const res = await setTwoStepAuth(data);
-    // if (res.success === true) {
-    //   toast.success("رمز دومرحله ای فعال شد");
-    // } else {
-    //   toast.error("عملیات ناموفق");
-    // }
+    if (res.success === true) {
+      toast.success("رمز دومرحله ای فعال شد");
+    } else {
+      toast.error("عملیات ناموفق");
+    }
   };
   const handleTwoAuth = (checked) => {
     twoStepVerification(checked);
@@ -139,7 +143,7 @@ const ProfileContent = () => {
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              <ProfilImageModal />
+              <ProfilImageModal imagesGallery={imagesGallery}/>
             </Box>
           </Modal>
         )}

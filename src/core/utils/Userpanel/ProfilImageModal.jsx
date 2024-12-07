@@ -13,13 +13,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleRefetch } from "../../../redux/userProfil";
 
 
-const ProfilImageModal = () => {
+const ProfilImageModal = ({imagesGallery}) => {
   const [image, setImage] = useState();
   const [fileList, setFileList] = useState([]);
   const dispatch = useDispatch();
   const refetch = useSelector((state) => state.userProfil.refetch);
-
+  
   const student = useSelector((state) => state.userProfil.userProfilInfo);
+  console.log("stu",student);
 
   const addNewProImg = async (image) => {
     const imageData = new FormData();
@@ -55,7 +56,7 @@ const ProfilImageModal = () => {
       <div className="modal ">
         <div style={{ background: "var(--background)" }} className="modal-box">
           <div className="py-8 flex flex-col justify-center items-center text-center">
-            <ProImgSlideShow student={student} />
+            <ProImgSlideShow student={imagesGallery} />
             <div
               style={{ color: "var(--text-col4)" }}
               className="flex flex-col justify-center items-center gap-2 text-sm mb-4"

@@ -5,7 +5,7 @@ import Dore from "./Dore";
 
 const MyFavoriteNews = () => {
   return (
-    <div className="h-[850px] w-[76.5%] rounded-[23px] flex justify-center relative flex-wrap p-4 bg-[#ffffff] content-start">
+    <div className="h-[850px] overflow-y-auto	 w-[76.5%] rounded-[23px] flex justify-center relative flex-wrap p-4 bg-[#ffffff] content-start">
       <HeadTitle />
       <Search />
       <Dore />

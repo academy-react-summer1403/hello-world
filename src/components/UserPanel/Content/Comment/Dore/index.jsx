@@ -16,7 +16,7 @@ const Dore = () => {
   }, []);
 
   return (
-    <div className="w-[95%] h-[520px] max-h-[520px]  mt-8 flex justify-center flex-wrap content-start">
+    <div className="w-[95%] h-[520px] overflow-y-auto	 max-h-[520px]  mt-8 flex justify-center flex-wrap content-start">
       <Titr />
       {userComment.map((item, index) => {
         return (

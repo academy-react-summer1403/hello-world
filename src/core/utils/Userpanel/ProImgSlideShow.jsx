@@ -20,7 +20,7 @@ import { deleteProfileImage, selectProfileImage } from "@core/servises/api/UserP
 import { handleRefetch } from "../../../redux/userProfil";
 
 const ProImgSlideShow = ({ student }) => {
-  const pofileImages = student.userImage;
+  const pofileImages = student;
   const dispatch = useDispatch();
   const refetch = useSelector((state) => state.userProfil.refetch);
 
