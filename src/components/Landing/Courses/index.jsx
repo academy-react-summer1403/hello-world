@@ -21,7 +21,7 @@ const Courses = () => {
   }, []);
   return (
     <div className="w-full h-[560px] mt-28 flex justify-center flex-wrap max-xx:mb-28">
-      <div className="w-[1300px]  flex justify-center flex-wrap align-top">
+      <div className="  flex justify-center flex-wrap align-top">
         <div className="w-full h-[16%] max-xx:hidden">
           <h1 className="font-['YekanBakhBold'] w-full text-center text-[#263238] text-[38px] dark:text-white transition duration-300 ease-in-out">
             دوره‌های اموزشی{" "}

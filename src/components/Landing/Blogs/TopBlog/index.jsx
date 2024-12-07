@@ -17,7 +17,7 @@ const TopBlog = ({
   return (
     <Link
       to={`/NewsDetailPage/${id}`}
-      className=" w-[597px] h-[570px] mt-[-60px] flex justify-end flex-wrap max-xl:hidden"
+      className=" w-[597px] h-[570px]  flex justify-end flex-wrap max-xl:hidden"
     >
       <div className="laptop  rounded-[24px] relative ">
         <img
@@ -49,7 +49,7 @@ const TopBlog = ({
         </h2>
         <h4
           dir="rtl"
-          className=" dark:text-white w-full transition duration-300 ease-in-out text-[#455A64] text-[12px] text-right font-medium font-[YekanBakh]"
+          className=" dark:text-white w-full truncate transition duration-300 ease-in-out text-[#455A64] text-[12px] text-right font-medium font-[YekanBakh]"
         >
           {miniDescribe}
         </h4>
